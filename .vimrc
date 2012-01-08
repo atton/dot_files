@@ -11,8 +11,10 @@ Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'quickrun.vim'
+"Bundle 'autodate.vim'
 "Bundle 'ref.vim'
 "Bundle 'neco-look'
+"Bundle 'surround.vim'
 "Bundle 'tyru/eskk.vim'
 "Bundle 'kana/vim-smartchr'
 
@@ -26,7 +28,7 @@ set showmatch						"対応する括弧を表示
 set tabstop=4						"タブ１つはスペース４つ分
 set number							"行番号表示
 set autoindent						"オートインデント
-set smartindent						"高度なオートインデント
+"set smartindent						"高度なオートインデント
 "set cindent						"オートインデント（C向け）
 set shiftwidth=4					"オートインデント時の空白数
 set splitbelow						"上下に新しいウィンドウを開いたときは下に
@@ -35,6 +37,7 @@ set ignorecase						"検索時、小文字のみなら、小文字大文字を�
 set smartcase						"検索時、大文字が入っていときは、小文字大文字を区別する
 set wildmenu						"コマンドモード時に補完を有効化
 set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
+set ambiwidth=double				"Ambiguous文字の幅を二倍に
 
 "エンコーディングはUTF-8
 set termencoding=utf-8
