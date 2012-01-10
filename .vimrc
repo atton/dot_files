@@ -11,10 +11,10 @@ Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'quickrun.vim'
-"Bundle 'autodate.vim'
+Bundle 'neco-look'
 "Bundle 'ref.vim'
-"Bundle 'neco-look'
 "Bundle 'surround.vim'
+"Bundle 'autodate.vim'
 "Bundle 'tyru/eskk.vim'
 "Bundle 'kana/vim-smartchr'
 
@@ -127,7 +127,6 @@ let g:quickrun_config={'*': {'split': ''}}				"起動時は横分割(上下に)
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1						" 起動時に有効化
 let g:neocomplcache_enable_underbar_completion = 1				" _の補完を有効化
-autocmd BufReadPost,BufNewFile *.txt let g:neocomplcache_enable_at_startup = 0	".txtファイルを編集するときは無効化
 
 " neocomplcacheのスニペットを<C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
