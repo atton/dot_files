@@ -12,6 +12,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'quickrun.vim'
 Bundle 'neco-look'
+Bundle 'YankRing.vim'
 "Bundle 'ref.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
@@ -23,12 +24,13 @@ filetype plugin indent on				"FileTypeを再適用
 " 各種設定
 syntax on                   
 set nocompatible					"viとの互換を切る
+set hidden							"バッファを保存しなくても他のバッファを表示できるように
 set showmatch						"対応する括弧を表示
 set showcmd							"入力中のコマンドを表示
 set tabstop=4						"タブ１つはスペース４つ分
 set number							"行番号表示
 set autoindent						"オートインデント
-"set smartindent						"高度なオートインデント
+"set smartindent					"高度なオートインデント
 "set cindent						"オートインデント（C向け）
 set shiftwidth=4					"オートインデント時の空白数
 set splitbelow						"上下に新しいウィンドウを開いたときは下に
@@ -69,10 +71,12 @@ nnoremap <S-tab> gT
 inoremap <unique><C-f> <Right>
 "インサートモード時に<C-f>でカーソルを左へ移動
 inoremap <unique><C-b> <Left>
-"VimShell用のショートカット
-cnoremap <silent>vsh<CR> VimShellTab<CR>
 "QuickRun用のショートカット
 nmap <C-k> <Plug>(quickrun)
+
+"ShortCutCommand
+"VimShell用のショートカット
+command! Vsh VimShellTab<CR>
 
 
 " Omni補完用の設定
@@ -102,6 +106,10 @@ let g:neocomplcache_enable_underbar_completion = 1				" _の補完を有効化
 " neocomplcacheのスニペットを<C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+
+"YankRing
+let g:yankring_history_dir = expand('$HOME/.vim')				"ヤンクのファイルのディレクトリ
+let g:yankring_history_file = 'yankring_history'				"ヤンクのファイル名
 
 
 "" tabで補完
