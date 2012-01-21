@@ -16,7 +16,6 @@ Bundle 'neco-look'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 "Bundle 'tyru/eskk.vim'
-"Bundle 'kana/vim-smartchr'
 
 filetype plugin indent on				"FileTypeを再適用
 
@@ -25,6 +24,7 @@ filetype plugin indent on				"FileTypeを再適用
 syntax on                   
 set nocompatible					"viとの互換を切る
 set showmatch						"対応する括弧を表示
+set showcmd							"入力中のコマンドを表示
 set tabstop=4						"タブ１つはスペース４つ分
 set number							"行番号表示
 set autoindent						"オートインデント
@@ -94,41 +94,6 @@ endif
 " quickrun
 let g:quickrun_config={'*': {'split': ''}}				"起動時は横分割(上下に)
 
-
-" smartchr
-
-" 各種演算子の前後に空白を入れる
-"inoremap <buffer><expr> + smartchr#one_of(' + ' , '++' , '+')
-"inoremap <buffer><expr> - smartchr#one_of(' - ' , '--' , '-')
-"inoremap <buffer><expr> * smartchr#one_of(' * ' , '*');
-"inoremap <buffer><expr> / smartchr#one_of(' / ' , '/')
-
-"  < と > は、#includeがある時は空白を入れない
-"inoremap <buffer><expr> < search('^#include\%#', 'bcn')? ' <': smartchr#one_of(' < ', ' << ', '<')
-"inoremap <buffer><expr> > search('^#include <.*\%#', 'bcn')? '>': smartchr#one_of(' > ', ' >> ', '>')
-
-"  & と | は && と|| の時だけ空白を入れる
-"inoremap <buffer><expr> & smartchr#one_of('&' , ' && ')
-"inoremap <buffer><expr> <bar> smartchr#one_of('<bar>' , ' <bar><bar> ')
- 
-"  = の設定
-" 代入や比較時は前後に空白
-" 複合演算代入時は直前のスペースを削除して入力
-"inoremap <buffer><expr> = search('\(&\<bar><bar>\<bar>+\<bar>-\<bar>/\<bar>>\<bar><\) \%#', 'bcn')? '<bs>= ' : search('\(*\<bar>!\)\%#', 'bcn') ? '= ' : smartchr#one_of(' = ', ' == ', '=')
-
-"  .. で ->
-"inoremap <buffer><expr> . smartchr#loop('.', '->', '...')
-
-" .txtのファイルの時は無効化させる（上記で設定したinoremapを上書き）
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> = =
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> + +
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> - -
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> / /
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> > >
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> < <
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> & &
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> . .
-"autocmd BufReadPost,BufNewFile *.txt inoremap  <buffer> <bar> <bar>
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1						" 起動時に有効化
