@@ -12,7 +12,8 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'quickrun.vim'
 Bundle 'neco-look'
-Bundle 'YankRing.vim'
+Bundle 'VimCalc'
+"Bundle 'YankRing.vim'
 "Bundle 'ref.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
@@ -108,9 +109,11 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 "YankRing
-let g:yankring_history_dir = expand('$HOME/.vim')				"ヤンクのファイルのディレクトリ
-let g:yankring_history_file = 'yankring_history'				"ヤンクのファイル名
+"let g:yankring_history_dir = expand('$HOME/.vim')				"ヤンクのファイルのディレクトリ
+"let g:yankring_history_file = 'yankring_history'				"ヤンクのファイル名
 
+"VimCalc
+let g:VCalc_WindowPosition = 'bottom'							"ウィンドウは下に起動
 
 "" tabで補完
 "     function InsertTabWrapper()
