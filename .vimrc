@@ -13,11 +13,12 @@ Bundle 'Shougo/vimproc'
 Bundle 'quickrun.vim'
 Bundle 'neco-look'
 Bundle 'VimCalc'
+Bundle 'skk.vim'
+"Bundle 'tyru/eskk.vim'
 "Bundle 'YankRing.vim'
 "Bundle 'ref.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
-"Bundle 'tyru/eskk.vim'
 
 filetype plugin indent on				"FileTypeを再適用
 
@@ -39,6 +40,7 @@ set splitright						"左右に新しいウィンドウを開いたときは右�
 set ignorecase						"検索時、小文字のみなら、小文字大文字を区別しない
 set smartcase						"検索時、大文字が入っていときは、小文字大文字を区別する
 set wildmenu						"コマンドモード時に補完を有効化
+set hlsearch						"検索したワードをハイライト表示
 set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
 set ambiwidth=double				"Ambiguous文字の幅を二倍に
 
@@ -74,6 +76,9 @@ inoremap <unique><C-f> <Right>
 inoremap <unique><C-b> <Left>
 "QuickRun用のショートカット
 nmap <C-k> <Plug>(quickrun)
+"C^lで検索ハイライトを消す
+nnoremap <C-l> :nohlsearch<CR><C-l>
+
 
 "ShortCutCommand
 "VimShell用のショートカット
@@ -114,6 +119,17 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 "VimCalc
 let g:VCalc_WindowPosition = 'bottom'							"ウィンドウは下に起動
+
+"skk.vim
+let g:skk_large_jisyo = expand('~/.vim/SKK-JISYO.L')	"辞書
+let g:skk_jisyo = expand('~/.vim/skk-jisyo')			"ユーザ辞書
+let g:skk_auto_save_jisyo = 1							"ユーザ辞書を聞かずに自動保存
+
+"eskk
+"let g:eskk#directory = "~/.vim/eskk"
+"let g:eskk#dictionary = { 'path': "~/.vim/skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+"let g:eskk#large_dictionary = { 'path': "~/.vim/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
+"let g:eskk#enable_completion = 1								
 
 "" tabで補完
 "     function InsertTabWrapper()
