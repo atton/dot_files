@@ -7,6 +7,7 @@ call vundle#rc()						"Vundleの初期化
 
 Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache.git'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
