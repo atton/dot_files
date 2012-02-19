@@ -1,8 +1,8 @@
 " Vundle の設定
-filetype off							"一度FileTypeをオフに
-"set rtp+=~/.vim/vundle.git/			"Vundleの初期化 (Vundleのみが .vim に入っているとき)
-set rtp+=~/.vim/bundle/vundle			"Vundleの初期化 (VundleもVundleで管理しているとき)
-call vundle#rc()						"Vundleの初期化
+filetype off						"一度FileTypeをオフに
+"set rtp+=~/.vim/vundle.git/		"Vundleの初期化 (Vundleのみが .vim に入っているとき)
+set rtp+=~/.vim/bundle/vundle		"Vundleの初期化 (VundleもVundleで管理しているとき)
+call vundle#rc()					"Vundleの初期化
 "使用するプラグインを指定
 
 Bundle 'gmarik/vundle'
@@ -19,7 +19,7 @@ Bundle 'skk.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 
-filetype plugin indent on				"FileTypeを再適用
+filetype plugin indent on			"FileTypeを再適用
 
 
 " 各種設定
@@ -85,12 +85,12 @@ command! Vsh VimShellTab<CR>
 
 
 " Omni補完用の設定
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP						"PHP
-autocmd FileType c setlocal omnifunc=ccomplete#Complete								"C
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP					"PHP
+autocmd FileType c setlocal omnifunc=ccomplete#Complete							"C
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				"HTML
 "autocmd FileType java setlocal omnifunc=javacomplete#Complete					"java
 "autocmd FileType java setlocal cfu=VjdeCompleteFun
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS			"JavaScript
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		"JavaScript
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					"ruby
 
 
@@ -99,7 +99,7 @@ autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
 
 "Undo履歴を保存する
 if has('persistent_undo')
-	set undodir=~/.vim/undo_history						"保存するディレクトリ
+	set undodir=~/.vim/undo_history							"保存するディレクトリ
 	set undofile
 endif
 
@@ -108,63 +108,28 @@ endif
 
 
 " quickrun
-let g:quickrun_config={'*': {'split': ''}}				"起動時は横分割(上下に)
+let g:quickrun_config={'*': {'split': ''}}					"起動時は横分割(上下に)
 
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1						" 起動時に有効化
-let g:neocomplcache_enable_underbar_completion = 1				" _の補完を有効化
+let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
+let g:neocomplcache_enable_underbar_completion = 1			" _の補完を有効化
 
 " neocomplcacheのスニペットを<C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 "VimCalc
-let g:VCalc_WindowPosition = 'bottom'							"ウィンドウは下に起動
+let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
 
 "skk.vim
 let g:skk_large_jisyo = expand('~/.vim/skk/SKK-JISYO.L')	"辞書
 let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
-let g:skk_auto_save_jisyo = 1							"ユーザ辞書を聞かずに自動保存
+let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 
 "vim-ref
 "alc
-let g:ref_alc_cmd = 'w3m -dump %s'						"w3mを使う
-let g:ref_alc_start_linenumber = 39						"表示開始位置
-
-
-"" tabで補完
-"     function InsertTabWrapper()
-"if pumvisible()
-"     return "\<c-n>"
-"     endif
-"     let col = col('.') - 1
-"     if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-"     return "\<tab>"
-"     elseif exists('&omnifunc') && &omnifunc == ''
-"     return "\<c-n>"
-"     else
-"     return "\<c-x>\<c-o>"
-"     endif
-"     endfunction
-"Tab補完無効化のためにinoremapをコメントアウト
-"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"
-"" Shift + tabで補完を逆順に移動
-"     function ShiftTabWrapper()
-"if pumvisible()
-"     return "\<c-p>"
-"     endif
-"     let col = col('.') - 1
-"     if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-"     return "\<s-tab>"
-"     elseif exists('&omnifunc') && &omnifunc == ''
-"     return "\<c-p>"
-"     else
-"     return "\<c-x>\<c-o>"
-"     endif
-"     endfunction
-""Shift+Tab補完無効化のためにinoremapをコメントアウト
-"inoremap <s-tab> <c-r>=ShiftTabWrapper()<cr>
+let g:ref_alc_cmd = 'w3m -dump %s'							"w3mを使う
+let g:ref_alc_start_linenumber = 39							"表示開始位置
 
 
 " 色の設定
