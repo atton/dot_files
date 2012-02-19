@@ -11,13 +11,11 @@ Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
+Bundle 'thinca/vim-ref'
 Bundle 'quickrun.vim'
 Bundle 'neco-look'
 Bundle 'VimCalc'
 Bundle 'skk.vim'
-"Bundle 'tyru/eskk.vim'
-"Bundle 'YankRing.vim'
-"Bundle 'ref.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 
@@ -95,6 +93,10 @@ autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				"HTML
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS			"JavaScript
 autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					"ruby
 
+
+" Ruby 用の設定
+autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
+
 "Undo履歴を保存する
 if has('persistent_undo')
 	set undodir=~/.vim/undo_history						"保存するディレクトリ
@@ -102,9 +104,11 @@ if has('persistent_undo')
 endif
 
 
+"plugins
+
+
 " quickrun
 let g:quickrun_config={'*': {'split': ''}}				"起動時は横分割(上下に)
-
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1						" 起動時に有効化
@@ -114,23 +118,19 @@ let g:neocomplcache_enable_underbar_completion = 1				" _の補完を有効化
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
-"YankRing
-"let g:yankring_history_dir = expand('$HOME/.vim')				"ヤンクのファイルのディレクトリ
-"let g:yankring_history_file = 'yankring_history'				"ヤンクのファイル名
-
 "VimCalc
 let g:VCalc_WindowPosition = 'bottom'							"ウィンドウは下に起動
 
 "skk.vim
-let g:skk_large_jisyo = expand('~/.vim/SKK-JISYO.L')	"辞書
-let g:skk_jisyo = expand('~/.vim/skk-jisyo')			"ユーザ辞書
+let g:skk_large_jisyo = expand('~/.vim/skk/SKK-JISYO.L')	"辞書
+let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
 let g:skk_auto_save_jisyo = 1							"ユーザ辞書を聞かずに自動保存
 
-"eskk
-"let g:eskk#directory = "~/.vim/eskk"
-"let g:eskk#dictionary = { 'path': "~/.vim/skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
-"let g:eskk#large_dictionary = { 'path': "~/.vim/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
-"let g:eskk#enable_completion = 1								
+"vim-ref
+"alc
+let g:ref_alc_cmd = 'w3m -dump %s'						"w3mを使う
+let g:ref_alc_start_linenumber = 39						"表示開始位置
+
 
 "" tabで補完
 "     function InsertTabWrapper()
