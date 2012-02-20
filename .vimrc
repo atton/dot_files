@@ -12,9 +12,9 @@ Bundle 'Shougo/vimshell.git'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-ref'
-Bundle 'quickrun.vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'gregsexton/VimCalc'
 Bundle 'neco-look'
-Bundle 'VimCalc'
 Bundle 'skk.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
@@ -130,6 +130,8 @@ let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 "alc
 let g:ref_alc_cmd = 'w3m -dump %s'							"w3mを使う
 let g:ref_alc_start_linenumber = 39							"表示開始位置
+"refe
+let g:ref_refe_cmd = '~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2'
 
 
 " 色の設定
