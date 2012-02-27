@@ -16,7 +16,7 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'gregsexton/VimCalc'
 Bundle 'ujihisa/neco-ruby'
 Bundle 'neco-look'
-Bundle 'ruby-matchit'
+Bundle 'matchit.zip'
 Bundle 'skk.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
@@ -67,10 +67,6 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 "keymaps
 "YでDのように行末まで
 nnoremap Y y$
-"ノーマルモード時に<tab>でタブ切り替え(次へ）
-nnoremap <tab> gt         
-"ノーマルモード時に<S-tab>でタブ切り替え(戻る）
-nnoremap <S-tab> gT
 "インサートモード時に<C-f>でカーソルを右へ移動
 inoremap <unique><C-f> <Right>
 "インサートモード時に<C-f>でカーソルを左へ移動
@@ -104,6 +100,10 @@ if has('persistent_undo')
 	set undodir=~/.vim/undo_history							"保存するディレクトリ
 	set undofile
 endif
+
+"template
+autocmd BufNewFile *.rb 0r ~/.vim/templates/ruby.rb			"ruby
+autocmd BufNewFile *.php 0r ~/.vim/templates/php.php		"php
 
 
 "plugins
