@@ -18,6 +18,7 @@ Bundle 'ujihisa/neco-ruby'
 Bundle 'neco-look'
 Bundle 'matchit.zip'
 Bundle 'tyru/skk.vim'
+Bundle 'taku-o/vim-toggle'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 
