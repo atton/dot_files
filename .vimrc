@@ -116,7 +116,7 @@ let g:quickrun_config={'*': {'split': ''}}					"起動時は横分割(上下に)
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
 let g:neocomplcache_enable_underbar_completion = 1			" _の補完を有効化
-let g:neocomplcache_temporary_dir = "~/.vim"
+let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 
 " neocomplcacheのスニペットを<C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
@@ -136,7 +136,7 @@ autocmd FileType text call ref#register_detection('_', 'alc')	"textならKでalc
 let g:ref_alc_cmd = 'w3m -dump %s'								"w3mを使う
 let g:ref_alc_start_linenumber = 39								"表示開始位置
 "refe
-let g:ref_refe_cmd = '~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2'
+let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
 
 
 " 色の設定
