@@ -17,7 +17,7 @@ Bundle 'gregsexton/VimCalc'
 Bundle 'ujihisa/neco-ruby'
 Bundle 'neco-look'
 Bundle 'matchit.zip'
-Bundle 'skk.vim'
+Bundle 'tyru/skk.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 
