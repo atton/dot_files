@@ -116,6 +116,7 @@ let g:quickrun_config={'*': {'split': ''}}					"起動時は横分割(上下に)
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
 let g:neocomplcache_enable_underbar_completion = 1			" _の補完を有効化
+let g:neocomplcache_temporary_dir = "~/.vim"
 
 " neocomplcacheのスニペットを<C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
