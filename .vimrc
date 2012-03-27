@@ -78,6 +78,10 @@ nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
+"undoのポイントを追加するところ
+inoremap <CR> <C-g>u<CR>
+inoremap <C-@> <C-g>u<C-@>
+
 
 "ShortCutCommand
 "VimShell用のショートカット
