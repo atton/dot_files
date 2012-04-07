@@ -92,10 +92,8 @@ command! Vsh VimShellTab<CR>
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP					"PHP
 autocmd FileType c setlocal omnifunc=ccomplete#Complete							"C
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				"HTML
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete					"java
-"autocmd FileType java setlocal cfu=VjdeCompleteFun
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		"JavaScript
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					"ruby
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					"ruby
 
 
 " Ruby 用の設定
@@ -127,15 +125,21 @@ let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
-"VimCalc
+" vimshell
+let g:vimshell_interactive_update_time = 50
+let g:vimshell_prompt = '%'
+let g:vimshell_user_prompt = ''
+let g:vimshell_right_prompt = 'getcwd()'
+
+" VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
 
-"skk.vim
+" skk.vim
 let g:skk_large_jisyo = expand('~/.vim/skk/SKK-JISYO.L')	"辞書
 let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
 let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 
-"vim-ref
+" vim-ref
 autocmd FileType text call ref#register_detection('_', 'alc')	"textならKでalcを使う
 "alc
 let g:ref_alc_cmd = 'w3m -dump %s'								"w3mを使う
