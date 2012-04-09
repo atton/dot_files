@@ -127,9 +127,14 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " vimshell
 let g:vimshell_interactive_update_time = 50
-let g:vimshell_prompt = '%'
+let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
+
+" unite
+" yでyank
+autocmd FileType unite nnoremap <buffer><expr> y unite#smart_map('y',unite#do_action('yank'))
+
 
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
