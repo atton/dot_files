@@ -132,8 +132,8 @@ let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 
 " unite
-" yでyank
-autocmd FileType unite nnoremap <buffer><expr> y unite#smart_map('y',unite#do_action('yank'))
+" <c-k>でyank
+autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
 
 
 " VimCalc
