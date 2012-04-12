@@ -85,7 +85,7 @@ inoremap <C-@> <C-g>u<C-@>
 
 "ShortCutCommand
 "VimShell用のショートカット
-command! Vsh VimShellTab<CR>
+command! Vsh VimShellTab
 
 
 " Omni補完用の設定
@@ -134,6 +134,8 @@ let g:vimshell_right_prompt = 'getcwd()'
 " unite
 " <c-k>でyank
 autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
+command! Ub Unite buffer
+command! Uf Unite file
 
 
 " VimCalc
