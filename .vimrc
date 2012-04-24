@@ -45,6 +45,7 @@ set wildmenu						"コマンドモード時に補完を有効化
 set hlsearch						"検索したワードをハイライト表示
 set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
 set ambiwidth=double				"Ambiguous文字の幅を二倍に
+set pumheight=7						"ポップアップメニューに表示する
 let loaded_matchparen = 1			"対応する括弧のハイライトを表示しない
 
 "エンコーディングはUTF-8
@@ -136,6 +137,7 @@ let g:vimshell_right_prompt = 'getcwd()'
 autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
 command! Ub Unite buffer
 command! Uf Unite file
+command! Ur Unite register
 
 
 " VimCalc
