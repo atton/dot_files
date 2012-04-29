@@ -79,6 +79,14 @@ nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
+" command mode をzsh likeに
+cnoremap <C-a> <HOME>
+cnoremap <C-e> <END>
+cnoremap <C-f> <RIGHT>
+cnoremap <C-b> <LEFT>
+cnoremap <C-d> <DEL>
+
+
 "undoのポイントを追加するところ
 inoremap <CR> <C-g>u<CR>
 inoremap <C-@> <C-g>u<C-@>
