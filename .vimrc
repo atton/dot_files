@@ -78,6 +78,8 @@ inoremap <unique><C-b> <Left>
 nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
+"texの時 n_^k でvimshellでtexpdfを実行するようにする(vimshellが開いている時のみ)
+autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf<CR>
 
 " command mode をzsh likeに
 cnoremap <C-a> <HOME>
