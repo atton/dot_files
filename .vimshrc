@@ -1,0 +1,3 @@
+alias javac='javac -J-Dfile.encoding=UTF8'
+alias java='java -Dfile.encoding=UTF8' 
+alias texpdf='platex *.tex && dvipdfmx *.dvi && rm *.dvi && rm *.aux && rm *.log'
