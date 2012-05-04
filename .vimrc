@@ -150,6 +150,7 @@ let g:unite_update_time = 25
 command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
+command! Um Unite file_mru
 
 
 " VimCalc
