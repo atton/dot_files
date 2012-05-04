@@ -138,7 +138,7 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " vimshell
-let g:vimshell_interactive_update_time = 50
+let g:vimshell_interactive_update_time = 25
 let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
@@ -146,6 +146,7 @@ let g:vimshell_right_prompt = 'getcwd()'
 " unite
 " <c-k>でyank
 autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
+let g:unite_update_time = 25
 command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
