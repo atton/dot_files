@@ -46,6 +46,7 @@ set hlsearch						"検索したワードをハイライト表示
 set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
 set ambiwidth=double				"Ambiguous文字の幅を二倍に
 set pumheight=7						"ポップアップメニューに表示する
+set foldmethod=marker				"折り畳みはmarkerで。
 let loaded_matchparen = 1			"対応する括弧のハイライトを表示しない
 
 "エンコーディングはUTF-8
