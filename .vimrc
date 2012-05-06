@@ -142,6 +142,7 @@ let g:vimshell_interactive_update_time = 25
 let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
+autocmd FileType vimshell setlocal nonumber
 
 " unite
 " <c-k>でyank
