@@ -143,6 +143,7 @@ let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 autocmd FileType vimshell setlocal nonumber
+autocmd FileType vimshell setlocal laststatus=0
 
 " unite
 " <c-k>でyank
