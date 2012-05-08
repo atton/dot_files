@@ -86,7 +86,7 @@ nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 "バッファがtexの時 n_^k でvimshellpopでtexpdfを実行する
-autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf
+autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf<CR>
 
 
 " command mode をzsh likeに
