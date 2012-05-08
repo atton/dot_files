@@ -79,8 +79,8 @@ inoremap <unique><C-b> <Left>
 nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
-"texの時 n_^k でvimshellでtexpdfを実行するようにする(vimshellが開いている時のみ)
-autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf<CR>
+"バッファがtexの時 n_^k でvimshellpopでtexpdfを実行する
+autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf
 
 " command mode をzsh likeに
 cnoremap <C-a> <HOME>
@@ -98,6 +98,7 @@ inoremap <C-@> <C-g>u<C-@>
 "ShortCutCommand
 "VimShell用のショートカット
 command! Vsh VimShellTab
+command! Texsh VimShellPop
 
 
 " Omni補完用の設定
@@ -142,8 +143,8 @@ let g:vimshell_interactive_update_time = 25
 let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
-autocmd FileType vimshell setlocal nonumber
-autocmd FileType vimshell setlocal laststatus=0
+autocmd FileType vimshell setlocal nonumber			"行番号は表示しない
+autocmd FileType vimshell setlocal laststatus=0		"ステータスラインは表示しない
 
 " unite
 " <c-k>でyank
