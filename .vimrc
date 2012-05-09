@@ -85,8 +85,6 @@ inoremap <unique><C-b> <Left>
 nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
-"バッファがtexの時 n_^k でvimshellpopでtexpdfを実行する
-autocmd FileType tex nnoremap <C-K> :VimShellSendString texpdf<CR>
 
 
 " command mode をzsh likeに
@@ -106,7 +104,6 @@ inoremap <C-@> <C-g>u<C-@>
 "ShortCutCommand {{{
 "VimShell用のショートカット
 command! Vsh VimShellTab
-command! Texsh VimShellPop
 
 " }}}
 
@@ -154,17 +151,17 @@ imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " vimshell
-let g:vimshell_interactive_update_time = 25
+let g:vimshell_interactive_update_time = 10
 let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 autocmd FileType vimshell setlocal nonumber			"行番号は表示しない
-autocmd FileType vimshell setlocal laststatus=0		"ステータスラインは表示しない
+"autocmd FileType vimshell setlocal laststatus=0		"ステータスラインは表示しない
 
 " unite
 " <c-k>でyank
 autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
-let g:unite_update_time = 25
+let g:unite_update_time = 10
 command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
