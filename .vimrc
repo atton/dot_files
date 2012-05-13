@@ -132,6 +132,7 @@ endif
 
 autocmd BufNewFile *.rb 0r ~/.vim/templates/ruby.rb			"ruby
 autocmd BufNewFile *.php 0r ~/.vim/templates/php.php		"php
+autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		"tex
 
 " }}}
 
@@ -178,10 +179,10 @@ let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 
 " vim-ref
 autocmd FileType text call ref#register_detection('_', 'alc')	"textならKでalcを使う
-"alc
+" alc
 let g:ref_alc_cmd = 'w3m -dump %s'								"w3mを使う
 let g:ref_alc_start_linenumber = 39								"表示開始位置
-"refe
+" refe
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
 
 " }}}
