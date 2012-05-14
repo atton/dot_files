@@ -19,6 +19,7 @@ Bundle 'neco-look'
 Bundle 'matchit.zip'
 Bundle 'tyru/skk.vim'
 Bundle 'taku-o/vim-toggle'
+Bundle 'sjl/gundo.vim'
 "Bundle 'surround.vim'
 "Bundle 'autodate.vim'
 
@@ -85,6 +86,8 @@ inoremap <unique><C-b> <Left>
 nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
+"UでUndoTree
+nnoremap U :<C-u>GundoToggle<CR>
 
 
 " command mode をzsh likeに
