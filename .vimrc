@@ -87,7 +87,7 @@ nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 "UでUndoTree
-nnoremap U :<C-u>GundoToggle<CR>
+nnoremap U :GundoToggle<CR>
 
 
 " command mode をzsh likeに
