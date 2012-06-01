@@ -4,3 +4,5 @@ let g:smooziee_scroll_interval="5"		"scroll time
 
 " shortcut command copy.js
 command! Ct copy title
+
+nnoremap b :tabopen about:mybookmarks<CR>
