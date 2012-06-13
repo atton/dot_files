@@ -15,13 +15,12 @@ Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'gregsexton/VimCalc'
 Bundle 'ujihisa/neco-ruby'
-Bundle 'neco-look'
-Bundle 'matchit.zip'
 Bundle 'tyru/skk.vim'
 Bundle 'taku-o/vim-toggle'
 Bundle 'sjl/gundo.vim'
-"Bundle 'surround.vim'
-"Bundle 'autodate.vim'
+Bundle 'neco-look'
+Bundle 'matchit.zip'
+Bundle 'surround.vim'
 
 filetype plugin indent on			"FileTypeを再適用
 
