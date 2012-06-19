@@ -169,6 +169,7 @@ command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
 command! Um Unite file_mru
+command! Ug Unite grep
 
 
 " VimCalc
