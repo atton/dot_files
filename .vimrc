@@ -153,6 +153,9 @@ let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
+" 手動補完
+inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
+
 " vimshell
 let g:vimshell_interactive_update_time = 10
 let g:vimshell_prompt = '% '
