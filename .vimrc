@@ -191,6 +191,11 @@ let g:ref_alc_start_linenumber = 39								"表示開始位置
 " refe
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
 
+" vim-surround
+" 追加済みキャラクタ : $ 
+" $の設定コマンド :call SurroundRegister('g','$',"$\r$")
+" .vimrc に書く必要は無くて、一回呼ぶと良いみたい。
+
 " }}}
 
 " color settings {{{
