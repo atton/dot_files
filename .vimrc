@@ -18,9 +18,9 @@ Bundle 'ujihisa/neco-ruby'
 Bundle 'tyru/skk.vim'
 Bundle 'taku-o/vim-toggle'
 Bundle 'sjl/gundo.vim'
+Bundle 'kana/vim-surround'
 Bundle 'neco-look'
 Bundle 'matchit.zip'
-Bundle 'surround.vim'
 
 filetype plugin indent on			"FileTypeを再適用
 
