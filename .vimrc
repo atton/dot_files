@@ -19,6 +19,7 @@ Bundle 'tyru/skk.vim'
 Bundle 'taku-o/vim-toggle'
 Bundle 'sjl/gundo.vim'
 Bundle 'kana/vim-surround'
+Bundle 'h1mesuke/vim-alignta'
 Bundle 'neco-look'
 Bundle 'matchit.zip'
 
@@ -173,7 +174,6 @@ command! Uf Unite file
 command! Ur Unite register
 command! Um Unite file_mru
 command! Ug Unite grep
-
 
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
