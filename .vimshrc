@@ -1,4 +1,4 @@
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias java='java -Dfile.encoding=UTF8' 
-alias tp='platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.dvi && rm *.aux && rm *.log && rm *.toc'
-alias tpo='platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.dvi && rm *.aux && rm *.log && rm *.toc && open *.pdf'
+alias tp="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc)"
+alias tpo="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc) && open *.pdf"
