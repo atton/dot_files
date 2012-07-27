@@ -24,7 +24,6 @@ Bundle 'neco-look'
 Bundle 'matchit.zip'
 
 filetype plugin indent on			"FileTypeを再適用
-
 " }}}
 
 " settings {{{
@@ -184,10 +183,21 @@ let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
 let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 
 " vim-ref
-autocmd FileType text call ref#register_detection('_', 'alc')	"textならKでalcを使う
-" alc
-let g:ref_alc_cmd = 'w3m -dump %s'								"w3mを使う
-let g:ref_alc_start_linenumber = 39								"表示開始位置
+" textファイルならKでwebdictを使う
+autocmd FileType text call ref#register_detection('_', 'webdict') 
+
+" webdict
+" infoseek と wikipedia を使う
+let g:ref_source_webdict_sites = {
+\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s',}, 
+\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s',}, 
+\ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
+
+" webdict の辞書のデフォルトはinfoseekの英和
+let g:ref_source_webdict_sites.default = 'infoseek_ej'			
+" テキストブラウザはw3mを使う
+let g:ref_source_webdict_cmd = 'w3m -dump %s'
+
 " refe
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
 
