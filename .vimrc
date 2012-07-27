@@ -197,6 +197,8 @@ let g:ref_source_webdict_sites = {
 let g:ref_source_webdict_sites.default = 'infoseek_ej'			
 " テキストブラウザはw3mを使う
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
+" 開始位置
+let g:ref_source_webdict_start_linenumber = 11
 
 " refe
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
