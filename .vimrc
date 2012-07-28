@@ -44,6 +44,7 @@ set ignorecase						"検索時、小文字のみなら、小文字大文字を�
 set smartcase						"検索時、大文字が入っていときは、小文字大文字を区別する
 set wildmenu						"コマンドモード時に補完を有効化
 set hlsearch						"検索したワードをハイライト表示
+set vb t_vb=						"ベルは鳴らさない
 set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
 set ambiwidth=double				"Ambiguous文字の幅を二倍に
 set pumheight=7						"ポップアップメニューに表示する
