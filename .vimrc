@@ -189,22 +189,14 @@ autocmd FileType text call ref#register_detection('_', 'webdict')
 " webdict
 " infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
-\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s',}, 
-\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s',}, 
+\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11',}, 
+\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11',}, 
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
 
 " webdict の辞書のデフォルトはinfoseekの英和
 let g:ref_source_webdict_sites.default = 'infoseek_ej'			
 " テキストブラウザはw3mを使う
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
-
-" フィルタ。infoseekは最初の15行は削る
-function! g:ref_source_webdict_sites.infoseek_ej.filter(output)
-	return join(split(a:output, "\n")[14 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.infoseek_je.filter(output)
-	return join(split(a:output, "\n")[14 :], "\n")
-endfunction
 
 " refe
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
