@@ -1,0 +1,11 @@
+# エスケープのキー
+escape ^Ss
+
+# 文字エンコード
+defencoding utf8
+
+# スタートアップメニューを消す
+startup_message off
+
+# 自動的にデタッチ
+autodetach on
