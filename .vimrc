@@ -162,8 +162,8 @@ let g:vimshell_interactive_update_time = 10
 let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
+let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
 autocmd FileType vimshell setlocal nonumber			"行番号は表示しない
-"autocmd FileType vimshell setlocal laststatus=0		"ステータスラインは表示しない
 
 " unite
 let g:unite_update_time = 10
@@ -183,16 +183,16 @@ let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
 let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 
 " vim-ref
-" textファイルならKでwebdictを使う
-autocmd FileType text call ref#register_detection('_', 'webdict') 
+let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
+" textファイルならKでwebdictを使う
+autocmd FileType text call ref#register_detection('_', 'webdict') 
 " infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
 \ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11',}, 
 \ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11',}, 
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
-
 " webdict の辞書のデフォルトはinfoseekの英和
 let g:ref_source_webdict_sites.default = 'infoseek_ej'			
 " テキストブラウザはw3mを使う
