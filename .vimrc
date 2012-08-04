@@ -20,6 +20,7 @@ Bundle 'taku-o/vim-toggle'
 Bundle 'sjl/gundo.vim'
 Bundle 'kana/vim-surround'
 Bundle 'h1mesuke/vim-alignta'
+Bundle 'yuratomo/w3m.vim'
 Bundle 'neco-look'
 Bundle 'matchit.zip'
 
@@ -150,11 +151,11 @@ let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
 let g:neocomplcache_enable_underbar_completion = 1			" _の補完を有効化
 let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 
-" neocomplcacheのスニペットを<C-k> にマッピング
+" neocomplcacheのスニペットを <C-k> にマッピング
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
-" 手動補完
+" i_^x^gでneocomplcacheを起動
 inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 
 " vimshell
@@ -186,7 +187,7 @@ let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
-" textファイルならKでwebdictを使う
+" FileTypeがtextならKでwebdictを使う
 autocmd FileType text call ref#register_detection('_', 'webdict') 
 " infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
@@ -206,12 +207,16 @@ let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/re
 " $の設定コマンド :call SurroundRegister('g','$',"$\r$")
 " .vimrc に書く必要は無くて、一回呼ぶと良いみたい。
 
+" w3m.vim
+autocmd FileType w3m call ref#register_detection('_', 'webdict') 	" K でrefでwebdict
+autocmd FileType w3m set nonumber
+
 " }}}
 
 " color settings {{{
 
-highlight Pmenu ctermbg=grey
-highlight PmenuSel ctermbg=darkcyan
-highlight PMenuSbar ctermbg=grey
+highlight Pmenu     ctermbg = grey
+highlight PmenuSel  ctermbg = darkcyan
+highlight PMenuSbar ctermbg = grey
 
 " }}}
