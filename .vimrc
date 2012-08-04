@@ -166,9 +166,8 @@ autocmd FileType vimshell setlocal nonumber			"行番号は表示しない
 "autocmd FileType vimshell setlocal laststatus=0		"ステータスラインは表示しない
 
 " unite
-" <c-k>でyank
-autocmd FileType unite nnoremap <buffer><expr> <c-k> unite#smart_map('<c-k>',unite#do_action('yank'))
 let g:unite_update_time = 10
+let g:unite_data_directory = expand('~/.vim/.unite')
 command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
