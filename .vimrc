@@ -189,13 +189,14 @@ let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 " webdict
 " FileTypeがtextならKでwebdictを使う
 autocmd FileType text call ref#register_detection('_', 'webdict') 
-" infoseek と wikipedia を使う
+" yahoo_dict と infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
+\ 'yahoo_dict' : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s', 'line' : '47'},
 \ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11',}, 
 \ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11',}, 
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
-" webdict の辞書のデフォルトはinfoseekの英和
-let g:ref_source_webdict_sites.default = 'infoseek_ej'			
+" webdict の辞書のデフォルトはyahoo_dict
+let g:ref_source_webdict_sites.default = 'yahoo_dict'			
 " テキストブラウザはw3mを使う
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
 
