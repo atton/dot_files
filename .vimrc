@@ -145,6 +145,8 @@ autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		"tex
 
 " quickrun
 let g:quickrun_config={'*': {'split': ''}}					"起動時は横分割(上下に)
+" scheme を quickrun 
+let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
