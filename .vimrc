@@ -14,7 +14,6 @@ NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'gregsexton/VimCalc'
@@ -27,6 +26,16 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'yuratomo/w3m.vim'
 NeoBundle 'neco-look'
 NeoBundle 'matchit.zip'
+
+" vimproc は自動make
+NeoBundle 'Shougo/vimproc', {
+			\ 'build' : {
+			\     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+			\     'cygwin' : 'make -f make_cygwin.mak',
+			\     'mac' : 'make -f make_mac.mak',
+			\     'unix' : 'make -f make_unix.mak',
+			\    },
+			\ }
 
 filetype plugin indent on			"FileTypeを再適用
 " }}}
