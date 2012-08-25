@@ -1,28 +1,32 @@
-" Vundle Settings {{{
-filetype off						"一度FileTypeをオフに
-"set rtp+=~/.vim/vundle.git/		"Vundleの初期化 (Vundleのみが .vim に入っているとき)
-set rtp+=~/.vim/bundle/vundle		"Vundleの初期化 (VundleもVundleで管理しているとき)
-call vundle#rc()					"Vundleの初期化
+" neobundle Settings {{{
+filetype off					
+" neobundle initialize {{{
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+" }}}
+
 "使用するプラグインを指定
 
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/neocomplcache.git'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'Shougo/vimshell.git'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'gregsexton/VimCalc'
-Bundle 'ujihisa/neco-ruby'
-Bundle 'tyru/skk.vim'
-Bundle 'taku-o/vim-toggle'
-Bundle 'sjl/gundo.vim'
-Bundle 'kana/vim-surround'
-Bundle 'h1mesuke/vim-alignta'
-Bundle 'yuratomo/w3m.vim'
-Bundle 'neco-look'
-Bundle 'matchit.zip'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/vimshell.git'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'gregsexton/VimCalc'
+NeoBundle 'ujihisa/neco-ruby'
+NeoBundle 'tyru/skk.vim'
+NeoBundle 'taku-o/vim-toggle'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'kana/vim-surround'
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'yuratomo/w3m.vim'
+NeoBundle 'neco-look'
+NeoBundle 'matchit.zip'
 
 filetype plugin indent on			"FileTypeを再適用
 " }}}
