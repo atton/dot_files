@@ -51,30 +51,28 @@ filetype plugin indent on			"FileTypeを再適用
 " }}}
 
 " settings {{{
-syntax on                   
-set nocompatible					"viとの互換を切る
-set hidden							"バッファを保存しなくても他のバッファを表示できるように
-set showmatch						"対応する括弧を表示
-set showcmd							"入力中のコマンドを表示
-set tabstop=4						"タブ１つはスペース４つ分
-set number							"行番号表示
-set autoindent						"オートインデント
-"set smartindent					"高度なオートインデント
-"set cindent						"オートインデント（C向け）
-set shiftwidth=4					"オートインデント時の空白数
-set splitbelow						"上下に新しいウィンドウを開いたときは下に
-set splitright						"左右に新しいウィンドウを開いたときは右に
-set ignorecase						"検索時、小文字のみなら、小文字大文字を区別しない
-set smartcase						"検索時、大文字が入っていときは、小文字大文字を区別する
-set wildmenu						"コマンドモード時に補完を有効化
-set hlsearch						"検索したワードをハイライト表示
-set vb t_vb=						"ベルは鳴らさない
-set backspace=indent,eol,start		"<BS>で改行文字等を削除できるように
-set ambiwidth=double				"Ambiguous文字の幅を二倍に
-set pumheight=7						"ポップアップメニューに表示する
-set foldmethod=marker				"折り畳みはmarkerで。
-let loaded_matchparen = 1			"対応する括弧のハイライトを表示しない
-
+syntax on                   		" シンタックスをオンに
+set nocompatible					" viとの互換を切る
+set hidden							" バッファを保存しなくても他のバッファを表示できるように
+set showmatch						" 対応する括弧を表示
+set showcmd							" 入力中のコマンドを表示
+set tabstop=4						" タブ１つはスペース４つ分
+set number							" 行番号表示
+set autoindent						" オートインデント
+set shiftwidth=4					" オートインデント時の空白数
+set splitbelow						" 上下に新しいウィンドウを開いたときは下に
+set splitright						" 左右に新しいウィンドウを開いたときは右に
+set ignorecase						" 検索時、小文字のみなら、小文字大文字を区別しない
+set smartcase						" 検索時、大文字があるときは、小文字大文字を区別する
+set wildmenu						" コマンドラインモード時に補完を有効化
+set hlsearch						" 検索したワードをハイライト表示
+set vb t_vb=						" ベルは鳴らさない
+set backspace=indent,eol,start		" <BS>で改行文字等を削除できるように
+set ambiwidth=double				" Ambiguous文字の幅を二倍に。全角記号対策
+set pumheight=7						" ポップアップメニューのアイテム数は7
+set foldmethod=marker				" 折り畳みはmarkerで
+let loaded_matchparen = 1			" 対応する括弧のハイライトを表示しない
+set nrformats-=octal				" ^a^xの時に8進数(先頭に0がつく場合)は無視
 " }}}
 
 " Encoding settings : utf-8{{{
