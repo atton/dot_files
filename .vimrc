@@ -24,7 +24,6 @@ NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'yuratomo/w3m.vim'
 NeoBundle 'neco-look'
 NeoBundle 'matchit.zip'
 
@@ -37,6 +36,10 @@ NeoBundle 'Shougo/vimproc', {
 			\     'unix' : 'make -f make_unix.mak',
 			\    },
 			\ }
+
+" lazy load plugins
+NeoBundleLazy 'yuratomo/w3m.vim'
+NeoBundleLazy 'Shougo/vinarise'
 
 " check not installed plugin {{{
 if neobundle#exists_not_installed_bundles()
