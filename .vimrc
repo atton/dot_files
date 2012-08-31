@@ -200,6 +200,26 @@ command! Uf Unite file
 command! Ur Unite register
 command! Um Unite file_mru
 command! Ug Unite grep
+command! Uc Unite menu:commands
+" commands source. for command shortcut {{{
+ 
+" command map
+let s:commands = {}
+function s:commands.map(key, value)
+	return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
+endfunction
+
+" commands
+let s:commands.candidates = {
+\ "NeoBundleUpdate": "NeoBundleUpdate",
+\ "NeoBundleSource": "NeoBundleSource",
+\ }
+
+" add unite
+let g:unite_source_menu_menus = {'commands': deepcopy(s:commands)}
+
+"unlet s:commands
+" }}}
 
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
