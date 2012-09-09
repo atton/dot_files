@@ -7,8 +7,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 " }}}
 
-"使用するプラグインを指定
-
+" set use plugins
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
@@ -50,7 +49,7 @@ if neobundle#exists_not_installed_bundles()
 endif
 " }}}
 
-filetype plugin indent on			"FileTypeを再適用
+filetype plugin indent on			" enable FileType
 " }}}
 
 " settings {{{
@@ -115,7 +114,7 @@ nnoremap <C-l> :nohlsearch<CR><C-l>
 nnoremap U :GundoToggle<CR>
 
 
-" command mode をzsh likeに
+" command mode を zsh likeに
 cnoremap <C-a> <HOME>
 cnoremap <C-e> <END>
 cnoremap <C-f> <RIGHT>
@@ -123,24 +122,18 @@ cnoremap <C-b> <LEFT>
 cnoremap <C-d> <DEL>
 
 
-"undoのポイントを追加するところ
+" undoのポイントを追加するところ
 inoremap <CR> <C-g>u<CR>
 inoremap <C-@> <C-g>u<C-@>
 
 " }}}
 
-"ShortCutCommand {{{
-"VimShell用のショートカット
-command! Vsh VimShellTab
-
-" }}}
-
 " Omni Completion dictionary {{{
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP					"PHP
-autocmd FileType c setlocal omnifunc=ccomplete#Complete							"C
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				"HTML
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		"JavaScript
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					"ruby
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP					" PHP
+autocmd FileType c setlocal omnifunc=ccomplete#Complete							" C
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				" HTML
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		" JavaScript
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					" ruby
 " }}}
 
 " other settings {{{
@@ -148,9 +141,9 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		"Ja
 " Ruby 用の設定
 autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
 
-"Undo履歴を保存する
+" Undo履歴を保存する
 if has('persistent_undo')
-	set undodir=~/.vim/undo_history							"保存するディレクトリ
+	set undodir=~/.vim/undo_history
 	set undofile
 endif
 
@@ -158,9 +151,9 @@ endif
 
 " files template {{{
 
-autocmd BufNewFile *.rb 0r ~/.vim/templates/ruby.rb			"ruby
-autocmd BufNewFile *.php 0r ~/.vim/templates/php.php		"php
-autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		"tex
+autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb		" ruby
+autocmd BufNewFile *.php 0r ~/.vim/templates/php.php		" php
+autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		" tex
 
 " }}}
 
@@ -190,7 +183,8 @@ let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
-autocmd FileType vimshell setlocal nonumber			"行番号は表示しない
+autocmd FileType vimshell setlocal nonumber			" 行番号は表示しない
+command! Vsh VimShellTab							" ショートカット用コマンド
 
 " unite
 let g:unite_update_time = 10
@@ -218,7 +212,7 @@ let s:commands.candidates = {
 " add unite
 let g:unite_source_menu_menus = {'commands': deepcopy(s:commands)}
 
-"unlet s:commands
+unlet s:commands
 " }}}
 
 " VimCalc
