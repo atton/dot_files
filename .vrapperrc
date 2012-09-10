@@ -1,0 +1,2 @@
+inoremap <C-f> <Esc><Right>a
+inoremap <C-b> <Esc>i
