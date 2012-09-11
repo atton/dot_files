@@ -39,6 +39,7 @@ NeoBundle 'Shougo/vimproc', {
 " lazy load plugins
 NeoBundleLazy 'yuratomo/w3m.vim'
 NeoBundleLazy 'Shougo/vinarise'
+NeoBundleLazy 'taka84u9/vim-ref-ri'
 
 " check not installed plugin {{{
 if neobundle#exists_not_installed_bundles()
