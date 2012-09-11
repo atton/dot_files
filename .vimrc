@@ -242,7 +242,7 @@ let g:ref_source_webdict_sites.default = 'yahoo_dict'
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
 
 " refe
-let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.2-dynamic-20110729/refe-1_9_2')
+let g:ref_refe_cmd = expand(' ~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
 
 " vim-surround
 " 追加済みキャラクタ : $ 
