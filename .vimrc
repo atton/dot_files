@@ -17,12 +17,14 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'gregsexton/VimCalc'
 NeoBundle 'ujihisa/neco-ruby'
+NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tyru/skk.vim'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'dag/vim2hs'
 NeoBundle 'neco-look'
 NeoBundle 'matchit.zip'
 
@@ -185,7 +187,8 @@ let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
 autocmd FileType vimshell setlocal nonumber			" 行番号は表示しない
-command! Vsh VimShellTab							" ショートカット用コマンド
+" ショートカット用コマンド
+command! Vsh VimShellTab
 
 " unite
 let g:unite_update_time = 10
