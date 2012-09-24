@@ -27,6 +27,8 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'neco-look'
 NeoBundle 'matchit.zip'
+NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle "osyo-manga/vim-watchdogs"
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -164,9 +166,16 @@ autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		" tex
 
 
 " quickrun
-let g:quickrun_config={'*': {'split': ''}}					"起動時は横分割(上下に)
+" 起動時は縦分割
+let g:quickrun_config = {'*': {'split': ''},}
 " scheme を quickrun 
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
+
+" watchdogs
+" quickfix にデータがある場合に quickfix ウィンドウを開く
+let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1, }
+" 初期化
+call watchdogs#setup(g:quickrun_config)
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
