@@ -112,9 +112,9 @@ command! ReloadVimrc source $MYVIMRC
 " YでDのように行末まで
 nnoremap Y y$
 " インサートモード時に<C-f>でカーソルを右へ移動
-inoremap <unique><C-f> <Right>
+inoremap <C-f> <Right>
 " インサートモード時に<C-f>でカーソルを左へ移動
-inoremap <unique><C-b> <Left>
+inoremap <C-b> <Left>
 " ^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
