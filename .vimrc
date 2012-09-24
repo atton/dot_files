@@ -134,17 +134,23 @@ inoremap <C-@> <C-g>u<C-@>
 " }}}
 
 " Omni Completion dictionary {{{
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP					" PHP
-autocmd FileType c setlocal omnifunc=ccomplete#Complete							" C
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags				" HTML
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS		" JavaScript
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete					" ruby
+augroup Omni
+	autocmd!
+	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+	autocmd FileType c setlocal omnifunc=ccomplete#Complete
+	autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+augroup END
 " }}}
 
 " other settings {{{
 
 " Ruby 用の設定
-autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
+augroup Ruby
+	autocmd!
+	autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
+augroup END
 
 " Undo履歴を保存する
 if has('persistent_undo')
@@ -156,9 +162,12 @@ endif
 
 " files template {{{
 
-autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb		" ruby
-autocmd BufNewFile *.php 0r ~/.vim/templates/php.php		" php
-autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		" tex
+augroup FileTemplate
+	autocmd!
+	autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb
+	autocmd BufNewFile *.php 0r ~/.vim/templates/php.php
+	autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex
+augroup END
 
 " }}}
 
@@ -192,8 +201,12 @@ let g:vimshell_prompt = '% '
 let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
-autocmd FileType vimshell setlocal nonumber			" 行番号は表示しない
-" ショートカット用コマンド
+
+augroup vimshell
+	autocmd!
+	autocmd FileType vimshell setlocal nonumber
+augroup END
+" command for shortcut
 command! Vsh VimShellTab
 
 
@@ -257,8 +270,11 @@ let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
+augroup ref
 " FileTypeがtextならKでwebdictを使う
-autocmd FileType text call ref#register_detection('_', 'webdict') 
+	autocmd!
+	autocmd FileType text call ref#register_detection('_', 'webdict') 
+augroup END
 " yahoo_dict と infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
 \ 'yahoo_dict' : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s', 'line' : '47'},
@@ -282,11 +298,15 @@ nnoremap U :GundoToggle<CR>
 " vim-surround
 " 追加済みキャラクタ : $ 
 " $の設定コマンド :call SurroundRegister('g','$',"$\r$")
-" .vimrc に書く必要は無くて、一回呼ぶと良いみたい。
+" .vimrc に書く必要は無くて、一回呼ぶと良いみたい？
 
 
 " w3m.vim
-autocmd FileType w3m call ref#register_detection('_', 'webdict') 	" K でrefでwebdict
-autocmd FileType w3m set nonumber
+augroup w3m
+	autocmd! 	
+	" K でrefでwebdict
+	autocmd FileType w3m call ref#register_detection('_', 'webdict')
+	autocmd FileType w3m set nonumber
+augroup END
 
 " }}}
