@@ -111,15 +111,11 @@ nnoremap Y y$
 inoremap <unique><C-f> <Right>
 "インサートモード時に<C-f>でカーソルを左へ移動
 inoremap <unique><C-b> <Left>
-"QuickRun用のショートカット
-nmap <C-k> <Plug>(quickrun)
 "C^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
-"UでUndoTree
-nnoremap U :GundoToggle<CR>
 
 
-" command mode を zsh likeに
+" command line mode のカーソル移動を zsh likeに
 cnoremap <C-a> <HOME>
 cnoremap <C-e> <END>
 cnoremap <C-f> <RIGHT>
@@ -162,20 +158,16 @@ autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex		" tex
 
 " }}}
 
+" color settings {{{
+
+highlight Pmenu     ctermbg = grey
+highlight PmenuSel  ctermbg = darkcyan
+highlight PMenuSbar ctermbg = grey
+
+" }}}
+
 " plugins {{{
 
-
-" quickrun
-" 起動時は縦分割
-let g:quickrun_config = {'*': {'split': ''},}
-" scheme を quickrun 
-let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
-
-" watchdogs
-" quickfix にデータがある場合に quickfix ウィンドウを開く
-let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1, }
-" 初期化
-call watchdogs#setup(g:quickrun_config)
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
@@ -189,6 +181,7 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " i_^x^gでneocomplcacheを起動
 inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 
+
 " vimshell
 let g:vimshell_interactive_update_time = 10
 let g:vimshell_prompt = '% '
@@ -199,7 +192,8 @@ autocmd FileType vimshell setlocal nonumber			" 行番号は表示しない
 " ショートカット用コマンド
 command! Vsh VimShellTab
 
-" unite
+
+" Unite
 let g:unite_update_time = 10
 let g:unite_data_directory = expand('~/.vim/.unite')
 command! Ub Unite buffer
@@ -228,13 +222,32 @@ let g:unite_source_menu_menus = {'commands': deepcopy(s:commands)}
 unlet s:commands
 " }}}
 
+
+" quickrun
+" ショートカット
+nmap <C-k> <Plug>(quickrun)
+" 起動時は縦分割
+let g:quickrun_config = {'*': {'split': ''}}
+" scheme を quickrun 
+let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
+
+
+" watchdogs
+" quickfix にデータがある場合に quickfix ウィンドウを開く
+let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1}
+" 初期化
+call watchdogs#setup(g:quickrun_config)
+
+
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
+
 
 " skk.vim
 let g:skk_large_jisyo = expand('~/.vim/skk/SKK-JISYO.L')	"辞書
 let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
 let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
+
 
 " vim-ref
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
@@ -256,21 +269,20 @@ let g:ref_source_webdict_cmd = 'w3m -dump %s'
 " refe
 let g:ref_refe_cmd = expand(' ~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
 
+
+" gundo.vim
+" UでUndoTree
+nnoremap U :GundoToggle<CR>
+
+
 " vim-surround
 " 追加済みキャラクタ : $ 
 " $の設定コマンド :call SurroundRegister('g','$',"$\r$")
 " .vimrc に書く必要は無くて、一回呼ぶと良いみたい。
 
+
 " w3m.vim
 autocmd FileType w3m call ref#register_detection('_', 'webdict') 	" K でrefでwebdict
 autocmd FileType w3m set nonumber
-
-" }}}
-
-" color settings {{{
-
-highlight Pmenu     ctermbg = grey
-highlight PmenuSel  ctermbg = darkcyan
-highlight PMenuSbar ctermbg = grey
 
 " }}}
