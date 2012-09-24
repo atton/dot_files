@@ -104,14 +104,18 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 
 " }}}
 
-"keymaps {{{
-"YでDのように行末まで
+" commands {{{
+command! ReloadVimrc source $MYVIMRC
+" }}}
+
+" keymaps {{{
+" YでDのように行末まで
 nnoremap Y y$
-"インサートモード時に<C-f>でカーソルを右へ移動
+" インサートモード時に<C-f>でカーソルを右へ移動
 inoremap <unique><C-f> <Right>
-"インサートモード時に<C-f>でカーソルを左へ移動
+" インサートモード時に<C-f>でカーソルを左へ移動
 inoremap <unique><C-b> <Left>
-"C^lで検索ハイライトを消す
+" ^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 
 
