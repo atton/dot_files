@@ -134,7 +134,7 @@ inoremap <C-@> <C-g>u<C-@>
 " }}}
 
 " Omni Completion dictionary {{{
-augroup Omni
+augroup OmniCompletionDictionary
 	autocmd!
 	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 	autocmd FileType c setlocal omnifunc=ccomplete#Complete
@@ -229,8 +229,9 @@ endfunction
 
 " commands
 let s:commands.candidates = {
-\ "NeoBundleUpdate": "NeoBundleUpdate",
-\ "NeoBundleSource": "NeoBundleSource",
+\ 'NeoBundleUpdate': 'NeoBundleUpdate',
+\ 'NeoBundleSource': 'NeoBundleSource',
+\ 'ReloadVimrc'    : 'ReloadVimrc',
 \ }
 
 " add unite
