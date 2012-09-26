@@ -283,6 +283,9 @@ let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' 
 let g:quickrun_config['watchdogs_checker/ruby'] = { 'outputter/quickfix/errorformat' : '\%+E%f:%l:\ parse\ error, \%W%f:%l:\ warning:\ %m, \%E%f:%l:in\ %*[^:]:\ %m, \%E%f:%l:\ %m, \%-C%\tfrom\ %f:%l:in\ %.%#, \%-Z%\tfrom\ %f:%l, \%-Z%p^, \%-G%.%#'}
 " 初期化
 call watchdogs#setup(g:quickrun_config)
+" ショートカット
+nnoremap <C-j> :WatchdogsRun<CR>
+
 
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
