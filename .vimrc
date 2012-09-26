@@ -8,27 +8,39 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " }}}
 
 " set use plugins
+
+" plugin management
 NeoBundle 'Shougo/neobundle.vim'
+
+" neocomplcache
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'ujihisa/neco-ruby'
+NeoBundle 'ujihisa/neco-ghc'
+NeoBundle 'neco-look'
+
+" quickrun and watchdogs
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'osyo-manga/vim-watchdogs'
+
+" extension
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'gregsexton/VimCalc'
-NeoBundle 'ujihisa/neco-ruby'
-NeoBundle 'ujihisa/neco-ghc'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tyru/skk.vim'
-NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'kana/vim-surround'
-NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'tyru/skk.vim'
+NeoBundle 'gregsexton/VimCalc'
+
+" syntax
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'dag/vim2hs'
-NeoBundle 'neco-look'
+
+" mini extention
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'kana/vim-surround'
+NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'matchit.zip'
-NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
