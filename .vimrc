@@ -27,8 +27,8 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'neco-look'
 NeoBundle 'matchit.zip'
-NeoBundle "osyo-manga/shabadou.vim"
-NeoBundle "osyo-manga/vim-watchdogs"
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'osyo-manga/vim-watchdogs'
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -106,6 +106,7 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 
 " commands {{{
 command! ReloadVimrc source $MYVIMRC
+command! EditVimrc edit $MYVIMRC
 function! Scouter(file, ...)
   let pat = '^\s*$\|^\s*"'
   let lines = readfile(a:file)
@@ -127,6 +128,8 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 " ^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
+" ^h でヘルプへのショートカット
+nnoremap <C-h> :h 
 
 
 " command line mode のカーソル移動を zsh likeに
@@ -242,6 +245,7 @@ let s:commands.candidates = {
 \ 'NeoBundleUpdate': 'NeoBundleUpdate',
 \ 'NeoBundleSource': 'NeoBundleSource',
 \ 'ReloadVimrc'    : 'ReloadVimrc',
+\ 'EditVimrc'      : 'EditVimrc',
 \ }
 
 " add unite
@@ -263,9 +267,10 @@ let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : 
 " watchdogs
 " quickfix にデータがある場合に quickfix ウィンドウを開く
 let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1}
+" errorformat for ruby
+let g:quickrun_config['watchdogs_checker/ruby'] = { 'outputter/quickfix/errorformat' : '\%+E%f:%l:\ parse\ error, \%W%f:%l:\ warning:\ %m, \%E%f:%l:in\ %*[^:]:\ %m, \%E%f:%l:\ %m, \%-C%\tfrom\ %f:%l:in\ %.%#, \%-Z%\tfrom\ %f:%l, \%-Z%p^, \%-G%.%#'}
 " 初期化
 call watchdogs#setup(g:quickrun_config)
-
 
 " VimCalc
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
