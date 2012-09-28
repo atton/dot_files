@@ -27,6 +27,7 @@ NeoBundle 'osyo-manga/vim-watchdogs'
 " extension
 NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'tyru/skk.vim'
@@ -36,7 +37,7 @@ NeoBundle 'gregsexton/VimCalc'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'dag/vim2hs'
 
-" mini extention
+" utility
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kana/vim-surround'
 NeoBundle 'taku-o/vim-toggle'
@@ -243,6 +244,7 @@ command! Uf Unite file
 command! Ur Unite register
 command! Um Unite file_mru
 command! Ug Unite grep
+command! Uo Unite outline
 command! Uc Unite menu:commands
 " commands source. for command shortcut {{{
  
