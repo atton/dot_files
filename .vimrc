@@ -281,11 +281,9 @@ let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : 
 " watchdogs
 " quickfix にデータがある場合に quickfix ウィンドウを開く
 let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1}
-" errorformat for ruby
-let g:quickrun_config['watchdogs_checker/ruby'] = { 'outputter/quickfix/errorformat' : '\%+E%f:%l:\ parse\ error, \%W%f:%l:\ warning:\ %m, \%E%f:%l:in\ %*[^:]:\ %m, \%E%f:%l:\ %m, \%-C%\tfrom\ %f:%l:in\ %.%#, \%-Z%\tfrom\ %f:%l, \%-Z%p^, \%-G%.%#'}
-" 初期化
+" initialize
 call watchdogs#setup(g:quickrun_config)
-" ショートカット
+" shortcut
 nnoremap <C-j> :WatchdogsRun<CR>
 
 
