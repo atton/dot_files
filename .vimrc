@@ -284,8 +284,11 @@ let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : 
 
 
 " watchdogs
+" デフォルト設定
+let g:quickrun_config['watchdogs_checker/_'] = {}
 " quickfix にデータがある場合に quickfix ウィンドウを開く
-let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1 }
+let g:quickrun_config['watchdogs_checker/_']['hook/copen/enable_exist_data'] = 1
+
 " initialize
 call watchdogs#setup(g:quickrun_config)
 " shortcut
