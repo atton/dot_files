@@ -288,6 +288,9 @@ let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : 
 let g:quickrun_config['watchdogs_checker/_'] = {}
 " quickfix にデータがある場合に quickfix ウィンドウを開く
 let g:quickrun_config['watchdogs_checker/_']['hook/copen/enable_exist_data'] = 1
+" 保存してないファイルにはバッファ番号で対応
+let g:quickrun_config['watchdogs_checker/_']['hook/quickfix_replate_tempname_to_bufnr/enable_exit'] = 1
+let g:quickrun_config['watchdogs_checker/_']['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
 
 " initialize
 call watchdogs#setup(g:quickrun_config)
