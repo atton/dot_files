@@ -272,15 +272,20 @@ unlet s:commands
 " quickrun
 " ショートカット
 nmap <C-k> <Plug>(quickrun)
+" デフォルト設定
+let g:quickrun_config = {'_' : {}}
 " 起動時は縦分割
-let g:quickrun_config = {'*': {'split': ''}}
-" scheme を quickrun 
+let g:quickrun_config._['split'] = ''
+" vimproc updatetime
+let g:quickrun_config._['runner'] = 'vimproc'
+let g:quickrun_config._['runner/vimproc/updatetime'] = 50
+" scheme を quickrun  (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
 
 " watchdogs
 " quickfix にデータがある場合に quickfix ウィンドウを開く
-let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1}
+let g:quickrun_config['watchdogs_checker/_'] = { 'hook/copen/enable_exist_data' : 1 }
 " initialize
 call watchdogs#setup(g:quickrun_config)
 " shortcut
