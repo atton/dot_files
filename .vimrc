@@ -43,6 +43,7 @@ NeoBundle 'kana/vim-surround'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'matchit.zip'
 
+
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
 			\ 'build' : {
@@ -57,6 +58,9 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundleLazy 'yuratomo/w3m.vim'
 NeoBundleLazy 'Shougo/vinarise'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
+
+" for debug
+NeoBundleLazy 'thinca/vim-prettyprint'
 
 " check not installed plugin {{{
 if neobundle#exists_not_installed_bundles()
