@@ -30,7 +30,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'tyru/skk.vim'
+NeoBundle 'tyru/eskk.vim'
 NeoBundle 'gregsexton/VimCalc'
 
 " syntax
@@ -309,11 +309,10 @@ nnoremap <C-j> :WatchdogsRun<CR>
 let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
 
 
-" skk.vim
-let g:skk_large_jisyo = expand('~/.vim/skk/SKK-JISYO.L')	"辞書
-let g:skk_jisyo = expand('~/.vim/skk/skk-jisyo')			"ユーザ辞書
-let g:skk_auto_save_jisyo = 1								"ユーザ辞書を聞かずに自動保存
-
+" eskk.vim
+let g:eskk#directory  = expand('~/.vim/eskk')				" direcotry
+let g:eskk#dictionary = { 'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8' }		" dictionary
+let g:eskk#large_dictionary = { 'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp', }
 
 " vim-ref
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
@@ -326,9 +325,9 @@ augroup ref
 augroup END
 " yahoo_dict と infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
-\ 'yahoo_dict' : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s', 'line' : '47'},
-\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11',}, 
-\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11',}, 
+\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '47'},
+\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'}, 
+\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'}, 
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
 " webdict の辞書のデフォルトはyahoo_dict
 let g:ref_source_webdict_sites.default = 'yahoo_dict'			
