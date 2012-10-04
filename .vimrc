@@ -58,6 +58,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundleLazy 'yuratomo/w3m.vim'
 NeoBundleLazy 'Shougo/vinarise'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
+NeoBundleLazy 'ujihisa/ref-hoogle'
 
 " for debug
 NeoBundleLazy 'thinca/vim-prettyprint'
@@ -313,6 +314,9 @@ let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
 let g:eskk#directory  = expand('~/.vim/eskk')				" direcotry
 let g:eskk#dictionary = { 'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8' }		" dictionary
 let g:eskk#large_dictionary = { 'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp', }
+imap <C-J> <Plug>(eskk:enable)
+cmap <C-J> <Plug>(eskk:enable)
+lmap <C-J> <Plug>(eskk:enable)
 
 " vim-ref
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
