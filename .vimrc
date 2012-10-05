@@ -39,7 +39,7 @@ NeoBundle 'dag/vim2hs'
 
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'kana/vim-surround'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'matchit.zip'
 
@@ -348,10 +348,20 @@ nnoremap U :GundoToggle<CR>
 
 
 " vim-surround
-" 追加済みキャラクタ : $ 
-" $の設定コマンド :call SurroundRegister('g','$',"$\r$")
-" .vimrc に書く必要は無くて、一回呼ぶと良いみたい？
-
+" manual mapping for eskk.vim (ignore ISurruond)
+let g:surround_no_mappings = 1
+" diff original mapping : Visual mode surround use 's' (original 'S')
+if has('vim_starting')
+	nmap ds  <Plug>Dsurround
+	nmap cs  <Plug>Csurround
+	nmap ys  <Plug>Ysurround
+	nmap yS  <Plug>YSurround
+	nmap yss <Plug>Yssurround
+	nmap ySs <Plug>YSsurround
+	nmap ySS <Plug>YSsurround
+	xmap s   <Plug>VSurround
+	xmap gs  <Plug>VgSurround
+endif
 
 " w3m.vim
 augroup w3m
