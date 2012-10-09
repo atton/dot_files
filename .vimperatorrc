@@ -1,6 +1,6 @@
 " smooziee.js setting
-let g:smooziee_scroll_amount="50"		"scroll amonut on jk key
-let g:smooziee_scroll_interval="5"		"scroll time
+let g:smooziee_scroll_amount="50"       "scroll amonut on jk key
+let g:smooziee_scroll_interval="5"      "scroll time
 
 " shortcut command copy.js
 command! Ct copy title
