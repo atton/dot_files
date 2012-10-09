@@ -6,6 +6,7 @@
 
 # .rc files
 !.vimrc
+!.vimrc_plugins
 !.zshrc
 !.screenrc
 !.vimshrc

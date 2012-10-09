@@ -1,5 +1,6 @@
 #!/bin/sh
 ln -s `pwd`/.vimrc ~/.vimrc
+ln -s `pwd`/.vimrc_plugins ~/.vimrc_plugins
 ln -s `pwd`/.vimshrc ~/.vimshrc
 ln -s `pwd`/.vim ~/.vim
 
