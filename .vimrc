@@ -6,9 +6,8 @@ endif
 unlet s:neobundle_path 
 " }}}
 
-filetype plugin indent on           " enable FileType
-
 " settings {{{
+filetype plugin indent on           " enable FileType
 syntax on                           " シンタックスをオンに
 set nocompatible                    " viとの互換を切る
 set hidden                          " バッファを保存しなくても他のバッファを表示できるように
@@ -67,16 +66,6 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 " commands {{{
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
-function! Scouter(file, ...)
-  let pat = '^\s*$\|^\s*"'
-  let lines = readfile(a:file)
-  if !a:0 || !a:1
-    let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
-  endif
-  return len(filter(lines,'v:val !~ pat'))
-endfunction
-command! -bar -bang -nargs=? -complete=file Scouter
-\        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
 " }}}
 
 " keymaps {{{
