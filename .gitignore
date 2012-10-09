@@ -18,3 +18,6 @@
 !.vim/templates/ruby.rb
 !.vim/templates/php.php
 !.vim/templates/tex.tex
+
+# install script
+!install.sh
