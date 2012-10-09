@@ -1,5 +1,5 @@
 " neobundle Settings {{{
-filetype off					
+filetype off                    
 " neobundle initialize {{{
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -46,13 +46,13 @@ NeoBundle 'matchit.zip'
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
-			\ 'build' : {
-			\     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
-			\     'cygwin' : 'make -f make_cygwin.mak',
-			\     'mac' : 'make -f make_mac.mak',
-			\     'unix' : 'make -f make_unix.mak',
-			\    },
-			\ }
+            \ 'build' : {
+            \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+            \     'cygwin' : 'make -f make_cygwin.mak',
+            \     'mac' : 'make -f make_mac.mak',
+            \     'unix' : 'make -f make_unix.mak',
+            \    },
+            \ }
 
 " lazy load plugins
 NeoBundleLazy 'yuratomo/w3m.vim'
@@ -65,39 +65,40 @@ NeoBundleLazy 'thinca/vim-prettyprint'
 
 " check not installed plugin {{{
 if neobundle#exists_not_installed_bundles()
-	echomsg 'Not installed bundles : ' .
-				\ string(neobundle#get_not_installed_bundle_names())
-	echomsg 'Please execute ":NeoBundleInstall" command.'
-	"finish
+    echomsg 'Not installed bundles : ' .
+                \ string(neobundle#get_not_installed_bundle_names())
+    echomsg 'Please execute ":NeoBundleInstall" command.'
+    "finish
 endif
 " }}}
 
-filetype plugin indent on			" enable FileType
+filetype plugin indent on           " enable FileType
 " }}}
 
 " settings {{{
-syntax on                   		" シンタックスをオンに
-set nocompatible					" viとの互換を切る
-set hidden							" バッファを保存しなくても他のバッファを表示できるように
-set showmatch						" 対応する括弧を表示
-set showcmd							" 入力中のコマンドを表示
-set tabstop=4						" タブ１つはスペース４つ分
-set number							" 行番号表示
-set autoindent						" オートインデント
-set shiftwidth=4					" オートインデント時の空白数
-set splitbelow						" 上下に新しいウィンドウを開いたときは下に
-set splitright						" 左右に新しいウィンドウを開いたときは右に
-set ignorecase						" 検索時、小文字のみなら、小文字大文字を区別しない
-set smartcase						" 検索時、大文字があるときは、小文字大文字を区別する
-set wildmenu						" コマンドラインモード時に補完を有効化
-set hlsearch						" 検索したワードをハイライト表示
-set vb t_vb=						" ベルは鳴らさない
-set backspace=indent,eol,start		" <BS>で改行文字等を削除できるように
-set ambiwidth=double				" Ambiguous文字の幅を二倍に。全角記号対策
-set pumheight=7						" ポップアップメニューのアイテム数は7
-set foldmethod=marker				" 折り畳みはmarkerで
-let loaded_matchparen = 1			" 対応する括弧のハイライトを表示しない
-set nrformats-=octal				" ^a^xの時に8進数(先頭に0がつく場合)は無視
+syntax on                           " シンタックスをオンに
+set nocompatible                    " viとの互換を切る
+set hidden                          " バッファを保存しなくても他のバッファを表示できるように
+set showmatch                       " 対応する括弧を表示
+set showcmd                         " 入力中のコマンドを表示
+set expandtab                       " タブはスペースで
+set tabstop=4                       " タブ１つはスペース４つ分
+set number                          " 行番号表示
+set autoindent                      " オートインデント
+set shiftwidth=4                    " オートインデント時の空白数
+set splitbelow                      " 上下に新しいウィンドウを開いたときは下に
+set splitright                      " 左右に新しいウィンドウを開いたときは右に
+set ignorecase                      " 検索時、小文字のみなら、小文字大文字を区別しない
+set smartcase                       " 検索時、大文字があるときは、小文字大文字を区別する
+set wildmenu                        " コマンドラインモード時に補完を有効化
+set hlsearch                        " 検索したワードをハイライト表示
+set vb t_vb=                        " ベルは鳴らさない
+set backspace=indent,eol,start      " <BS>で改行文字等を削除できるように
+set ambiwidth=double                " Ambiguous文字の幅を二倍に。全角記号対策
+set pumheight=7                     " ポップアップメニューのアイテム数は7
+set foldmethod=marker               " 折り畳みはmarkerで
+let loaded_matchparen = 1           " 対応する括弧のハイライトを表示しない
+set nrformats-=octal                " ^a^xの時に8進数(先頭に0がつく場合)は無視
 " }}}
 
 " Encoding settings : utf-8{{{
@@ -112,7 +113,7 @@ set fileformats=unix,dos,mac
 " }}}
 
 " statusline settings {{{
-set laststatus=2					"ステータスラインを表示
+set laststatus=2                    "ステータスラインを表示
 " 通常表示
 "set statusline=%F%m%r%h%w%=\ %{'[Encoding:'.(&fenc!=''?&fenc:&enc).'][Format:'.&ff.']'}[Length:%04l\/%04L][Pos:%04l,%04v][%03p%%]
 " シンプル表示（できるだけスペースを省略）
@@ -166,12 +167,12 @@ inoremap <C-@> <C-g>u<C-@>
 
 " Omni Completion dictionary {{{
 augroup OmniCompletionDictionary
-	autocmd!
-	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-	autocmd FileType c setlocal omnifunc=ccomplete#Complete
-	autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+    autocmd!
+    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c setlocal omnifunc=ccomplete#Complete
+    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 augroup END
 " }}}
 
@@ -179,14 +180,14 @@ augroup END
 
 " Ruby 用の設定
 augroup Ruby
-	autocmd!
-	autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
+    autocmd!
+    autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " Undo履歴を保存する
 if has('persistent_undo')
-	set undodir=~/.vim/undo_history
-	set undofile
+    set undodir=~/.vim/undo_history
+    set undofile
 endif
 
 " }}}
@@ -194,10 +195,10 @@ endif
 " files template {{{
 
 augroup FileTemplate
-	autocmd!
-	autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb
-	autocmd BufNewFile *.php 0r ~/.vim/templates/php.php
-	autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex
+    autocmd!
+    autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb
+    autocmd BufNewFile *.php 0r ~/.vim/templates/php.php
+    autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex
 augroup END
 
 " }}}
@@ -214,8 +215,8 @@ highlight PMenuSbar ctermbg = grey
 
 
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1					" 起動時に有効化
-let g:neocomplcache_enable_underbar_completion = 1			" _の補完を有効化
+let g:neocomplcache_enable_at_startup = 1                   " 起動時に有効化
+let g:neocomplcache_enable_underbar_completion = 1          " _の補完を有効化
 let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 
 " neocomplcacheのスニペットを <C-k> にマッピング
@@ -234,8 +235,8 @@ let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
 
 augroup vimshell
-	autocmd!
-	autocmd FileType vimshell setlocal nonumber
+    autocmd!
+    autocmd FileType vimshell setlocal nonumber
 augroup END
 " command for shortcut
 command! Vsh VimShellTab
@@ -256,7 +257,7 @@ command! Uc Unite menu:commands
 " command map
 let s:commands = {}
 function s:commands.map(key, value)
-	return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
+    return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
 endfunction
 
 " commands
@@ -307,12 +308,12 @@ nnoremap <C-j> :WatchdogsRun<CR>
 
 
 " VimCalc
-let g:VCalc_WindowPosition = 'bottom'						"ウィンドウは下に起動
+let g:VCalc_WindowPosition = 'bottom'                       "ウィンドウは下に起動
 
 
 " eskk.vim
-let g:eskk#directory  = expand('~/.vim/eskk')				" direcotry
-let g:eskk#dictionary = { 'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8' }		" dictionary
+let g:eskk#directory  = expand('~/.vim/eskk')               " direcotry
+let g:eskk#dictionary = { 'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8' }       " dictionary
 let g:eskk#large_dictionary = { 'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp', }
 imap <C-J> <Plug>(eskk:enable)
 cmap <C-J> <Plug>(eskk:enable)
@@ -324,8 +325,8 @@ let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 " webdict
 augroup ref
 " FileTypeがtextならKでwebdictを使う
-	autocmd!
-	autocmd FileType text call ref#register_detection('_', 'webdict') 
+    autocmd!
+    autocmd FileType text call ref#register_detection('_', 'webdict') 
 augroup END
 " yahoo_dict と infoseek と wikipedia を使う
 let g:ref_source_webdict_sites = {
@@ -334,7 +335,7 @@ let g:ref_source_webdict_sites = {
 \ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'}, 
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
 " webdict の辞書のデフォルトはyahoo_dict
-let g:ref_source_webdict_sites.default = 'yahoo_dict'			
+let g:ref_source_webdict_sites.default = 'yahoo_dict'           
 " テキストブラウザはw3mを使う
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
 
@@ -352,23 +353,23 @@ nnoremap U :GundoToggle<CR>
 let g:surround_no_mappings = 1
 " diff original mapping : Visual mode surround use 's' (original 'S')
 if has('vim_starting')
-	nmap ds  <Plug>Dsurround
-	nmap cs  <Plug>Csurround
-	nmap ys  <Plug>Ysurround
-	nmap yS  <Plug>YSurround
-	nmap yss <Plug>Yssurround
-	nmap ySs <Plug>YSsurround
-	nmap ySS <Plug>YSsurround
-	xmap s   <Plug>VSurround
-	xmap gs  <Plug>VgSurround
+    nmap ds  <Plug>Dsurround
+    nmap cs  <Plug>Csurround
+    nmap ys  <Plug>Ysurround
+    nmap yS  <Plug>YSurround
+    nmap yss <Plug>Yssurround
+    nmap ySs <Plug>YSsurround
+    nmap ySS <Plug>YSsurround
+    xmap s   <Plug>VSurround
+    xmap gs  <Plug>VgSurround
 endif
 
 " w3m.vim
 augroup w3m
-	autocmd! 	
-	" K でrefでwebdict
-	autocmd FileType w3m call ref#register_detection('_', 'webdict')
-	autocmd FileType w3m set nonumber
+    autocmd!    
+    " K でrefでwebdict
+    autocmd FileType w3m call ref#register_detection('_', 'webdict')
+    autocmd FileType w3m set nonumber
 augroup END
 
 " }}}
