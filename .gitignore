@@ -1,0 +1,20 @@
+# ignore all files
+*
+
+# this
+!.gitignore
+
+# .rc files
+!.vimrc
+!.zshrc
+!.screenrc
+!.vimshrc
+!.vimperatorrc
+!.vrapperrc
+
+# vim templetes
+!.vim
+!.vim/templates
+!.vim/templates/ruby.rb
+!.vim/templates/php.php
+!.vim/templates/tex.tex
