@@ -81,8 +81,6 @@ set nocompatible                    " viとの互換を切る
 set hidden                          " バッファを保存しなくても他のバッファを表示できるように
 set showmatch                       " 対応する括弧を表示
 set showcmd                         " 入力中のコマンドを表示
-set expandtab                       " タブはスペースで
-set tabstop=4                       " タブ１つはスペース４つ分
 set number                          " 行番号表示
 set autoindent                      " オートインデント
 set shiftwidth=4                    " オートインデント時の空白数
@@ -101,6 +99,14 @@ let loaded_matchparen = 1           " 対応する括弧のハイライトを表
 set nrformats-=octal                " ^a^xの時に8進数(先頭に0がつく場合)は無視
 set list                            " 記号を可視化
 set lcs=tab:>-                      " 可視化の設定
+
+set expandtab                       " タブはスペースで
+set tabstop=4                       " タブ１つはスペース４つ分
+" Makefile だけはタブを使う
+augroup Makefile
+    autocmd!
+    autocmd FileType make set noexpandtab
+augroup END
 " }}}
 
 " Encoding settings : utf-8{{{
