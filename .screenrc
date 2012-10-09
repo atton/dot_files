@@ -1,5 +1,5 @@
 # エスケープのキー
-escape ^Ss
+escape ^Qq
 
 # 文字エンコード
 defencoding utf8
@@ -9,3 +9,12 @@ startup_message off
 
 # 自動的にデタッチ
 autodetach on
+
+# スクロールのバッファサイズ
+defscrollback 100000
+
+# バッファをマウスでスクロールできるように
+termcapinfo xterm* ti@:te@
+
+# lessとか終了したらzsh-likeな状態に
+altscreen on
