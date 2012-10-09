@@ -99,6 +99,8 @@ set pumheight=7                     " ポップアップメニューのアイテ
 set foldmethod=marker               " 折り畳みはmarkerで
 let loaded_matchparen = 1           " 対応する括弧のハイライトを表示しない
 set nrformats-=octal                " ^a^xの時に8進数(先頭に0がつく場合)は無視
+set list                            " 記号を可視化
+set lcs=tab:>-                      " 可視化の設定
 " }}}
 
 " Encoding settings : utf-8{{{
