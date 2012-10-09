@@ -48,7 +48,7 @@ precmd () {
 
 # プロンプトの表示フォーマット
 PROMPT="%#"                      
-RPROMPT="%1(v|%1v|)[%~]"         
+RPROMPT="[%~]%1(v|%1v|)"         
 setopt transient_rprompt            #右のパス名表示に入力が被るとパスを消す
 
 # cd系のオプション
