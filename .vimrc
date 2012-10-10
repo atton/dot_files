@@ -66,6 +66,7 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 " commands {{{
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
+command! EditVimrcPlugins edit ~/.vimrc_plugins
 " }}}
 
 " keymaps {{{
