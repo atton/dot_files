@@ -36,15 +36,18 @@ typeset -U path cdpath fpath manpath
 # ディレクトリスタックの重複を除去する
 setopt PUSHD_IGNORE_DUPS 
 
-# vcs_info
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%s|%b)'
-zstyle ':vcs_info:*' actionformats '(%s|%b|%a)'
-precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
+# vcs_info (zsh support vcs_info after 4.3.11)
+autoload -Uz is-at-least
+if is-at-least 4.3.11; then
+    autoload -Uz vcs_info
+    zstyle ':vcs_info:*' formats '(%s|%b)'
+    zstyle ':vcs_info:*' actionformats '(%s|%b|%a)'
+    precmd () {
+        psvar=()
+        LANG=en_US.UTF-8 vcs_info
+        [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    }
+fi
 
 # プロンプトの表示フォーマット
 PROMPT="%#"                      
