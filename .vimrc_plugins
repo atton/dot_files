@@ -127,10 +127,11 @@ endfunction
 
 " commands
 let s:commands.candidates = {
-\ 'NeoBundleUpdate': 'NeoBundleUpdate',
-\ 'NeoBundleSource': 'NeoBundleSource',
-\ 'ReloadVimrc'    : 'ReloadVimrc',
-\ 'EditVimrc'      : 'EditVimrc',
+\ 'NeoBundleUpdate'  : 'NeoBundleUpdate',
+\ 'NeoBundleSource'  : 'NeoBundleSource',
+\ 'ReloadVimrc'      : 'ReloadVimrc',
+\ 'EditVimrc'        : 'EditVimrc',
+\ 'EditVimrcPlugins' : 'EditVimrcPlugins',
 \ }
 
 " add unite
