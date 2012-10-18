@@ -206,7 +206,7 @@ unlet s:watchdogs_config
 " initialize
 call watchdogs#setup(g:quickrun_config)
 " shortcut
-nnoremap <C-j> :WatchdogsRun<CR>
+nnoremap <C-j> :WatchdogsRunSilent<CR>
 
 
 " VimCalc
