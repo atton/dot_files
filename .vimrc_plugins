@@ -17,7 +17,7 @@ NeoBundle 'Shougo/neobundle.vim'
 
 " neocomplcache
 NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'ujihisa/neco-ruby'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'neco-look'
