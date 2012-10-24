@@ -8,12 +8,13 @@ unlet s:neobundle_path
 
 " settings {{{
 filetype plugin indent on           " enable FileType
-syntax on                           " シンタックスをオンに
+syntax enable                       " シンタックスを有効化
+set background=light                " ターミナルの背景色は白めの場合を想定
 set nocompatible                    " viとの互換を切る
 set hidden                          " バッファを保存しなくても他のバッファを表示できるように
 set showmatch                       " 対応する括弧を表示
 set showcmd                         " 入力中のコマンドを表示
-set number                          " 行番号表示
+set nonumber                        " 行番号非表示
 set autoindent                      " オートインデント
 set shiftwidth=4                    " オートインデント時の空白数
 set splitbelow                      " 上下に新しいウィンドウを開いたときは下に
