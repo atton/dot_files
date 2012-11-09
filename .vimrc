@@ -116,6 +116,12 @@ augroup Ruby
     autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
 augroup END
 
+" TeX 用の設定
+augroup TeX
+  autocmd!
+  autocmd Filetype tex nnoremap <C-K> :make<CR>
+augroup END
+
 " Undo履歴を保存する
 if has('persistent_undo')
     set undodir=~/.vim/undo_history
