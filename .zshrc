@@ -17,15 +17,15 @@ export LANGUAGE=en_US.UTF-8
 # editor
 export EDITOR=vim
 
-# rbenv
-eval "$(rbenv init -)"
-#source ~/.rbenv/completions/rbenv.zsh
-
 # PATHの設定
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/texbin:$PATH
 export PATH=$PATH:$HOME/.cabal/bin
 export PATH=$PATH:$HOME/MyScript
+
+# rbenv
+eval "$(rbenv init -)"
+#source ~/.rbenv/completions/rbenv.zsh
 
 # PYTHON PATH
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
