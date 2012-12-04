@@ -110,19 +110,27 @@ augroup END
 
 " other settings {{{
 
-" Ruby 用の設定
+" for Ruby
 augroup Ruby
     autocmd!
     autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
 augroup END
 
-" TeX 用の設定
+" for TeX
 augroup TeX
   autocmd!
   autocmd Filetype tex nnoremap <C-K> :make<CR>
 augroup END
 
-" Undo履歴を保存する
+" for Processing(*.pde)
+" set filetype
+augroup Processing
+    autocmd!
+    autocmd BufNewFile *.pde setl filetype=java
+    autocmd BufRead    *.pde setl filetype=java
+augroup END
+
+" save undo history
 if has('persistent_undo')
     set undodir=~/.vim/undo_history
     set undofile
