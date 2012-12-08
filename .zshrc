@@ -70,8 +70,6 @@ setopt no_beep
 setopt no_flow_control
 
 # エイリアス
-alias emacs="emacs -nw"
-alias encoding-utf8="nkf -wLu --overwrite"
 alias tp="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc)"
 alias tpo="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc) && open *.pdf"
 alias pin="ping 8.8.8.8"
