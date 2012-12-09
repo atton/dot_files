@@ -1,10 +1,13 @@
 #!/bin/sh
-ln -s `pwd`/.vimrc ~/.vimrc
-ln -s `pwd`/.vimrc_plugins ~/.vimrc_plugins
-ln -s `pwd`/.vimshrc ~/.vimshrc
-ln -s `pwd`/.vim ~/.vim
+# dot files link script : files in dot_files link to $HOME
 
-ln -s `pwd`/.zshrc ~/.zshrc
-ln -s `pwd`/.screenrc ~/.screenrc
-ln -s `pwd`/.vrapperrc ~/.vrapperrc
-ln -s `pwd`/.vimperatorrc ~/.vimperatorrc
+dir="dot_files"
+target_dir=$HOME
+files=`ls -1A $dir`
+
+for file in $files
+do
+    command="ln -s `pwd`/${dir}/${file} ${target_dir}"
+    echo $command
+    $command
+done
