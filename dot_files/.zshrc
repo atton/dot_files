@@ -21,7 +21,6 @@ export EDITOR=vim
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/texbin:$PATH
 export PATH=$PATH:$HOME/.cabal/bin
-export PATH=$PATH:$HOME/MyScript
 
 # rbenv
 eval "$(rbenv init -)"
