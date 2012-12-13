@@ -53,8 +53,16 @@ PROMPT="%#"
 RPROMPT="[%~]%1(v|%1v|)"         
 setopt transient_rprompt            #右のパス名表示に入力が被るとパスを消す
 
-# cd系のオプション
-setopt auto_pushd                   #移動したディレクトリを記憶しておく。
+# custom cd
+function cd() {
+    if [ $# -eq 0 ]; then
+        # if have no arguments, pushd $HOME
+        builtin pushd $HOME
+    else
+        # if have arguments, builtin cd
+        builtin cd $@
+    fi
+}
 
 #直前と同じコマンドを履歴に追加しない
 setopt hist_ignore_dups
