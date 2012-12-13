@@ -53,8 +53,8 @@ set fileformats=unix,dos,mac
 
 " }}}
 
-" statusline settings {{{
-set laststatus=2                    "ステータスラインを表示
+" statusline and ruler settings {{{
+set laststatus=2                    " usually show status line 
 " 通常表示
 "set statusline=%F%m%r%h%w%=\ %{'[Encoding:'.(&fenc!=''?&fenc:&enc).'][Format:'.&ff.']'}[Length:%04l\/%04L][Pos:%04l,%04v][%03p%%]
 " シンプル表示（できるだけスペースを省略）
@@ -62,6 +62,9 @@ set laststatus=2                    "ステータスラインを表示
 " シンプル表示:2（できるだけスペースを省略 + % 無し）
 set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%04l\/%04L][P:%04l,%04v]
 
+" simple ruler (only modified flag)
+set ruler                           " show ruler, but usually hidden by statusline
+set rulerformat=%m
 " }}}
 
 " commands {{{
