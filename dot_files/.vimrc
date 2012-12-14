@@ -121,8 +121,10 @@ augroup END
 
 " for TeX
 augroup TeX
-  autocmd!
-  autocmd Filetype tex nnoremap <C-K> :make<CR>
+    autocmd!
+    autocmd BufNewFile *.tex setl filetype=tex
+    autocmd BufRead    *.tex setl filetype=tex
+    autocmd FileType tex nnoremap <C-K> :make<CR>
 augroup END
 
 " for Processing(*.pde)
