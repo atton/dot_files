@@ -29,7 +29,13 @@ set foldmethod=marker               " 折り畳みはmarkerで
 let loaded_matchparen = 1           " 対応する括弧のハイライトを表示しない
 set nrformats-=octal                " ^a^xの時に8進数(先頭に0がつく場合)は無視
 set list                            " 記号を可視化
-set lcs=tab:>-                      " 可視化の設定
+set listchars=tab:>-                " 可視化の設定
+
+" save undo history
+if has('persistent_undo')
+    set undodir=~/.vim/undo_history
+    set undofile
+endif
 
 " tab settings
 set expandtab               " use space
@@ -109,18 +115,7 @@ inoremap <C-@> <C-g>u<C-@>
 
 " }}}
 
-" Omni Completion dictionary {{{
-augroup OmniCompletionDictionary
-    autocmd!
-    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-    autocmd FileType c setlocal omnifunc=ccomplete#Complete
-    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-augroup END
-" }}}
-
-" other settings {{{
+" autocmds {{{
 
 " for Ruby
 augroup Ruby
@@ -144,12 +139,15 @@ augroup Processing
     autocmd BufRead    *.pde setl filetype=java
 augroup END
 
-" save undo history
-if has('persistent_undo')
-    set undodir=~/.vim/undo_history
-    set undofile
-endif
-
+" Omni Completion dictionary {{{
+augroup OmniCompletionDictionary
+    autocmd!
+    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    autocmd FileType c setlocal omnifunc=ccomplete#Complete
+    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+augroup END
 " }}}
 
 " files template {{{
@@ -160,6 +158,8 @@ augroup FileTemplate
     autocmd BufNewFile *.php 0r ~/.vim/templates/php.php
     autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex
 augroup END
+
+" }}}
 
 " }}}
 
