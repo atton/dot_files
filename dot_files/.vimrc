@@ -16,12 +16,10 @@ set showmatch                       " 対応する括弧を表示
 set showcmd                         " 入力中のコマンドを表示
 set nonumber                        " 行番号非表示
 set autoindent                      " オートインデント
-set shiftwidth=4                    " オートインデント時の空白数
 set splitbelow                      " 上下に新しいウィンドウを開いたときは下に
 set splitright                      " 左右に新しいウィンドウを開いたときは右に
 set ignorecase                      " 検索時、小文字のみなら、小文字大文字を区別しない
 set smartcase                       " 検索時、大文字があるときは、小文字大文字を区別する
-set wildmenu                        " コマンドラインモード時に補完を有効化
 set hlsearch                        " 検索したワードをハイライト表示
 set vb t_vb=                        " ベルは鳴らさない
 set backspace=indent,eol,start      " <BS>で改行文字等を削除できるように
@@ -33,13 +31,24 @@ set nrformats-=octal                " ^a^xの時に8進数(先頭に0がつく�
 set list                            " 記号を可視化
 set lcs=tab:>-                      " 可視化の設定
 
-set expandtab                       " タブはスペースで
-set tabstop=4                       " タブ１つはスペース４つ分
-" Makefile だけはタブを使う
+" tab settings
+set expandtab               " use space
+let s:tab_width = 4         " common tab width
+execute 'set tabstop='    . s:tab_width
+execute 'set shiftwidth=' . s:tab_width
+execute 'set tabstop='    . s:tab_width
+unlet s:tab_width
+
+" use \t in only Makefile
 augroup Makefile
     autocmd!
     autocmd FileType make set noexpandtab
 augroup END
+
+" wild settings
+set wildmenu                        " enable wild
+" wild ignore settings
+set wildignore=.git,.hg,*.o,*.class,*.jpg,*.png,*.gif,*.eps,*.aux,*dvi,*.toc,*.pdf,*.zip
 " }}}
 
 " Encoding settings : utf-8{{{
