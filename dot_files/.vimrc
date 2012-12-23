@@ -37,7 +37,8 @@ if has('persistent_undo')
     set undofile
 endif
 
-" tab settings
+" tab settings {{{
+
 set expandtab               " use space
 let s:tab_width = 4         " common tab width
 execute 'set tabstop='    . s:tab_width
@@ -51,10 +52,24 @@ augroup Makefile
     autocmd FileType make set noexpandtab
 augroup END
 
-" wild settings
+" }}}
+
+" wild settings {{{
+
 set wildmenu                        " enable wild
 " wild ignore settings
-set wildignore=.git,.hg,*.o,*.class,*.jpg,*.png,*.gif,*.eps,*.aux,*dvi,*.toc,*.pdf,*.zip
+let s:wildignore_files =
+            \ '.*.sw[a-z],' . '*.un~,' . 'Session.vim,' . '.netrwhist,' .
+            \ '.DS_Store,' . '.AppleDouble,' . '.LSOverride,' . 'Icon,' . 
+            \ '._*,' . '.Spotlight-V100,' . '.Trashes,' . 
+            \ '.git,' . '.hg,' . 
+            \ 'a.out,' . '*.o,' . '*.class,' .
+            \ '*.jpg,' . '*.png,' . '*.gif,' . '*.eps,' .
+            \ '*.aux,' . '*.dvi,' . '*.toc,' . '*.pdf,' .
+            \ '*.zip,'
+execute 'set wildignore=' . s:wildignore_files
+unlet s:wildignore_files
+
 " }}}
 
 " Encoding settings : utf-8{{{
