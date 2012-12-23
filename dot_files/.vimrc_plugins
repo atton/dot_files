@@ -41,7 +41,6 @@ NeoBundle 'dag/vim2hs'
 
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'matchit.zip'

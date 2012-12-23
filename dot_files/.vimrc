@@ -101,6 +101,7 @@ set rulerformat=%m
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit ~/.vimrc_plugins
+command! SudoWriteCurrentBuffer write !sudo tee %
 " }}}
 
 " keymaps {{{
