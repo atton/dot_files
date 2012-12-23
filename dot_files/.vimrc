@@ -3,7 +3,7 @@ let s:neobundle_path = expand('~/.vim/bundle/neobundle.vim/')
 if isdirectory(s:neobundle_path)
     source ~/.vimrc_plugins
 endif
-unlet s:neobundle_path 
+unlet s:neobundle_path
 " }}}
 
 " settings {{{
@@ -38,7 +38,6 @@ if has('persistent_undo')
 endif
 
 " tab settings {{{
-
 set expandtab               " use space
 let s:tab_width = 4         " common tab width
 execute 'set tabstop='    . s:tab_width
@@ -51,40 +50,37 @@ augroup Makefile
     autocmd!
     autocmd FileType make set noexpandtab
 augroup END
-
 " }}}
 
 " wild settings {{{
-
 set wildmenu                        " enable wild
 " wild ignore settings
 let s:wildignore_files =
             \ '.*.sw[a-z],' . '*.un~,' . 'Session.vim,' . '.netrwhist,' .
-            \ '.DS_Store,' . '.AppleDouble,' . '.LSOverride,' . 'Icon,' . 
-            \ '._*,' . '.Spotlight-V100,' . '.Trashes,' . 
-            \ '.git,' . '.hg,' . 
+            \ '.DS_Store,' . '.AppleDouble,' . '.LSOverride,' . 'Icon,' .
+            \ '._*,' . '.Spotlight-V100,' . '.Trashes,' .
+            \ '.git,' . '.hg,' .
             \ 'a.out,' . '*.o,' . '*.class,' .
             \ '*.jpg,' . '*.png,' . '*.gif,' . '*.eps,' .
             \ '*.aux,' . '*.dvi,' . '*.toc,' . '*.pdf,' .
             \ '*.zip,'
 execute 'set wildignore=' . s:wildignore_files
 unlet s:wildignore_files
+" }}}
 
 " }}}
 
-" Encoding settings : utf-8{{{
-
+" Encoding settings : utf-8 {{{
 set termencoding=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ascii,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
 set fileformat=unix
 set fileformats=unix,dos,mac
-
 " }}}
 
 " statusline and ruler settings {{{
-set laststatus=2                    " usually show status line 
+set laststatus=2                    " usually show status line
 " 通常表示
 "set statusline=%F%m%r%h%w%=\ %{'[Encoding:'.(&fenc!=''?&fenc:&enc).'][Format:'.&ff.']'}[Length:%04l\/%04L][Pos:%04l,%04v][%03p%%]
 " シンプル表示（できるだけスペースを省略）
@@ -100,8 +96,15 @@ set rulerformat=%m
 " commands {{{
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
-command! EditVimrcPlugins edit ~/.vimrc_plugins
+command! EditVimrcPlugins edit $HOME/.vimrc_plugins
 command! SudoWriteCurrentBuffer write !sudo tee %
+command! DeleteTrailingSpaces %s/\s\+$//ge
+
+function! ShowTrailingSpacesFunc()
+    highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+    match TrailingSpaces /\s\+$/
+endfunction
+command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
 " }}}
 
 " keymaps {{{
@@ -114,7 +117,7 @@ inoremap <C-b> <Left>
 " ^lで検索ハイライトを消す
 nnoremap <C-l> :nohlsearch<CR><C-l>
 " ^h でヘルプへのショートカット
-nnoremap <C-h> :h 
+nnoremap <C-h> :h<Space>
 
 
 " command line mode のカーソル移動を zsh likeに
