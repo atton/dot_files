@@ -42,9 +42,7 @@ NeoBundle 'dag/vim2hs'
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'matchit.zip'
-
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -98,7 +96,7 @@ let g:vimshell_user_prompt = ''
 let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
 
-augroup vimshell
+augroup VimShell
     autocmd!
     autocmd FileType vimshell setlocal nonumber
 augroup END
@@ -224,7 +222,7 @@ lmap <C-J> <Plug>(eskk:enable)
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
-augroup ref
+augroup Ref
 " FileTypeがtextならKでwebdictを使う
     autocmd!
     autocmd FileType text call ref#register_detection('_', 'webdict') 
@@ -271,7 +269,7 @@ let g:alignta_default_arguments = " = "
 
 
 " w3m.vim
-augroup w3m
+augroup W3m
     autocmd!    
     " K でrefでwebdict
     autocmd FileType w3m call ref#register_detection('_', 'webdict')
