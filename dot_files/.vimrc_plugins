@@ -265,6 +265,11 @@ if has('vim_starting')
     xmap gs  <Plug>VgSurround
 endif
 
+
+" alignta.vim
+let g:alignta_default_arguments = " = "
+
+
 " w3m.vim
 augroup w3m
     autocmd!    
