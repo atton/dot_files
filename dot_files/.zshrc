@@ -23,8 +23,10 @@ export PATH=/usr/texbin:$PATH
 export PATH=$PATH:$HOME/.cabal/bin
 
 # rbenv
-eval "$(rbenv init -)"
-#source ~/.rbenv/completions/rbenv.zsh
+rbenv >& /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(rbenv init -)"
+fi
 
 # PYTHON PATH
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
@@ -33,7 +35,7 @@ export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
 typeset -U path cdpath fpath manpath
 
 # ディレクトリスタックの重複を除去する
-setopt PUSHD_IGNORE_DUPS 
+setopt PUSHD_IGNORE_DUPS
 
 # vcs_info (zsh support vcs_info after 4.3.11)
 autoload -Uz is-at-least
@@ -49,8 +51,8 @@ if is-at-least 4.3.11; then
 fi
 
 # プロンプトの表示フォーマット
-PROMPT="%#"                      
-RPROMPT="[%~]%1(v|%1v|)"         
+PROMPT="%#"
+RPROMPT="[%~]%1(v|%1v|)"
 setopt transient_rprompt            #右のパス名表示に入力が被るとパスを消す
 
 # custom cd
@@ -84,7 +86,7 @@ alias ipin="nslookup www.google.com"
 
 #ptetex用の設定
 export PTEX_IN_FILTER=/usr/local/bin/nkf
- 
+
 #Javaの実行時のメッセージをUTF-8に
 alias javac='javac -J-Dfile.encoding=UTF8'
-alias java='java -Dfile.encoding=UTF8' 
+alias java='java -Dfile.encoding=UTF8'
