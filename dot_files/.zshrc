@@ -84,9 +84,12 @@ alias tpo="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm 
 alias pin="ping 8.8.8.8"
 alias ipin="nslookup www.google.com"
 
-#ptetex用の設定
+# ptetex用の設定
 export PTEX_IN_FILTER=/usr/local/bin/nkf
 
-#Javaの実行時のメッセージをUTF-8に
+# Javaの実行時のメッセージをUTF-8に
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias java='java -Dfile.encoding=UTF8'
+
+# add javafx jar file in classpath on Mac(jdk1.7)
+export CLASSPATH=${CLASSPATH}:`/usr/libexec/java_home`/jre/lib/jfxrt.jar
