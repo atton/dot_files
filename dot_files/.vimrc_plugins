@@ -41,6 +41,7 @@ NeoBundle 'dag/vim2hs'
 
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'thinca/vim-textobj-between' , { 'depends' : [ 'textobj-user' ] }
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
 
