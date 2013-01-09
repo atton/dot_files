@@ -42,8 +42,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
 
 " syntax
-NeoBundleLazy 'tpope/vim-rails' , {'autoload' : {'filetypes' : 'ruby'}} 
-NeoBundleLazy 'dag/vim2hs'      , {'autoload' : {'filetypes' : 'haskell'}} 
+NeoBundleLazy 'tpope/vim-rails' , {'autoload' : {'filetypes' : 'ruby'}}
+NeoBundleLazy 'dag/vim2hs'      , {'autoload' : {'filetypes' : 'haskell'}}
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -130,6 +130,7 @@ let s:commands.candidates = {
 \ 'ReloadVimrc'      : 'ReloadVimrc',
 \ 'EditVimrc'        : 'EditVimrc',
 \ 'EditVimrcPlugins' : 'EditVimrcPlugins',
+\ 'ToggleLastStatus' : 'ToggleLastStatus',
 \ }
 
 " add unite
