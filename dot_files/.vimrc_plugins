@@ -18,32 +18,32 @@ NeoBundle 'Shougo/neobundle.vim'
 " neocomplcache
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'ujihisa/neco-ruby'
-NeoBundle 'neco-look'
+NeoBundleLazy 'neco-look'         , {'autoload' : {'filetypes' : 'text'}}
+NeoBundleLazy 'ujihisa/neco-ruby' , {'autoload' : {'filetypes' : 'ruby'}}
 
 " quickrun and watchdogs
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'osyo-manga/shabadou.vim'
 NeoBundle 'osyo-manga/vim-watchdogs'
+NeoBundle 'osyo-manga/shabadou.vim'
 
 " extension
-NeoBundle 'Shougo/vimshell.git'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'sjl/gundo.vim'
 NeoBundle 'tyru/eskk.vim'
-NeoBundle 'gregsexton/VimCalc'
-
-" syntax
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'dag/vim2hs'
+NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
+NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggle'}}
+NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'thinca/vim-textobj-between' , { 'depends' : [ 'textobj-user' ] }
+NeoBundle 'thinca/vim-textobj-between' , {'depends' : ['textobj-user']}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
+
+" syntax
+NeoBundleLazy 'tpope/vim-rails' , {'autoload' : {'filetypes' : 'ruby'}} 
+NeoBundleLazy 'dag/vim2hs'      , {'autoload' : {'filetypes' : 'haskell'}} 
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
