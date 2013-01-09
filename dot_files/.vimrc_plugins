@@ -131,6 +131,7 @@ let s:commands.candidates = {
 \ 'EditVimrc'        : 'EditVimrc',
 \ 'EditVimrcPlugins' : 'EditVimrcPlugins',
 \ 'ToggleLastStatus' : 'ToggleLastStatus',
+\ 'ToggleWildIgnore' : 'ToggleWildIgnore',
 \ }
 
 " add unite

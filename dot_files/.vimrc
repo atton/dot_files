@@ -117,6 +117,18 @@ function! ToggleLastStatusFunc()
     end
 endfunction
 command! ToggleLastStatus call ToggleLastStatusFunc()
+
+function! ToggleWildIgnoreFunc()
+    if (&wildignore != '')
+        let s:wildignore_backup = &wildignore
+        let &wildignore = ''
+    else
+        if(exists('s:wildignore_backup'))
+            let &wildignore = s:wildignore_backup
+        endif
+    endif
+endfunction
+command! ToggleWildIgnore call ToggleWildIgnoreFunc()
 " }}}
 
 " keymaps {{{
