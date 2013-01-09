@@ -105,6 +105,18 @@ function! ShowTrailingSpacesFunc()
     match TrailingSpaces /\s\+$/
 endfunction
 command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
+
+function! ToggleLastStatusFunc()
+    let s:enable_last_status  = 2
+    let s:disable_last_status = 0
+
+    if(&laststatus == s:enable_last_status)
+        let &laststatus = s:disable_last_status
+    else
+        let &laststatus = s:enable_last_status
+    end
+endfunction
+command! ToggleLastStatus call ToggleLastStatusFunc()
 " }}}
 
 " keymaps {{{
