@@ -19,7 +19,6 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'Shougo/neosnippet'
 NeoBundleLazy 'neco-look'         , {'autoload' : {'filetypes' : 'text'}}
-NeoBundleLazy 'ujihisa/neco-ruby' , {'autoload' : {'filetypes' : 'ruby'}}
 
 " quickrun and watchdogs
 NeoBundle 'thinca/vim-quickrun'
