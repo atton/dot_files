@@ -37,13 +37,12 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'thinca/vim-textobj-between' , {'depends' : ['textobj-user']}
+NeoBundle 'thinca/vim-textobj-between' , {'depends' : 'textobj-user'}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
 
 " syntax
-NeoBundleLazy 'tpope/vim-rails' , {'autoload' : {'filetypes' : 'ruby'}}
-NeoBundleLazy 'dag/vim2hs'      , {'autoload' : {'filetypes' : 'haskell'}}
+NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -58,6 +57,7 @@ NeoBundle 'Shougo/vimproc', {
 " lazy load plugins
 NeoBundleLazy 'yuratomo/w3m.vim'
 NeoBundleLazy 'Shougo/vinarise'
+NeoBundleLazy 'tpope/vim-rails'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
 NeoBundleLazy 'ujihisa/ref-hoogle'
 
