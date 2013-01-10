@@ -107,6 +107,8 @@ command! Vsh VimShellTab
 " Unite
 let g:unite_update_time = 10
 let g:unite_data_directory = expand('~/.vim/.unite')
+
+" Shortcut Commands
 command! Ub Unite buffer
 command! Uf Unite file
 command! Ur Unite register
@@ -114,6 +116,17 @@ command! Um Unite file_mru
 command! Ug Unite grep
 command! Uo Unite outline
 command! Uc Unite menu:commands
+
+" Shortcut Mappings
+nnoremap <Leader>b :Unite buffer<CR>
+nnoremap <Leader>f :Unite file<CR>
+nnoremap <Leader>r :Unite register<CR>
+nnoremap <Leader>m :Unite file_mru<CR>
+nnoremap <Leader>g :Unite grep<CR>
+nnoremap <Leader>o :Unite outline<CR>
+nnoremap <Leader>c :Unite menu:commands<CR>
+nnoremap <Leader><Leader> :Unite menu:commands<CR>
+
 " commands source. for command shortcut {{{
 
 " command map
@@ -268,6 +281,8 @@ endif
 
 " alignta.vim
 let g:alignta_default_arguments = " = "
+vnoremap <Leader>= :Alignta = <CR>
+vnoremap <Leader>: :Alignta : <CR>
 
 
 " w3m.vim

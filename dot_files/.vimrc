@@ -1,3 +1,7 @@
+" {{{ set Leader
+let g:mapleader = ' '               " <Leader> = <Space>
+" }}}
+
 " source plugins {{{
 let s:neobundle_path = expand('~/.vim/bundle/neobundle.vim/')
 if isdirectory(s:neobundle_path)
@@ -156,6 +160,8 @@ cnoremap <C-d> <DEL>
 inoremap <CR> <C-g>u<CR>
 inoremap <C-@> <C-g>u<C-@>
 
+" shortcut
+nnoremap <Leader>l :ToggleLastStatus<CR>
 " }}}
 
 " autocmds {{{
