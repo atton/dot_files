@@ -35,10 +35,10 @@ NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggl
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
-NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'thinca/vim-textobj-between' , {'depends' : 'textobj-user'}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
+NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands' : ['Alignta', 'Align']}}
 
 " syntax
 NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
