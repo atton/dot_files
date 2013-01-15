@@ -103,6 +103,7 @@ command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.vimrc_plugins
 command! SudoWriteCurrentBuffer write !sudo tee %
 command! DeleteTrailingSpaces %s/\s\+$//ge
+command! SetFileEncodingUTF8 set fileencoding=utf8
 
 function! ShowTrailingSpacesFunc()
     highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
@@ -162,6 +163,7 @@ inoremap <C-@> <C-g>u<C-@>
 
 " shortcut
 nnoremap <Leader>l :ToggleLastStatus<CR>
+nnoremap <Leader>e :SetFileEncodingUTF8<CR>
 " }}}
 
 " autocmds {{{
