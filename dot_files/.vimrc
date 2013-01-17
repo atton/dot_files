@@ -164,6 +164,7 @@ inoremap <C-@> <C-g>u<C-@>
 " shortcut
 nnoremap <Leader>l :ToggleLastStatus<CR>
 nnoremap <Leader>e :SetFileEncodingUTF8<CR>
+nnoremap <Leader>s :set spell!<CR>
 " }}}
 
 " autocmds {{{
