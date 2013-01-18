@@ -17,11 +17,12 @@
 !dot_files/.vrapperrc
 
 # vim templetes
-!dot_files/vim
-!dot_files/vim/templates
-!dot_files/vim/templates/ruby.rb
-!dot_files/vim/templates/php.php
-!dot_files/vim/templates/tex.tex
+!dot_files/.vim
+!dot_files/.vim/templates
+!dot_files/.vim/templates/shell.sh
+!dot_files/.vim/templates/ruby.rb
+!dot_files/.vim/templates/php.php
+!dot_files/.vim/templates/tex.tex
 
 # install script
 !install.sh
