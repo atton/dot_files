@@ -225,3 +225,5 @@ highlight PmenuSel  ctermbg = darkcyan
 highlight PMenuSbar ctermbg = grey
 
 " }}}
+
+" vim:set fileencoding=utf8:
