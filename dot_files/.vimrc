@@ -44,9 +44,9 @@ endif
 " tab settings {{{
 set expandtab               " use space
 let s:tab_width = 4         " common tab width
-execute 'set tabstop='    . s:tab_width
-execute 'set shiftwidth=' . s:tab_width
-execute 'set tabstop='    . s:tab_width
+let &tabstop    = s:tab_width
+let &shiftwidth = s:tab_width
+let &tabstop    = s:tab_width
 unlet s:tab_width
 
 " use \t in only Makefile
