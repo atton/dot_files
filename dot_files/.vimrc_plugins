@@ -28,6 +28,7 @@ NeoBundle 'osyo-manga/shabadou.vim'
 " extension
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tyru/eskk.vim'
 NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
@@ -117,6 +118,7 @@ command! Um Unite file_mru
 command! Ug Unite grep
 command! Uo Unite outline
 command! Uc Unite menu:commands
+command! Uv Unite giti
 
 " Shortcut Mappings
 nnoremap <Leader>b :Unite buffer<CR>
@@ -127,6 +129,7 @@ nnoremap <Leader>g :Unite grep<CR>
 nnoremap <Leader>o :Unite outline<CR>
 nnoremap <Leader>c :Unite menu:commands<CR>
 nnoremap <Leader><Leader> :Unite menu:commands<CR>
+nnoremap <Leader>v :Unite giti<CR>
 
 " commands source. for command shortcut {{{
 
