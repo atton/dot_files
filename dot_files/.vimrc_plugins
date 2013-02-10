@@ -39,7 +39,8 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 NeoBundle 'thinca/vim-textobj-between' , {'depends' : 'textobj-user'}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
-NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands' : ['Alignta', 'Align']}}
+NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
+NeoBundleLazy 'a.vim'                  , {'autoload' : {'filetypes' : ['c', 'cpp']}}
 
 " syntax
 NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
