@@ -200,7 +200,7 @@ augroup OmniCompletionDictionary
     autocmd FileType c setlocal omnifunc=ccomplete#Complete
     autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+    autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 augroup END
 " }}}
 
