@@ -6,4 +6,4 @@ let g:smooziee_scroll_interval="5"      "scroll time
 command! Ct copy title
 
 nnoremap b :tabopen about:mybookmarks<CR>
-noremap  y :js util.copyToClipboard(buffer.URL, true)<CR>
+nnoremap y :js util.copyToClipboard(buffer.URL, true)<CR>
