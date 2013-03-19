@@ -90,6 +90,9 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
 " i_^x^gでneocomplcacheを起動
 inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 
+" neosnippet
+set completeopt-=preview    " disable snippet preview
+
 
 " vimshell
 let g:vimshell_interactive_update_time = 10
