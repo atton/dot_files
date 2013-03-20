@@ -5,5 +5,11 @@ let g:smooziee_scroll_interval="5"      "scroll time
 " shortcut command copy.js
 command! Ct copy title
 
+" shortcut feedly
+command! rss open http://www.feedly.com/home#latest
+
+" shortcut mybokmarks
 nnoremap b :tabopen about:mybookmarks<CR>
+
+" yank URL support escaped multi byte character
 nnoremap y :js util.copyToClipboard(buffer.URL, true)<CR>
