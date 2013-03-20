@@ -70,7 +70,6 @@ if neobundle#exists_not_installed_bundles()
     echomsg 'Not installed bundles : ' .
                 \ string(neobundle#get_not_installed_bundle_names())
     echomsg 'Please execute ":NeoBundleInstall" command.'
-    "finish
 endif
 " }}}
 " }}}
@@ -79,25 +78,27 @@ endif
 
 
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1                   " 起動時に有効化
-let g:neocomplcache_enable_underbar_completion = 1          " _の補完を有効化
+let g:neocomplcache_enable_at_startup = 1                   " enable on startup
+let g:neocomplcache_enable_underbar_completion = 1          " enable '_' completion
 let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
 
-" neocomplcacheのスニペットを <C-k> にマッピング
+" manual completion on neocomplcache : i_^x^g
+inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
+
+
+" neosnippet
+
+" snippet mapping : ^k
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
-" i_^x^gでneocomplcacheを起動
-inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
-
-" neosnippet
 set completeopt-=preview    " disable snippet preview
 
 
 " vimshell
 let g:vimshell_interactive_update_time = 10
-let g:vimshell_prompt = '% '
-let g:vimshell_user_prompt = ''
+let g:vimshell_prompt       = '% '
+let g:vimshell_user_prompt  = ''
 let g:vimshell_right_prompt = 'getcwd()'
 let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
 
@@ -162,27 +163,27 @@ unlet s:commands
 
 
 " quickrun
-" ショートカット
+" shortcut
 nmap <C-k> <Plug>(quickrun)
-" デフォルト設定
+" init default settings
 let g:quickrun_config = {'_' : {}}
-" 起動時は縦分割
+" horizontal split on quickrun
 let g:quickrun_config._['split'] = ''
 " vimproc updatetime
 let g:quickrun_config._['runner'] = 'vimproc'
 let g:quickrun_config._['runner/vimproc/updatetime'] = 50
-" scheme を quickrun  (for SICP)
+" scheme settings (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
 
 " watchdogs
-" デフォルト設定
+" default settings
 let s:watchdogs_config = {}
-" 保存してないファイルにはバッファ番号で対応
-let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit'] = 1
+" for unnammed buffer
+let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit']   = 1
 let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
 
-" TeX用設定 {{{
+" for LaTeX {{{
 let g:quickrun_config['tex/watchdogs_checker'] = {
             \'type' : 'watchdogs_checker/tex' }
 let g:quickrun_config['watchdogs_checker/tex'] = {
@@ -220,17 +221,17 @@ let g:quickrun_config['watchdogs_checker/tex'] = {
             \.'%+Q[%\\d%*[^()])%r' }
 " }}}
 
-" 追加
+" add to quickrun_config
 let g:quickrun_config['watchdogs_checker/_']  = s:watchdogs_config
 unlet s:watchdogs_config
-" initialize
+" watchdogs initialize
 call watchdogs#setup(g:quickrun_config)
 " shortcut
 nnoremap <C-j> :WatchdogsRunSilent<CR>
 
 
 " VimCalc
-let g:VCalc_WindowPosition = 'bottom'                       "ウィンドウは下に起動
+let g:VCalc_WindowPosition = 'bottom'                       " show buttom
 
 
 " eskk.vim
@@ -246,19 +247,19 @@ let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
 augroup Ref
-" FileTypeがtextならKでwebdictを使う
+" if FileType is 'text', use webdict source
     autocmd!
     autocmd FileType text call ref#register_detection('_', 'webdict')
 augroup END
-" yahoo_dict と infoseek と wikipedia を使う
+" webdict source use yahoo_dict and infoseek and wikipedia:w
 let g:ref_source_webdict_sites = {
 \ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '47'},
 \ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
 \ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'},
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
-" webdict の辞書のデフォルトはyahoo_dict
+" webdict default dictionary is yahoo_dict
 let g:ref_source_webdict_sites.default = 'yahoo_dict'
-" テキストブラウザはw3mを使う
+" text browser is w3m
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
 
 " refe
@@ -266,7 +267,7 @@ let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/re
 
 
 " gundo.vim
-" UでUndoTree
+" UndoTree : U
 nnoremap U :GundoToggle<CR>
 
 
@@ -296,7 +297,7 @@ vnoremap <Leader>: :Alignta : <CR>
 " w3m.vim
 augroup W3m
     autocmd!
-    " K でrefでwebdict
+    " type 'K', use webdict on ref
     autocmd FileType w3m call ref#register_detection('_', 'webdict')
     autocmd FileType w3m set nonumber
 augroup END
