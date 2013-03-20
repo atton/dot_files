@@ -13,26 +13,26 @@ unlet s:neobundle_path
 " settings {{{
 filetype plugin indent on
 syntax enable
-set nocompatible                    " disable vi compatible
-set background=light                " terminal back ground color is light
-set hidden                          " if buffer unsaved, can show other buffer
-set showmatch                       " show match brackets
-set showcmd                         " show typing commands
-set nonumber                        " disable show line number
-set splitbelow                      " open new window in bottom when  split
-set splitright                      " open new window in right  when vsplit
-set hlsearch                        " enable word highlighting in search
-set ignorecase                      " if search word is small char only, ignore capital or small
-set smartcase                       " if search word include capital char, not ignore capital or small
-set vb t_vb=                        " disable bell
-set backspace=indent,eol,start      " set deletable character by <BS>
-set ambiwidth=double                " set Ambiguous character width, for Zenkaku character
-set pumheight=7                     " pop up items number is 7
-set foldmethod=marker               " fold use marker. {{{ }}}
-let loaded_matchparen = 1           " disable show match brackets on cursor
-set nrformats-=octal                " ignore octal in increment/decrement(^a^x)
-set list                            " show symbols include tab
-set listchars=tab:>-                " set list visible style
+set nocompatible                " disable vi compatible
+set background=light            " terminal back ground color is light
+set hidden                      " if buffer unsaved, can show other buffer
+set showmatch                   " show match brackets
+set showcmd                     " show typing commands
+set nonumber                    " disable show line number
+set splitbelow                  " open new window in bottom when  split
+set splitright                  " open new window in right  when vsplit
+set hlsearch                    " enable word highlighting in search
+set ignorecase                  " if search word is small char only, ignore capital/small
+set smartcase                   " if search word include capital char, not ignore capital/small
+set visualbell t_vb=            " disable bell
+set backspace=indent,eol,start  " set deletable character by <BS>
+set ambiwidth=double            " set Ambiguous character width, for Zenkaku character
+set pumheight=7                 " pop up items number is 7
+set foldmethod=marker           " fold use marker. {{{ }}}
+let loaded_matchparen = 1       " disable show match brackets on cursor
+set nrformats-=octal            " ignore octal in increment/decrement(^a^x)
+set list                        " show symbols include tab
+set listchars=tab:>-            " set list visible style
 set autoindent
 
 " save undo history
