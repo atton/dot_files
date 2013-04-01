@@ -89,10 +89,8 @@ inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 " neosnippet
 
 " snippet mapping : ^k
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
-
-set completeopt-=preview    " disable snippet preview
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 
 " vimshell
