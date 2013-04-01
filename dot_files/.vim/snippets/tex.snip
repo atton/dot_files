@@ -1,0 +1,36 @@
+# original snippets for TeX 
+
+# position fixed figure snippet
+snippet figure
+alias   \begin{figure} \figure
+	\begin{figure}[htbp]
+		\begin{center}
+			\includegraphics[${1:width=}]{${2}}
+			\caption{${3}}
+			\label{${4}}
+		\end{center}
+	\end{figure}
+
+# position fixed table snippet
+snippet table
+alias   \begin{table} \table
+	\begin{table}[htbp]
+		${1:TARGET}
+	\end{table}
+
+# number fixed thebibliography snippet
+snippet thebibliography
+alias   \begin{thebibliography} \thebibliography
+	\begin{thebibliography}{9}
+		${1:TARGET}
+	\end{thebibliography}
+
+# bibitem snippet
+snippet bibitem
+alias   \bibitem bibitem
+	\bibitem {${1}} ${2}
+
+# item snippet
+snippet item
+alias   \item item
+	\item ${1}

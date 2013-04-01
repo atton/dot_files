@@ -1,3 +1,4 @@
+" vim: set filetype=vim:
 " plugins settings
 " plugins management plugin : neobundle
 
@@ -91,6 +92,9 @@ inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 " snippet mapping : ^k
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" my snnipets dir
+let g:neosnippet#snippets_directory = expand("~/.vim/snippets")
 
 
 " vimshell

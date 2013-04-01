@@ -16,13 +16,19 @@
 !dot_files/.vimperatorrc
 !dot_files/.vrapperrc
 
-# vim templetes
+# .vim direcotry
 !dot_files/.vim
+
+# vim templetes
 !dot_files/.vim/templates
 !dot_files/.vim/templates/shell.sh
 !dot_files/.vim/templates/ruby.rb
 !dot_files/.vim/templates/php.php
 !dot_files/.vim/templates/tex.tex
+
+# snippets
+!dot_files/.vim/snippets
+!dot_files/.vim/snippets/tex.snip
 
 # install script
 !install.sh
