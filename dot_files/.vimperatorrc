@@ -4,6 +4,7 @@ let g:smooziee_scroll_interval="5"      "scroll time
 
 " shortcut command copy.js
 command! Ct copy title
+nnoremap Y  :Ct<CR>
 
 " shortcut feedly
 command! rss open http://www.feedly.com/home#latest
