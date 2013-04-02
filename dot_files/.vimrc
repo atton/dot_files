@@ -65,7 +65,7 @@ let s:wildignore_files =
             \ '._*,' . '.Spotlight-V100,' . '.Trashes,' .
             \ '.git,' . '.hg,' .
             \ 'a.out,' . '*.o,' . '*.class,' .
-            \ '*.jpg,' . '*.png,' . '*.gif,' . '*.eps,' .
+            \ '*.jpg,' . '*.png,' . '*.bb,' . '*.gif,' . '*.eps,' .
             \ '*.aux,' . '*.dvi,' . '*.toc,' . '*.pdf,' .
             \ '*.zip,'
 execute 'set wildignore=' . s:wildignore_files
