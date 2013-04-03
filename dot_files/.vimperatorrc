@@ -1,10 +1,6 @@
-" smooziee.js setting
-let g:smooziee_scroll_amount="50"       "scroll amonut on jk key
-let g:smooziee_scroll_interval="5"      "scroll time
-
-" shortcut command copy.js
-command! Ct copy title
-nnoremap Y  :Ct<CR>
+" move
+nnoremap j 4j
+nnoremap k 4k
 
 " shortcut feedly
 command! rss open http://www.feedly.com/home#latest
@@ -14,3 +10,6 @@ nnoremap b :tabopen about:mybookmarks<CR>
 
 " yank URL support escaped multi byte character
 nnoremap y :js util.copyToClipboard(buffer.URL, true)<CR>
+
+" yank page title shortcut
+nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
