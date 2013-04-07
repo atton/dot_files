@@ -107,13 +107,13 @@ endfunction
 command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
 
 function! ToggleLastStatusFunc()
-    let s:enable_last_status  = 2
-    let s:disable_last_status = 0
+    let s:enable_last_status_value  = 2
+    let s:disable_last_status_value = 0
 
-    if(&laststatus == s:enable_last_status)
-        let &laststatus = s:disable_last_status
+    if(&laststatus == s:enable_last_status_value)
+        let &laststatus = s:disable_last_status_value
     else
-        let &laststatus = s:enable_last_status
+        let &laststatus = s:enable_last_status_value
     end
 endfunction
 command! ToggleLastStatus call ToggleLastStatusFunc()
