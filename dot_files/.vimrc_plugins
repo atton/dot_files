@@ -167,6 +167,8 @@ unlet s:commands
 " quickrun
 " shortcut
 nmap <C-k> <Plug>(quickrun)
+" disable default mappings
+let g:quickrun_no_default_key_mappings = 1
 " init default settings
 let g:quickrun_config = {'_' : {}}
 " horizontal split on quickrun
@@ -177,6 +179,9 @@ let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 " scheme settings (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
+" shabadou hooks
+" for all : if output empty, close quickrun buffer
+let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
 
 " watchdogs
 " default settings
@@ -271,7 +276,6 @@ let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/re
 " gundo.vim
 " UndoTree : U
 nnoremap U :GundoToggle<CR>
-
 
 " vim-surround
 " manual mapping for eskk.vim (ignore ISurruond)
