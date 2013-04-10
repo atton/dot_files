@@ -174,14 +174,16 @@ let g:quickrun_config = {'_' : {}}
 " horizontal split on quickrun
 let g:quickrun_config._['split'] = ''
 " vimproc updatetime
-let g:quickrun_config._['runner'] = 'vimproc'
+let g:quickrun_config._['runner']                    = 'vimproc'
 let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 " scheme settings (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
 " shabadou hooks
-" for all : if output empty, close quickrun buffer
+" for all : if output is empty, close quickrun buffer and echo message(finished point)
 let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
+let g:quickrun_config._['hook/echo/enable']                    = 1
+let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finised.'
 
 " watchdogs
 " default settings
