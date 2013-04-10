@@ -176,7 +176,11 @@ let g:quickrun_config._['split'] = ''
 " vimproc updatetime
 let g:quickrun_config._['runner']                    = 'vimproc'
 let g:quickrun_config._['runner/vimproc/updatetime'] = 50
-" scheme settings (for SICP)
+" for text : not exec quickrun(exec false command and disable output)
+let g:quickrun_config.text              = {}
+let g:quickrun_config.text['command']   = 'false'
+let g:quickrun_config.text['outputter'] = 'null'
+" for scheme : use -i flag (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 
 " shabadou hooks
