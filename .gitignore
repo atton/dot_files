@@ -28,6 +28,7 @@
 
 # snippets
 !dot_files/.vim/snippets
+!dot_files/.vim/snippets/_.snip
 !dot_files/.vim/snippets/tex.snip
 
 # install script
