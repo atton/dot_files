@@ -16,6 +16,9 @@
 !dot_files/.vimperatorrc
 !dot_files/.vrapperrc
 
+# settings
+!dot_files/.pythonstartup
+
 # .vim direcotry
 !dot_files/.vim
 

@@ -28,6 +28,7 @@ fi
 
 # PYTHON PATH
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
+export PYTHONSTARTUP=~/.pythonstartup
 
 # Java CLASSPATH
 # add javafx jar file in classpath on Mac(jdk1.7)
