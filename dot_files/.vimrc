@@ -170,7 +170,14 @@ nnoremap <Leader>u :edit! ++encoding=utf8<CR>
 " for Ruby
 augroup Ruby
     autocmd!
-    autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup END
+
+" for Python
+augroup Python
+    autocmd!
+    autocmd FileType python setl tabstop=4 softtabstop=4 shiftwidth=4  expandtab
+    autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 augroup END
 
 " for TeX
