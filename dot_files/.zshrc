@@ -117,4 +117,7 @@ alias java='java -Dfile.encoding=UTF8'
 # file name completion in git command, use normal file name completion
 __git_files() { _files }
 
+# mercurial
+export HGENCODING=UTF-8
+
 # }}}
