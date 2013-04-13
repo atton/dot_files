@@ -213,6 +213,7 @@ augroup FileTemplate
     autocmd!
     autocmd BufNewFile *.sh  0r ~/.vim/templates/shell.sh
     autocmd BufNewFile *.rb  0r ~/.vim/templates/ruby.rb
+    autocmd BufNewFile *.py  0r ~/.vim/templates/python.py
     autocmd BufNewFile *.php 0r ~/.vim/templates/php.php
     autocmd BufNewFile *.tex 0r ~/.vim/templates/tex.tex
 augroup END
