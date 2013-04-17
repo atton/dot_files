@@ -16,7 +16,7 @@ export EDITOR=vim
 # PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/texbin:$PATH
-export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$HOME/.cabal/bin:$PATH
 
 # }}}
 
