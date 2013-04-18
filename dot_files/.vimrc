@@ -31,6 +31,7 @@ set pumheight=7                 " pop up items number is 7
 set foldmethod=marker           " fold use marker. {{{ }}}
 let loaded_matchparen = 1       " disable show match brackets on cursor
 set nrformats-=octal            " ignore octal in increment/decrement(^a^x)
+set completeopt-=preview        " disable preview in completion
 set list                        " show symbols include tab
 set listchars=tab:>-            " set list visible style
 set autoindent
