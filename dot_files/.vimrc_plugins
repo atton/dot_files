@@ -181,8 +181,6 @@ let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 let g:quickrun_config.text = {'command' : 'false', 'outputter' : 'null'}
 " for scheme : use -i flag (for SICP)
 let g:quickrun_config.scheme   = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
-" for python : escape shebang
-let g:quickrun_config.python   = {'shebang/enable' : 0}
 " for quickrun : not exec command. for close buffer
 let g:quickrun_config.quickrun = {'command' : 'false', 'outputter' : 'null'}
 
