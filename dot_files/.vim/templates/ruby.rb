@@ -1,1 +1,1 @@
-# vim:set fileencoding=utf-8:
+#!/usr/bin/env ruby
