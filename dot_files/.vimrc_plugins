@@ -277,7 +277,7 @@ augroup Ref
 augroup END
 " webdict source use yahoo_dict and infoseek and wikipedia:w
 let g:ref_source_webdict_sites = {
-\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '47'},
+\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '55'},
 \ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
 \ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'},
 \ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
