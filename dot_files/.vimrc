@@ -53,7 +53,7 @@ unlet s:tab_width
 " use \t in only Makefile
 augroup Makefile
     autocmd!
-    autocmd FileType make set noexpandtab
+    autocmd FileType make setl noexpandtab
 augroup END
 " }}}
 
