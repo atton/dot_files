@@ -44,7 +44,7 @@ endif
 
 " tab settings {{{
 set expandtab               " use space
-let s:tab_width  = 4         " common tab width
+let s:tab_width  = 4        " common tab width
 let &tabstop     = s:tab_width
 let &shiftwidth  = s:tab_width
 let &softtabstop = s:tab_width
