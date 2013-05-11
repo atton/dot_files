@@ -30,6 +30,12 @@
 !dot_files/.vim/templates/php.php
 !dot_files/.vim/templates/tex.tex
 
+# emacs directory
+!dot_files/.emacs.d
+
+# emacs settings
+!dot_files/.emacs.d/init.el
+
 # snippets
 !dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip
