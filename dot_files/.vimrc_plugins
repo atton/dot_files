@@ -74,19 +74,20 @@ endif
 " }}}
 " }}}
 
-" plugins settings {{{
+" plugins settings
 
+" neocomplcache {{{
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1                   " enable on startup
-let g:neocomplcache_enable_underbar_completion = 1          " enable '_' completion
-let g:neocomplcache_temporary_dir = expand('~/.vim/.neocon')
+let g:neocomplcache_enable_at_startup          = 1      " enable on startup
+let g:neocomplcache_enable_underbar_completion = 1      " enable '_' completion
+let g:neocomplcache_temporary_dir              = expand('~/.vim/.neocon')
 
 " manual completion on neocomplcache : i_^x^g
 inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
 
+" }}}
 
-" neosnippet
+" neosnippet {{{
 
 " snippet mapping : ^k
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -95,13 +96,16 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " my snnipets dir
 let g:neosnippet#snippets_directory = expand("~/.vim/snippets")
 
+" }}}
 
-" vimshell
-let g:vimshell_interactive_update_time = 10
+" vimshell {{{
+
 let g:vimshell_prompt       = '% '
 let g:vimshell_user_prompt  = ''
 let g:vimshell_right_prompt = 'getcwd()'
-let g:vimshell_temporary_directory = expand('~/.vim/.vimshell')
+
+let g:vimshell_temporary_directory     = expand('~/.vim/.vimshell')
+let g:vimshell_interactive_update_time = 10
 
 augroup VimShell
     autocmd!
@@ -110,8 +114,10 @@ augroup END
 " command for shortcut
 command! Vsh VimShellTab
 
+" }}}
 
-" Unite
+" Unite {{{
+
 let g:unite_update_time         = 10
 let g:unite_data_directory      = expand('~/.vim/.unite')
 let g:unite_enable_start_insert = 1
@@ -162,8 +168,10 @@ let g:unite_source_menu_menus = {'commands': deepcopy(s:commands)}
 unlet s:commands
 " }}}
 
+" }}}
 
-" quickrun
+" quickrun {{{
+
 " shortcut
 nmap <C-k> <Plug>(quickrun)
 " disable default mappings
@@ -190,7 +198,7 @@ for s:ft in s:not_executable_filetypes
     let g:quickrun_config[s:ft]['outputter'] = 'null'
 endfor
 
-" shabadou hooks
+" shabadou hooks {{{
 " for all : if output is empty, close quickrun buffer and echo message(finished point)
 let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
 let g:quickrun_config._['hook/echo/enable']                    = 1
@@ -198,8 +206,11 @@ let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finis
 " for quickfix : close quickfix window
 let g:quickrun_config.qf['hook/echo/output_finish']            = 'close quickrun window'
 let g:quickrun_config.qf['hook/close_quickfix/enable_exit']    = 1
+" }}}
+" }}}
 
-" watchdogs
+" watchdogs {{{
+
 " default settings
 let s:watchdogs_config = {}
 " for unnammed buffer
@@ -252,29 +263,31 @@ call watchdogs#setup(g:quickrun_config)
 " shortcut
 nnoremap <C-j> :WatchdogsRunSilent<CR>
 
+" }}}
 
-" VimCalc
+" VimCalc {{{
+
 let g:VCalc_WindowPosition = 'bottom'                       " show buttom
 
+" }}}
 
-" eskk.vim
+" eskk.vim {{{
+
 let g:eskk#directory  = expand('~/.vim/eskk')               " direcotry
-let g:eskk#dictionary = { 'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8' }       " dictionary
-let g:eskk#large_dictionary = { 'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp', }
+let g:eskk#dictionary = {'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}       " dictionary
+let g:eskk#large_dictionary = {'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp',}
 imap <C-J> <Plug>(eskk:enable)
 cmap <C-J> <Plug>(eskk:enable)
 lmap <C-J> <Plug>(eskk:enable)
 
-" vim-ref
+" }}}
+
+" vim-ref {{{
+
 let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
 
 " webdict
-augroup Ref
-" if FileType is 'text', use webdict source
-    autocmd!
-    autocmd FileType text call ref#register_detection('_', 'webdict')
-augroup END
-" webdict source use yahoo_dict and infoseek and wikipedia:w
+" webdict source use yahoo_dict and infoseek and wikipedia
 let g:ref_source_webdict_sites = {
 \ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '55'},
 \ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
@@ -284,19 +297,29 @@ let g:ref_source_webdict_sites = {
 let g:ref_source_webdict_sites.default = 'yahoo_dict'
 " text browser is w3m
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
+" if FileType is 'text', use webdict source
+augroup Ref
+    autocmd!
+    autocmd FileType text call ref#register_detection('_', 'webdict')
+augroup END
 
-" refe
+" refe source
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
 
+" }}}
 
-" gundo.vim
+" gundo.vim {{{
+
 " UndoTree : U
 nnoremap U :GundoToggle<CR>
 
-" vim-surround
+" }}}
+
+" vim-surround {{{
+
 " manual mapping for eskk.vim (ignore ISurruond)
 let g:surround_no_mappings = 1
-" diff original mapping : Visual mode surround use 's' (original 'S')
+" diff original mapping : Visual mode surround use 's' (original is 'S')
 if has('vim_starting')
     nmap ds  <Plug>Dsurround
     nmap cs  <Plug>Csurround
@@ -309,19 +332,23 @@ if has('vim_starting')
     xmap gs  <Plug>VgSurround
 endif
 
+" }}}
 
-" alignta.vim
+" alignta {{{
+
 let g:alignta_default_arguments = " = "
 vnoremap <Leader>= :Alignta = <CR>
 vnoremap <Leader>: :Alignta : <CR>
 
+" }}}
 
-" w3m.vim
+" w3m.vim {{{
+
 augroup W3m
     autocmd!
     " type 'K', use webdict on ref
     autocmd FileType w3m call ref#register_detection('_', 'webdict')
-    autocmd FileType w3m set nonumber
+    autocmd FileType w3m setl nonumber
 augroup END
 
 " }}}
