@@ -39,6 +39,7 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 NeoBundle 'thinca/vim-textobj-between' , {'depends' : 'textobj-user'}
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
+NeoBundle 'tyru/open-browser.vim.git'
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
 
@@ -350,5 +351,15 @@ augroup W3m
     autocmd FileType w3m call ref#register_detection('_', 'webdict')
     autocmd FileType w3m setl nonumber
 augroup END
+
+" }}}
+
+" open-browser {{{
+
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+
+" open URL
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 " }}}
