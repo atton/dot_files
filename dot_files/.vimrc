@@ -85,7 +85,7 @@ set fileformats=unix,dos,mac
 " }}}
 
 " statusline and ruler settings {{{
-set laststatus=2                    " usually show status line
+set laststatus=0                    " usually hide status line
 set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%04l\/%04L][P:%04l,%04v]
 
 " simple ruler (only modified flag)
