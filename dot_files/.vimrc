@@ -27,7 +27,6 @@ set smartcase                   " if search word include capital char, not ignor
 set visualbell t_vb=            " disable bell
 set backspace=indent,eol,start  " set deletable character by <BS>
 set ambiwidth=double            " set Ambiguous character width, for Zenkaku character
-set regexpengine=1              " use old regexp engine (temporary setting?)
 set pumheight=7                 " pop up items number is 7
 set foldmethod=marker           " fold use marker. {{{ }}}
 let loaded_matchparen = 1       " disable show match brackets on cursor
