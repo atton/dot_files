@@ -163,7 +163,6 @@ nnoremap <Leader>l :ToggleLastStatus<CR>
 nnoremap <Leader>w :ToggleWildIgnore<CR>
 nnoremap <Leader>e :SetFileEncodingUTF8<CR>
 nnoremap <Leader>s :set spell!<CR>
-nnoremap <Leader>u :edit! ++encoding=utf8<CR>
 " }}}
 
 " autocmds {{{
