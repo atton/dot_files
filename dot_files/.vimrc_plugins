@@ -27,10 +27,10 @@ NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'osyo-manga/shabadou.vim'
 
 " extension
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tyru/eskk.vim'
+NeoBundleLazy 'Shougo/unite.vim'       , {'autoload' : {'commands' : 'Unite'}}
+NeoBundleLazy 'Shougo/unite-outline'   , {'autoload' : {'commands' : 'Unite'}}
 NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
 NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggle'}}
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
