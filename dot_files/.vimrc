@@ -69,7 +69,7 @@ let s:wildignore_files =
             \ '*.jpg,' . '*.png,' . '*.bb,' . '*.gif,' . '*.eps,' .
             \ '*.aux,' . '*.dvi,' . '*.toc,' . '*.pdf,' .
             \ '*.zip,'
-execute 'set wildignore=' . s:wildignore_files
+let &wildignore = s:wildignore_files
 unlet s:wildignore_files
 " }}}
 
