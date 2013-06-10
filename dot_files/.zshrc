@@ -15,8 +15,12 @@ export EDITOR=vim
 
 # PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/texbin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
+
+# Path for Mac
+if [[  $(uname) == Darwin ]]; then
+    export PATH=/usr/texbin:$PATH
+    export PATH=$HOME/.cabal/bin:$PATH
+fi
 
 # }}}
 
@@ -100,15 +104,19 @@ if [ $? -eq 0 ]; then
 fi
 
 # Python
-# Python PATH
-export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
+# Python Path for Mac
+if [[  $(uname) == Darwin ]]; then
+    export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
+fi
 # Python startup
 export PYTHONSTARTUP=~/.pythonstartup
 
 # Java
 # Java CLASSPATH
 # add javafx jar file in classpath on Mac(jdk1.7)
-export CLASSPATH=$CLASSPATH:`/usr/libexec/java_home`/jre/lib/jfxrt.jar
+if [[  $(uname) == Darwin ]]; then
+    export CLASSPATH=$CLASSPATH:`/usr/libexec/java_home`/jre/lib/jfxrt.jar
+fi
 # alias to set encoding
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias java='java -Dfile.encoding=UTF8'
