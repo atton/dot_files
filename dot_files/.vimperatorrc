@@ -4,6 +4,7 @@ let g:smooziee_scroll_interval="5"      " scroll time
 
 " shortcut feedly
 command! rss open http://www.feedly.com/home#latest
+nnoremap <C-r> :rss<CR>
 
 " shortcut mybokmarks
 nnoremap b :tabopen about:mybookmarks<CR>
