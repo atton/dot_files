@@ -98,10 +98,7 @@ function cd() {
 
 # Ruby
 # rbenv
-rbenv >& /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(rbenv init -)"
-fi
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 # Python
 # Python Path for Mac
