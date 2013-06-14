@@ -57,8 +57,8 @@ NeoBundle 'Shougo/vimproc', {
             \ }
 
 " lazy load plugins
-NeoBundleLazy 'yuratomo/w3m.vim'
-NeoBundleLazy 'Shougo/vinarise'
+NeoBundleLazy 'yuratomo/w3m.vim' , {'autoload' : {'commands' : 'W3m'}}
+NeoBundleLazy 'Shougo/vinarise'  , {'autoload' : {'commands' : 'Vinarise'}}
 NeoBundleLazy 'tpope/vim-rails'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
 NeoBundleLazy 'ujihisa/ref-hoogle'
