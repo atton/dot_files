@@ -3,7 +3,7 @@ let g:smooziee_scroll_amount="50"       " scroll amonut on up/down
 let g:smooziee_scroll_interval="5"      " scroll time
 
 " shortcut feedly
-command! rss open http://www.feedly.com/home#latest
+command! rss open http://cloud.feedly.com/#latest
 nnoremap <C-r> :rss<CR>
 
 " shortcut mybokmarks
