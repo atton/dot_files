@@ -28,7 +28,7 @@ NeoBundle 'osyo-manga/shabadou.vim'
 
 " extension
 NeoBundle 'tyru/eskk.vim'
-NeoBundleLazy 'Shougo/unite.vim'       , {'autoload' : {'commands' : 'Unite'}}
+NeoBundle 'Shougo/unite.vim'
 NeoBundleLazy 'Shougo/unite-outline'   , {'autoload' : {'commands' : 'Unite'}}
 NeoBundleLazy 'thinca/vim-ref'         , {'autoload' : {'commands' : 'Ref'}}
 NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
