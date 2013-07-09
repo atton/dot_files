@@ -96,9 +96,9 @@ set rulerformat=%m
 " functions {{{
 
 function! s:detect_trailing_space()
-    " detect trailing space for :write hook
+    " detect trailing spaces for :write hook
 
-    " search trailing space. wrap search and do not move cursor
+    " search trailing spaces. wrap search and do not move cursor
     if search('\s\+$', 'wn')
        echomsg("warn: detect trailing space in " . expand("%"))
     endif
@@ -107,6 +107,13 @@ endfunction
 function! s:show_trailing_spaces()
     highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     match TrailingSpaces /\s\+$/
+endfunction
+
+function! s:delete_trailing_spaces()
+    " delete all trailing spaces
+    let s:cursor = getpos(".")
+    %substitute/\s\+$//ge
+    call setpos(".", s:cursor)
 endfunction
 
 function! s:toggle_last_status()
@@ -145,13 +152,13 @@ command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.vimrc_plugins
 command! SudoWriteCurrentBuffer write !sudo tee %
-command! DeleteTrailingSpaces %s/\s\+$//ge
 command! SetFileEncodingUTF8 set fileencoding=utf8
 
 " commands for fuctions
-command! ShowTrailingSpaces call s:show_trailing_spaces()
-command! ToggleLastStatus   call s:toggle_last_status()
-command! ToggleWildIgnore   call s:toggle_wild_ignore()
+command! ShowTrailingSpaces   call s:show_trailing_spaces()
+command! DeleteTrailingSpaces call s:delete_trailing_spaces()
+command! ToggleLastStatus     call s:toggle_last_status()
+command! ToggleWildIgnore     call s:toggle_wild_ignore()
 
 " }}}
 
