@@ -93,19 +93,11 @@ set ruler                           " show ruler, but usually hidden by statusli
 set rulerformat=%m
 " }}}
 
-" commands {{{
-command! ReloadVimrc source $MYVIMRC
-command! EditVimrc edit $MYVIMRC
-command! EditVimrcPlugins edit $HOME/.vimrc_plugins
-command! SudoWriteCurrentBuffer write !sudo tee %
-command! DeleteTrailingSpaces %s/\s\+$//ge
-command! SetFileEncodingUTF8 set fileencoding=utf8
-
+" functions {{{
 function! ShowTrailingSpacesFunc()
     highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     match TrailingSpaces /\s\+$/
 endfunction
-command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
 
 function! ToggleLastStatusFunc()
     let s:enable_last_status_value  = 2
@@ -117,7 +109,6 @@ function! ToggleLastStatusFunc()
         let &laststatus = s:enable_last_status_value
     end
 endfunction
-command! ToggleLastStatus call ToggleLastStatusFunc()
 
 function! ToggleWildIgnoreFunc()
     if (&wildignore != '')
@@ -131,7 +122,24 @@ function! ToggleWildIgnoreFunc()
         endif
     endif
 endfunction
-command! ToggleWildIgnore call ToggleWildIgnoreFunc()
+
+" }}}
+
+" commands {{{
+
+" short cut commands
+command! ReloadVimrc source $MYVIMRC
+command! EditVimrc edit $MYVIMRC
+command! EditVimrcPlugins edit $HOME/.vimrc_plugins
+command! SudoWriteCurrentBuffer write !sudo tee %
+command! DeleteTrailingSpaces %s/\s\+$//ge
+command! SetFileEncodingUTF8 set fileencoding=utf8
+
+" commands for fuctions
+command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
+command! ToggleLastStatus   call ToggleLastStatusFunc()
+command! ToggleWildIgnore   call ToggleWildIgnoreFunc()
+
 " }}}
 
 " keymaps {{{
