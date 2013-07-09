@@ -104,12 +104,13 @@ function! s:detect_trailing_space()
     endif
 endfunction
 
-function! ShowTrailingSpacesFunc()
+function! s:show_trailing_spaces()
     highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     match TrailingSpaces /\s\+$/
 endfunction
 
-function! ToggleLastStatusFunc()
+function! s:toggle_last_status()
+    " toggle laststatus helper
     let s:enable_last_status_value  = 2
     let s:disable_last_status_value = 0
 
@@ -120,7 +121,9 @@ function! ToggleLastStatusFunc()
     end
 endfunction
 
-function! ToggleWildIgnoreFunc()
+function! s:toggle_wild_ignore()
+    " toggle wildignore settings helper
+    let s:enable_last_status_value  = 2
     if (&wildignore != '')
         let s:wildignore_backup = &wildignore
         let &wildignore = ''
@@ -146,9 +149,9 @@ command! DeleteTrailingSpaces %s/\s\+$//ge
 command! SetFileEncodingUTF8 set fileencoding=utf8
 
 " commands for fuctions
-command! ShowTrailingSpaces call ShowTrailingSpacesFunc()
-command! ToggleLastStatus   call ToggleLastStatusFunc()
-command! ToggleWildIgnore   call ToggleWildIgnoreFunc()
+command! ShowTrailingSpaces call s:show_trailing_spaces()
+command! ToggleLastStatus   call s:toggle_last_status()
+command! ToggleWildIgnore   call s:toggle_wild_ignore()
 
 " }}}
 
