@@ -94,6 +94,16 @@ set rulerformat=%m
 " }}}
 
 " functions {{{
+
+function! s:detect_trailing_space()
+    " detect trailing space for :write hook
+
+    " search trailing space. wrap search and do not move cursor
+    if search('\s\+$', 'wn')
+       echomsg("warn: detect trailing space in " . expand("%"))
+    endif
+endfunction
+
 function! ShowTrailingSpacesFunc()
     highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
     match TrailingSpaces /\s\+$/
@@ -174,6 +184,12 @@ nnoremap <Leader>s :set spell!<CR>
 " }}}
 
 " autocmds {{{
+
+augroup All
+    autocmd!
+    " detect trailing spaces on write files
+    autocmd BufWritePost * call s:detect_trailing_space()
+augroup END
 
 " for Ruby
 augroup Ruby
