@@ -191,6 +191,7 @@ nnoremap <Leader>l :ToggleLastStatus<CR>
 nnoremap <Leader>w :ToggleWildIgnore<CR>
 nnoremap <Leader>e :SetFileEncodingUTF8<CR>
 nnoremap <Leader>s :set spell!<CR>
+nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 " }}}
 
 " autocmds {{{
