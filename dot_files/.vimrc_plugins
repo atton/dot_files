@@ -36,12 +36,14 @@ NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggl
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
-NeoBundle 'thinca/vim-textobj-between' , {'depends' : 'textobj-user'}
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'matchit.zip'
 NeoBundle 'tyru/open-browser.vim.git'
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
+
+" text-objects extension
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'depends' : 'textobj-user'}
 
 " syntax
 NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
