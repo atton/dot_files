@@ -46,6 +46,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'depends' : 'textobj-user'}
 
 " syntax
+NeoBundle 'tpope/vim-rails'
 NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
 
 " auto make vimproc
@@ -61,7 +62,6 @@ NeoBundle 'Shougo/vimproc', {
 " lazy load plugins
 NeoBundleLazy 'yuratomo/w3m.vim' , {'autoload' : {'commands' : 'W3m'}}
 NeoBundleLazy 'Shougo/vinarise'  , {'autoload' : {'commands' : 'Vinarise'}}
-NeoBundleLazy 'tpope/vim-rails'
 NeoBundleLazy 'taka84u9/vim-ref-ri'
 NeoBundleLazy 'ujihisa/ref-hoogle'
 
