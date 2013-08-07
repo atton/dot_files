@@ -223,6 +223,12 @@ augroup TeX
     autocmd FileType tex nnoremap <C-K> :make<CR>
 augroup END
 
+" for HTML
+augroup HTML
+    autocmd!
+    autocmd FileType html setl tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
 " for Processing(*.pde)
 " set filetype
 augroup Processing
