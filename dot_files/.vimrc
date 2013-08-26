@@ -245,6 +245,12 @@ augroup OmniCompletionDictionary
     autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+    " default setting : syntax completaion
+    autocmd Filetype *
+                \   if &l:omnifunc == ''
+                \ |   setlocal omnifunc=syntaxcomplete#Complete
+                \ | endif
 augroup END
 " }}}
 
