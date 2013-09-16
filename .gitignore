@@ -4,6 +4,9 @@
 # this
 !.gitignore
 
+# directory
+!dot_files
+
 # .rc files
 !dot_files/.vimrc_plugins
 !dot_files/.zshrc
@@ -15,7 +18,11 @@
 # settings
 !dot_files/.pythonstartup
 
+# .vim directory
+!dot_files/.vim
+
 # vim templetes
+!dot_files/.vim/templates
 !dot_files/.vim/templates/shell.sh
 !dot_files/.vim/templates/ruby.rb
 !dot_files/.vim/templates/python.py
@@ -23,9 +30,11 @@
 !dot_files/.vim/templates/tex.tex
 
 # emacs settings
+!dot_files/.emacs.d
 !dot_files/.emacs.d/init.el
 
 # snippets
+!dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip
 !dot_files/.vim/snippets/tex.snip
 
