@@ -12,6 +12,10 @@ nnoremap Y :js util.copyToClipboard(buffer.title, true)<CR>
 " shortcut mybokmarks
 nnoremap b :tabopen about:mybookmarks<CR>
 
+" shortcut nextplease
+nnoremap <c-n> :js nextplease.openNextLink()<CR>
+nnoremap <c-p> :js nextplease.openPrevLink()<CR>
+
 
 " settings for vimperator plugin
 
