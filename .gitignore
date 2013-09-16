@@ -36,7 +36,9 @@
 # snippets
 !dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip
+!dot_files/.vim/snippets/cpp.snip
 !dot_files/.vim/snippets/tex.snip
+!dot_files/.vim/snippets/ruby.snip
 
 # install script
 !install.sh
