@@ -146,27 +146,31 @@ nnoremap <Leader><Leader> :Unite menu:commands<CR>
 
 " commands source. for command shortcut {{{
 
-" command map
-let s:commands = {}
-function! s:commands.map(key, value)
+let s:unite_commands = {}
+let s:unite_commands.description = 'command shortcuts'
+
+" commands
+let s:unite_commands.command_candidates = [
+\ ['ReloadVimrc'     , 'ReloadVimrc'],
+\ ['EditVimrc'       , 'EditVimrc'],
+\ ['EditVimrcPlugins', 'EditVimrcPlugins'],
+\ ['ToggleLastStatus', 'ToggleLastStatus'],
+\ ['ToggleWildIgnore', 'ToggleWildIgnore'],
+\ ['NeoBundleUpdate' , 'NeoBundleUpdate'],
+\ ['NeoBundleSource' , 'NeoBundleSource'],
+\ ]
+
+function! s:unite_commands.map(key, value)
     return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
 endfunction
 
-" commands
-let s:commands.candidates = {
-\ 'NeoBundleUpdate'  : 'NeoBundleUpdate',
-\ 'NeoBundleSource'  : 'NeoBundleSource',
-\ 'ReloadVimrc'      : 'ReloadVimrc',
-\ 'EditVimrc'        : 'EditVimrc',
-\ 'EditVimrcPlugins' : 'EditVimrcPlugins',
-\ 'ToggleLastStatus' : 'ToggleLastStatus',
-\ 'ToggleWildIgnore' : 'ToggleWildIgnore',
-\ }
+" add to unite menus
+if (!exists('g:unite_source_menu_menus'))
+    let g:unite_source_menu_menus = {}
+endif
+let g:unite_source_menu_menus.commands = deepcopy(s:unite_commands)
 
-" add unite
-let g:unite_source_menu_menus = {'commands': deepcopy(s:commands)}
-
-unlet s:commands
+unlet s:unite_commands
 " }}}
 
 " }}}
