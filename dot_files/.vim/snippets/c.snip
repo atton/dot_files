@@ -5,3 +5,10 @@ snippet main
 		${0:TARGET}
 		return 0;
 	}
+
+
+snippet     for
+abbr        for () {}
+	for (${1:type} ${2:variable} = 0; $2 < ${3}; $2++) {
+		${0:TARGET}
+	}
