@@ -17,6 +17,7 @@
 
 # settings
 !dot_files/.pythonstartup
+!dot_files/.gdbinit
 
 # .vim directory
 !dot_files/.vim
