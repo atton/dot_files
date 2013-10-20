@@ -152,7 +152,7 @@ command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.vimrc_plugins
 command! SudoWriteCurrentBuffer write !sudo tee %
-command! SetFileEncodingUTF8 set fileencoding=utf8
+command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
 command! ShowTrailingSpaces   call s:show_trailing_spaces()
@@ -190,7 +190,7 @@ inoremap <C-@> <C-g>u<C-@>
 nnoremap <Leader>l :ToggleLastStatus<CR>
 nnoremap <Leader>w :ToggleWildIgnore<CR>
 nnoremap <Leader>e :SetFileEncodingUTF8<CR>
-nnoremap <Leader>s :set spell!<CR>
+nnoremap <Leader>s :setl spell!<CR>
 nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 " }}}
 
