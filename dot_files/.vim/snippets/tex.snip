@@ -1,4 +1,4 @@
-# original snippets for TeX 
+# original snippets for TeX
 
 # position fixed figure snippet
 snippet figure
@@ -38,3 +38,19 @@ alias   \item item
 snippet footnote
 alias   \footnote footnote
 	\footnote{${1}}
+
+# verbatim surround with hrulefill
+snippet verbatim_with_hrulefill
+alias hrulefill_verbatim \hrulefill_verbatim verbatim_hrulefill \verbatim_hrulefill
+	\hrulefill
+	\begin{verbatim}
+	${1}
+	\end{verbatim}
+	\hrulefill
+
+# verbatiminput surround with hrulefill
+snippet verbatiminput_with_hrulefill
+alias hrulefill_verbatiminput \hrulefill_verbatiminput verbatiminput_hrulefill \verbatiminput_hrulefill
+	\hrulefill
+	\verbatiminput{${1}}
+	\hrulefill
