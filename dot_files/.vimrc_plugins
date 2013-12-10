@@ -376,11 +376,11 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " }}}
 
-""" {{{ vim2hs
+" {{{ vim2hs
 
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
 
-""" }}}
+" }}}
 
 " {{{ vim-processing
 
