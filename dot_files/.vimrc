@@ -229,14 +229,6 @@ augroup HTML
     autocmd FileType html setl tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-" for Processing(*.pde)
-" set filetype
-augroup Processing
-    autocmd!
-    autocmd BufNewFile *.pde setl filetype=java
-    autocmd BufRead    *.pde setl filetype=java
-augroup END
-
 " Omni Completion dictionary {{{
 augroup OmniCompletionDictionary
     autocmd!

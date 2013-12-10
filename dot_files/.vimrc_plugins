@@ -48,6 +48,8 @@ NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'd
 " syntax
 NeoBundle 'tpope/vim-rails'
 NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
+NeoBundleLazy 'sophacles/vim-processing'
+
 
 " auto make vimproc
 NeoBundle 'Shougo/vimproc', {
@@ -193,6 +195,10 @@ let g:quickrun_config._['runner']                    = 'vimproc'
 let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 " for scheme : use -i flag (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
+" for processing (need processing-java command and vim-processing plugin)
+let g:quickrun_config.processing = {
+\     'command': 'processing-java',
+\     'exec': '%c --sketch=$PWD/ --output=/tmp/processing --run --force'}
 " for not executable filetype : not execute quickrun
 let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']
 for s:ft in s:not_executable_filetypes
@@ -373,3 +379,13 @@ vmap gx <Plug>(openbrowser-smart-search)
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
 
 """ }}}
+
+" {{{ vim-processing
+
+augroup Processing
+    autocmd!
+    autocmd BufNewFile *.pde NeoBundleSource vim-processing
+    autocmd BufRead    *.pde NeoBundleSource vim-processing
+augroup END
+
+" }}}
