@@ -47,8 +47,8 @@ NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'd
 
 " syntax
 NeoBundle 'tpope/vim-rails'
-NeoBundleLazy 'dag/vim2hs' , {'autoload' : {'filetypes' : 'haskell'}}
-NeoBundleLazy 'sophacles/vim-processing'
+NeoBundleLazy 'dag/vim2hs'               , {'autoload' : {'filetypes' : 'haskell'}}
+NeoBundleLazy 'sophacles/vim-processing' , {'autoload' : {'filename_patterns' : '.*\.pde'}}
 
 
 " auto make vimproc
@@ -379,15 +379,5 @@ vmap gx <Plug>(openbrowser-smart-search)
 " {{{ vim2hs
 
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
-
-" }}}
-
-" {{{ vim-processing
-
-augroup Processing
-    autocmd!
-    autocmd BufNewFile *.pde NeoBundleSource vim-processing
-    autocmd BufRead    *.pde NeoBundleSource vim-processing
-augroup END
 
 " }}}
