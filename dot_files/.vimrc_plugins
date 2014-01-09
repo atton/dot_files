@@ -16,8 +16,8 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " plugin management
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" neocomplcache
-NeoBundle 'Shougo/neocomplcache.git'
+" neocomplete
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundleLazy 'neco-look'         , {'autoload' : {'filetypes' : 'text'}}
 
@@ -82,14 +82,13 @@ endif
 
 " plugins settings
 
-" neocomplcache {{{
+" neocomplete {{{
 
-let g:neocomplcache_enable_at_startup          = 1      " enable on startup
-let g:neocomplcache_enable_underbar_completion = 1      " enable '_' completion
-let g:neocomplcache_temporary_dir              = expand('~/.vim/.neocon')
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#data_directory    = expand('~/.vim/.neocomplete')
 
-" manual completion on neocomplcache : i_^x^g
-inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
+" manual completion on neocomplete : i_^x^g
+inoremap <expr><c-x><c-g> neocomplete#start_manual_complete()
 
 " }}}
 
