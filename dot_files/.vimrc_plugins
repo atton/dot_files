@@ -19,6 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " neocomplete
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundleLazy 'neco-look'         , {'autoload' : {'filetypes' : 'text'}}
 
 " quickrun and watchdogs
