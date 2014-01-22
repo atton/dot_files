@@ -18,6 +18,19 @@ alias   \begin{table} \table
 		${1:TARGET}
 	\end{table}
 
+# position fixed and centering table snippet wich caption and label
+snippet table_with_caption
+alias   \begin{table} \table
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{${1}} \hline
+			${4}
+			\end{tabular}
+			\caption{${2}}
+			\label{${3}}
+		\end{center}
+	\end{table}
+
 # number fixed thebibliography snippet
 snippet thebibliography
 alias   \begin{thebibliography} \thebibliography
