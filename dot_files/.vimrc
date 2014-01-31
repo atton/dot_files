@@ -28,7 +28,6 @@ set visualbell t_vb=            " disable bell
 set backspace=indent,eol,start  " set deletable character by <BS>
 set ambiwidth=double            " set Ambiguous character width, for Zenkaku character
 set pumheight=7                 " pop up items number is 7
-set foldmethod=marker           " fold use marker. {{{ }}}
 let loaded_matchparen = 1       " disable show match brackets on cursor
 set nrformats-=octal            " ignore octal in increment/decrement(^a^x)
 set completeopt-=preview        " disable preview in completion
@@ -36,11 +35,19 @@ set list                        " show symbols include tab
 set listchars=tab:>-            " set list visible style
 set autoindent
 
+" specific feature settings {{{
+
 " save undo history
 if has('persistent_undo')
     set undodir=~/.vim/undo_history
     set undofile
 endif
+
+if has('folding')
+    set foldmethod=marker       " fold use marker. {{{ }}}
+endif
+
+" }}}
 
 " tab settings {{{
 set expandtab               " use space
