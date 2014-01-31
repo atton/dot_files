@@ -51,7 +51,7 @@ setopt no_flow_control
 zstyle ':completion:*' ignore-parents parent pwd ..
 
 # prompt format
-PROMPT="%#"                         # left prompt
+PROMPT="%m%# "                      # left prompt
 RPROMPT="[%~]%1(v|%1v|)"            # right prompt
 setopt transient_rprompt            # if typed chars conflict right prompt, hide right prompt
 
