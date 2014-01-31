@@ -16,10 +16,12 @@ export EDITOR=vim
 # PATH
 export PATH=/usr/local/bin:$PATH
 
-# Path for Mac
+# Path for specific environment
 if [[  $(uname) == Darwin ]]; then
     export PATH=/usr/texbin:$PATH
     export PATH=$HOME/.cabal/bin:$PATH
+else
+    export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
 # }}}
