@@ -19,6 +19,10 @@
 !dot_files/.pythonstartup
 !dot_files/.gdbinit
 
+# zsh settings
+!dot_files/.zsh.d
+!dot_files/.zsh.d/zsh-notify
+
 # .vim directory
 !dot_files/.vim
 

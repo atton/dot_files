@@ -1,5 +1,5 @@
 # complete enable
-autoload -U compinit
+autoload -U compinit add-zsh-hook
 compinit
 
 # {{{ environment variables
@@ -126,5 +126,25 @@ __git_files() { _files }
 
 # mercurial
 export HGENCODING=UTF-8
+
+# }}}
+
+# {{{ notification settings in Mac
+
+function init_notifier() {
+    if ! [[ $(uname) == Darwin ]]; then exit; fi
+
+    notify_script_path="$HOME/.zsh.d/zsh-notify/notify.plugin.zsh"
+    notifier_command="terminal-notifier"
+
+    if ! [ -f $notify_script_path ]; then exit; fi
+    if ! (which $notifier_command >& /dev/null) ; then exit; fi
+
+    source $notify_script_path
+    export SYS_NOTIFIER=`which $notifier_command`
+    export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+}
+
+init_notifier
 
 # }}}
