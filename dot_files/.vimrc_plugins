@@ -51,6 +51,7 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 " utility
 NeoBundle 'matchit.zip'
 NeoBundle 'tyru/open-browser.vim.git'
+NeoBundleLazy 'mopp/makecomp.vim'      , {'autoload' : {'commands' : [ { 'name' : 'Make', 'complete' : 'customlist,makecomp#get_make_argument' } ] } }
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
 
