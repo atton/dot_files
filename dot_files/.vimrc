@@ -39,7 +39,7 @@ set autoindent
 
 " save undo history
 if has('persistent_undo')
-    set undodir=~/.vim/undo_history
+    let &undodir = expand('~/.vim/undo_history')
     set undofile
 endif
 
