@@ -38,6 +38,10 @@
 !dot_files/.emacs.d
 !dot_files/.emacs.d/init.el
 
+# elisp
+!dot_files/.emacs.d/elisp
+!dot_files/.emacs.d/elisp/east-asian-ambiguous.el
+
 # snippets
 !dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip
