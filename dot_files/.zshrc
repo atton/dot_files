@@ -132,13 +132,13 @@ export HGENCODING=UTF-8
 # {{{ notification settings in Mac
 
 function init_notifier() {
-    if ! [[ $(uname) == Darwin ]]; then exit; fi
+    if ! [[ $(uname) == Darwin ]]; then return; fi
 
     notify_script_path="$HOME/.zsh.d/zsh-notify/notify.plugin.zsh"
     notifier_command="terminal-notifier"
 
-    if ! [ -f $notify_script_path ]; then exit; fi
-    if ! (which $notifier_command >& /dev/null) ; then exit; fi
+    if ! [ -f $notify_script_path ]; then return; fi
+    if ! (which $notifier_command >& /dev/null) ; then return; fi
 
     source $notify_script_path
     export SYS_NOTIFIER=`which $notifier_command`
