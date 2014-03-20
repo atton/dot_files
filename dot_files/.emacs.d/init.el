@@ -9,4 +9,5 @@
 (load-file (let ((coding-system-for-read 'utf-8))
              (shell-command-to-string "agda-mode locate")))
 
-(setq agda2-include-dirs (list "." (expand-file-name "~/Library/Agda2/current/src")))
+(setq agda2-include-dirs (mapcar (lambda (path) (expand-file-name path)) (file-expand-wildcards "~/Library/Agda2/*")))
+(add-to-list 'agda2-include-dirs ".")
