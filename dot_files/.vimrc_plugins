@@ -203,8 +203,8 @@ unlet s:unite_commands
 " }}}
 
 " {{{ neomru
-let g:neomru#file_mru_path      = '~/.vim/.neomru/file'
-let g:neomru#directory_mru_path = '~/.vim/.neomru/directory'
+let g:neomru#file_mru_path      = expand('~/.vim/.neomru/file')
+let g:neomru#directory_mru_path = expand('~/.vim/.neomru/directory')
 " }}}
 
 " quickrun {{{
