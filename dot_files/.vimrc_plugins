@@ -253,14 +253,6 @@ let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finis
 let g:quickrun_config.qf['hook/echo/output_finish']            = 'close quickrun window'
 let g:quickrun_config.qf['hook/close_quickfix/enable_exit']    = 1
 " }}}
-
-" {{{ filetype settings for QuickRun
-augroup QuickRunFileType
-    autocmd!
-    autocmd BufNewFile slide.md setl filetype=markdown.slide
-    autocmd BufRead    slide.md setl filetype=markdown.slide
-augroup END
-" }}}
 " }}}
 
 " watchdogs {{{
