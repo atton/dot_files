@@ -101,6 +101,8 @@ function cd() {
 # Ruby
 # rbenv
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
+# noir
+if which noir  >& /dev/null; then eval "$(noir init zsh)"; fi
 
 # Python
 # Python Path for Mac
