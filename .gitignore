@@ -4,6 +4,9 @@
 # this
 !.gitignore
 
+# Gemfile
+!Gemfile
+
 # directory
 !dot_files
 
