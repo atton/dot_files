@@ -24,6 +24,8 @@ set splitright                  " open new window in right  when vsplit
 set hlsearch                    " enable word highlighting in search
 set ignorecase                  " if search word is small char only, ignore capital/small
 set smartcase                   " if search word include capital char, not ignore capital/small
+set wildmenu                    " enable command line completion
+set wildmode=list:longest       " show longest match with list in commad line completion
 set visualbell t_vb=            " disable bell
 set backspace=indent,eol,start  " set deletable character by <BS>
 set ambiwidth=double            " set Ambiguous character width, for Zenkaku character
