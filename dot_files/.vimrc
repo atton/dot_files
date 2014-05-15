@@ -215,6 +215,7 @@ augroup END
 augroup Ruby
     autocmd!
     autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType eruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " for Python
