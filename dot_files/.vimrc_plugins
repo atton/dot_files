@@ -153,23 +153,23 @@ let g:unite_data_directory      = expand('~/.vim/.unite')
 let g:unite_enable_start_insert = 1
 
 " Shortcut Commands
-command! Ub Unite buffer
-command! Uf Unite file_rec
-command! Ur Unite register
-command! Um Unite file_mru
-command! Ug Unite grep:.
-command! Uo Unite outline
-command! Uc Unite menu:commands
+command! Ub silent Unite buffer
+command! Uf silent Unite file_rec
+command! Ur silent Unite register
+command! Um silent Unite file_mru
+command! Ug silent Unite grep:.
+command! Uo silent Unite outline
+command! Uc silent Unite menu:commands
 
 " Shortcut Mappings
-nnoremap <Leader>b :Unite buffer<CR>
-nnoremap <Leader>f :Unite file_rec<CR>
-nnoremap <Leader>r :Unite register<CR>
-nnoremap <Leader>m :Unite file_mru<CR>
-nnoremap <Leader>g :Unite grep:.<CR>
-nnoremap <Leader>o :Unite outline<CR>
-nnoremap <Leader>c :Unite menu:commands<CR>
-nnoremap <Leader><Leader> :Unite menu:commands<CR>
+nnoremap <Leader>b :silent Unite buffer<CR>
+nnoremap <Leader>f :silent Unite file_rec<CR>
+nnoremap <Leader>r :silent Unite register<CR>
+nnoremap <Leader>m :silent Unite file_mru<CR>
+nnoremap <Leader>g :silent Unite grep:.<CR>
+nnoremap <Leader>o :silent Unite outline<CR>
+nnoremap <Leader>c :silent Unite menu:commands<CR>
+nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
 
 " commands source. for command shortcut {{{
 
