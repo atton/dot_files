@@ -214,7 +214,7 @@ augroup END
 " for Ruby
 augroup Ruby
     autocmd!
-    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType ruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType eruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
@@ -237,6 +237,14 @@ augroup END
 augroup HTML
     autocmd!
     autocmd FileType html setl tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+" for coffee
+augroup Coffee
+    autocmd!
+    autocmd BufNewFile *.coffee setl filetype=coffee
+    autocmd BufRead    *.coffee setl filetype=coffee
+    autocmd FileType     coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " Omni Completion dictionary {{{

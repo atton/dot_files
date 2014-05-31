@@ -65,6 +65,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundleLazy 'dag/vim2hs'               , {'autoload' : {'filetypes' : 'haskell'}}
 NeoBundleLazy 'sophacles/vim-processing' , {'autoload' : {'filename_patterns' : '.*\.pde'}}
 NeoBundleLazy 'tpope/vim-markdown'       , {'autoload' : {'filename_patterns' : ['.*\.md', '.*\.mkd']}}
+NeoBundleLazy 'kchmck/vim-coffee-script' , {'autoload' : {'filename_patterns' : '.*\.coffee'}}
 
 
 " auto make vimproc
