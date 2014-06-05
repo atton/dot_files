@@ -21,6 +21,7 @@
 # settings
 !dot_files/.pythonstartup
 !dot_files/.gdbinit
+!dot_files/.tmux.conf
 
 # zsh settings
 !dot_files/.zsh.d
