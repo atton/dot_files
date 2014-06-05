@@ -27,6 +27,8 @@ fi
 # }}}
 
 # options {{{
+# emacs like key binding
+bindkey -e
 
 # number of history
 HISTSIZE=10000
