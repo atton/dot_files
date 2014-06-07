@@ -4,8 +4,9 @@
 # this
 !.gitignore
 
-# Gemfile
+# package settings
 !Gemfile
+!Brewfile
 
 # directory
 !dot_files
