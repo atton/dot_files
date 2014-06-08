@@ -47,6 +47,12 @@
 !dot_files/.emacs.d/elisp
 !dot_files/.emacs.d/elisp/east-asian-ambiguous.el
 
+# tmuxinator
+!dot_files/.tmuxinator
+
+# mux files
+!dot_files/.tmuxinator/lab.yml
+
 # snippets
 !dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip

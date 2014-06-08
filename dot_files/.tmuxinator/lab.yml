@@ -1,0 +1,10 @@
+# ~/.tmuxinator/lab.yml
+
+name: research
+root: ~/research/
+
+windows:
+  - weekly-report:
+    - cd weekly_report
+    - noir edit weeklyreport tuesday
+  - main:
