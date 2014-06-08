@@ -10,8 +10,9 @@ export LANG=en_US.UTF-8
 export lang=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# editor
+# for tmuxinator
 export EDITOR=vim
+export SHELL=zsh
 
 # PATH
 export PATH=/usr/local/bin:$PATH
