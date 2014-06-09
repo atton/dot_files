@@ -3,14 +3,13 @@
 
 update
 
+# formulas
 install coreutils
 install gcc
-install ghc
 install git
 install gnu-sed
 install gradle
 install graphviz
-install haskell-platform
 install lua
 install mercurial
 install nkf
@@ -25,8 +24,13 @@ install w3m
 install wget
 install zsh
 
+install ghc
+install haskell-platform
+
 install vim --with-lua --HEAD
 
+
+# cask
 tap caskroom/homebrew-cask
 install brew-cask
 cask install android-file-transfer
@@ -43,6 +47,7 @@ cask install libreoffice
 cask install mactex
 cask install omnigraffle
 cask install remote-desktop-connection
+caks install scansnap-manager
 cask install skype
 cask install the-unarchiver
 cask install vagrant
