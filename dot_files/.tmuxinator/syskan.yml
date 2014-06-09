@@ -1,0 +1,10 @@
+# ~/.tmuxinator/syskan.yml
+
+name: syskan
+root: ~/files/syskan/
+
+windows:
+  - weekly-report:
+    - cd weekly_report
+    - noir edit weeklyreport monday
+  - main:
