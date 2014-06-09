@@ -8,3 +8,5 @@ gem 'pry'
 gem 'pry-rescue'
 
 gem 'slideshow'
+
+gem 'tmuxinator'
