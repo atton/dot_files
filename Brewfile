@@ -33,6 +33,7 @@ install vim --with-lua --HEAD
 # cask
 tap caskroom/homebrew-cask
 install brew-cask
+cask install alfred
 cask install android-file-transfer
 cask install appcleaner
 cask install dropbox
