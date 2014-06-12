@@ -1,0 +1,7 @@
+# ~/.tmuxinator/noir.yml
+
+name: noir
+root: ~/files/development/ruby/gems/noir
+
+windows:
+  - main:

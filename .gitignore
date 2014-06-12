@@ -52,6 +52,7 @@
 
 # mux files
 !dot_files/.tmuxinator/lab.yml
+!dot_files/.tmuxinator/noir.yml
 !dot_files/.tmuxinator/syskan.yml
 
 # snippets
