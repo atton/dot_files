@@ -5,3 +5,7 @@ root: ~/files/development/ruby/gems/noir
 
 windows:
   - main:
+      layout: main-horizontal
+      panes:
+        -
+        -
