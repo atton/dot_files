@@ -37,6 +37,7 @@ cask install alfred
 cask install android-file-transfer
 cask install appcleaner
 cask install dropbox
+cask install eclipse-platform
 cask install evernote
 cask install firefox
 cask install flash
