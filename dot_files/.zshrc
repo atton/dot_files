@@ -154,3 +154,12 @@ function init_notifier() {
 init_notifier
 
 # }}}
+
+#  {{{ source local zshrc
+localzshrc=$HOME/.zshrc.local
+
+if [ -f $localzshrc ]; then
+    source $localzshrc
+fi
+
+# }}}
