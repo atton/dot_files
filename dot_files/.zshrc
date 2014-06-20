@@ -82,6 +82,8 @@ alias tpo="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm 
 alias pin="ping 8.8.8.8"
 alias ipin="nslookup www.google.com"
 alias be='bundle exec'
+alias bet='RAILS_ENV=test bundle exec'
+alias bep='RAILS_ENV=production bundle exec'
 
 # }}}
 
