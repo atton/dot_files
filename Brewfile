@@ -33,6 +33,7 @@ install vim --with-lua --HEAD
 # cask
 tap caskroom/homebrew-cask
 install brew-cask
+caks install scansnap-manager
 cask install alfred
 cask install android-file-transfer
 cask install appcleaner
@@ -43,13 +44,13 @@ cask install firefox
 cask install flash
 cask install freemind
 cask install google-chrome
+cask install heroku-toolbelt
 cask install iterm2
 cask install kobito
 cask install libreoffice
 cask install mactex
 cask install omnigraffle
 cask install remote-desktop-connection
-caks install scansnap-manager
 cask install skype
 cask install the-unarchiver
 cask install vagrant
