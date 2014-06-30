@@ -30,6 +30,11 @@ install haskell-platform
 install vim --with-lua --HEAD
 
 
+# taps
+brew tap peco/peco
+brew install peco
+
+
 # cask
 tap caskroom/homebrew-cask
 install brew-cask
