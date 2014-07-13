@@ -51,6 +51,7 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
 NeoBundle 'matchit.zip'
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tyru/open-browser.vim.git'
 NeoBundleLazy 'mopp/makecomp.vim'      , {'autoload' : {'commands' : [ { 'name' : 'Make', 'complete' : 'customlist,makecomp#get_make_argument' } ] } }
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
@@ -406,5 +407,11 @@ vmap gx <Plug>(openbrowser-smart-search)
 " {{{ vim2hs
 
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
+
+" }}}
+
+" {{{ indentLine
+
+let g:indentLine_fileType = ['html', 'ehtml']
 
 " }}}
