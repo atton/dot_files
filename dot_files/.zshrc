@@ -23,6 +23,7 @@ if [[  $(uname) == Darwin ]]; then
     export PATH=$HOME/.cabal/bin:$PATH
 else
     export PATH=$HOME/.rbenv/bin:$PATH
+    export PATH=$HOME/.pyenv/bin:$PATH
 fi
 
 # }}}
@@ -121,6 +122,8 @@ if [[  $(uname) == Darwin ]]; then
 fi
 # Python startup
 export PYTHONSTARTUP=~/.pythonstartup
+# pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Java
 # Java CLASSPATH
