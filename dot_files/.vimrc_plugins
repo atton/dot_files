@@ -156,6 +156,20 @@ let g:unite_enable_start_insert = 1
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
+function! s:unite_grep_by_selected_word_in_current_dir()
+    try
+        let s:register_save = @a
+        normal! gv"ay
+        let s:command = 'Unite grep:.::' . @a
+        exec s:command
+    finally
+        let @a = s:register_save
+    endtry
+endfunction
+
+command! -nargs=0 -range UniteGrepBySelectedWord call s:unite_grep_by_selected_word_in_current_dir()
+
+
 " Shortcut Mappings
 nnoremap <Leader>b :silent Unite buffer<CR>
 nnoremap <Leader>f :silent Unite file_rec<CR>
@@ -165,6 +179,8 @@ nnoremap <Leader>g :Unite grep:. <CR>
 nnoremap <Leader>o :silent Unite outline<CR>
 nnoremap <Leader>c :silent Unite menu:commands<CR>
 nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
+
+vnoremap <Leader>k :UniteGrepBySelectedWord<CR>
 
 " commands source. for command shortcut {{{
 
