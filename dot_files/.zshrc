@@ -105,6 +105,16 @@ function cd() {
     fi
 }
 
+function brew() {
+    original_path=$PATH
+
+    # delete pyenv path
+    PATH=$(echo $PATH | sed -e 's/[^:]*pyenv[^:]*://')
+
+    /usr/local/bin/brew $@
+    PATH=$original_path
+}
+
 # }}}
 
 # settings for specific command {{{
