@@ -54,6 +54,7 @@ cask install iterm2
 cask install kobito
 cask install libreoffice
 cask install mactex
+cask install makerware
 cask install omnigraffle
 cask install remote-desktop-connection
 cask install skype
