@@ -127,6 +127,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " my snnipets dir
 let g:neosnippet#snippets_directory = expand("~/.vim/snippets")
+let g:neosnippet#data_directory     = expand("~/.vim/.neosnippet")
 
 " }}}
 
