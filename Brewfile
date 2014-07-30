@@ -58,6 +58,7 @@ cask install makerware
 cask install omnigraffle
 cask install remote-desktop-connection
 cask install skype
+cask install sublime-text
 cask install the-unarchiver
 cask install vagrant
 cask install virtualbox
