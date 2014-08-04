@@ -16,6 +16,7 @@ install mercurial
 install nkf
 install rbenv
 install reattach-to-user-namespace
+install rsync
 install ruby-build
 install ssh-copy-id
 install tig
