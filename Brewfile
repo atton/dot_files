@@ -5,6 +5,7 @@ update
 
 # formulas
 install coreutils
+install direnv
 install gcc
 install git
 install gnu-sed
