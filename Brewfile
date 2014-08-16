@@ -40,7 +40,6 @@ brew install peco
 # cask
 tap caskroom/homebrew-cask
 install brew-cask
-caks install scansnap-manager
 cask install alfred
 cask install android-file-transfer
 cask install appcleaner
@@ -59,9 +58,11 @@ cask install mactex
 cask install makerware
 cask install omnigraffle
 cask install remote-desktop-connection
+cask install scansnap-manager
 cask install skype
 cask install sublime-text
 cask install the-unarchiver
+cask install unity3d
 cask install vagrant
 cask install virtualbox
 cask install xquartz
