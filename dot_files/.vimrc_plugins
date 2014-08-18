@@ -30,34 +30,34 @@ else
 endif
 
 " }}}
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundleLazy 'neco-look'         , {'autoload' : {'filetypes' : 'text'}}
+NeoBundle     'Shougo/neosnippet'
+NeoBundle     'Shougo/neosnippet-snippets'
+NeoBundleLazy 'neco-look', {'autoload' : {'filetypes' : 'text'}}
 
 " quickrun and watchdogs
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle     'thinca/vim-quickrun'
+NeoBundle     'osyo-manga/vim-watchdogs'
+NeoBundle     'osyo-manga/shabadou.vim'
 
 " extension
-NeoBundle 'tyru/eskk.vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite-outline'
+NeoBundle     'tyru/eskk.vim'
+NeoBundle     'thinca/vim-ref'
+NeoBundle     'Shougo/unite.vim'
+NeoBundle     'Shougo/neomru.vim'
+NeoBundle     'Shougo/unite-outline'
 NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
 NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggle'}}
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
-NeoBundle 'matchit.zip'
-NeoBundle 'tyru/open-browser.vim.git'
+NeoBundle     'matchit.zip'
+NeoBundle     'tyru/open-browser.vim.git'
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
 
 " text-objects extension
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'depends' : 'textobj-user'}
+NeoBundle     'tpope/vim-surround'
+NeoBundle     'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'depends' : 'textobj-user'}
 
 " syntax
 NeoBundle     'tpope/vim-rails'
@@ -68,7 +68,7 @@ NeoBundleLazy 'kchmck/vim-coffee-script' , {'autoload' : {'filename_patterns' : 
 
 
 " auto make vimproc
-NeoBundle 'Shougo/vimproc', {
+NeoBundle     'Shougo/vimproc', {
             \ 'build' : {
             \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
             \     'cygwin' : 'make -f make_cygwin.mak',
