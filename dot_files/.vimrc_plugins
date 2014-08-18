@@ -51,9 +51,7 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
 NeoBundle 'matchit.zip'
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tyru/open-browser.vim.git'
-NeoBundleLazy 'mopp/makecomp.vim'      , {'autoload' : {'commands' : [ { 'name' : 'Make', 'complete' : 'customlist,makecomp#get_make_argument' } ] } }
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
 
@@ -62,7 +60,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'rbonvall/vim-textobj-latex' , {'autoload' : {'filetypes' : 'tex'}, 'depends' : 'textobj-user'}
 
 " syntax
-NeoBundle 'tpope/vim-rails'
+NeoBundle     'tpope/vim-rails'
 NeoBundleLazy 'dag/vim2hs'               , {'autoload' : {'filetypes' : 'haskell'}}
 NeoBundleLazy 'sophacles/vim-processing' , {'autoload' : {'filename_patterns' : '.*\.pde'}}
 NeoBundleLazy 'tpope/vim-markdown'       , {'autoload' : {'filename_patterns' : ['.*\.md', '.*\.mkd']}}
@@ -424,11 +422,5 @@ vmap gx <Plug>(openbrowser-smart-search)
 " {{{ vim2hs
 
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
-
-" }}}
-
-" {{{ indentLine
-
-let g:indentLine_fileType = ['html', 'ehtml']
 
 " }}}
