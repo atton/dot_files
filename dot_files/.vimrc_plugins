@@ -51,6 +51,7 @@ NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
 NeoBundle     'matchit.zip'
+NeoBundle     'rhysd/clever-f.vim'
 NeoBundle     'tyru/open-browser.vim.git'
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
 NeoBundleLazy 'atton-/a.vim'           , {'autoload' : {'filetypes' : ['c', 'cpp']}}
@@ -424,3 +425,14 @@ vmap gx <Plug>(openbrowser-smart-search)
 let g:haskell_conceal = 0   " disable conceal. lambda and function compose
 
 " }}}
+
+" {{{ clever-f
+
+let g:clever_f_use_migemo = 1
+
+" compatible default keys
+let g:clever_f_across_no_line = 1
+nmap ; <Plug>(clever-f-repeat-forward)
+nmap , <Plug>(clever-f-repeat-back)
+
+" {{{
