@@ -435,4 +435,20 @@ let g:clever_f_across_no_line = 1
 nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
 
-" {{{
+" }}}
+
+
+let s:unite_source = {'name' : 'input-symbol'}
+
+function! s:unite_source.gather_candidates(args, context)
+ let s:symbols = {'A' : 'aaa', 'AA': 'a---', 'B' : 'b'}
+ return values(map(s:symbols, '{
+ \ "word": v:val,
+ \ "source": "input-symbol",
+ \ "kind": "command",
+ \ "action__command": "call unite#kinds#common#insert_word(\"" . v:key . "\")"
+ \ }'))
+endfunction
+call unite#define_source(s:unite_source)
+
+nnoremap <Leader>i :silent Unite input-symbol<CR>
