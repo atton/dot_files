@@ -438,6 +438,8 @@ nmap , <Plug>(clever-f-repeat-back)
 " }}}
 
 
+" {{{ unite-input-symbol
+
 let s:unite_source = {'name' : 'input-symbol'}
 let s:symbols = {
 \   "\u2261" : 'equivalence equiv =='
@@ -455,3 +457,5 @@ endfunction
 call unite#define_source(s:unite_source)
 
 nnoremap <Leader>i :silent Unite input-symbol<CR>
+
+" }}}
