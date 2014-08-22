@@ -440,17 +440,17 @@ nmap , <Plug>(clever-f-repeat-back)
 
 let s:unite_source = {'name' : 'input-symbol'}
 let s:symbols = {
-\   '\u2261' : 'equivalence equiv =='
+\   "\u2261" : 'equivalence equiv =='
 \}
 
 function! s:unite_source.gather_candidates(args, context)
-    let s:symbol_table = values(map(s:symbols, '{
-\       "word": v:val,
+    let s:unite_element = '{
+\       "word": v:key . " : " . v:val,
 \       "source": "input-symbol",
 \       "kind": "command",
 \       "action__command": "call unite#kinds#common#insert_word(\"" . v:key . "\")"
-\   }'))
-    return s:symbol_table
+\   }'
+    return values(map(s:symbols, s:unite_element))
 endfunction
 call unite#define_source(s:unite_source)
 
