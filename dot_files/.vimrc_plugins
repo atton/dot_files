@@ -154,8 +154,6 @@ let g:unite_update_time         = 10
 let g:unite_data_directory      = expand('~/.vim/.unite')
 let g:unite_enable_start_insert = 1
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
 function! s:unite_grep_by_selected_word_in_current_dir()
     try
         let s:register_save = @a
