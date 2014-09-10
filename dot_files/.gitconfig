@@ -1,0 +1,12 @@
+[user]
+	name  = atton
+	email = e115763@gmail.com
+[push]
+	default = current
+[alias]
+	co = checkout
+	st = status
+[gc]
+	auto = 0
+[include]
+	path = .githubconfig

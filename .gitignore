@@ -12,6 +12,7 @@
 !dot_files
 
 # .rc files
+!dot_files/.vimrc
 !dot_files/.vimrc_plugins
 !dot_files/.zshrc
 !dot_files/.screenrc
@@ -20,6 +21,7 @@
 !dot_files/.vrapperrc
 
 # settings
+!dot_files/.gitconfig
 !dot_files/.pythonstartup
 !dot_files/.gdbinit
 !dot_files/.tmux.conf
