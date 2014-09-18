@@ -11,6 +11,7 @@ install git
 install gnu-sed
 install gradle
 install graphviz
+install imagemagick
 install lua
 install mercurial
 install nkf
