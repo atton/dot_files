@@ -26,6 +26,9 @@ else
     export PATH=$HOME/.pyenv/bin:$PATH
 fi
 
+# for my util function
+export LOOP_EXEC_MAX_COUNT=50
+
 # }}}
 
 # options {{{
@@ -113,6 +116,35 @@ function brew() {
 
     /usr/local/bin/brew $@
     PATH=$original_path
+}
+
+function _loop_exec()
+{
+    if [ $# -ne 2 ]; then
+        echo 'invalid argument. do not call this function by user'
+        return
+    fi
+
+    if [ $2 -gt $LOOP_EXEC_MAX_COUNT ]; then
+        echo "loop_exec was executed \"${1}\" ${LOOP_EXEC_MAX_COUNT} times. exit."
+        return
+    fi
+
+    eval "$1"
+
+    if [ $? -ne 0 ]; then
+        echo "exit status was not 0. retry command... ($2)"
+        _loop_exec "$1" $(expr $2 + 1)
+    fi
+}
+
+function loop_exec() {
+    if [ $# -ne 1 ]; then
+        echo 'Usage : loop_exec {loop_exec_command}'
+        echo 'argument must be single. if command has argument, please quote.'
+    fi
+
+    _loop_exec "$1" 1
 }
 
 # }}}
