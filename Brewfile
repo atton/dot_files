@@ -27,7 +27,7 @@ install wget
 install zsh
 
 install ghc
-install haskell-platform
+install cabal-install
 
 install vim --with-lua --HEAD
 
