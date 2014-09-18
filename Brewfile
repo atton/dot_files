@@ -60,6 +60,7 @@ cask install omnigraffle
 cask install remote-desktop-connection
 cask install scansnap-manager
 cask install skype
+cask install slack
 cask install sublime-text
 cask install the-unarchiver
 cask install unity3d
