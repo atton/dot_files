@@ -64,7 +64,7 @@ cask install skype
 cask install slack
 cask install sublime-text
 cask install the-unarchiver
-cask install unity3d
+cask install unity
 cask install vagrant
 cask install virtualbox
 cask install vlc
