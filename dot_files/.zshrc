@@ -23,7 +23,6 @@ if [[  $(uname) == Darwin ]]; then
     export PATH=$HOME/.cabal/bin:$PATH
 else
     export PATH=$HOME/.rbenv/bin:$PATH
-    export PATH=$HOME/.pyenv/bin:$PATH
 fi
 
 # for my util function
@@ -108,16 +107,6 @@ function cd() {
     fi
 }
 
-function brew() {
-    original_path=$PATH
-
-    # delete pyenv path
-    PATH=$(echo $PATH | sed -e 's/[^:]*pyenv[^:]*://')
-
-    /usr/local/bin/brew $@
-    PATH=$original_path
-}
-
 function _loop_exec()
 {
     if [ $# -ne 2 ]; then
@@ -164,8 +153,6 @@ if [[  $(uname) == Darwin ]]; then
 fi
 # Python startup
 export PYTHONSTARTUP=~/.pythonstartup
-# pyenv
-if which pyenv >& /dev/null; then eval "$(pyenv init -)"; fi
 
 # Java
 # Java CLASSPATH
