@@ -15,7 +15,7 @@ export EDITOR=vim
 export SHELL=zsh
 
 # PATH
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Path for specific environment
 if [[  $(uname) == Darwin ]]; then
