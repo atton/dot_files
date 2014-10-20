@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'bundler'
 
+gem 'noir'
+
 gem 'terminal-notifier'
 
 gem 'pry'
