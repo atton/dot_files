@@ -6,5 +6,5 @@ root: ~/files/syskan/
 windows:
   - weekly-report:
     - cd weekly_report
-    - noir edit weeklyreport monday
+    - noir edit weeklyreport tuesday
   - main:
