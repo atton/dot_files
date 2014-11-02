@@ -2,11 +2,11 @@
 % vim:set fileencoding=utf8:
 \documentclass[10pt]{jarticle}
 
+\usepackage{cprotect}
 \usepackage{moreverb}
-\usepackage[dvipdfm]{graphicx}
-\usepackage{url}
+\usepackage[dvipdf]{graphicx}
 
-% equation の番号を section 毎に
+% equation number with section number
 \makeatletter
 \renewcommand{\theequation}{\arabic{section}-\arabic{equation}}
 \@addtoreset{equation}{section}
