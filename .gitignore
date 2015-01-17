@@ -35,11 +35,12 @@
 
 # vim templetes
 !dot_files/.vim/templates
-!dot_files/.vim/templates/shell.sh
-!dot_files/.vim/templates/ruby.rb
-!dot_files/.vim/templates/python.py
 !dot_files/.vim/templates/php.php
+!dot_files/.vim/templates/python.py
+!dot_files/.vim/templates/ruby.rb
+!dot_files/.vim/templates/shell.sh
 !dot_files/.vim/templates/tex.tex
+!dot_files/.vim/templates/vim.vim
 
 # emacs settings
 !dot_files/.emacs.d
