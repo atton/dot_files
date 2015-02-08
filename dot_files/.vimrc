@@ -181,6 +181,8 @@ inoremap <C-b> <Left>
 nnoremap <C-l> :nohlsearch<CR><C-l>
 " help shortcut
 nnoremap <C-h> :h<Space>
+" search words shortcut in visual block
+vnoremap * y/<C-r>"<CR>
 
 
 " zsh like cursor move in command line mode
