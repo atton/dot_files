@@ -67,3 +67,11 @@ alias hrulefill_verbatiminput \hrulefill_verbatiminput verbatiminput_hrulefill \
 	\hrulefill
 	\verbatiminput{${1}}
 	\hrulefill
+
+
+# listinginput for sources
+snippet listinginput
+alias \listinginput
+	\begin{table}[html]
+		\lstinputlisting[label=${2}, caption=${3}] {${1}}
+	\end{table}
