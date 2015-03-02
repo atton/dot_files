@@ -80,9 +80,6 @@ fi
 
 # aliases {{{
 
-alias tp="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc)"
-alias tpo="platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc) && open *.pdf"
-
 alias pin="ping 8.8.8.8"
 alias ipin="nslookup www.google.com"
 

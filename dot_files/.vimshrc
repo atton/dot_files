@@ -1,4 +1,0 @@
-alias javac='javac -J-Dfile.encoding=UTF8'
-alias java='java -Dfile.encoding=UTF8' 
-alias tp='zsh -c "platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc)"'
-alias tpo='zsh -c "platex *.tex && platex *.tex && platex *.tex && dvipdfmx *.dvi && rm *.(dvi|aux|log|toc) && open *.pdf"'
