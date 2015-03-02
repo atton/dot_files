@@ -45,6 +45,7 @@ NeoBundle     'thinca/vim-ref'
 NeoBundle     'Shougo/unite.vim'
 NeoBundle     'Shougo/neomru.vim'
 NeoBundle     'Shougo/unite-outline'
+NeoBundle     'atton-/unite-symbol'
 NeoBundleLazy 'Shougo/vimshell.git'    , {'autoload' : {'commands' : ['VimShell', 'VimShellTab']}}
 NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggle'}}
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
@@ -245,7 +246,7 @@ let g:quickrun_config.processing = {
 let g:quickrun_config.markdown          = {'outputter' : 'browser'}
 let g:quickrun_config['markdown.slide'] = {'command' : 'build_tmp_slide.sh',
 \                                          'exec' : '%c %s:p:r %s:t:r',
-\                                          'outputter/buffer/into' : 0}
+\                                          'outputter' : 'null'}
 
 " for not executable filetype : not execute quickrun
 let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']
@@ -441,24 +442,8 @@ nmap , <Plug>(clever-f-repeat-back)
 " }}}
 
 
-" {{{ unite-input-symbol
+" {{{ unite-symbol
 
-let s:unite_source = {'name' : 'input-symbol'}
-let s:symbols = {
-\   "\u2261" : 'equivalence equiv =='
-\}
-
-function! s:unite_source.gather_candidates(args, context)
-    let s:unite_element = '{
-\       "word": v:key . " : " . v:val,
-\       "source": "input-symbol",
-\       "kind": "command",
-\       "action__command": "call unite#kinds#common#insert_word(\"" . v:key . "\")"
-\   }'
-    return values(map(s:symbols, s:unite_element))
-endfunction
-call unite#define_source(s:unite_source)
-
-nnoremap <Leader>i :silent Unite input-symbol<CR>
+nnoremap <Leader>i :silent Unite symbol<CR>
 
 " }}}
