@@ -80,6 +80,8 @@ fi
 
 # aliases {{{
 
+alias vimp="vim -c 'set rtp+=.'"
+
 alias pin="ping 8.8.8.8"
 alias ipin="nslookup www.google.com"
 

@@ -214,9 +214,13 @@ unlet s:unite_commands
 
 " }}}
 
-" {{{ neomru
+" {{{ Unite : neomru
 let g:neomru#file_mru_path      = expand('~/.vim/.neomru/file')
 let g:neomru#directory_mru_path = expand('~/.vim/.neomru/directory')
+" }}}
+
+" {{{ Unite : unite-symbol
+nnoremap <Leader>i :silent Unite symbol<CR>
 " }}}
 
 " quickrun {{{
@@ -438,12 +442,5 @@ let g:clever_f_use_migemo = 1
 let g:clever_f_across_no_line = 1
 nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
-
-" }}}
-
-
-" {{{ unite-symbol
-
-nnoremap <Leader>i :silent Unite symbol<CR>
 
 " }}}
