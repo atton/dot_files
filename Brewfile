@@ -4,12 +4,15 @@
 update
 
 # formulas
+install ant
 install coreutils
 install direnv
 install findutils
+install gauche
 install gcc
 install git
 install gnu-sed
+install gnuplot
 install gradle
 install graphviz
 install imagemagick
@@ -20,6 +23,7 @@ install rbenv
 install reattach-to-user-namespace
 install rsync
 install ruby-build
+install sdl
 install ssh-copy-id
 install tig
 install tmux
