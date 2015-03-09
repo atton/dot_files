@@ -14,13 +14,13 @@ cask install freemind
 cask install google-chrome
 cask install heroku-toolbelt
 cask install iterm2
+cask install java
 cask install kobito
 cask install libreoffice
 cask install mactex
 cask install makerware
-cask install omnigraffle
+cask install netnewswire
 cask install remote-desktop-connection
-cask install scansnap-manager
 cask install skype
 cask install slack
 cask install sublime-text
