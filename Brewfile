@@ -40,37 +40,6 @@ install vim --with-lua --HEAD
 
 # taps
 brew tap peco/peco
-brew install peco
-
-
-# cask
 tap caskroom/homebrew-cask
-install brew-cask
-cask install alfred
-cask install android-file-transfer
-cask install appcleaner
-cask install dropbox
-cask install eclipse-platform
-cask install evernote
-cask install firefox
-cask install flash
-cask install freemind
-cask install google-chrome
-cask install heroku-toolbelt
-cask install iterm2
-cask install kobito
-cask install libreoffice
-cask install mactex
-cask install makerware
-cask install omnigraffle
-cask install remote-desktop-connection
-cask install scansnap-manager
-cask install skype
-cask install slack
-cask install sublime-text
-cask install the-unarchiver
-cask install unity
-cask install vagrant
-cask install virtualbox
-cask install vlc
-cask install xquartz
+
+brew install peco
