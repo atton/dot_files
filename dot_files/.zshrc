@@ -16,6 +16,7 @@ export SHELL=zsh
 
 # PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
 # Path for specific environment
 if [[  $(uname) == Darwin ]]; then
