@@ -4,6 +4,7 @@
 update
 
 # formulas
+install android-sdk
 install ant
 install coreutils
 install direnv

@@ -22,9 +22,12 @@ export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 if [[  $(uname) == Darwin ]]; then
     export PATH=/usr/texbin:$PATH
     export PATH=$HOME/.cabal/bin:$PATH
+    export ANDROID_HOME=/usr/local/opt/android-sdk
+    export PATH=$ANDROID_HOME/bin:$PATH
 else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
+
 
 # for my util function
 export LOOP_EXEC_MAX_COUNT=50
