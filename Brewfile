@@ -31,6 +31,7 @@ install tmux
 install tree
 install w3m
 install wget
+install xpdf
 install zsh
 
 install ghc
