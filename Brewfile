@@ -16,6 +16,7 @@ install gnu-sed
 install gnuplot
 install gradle
 install graphviz
+install hub
 install imagemagick
 install lua
 install mercurial
