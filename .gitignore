@@ -13,13 +13,14 @@
 !dot_files
 
 # .rc files
+!dot_files/.pryrc
+!dot_files/.screenrc
+!dot_files/.vimperatorrc
 !dot_files/.vimrc
 !dot_files/.vimrc_plugins
-!dot_files/.zshrc
-!dot_files/.screenrc
 !dot_files/.vimshrc
-!dot_files/.vimperatorrc
 !dot_files/.vrapperrc
+!dot_files/.zshrc
 
 # settings
 !dot_files/.gitconfig

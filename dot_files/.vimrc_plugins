@@ -39,6 +39,8 @@ NeoBundle     'thinca/vim-quickrun'
 NeoBundle     'osyo-manga/vim-watchdogs'
 NeoBundle     'osyo-manga/shabadou.vim'
 
+NeoBundle     'derekelkins/agda-vim' " nya
+
 " extension
 NeoBundle     'tyru/eskk.vim'
 NeoBundle     'thinca/vim-ref'
