@@ -69,12 +69,24 @@ alias hrulefill_verbatiminput \hrulefill_verbatiminput verbatiminput_hrulefill \
 	\hrulefill
 
 
+# lstlisting for sources
+snippet lstlisting
+alias \lstlisting
+	\begin{table}[html]
+	\begin{lstlisting}
+	${1}
+	\end{lstlisting}
+	\caption{${2}}
+	\label{${3}}
+	\end{table}
+
 # listinginput for sources
 snippet listinginput
-alias \listinginput lstinputlisting \lst
+alias \listinginput lstinputlisting
 	\begin{table}[html]
 		\lstinputlisting[label=${2}, caption=${3}] {${1}}
 	\end{table}
+
 
 # prooftree
 snippet prooftree
