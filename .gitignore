@@ -14,7 +14,6 @@
 
 # .rc files
 !dot_files/.pryrc
-!dot_files/.screenrc
 !dot_files/.vimperatorrc
 !dot_files/.vimrc
 !dot_files/.vimrc_plugins
