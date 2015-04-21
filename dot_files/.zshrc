@@ -15,13 +15,12 @@ export EDITOR=vim
 export SHELL=zsh
 
 # PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.cabal/bin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
 # Path for specific environment
 if [[  $(uname) == Darwin ]]; then
     export PATH=/usr/texbin:$PATH
-    export PATH=$HOME/.cabal/bin:$PATH
     export ANDROID_HOME=/usr/local/opt/android-sdk
     export PATH=$ANDROID_HOME/bin:$PATH
 else
