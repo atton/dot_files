@@ -218,6 +218,7 @@ augroup Ruby
     autocmd!
     autocmd FileType ruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType eruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType haml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " for Python
@@ -247,6 +248,11 @@ augroup Coffee
     autocmd BufNewFile *.coffee setl filetype=coffee
     autocmd BufRead    *.coffee setl filetype=coffee
     autocmd FileType     coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup END
+
+" for YAML
+augroup Yaml
+    autocmd FileType yaml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " Omni Completion dictionary {{{
