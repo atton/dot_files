@@ -39,8 +39,6 @@ NeoBundle     'thinca/vim-quickrun'
 NeoBundle     'osyo-manga/vim-watchdogs'
 NeoBundle     'osyo-manga/shabadou.vim'
 
-NeoBundle     'derekelkins/agda-vim' " nya
-
 " extension
 NeoBundle     'tyru/eskk.vim'
 NeoBundle     'thinca/vim-ref'
@@ -69,6 +67,7 @@ NeoBundleLazy 'dag/vim2hs'               , {'autoload' : {'filetypes' : 'haskell
 NeoBundleLazy 'sophacles/vim-processing' , {'autoload' : {'filename_patterns' : '.*\.pde'}}
 NeoBundleLazy 'tpope/vim-markdown'       , {'autoload' : {'filename_patterns' : ['.*\.md', '.*\.mkd']}}
 NeoBundleLazy 'kchmck/vim-coffee-script' , {'autoload' : {'filename_patterns' : '.*\.coffee'}}
+NeoBundleLazy 'vim-scripts/promela.vim'  , {'autoload' : {'filetypes' : 'promela'}}
 
 
 " auto make vimproc
