@@ -117,12 +117,12 @@ function _loop_exec()
 {
     if [ $# -ne 2 ]; then
         echo 'invalid argument. do not call this function by user'
-        return
+        return 1
     fi
 
     if [ $2 -gt $LOOP_EXEC_MAX_COUNT ]; then
         echo "loop_exec was executed \"${1}\" ${LOOP_EXEC_MAX_COUNT} times. exit."
-        return
+        return 1
     fi
 
     eval "$1"
@@ -137,9 +137,36 @@ function loop_exec() {
     if [ $# -ne 1 ]; then
         echo 'Usage : loop_exec {loop_exec_command}'
         echo 'argument must be single. if command has argument, please quote.'
+        return 1
     fi
 
     _loop_exec "$1" 1
+}
+
+function careful_sync {
+    if [ $# -lt 2 -o $# -gt 3 ]; then
+        echo 'Usage : careful_sync <rsync-additional-opts> <source-dir> <destination-dir>'
+        return 1
+    fi
+
+    if [ $# -eq 2 ]; then
+        rsync_opts=''
+        source=$1
+        destination=$2
+    elif [ $# -eq 3 ]; then
+        rsync_opts=$1
+        source=$2
+        destination=$3
+    fi
+
+
+    loop_exec "rsync -avx  ${rsync_opts} ${source} ${destination}"
+
+    if [ $? -ne 0 ]; then
+        echo 'Failed synchronization without checksum validation. Validation skipped.'
+        return 1
+    fi
+    loop_exec "rsync -acvx ${rsync_opts} ${source} ${destination}"
 }
 
 # }}}
