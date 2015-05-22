@@ -30,6 +30,7 @@ fi
 
 # for my util function
 export LOOP_EXEC_MAX_COUNT=50
+export CAREFUL_SYNC_OPTS='--exclude=".*"'
 
 # }}}
 
@@ -160,13 +161,13 @@ function careful_sync {
     fi
 
 
-    loop_exec "rsync -avx  ${rsync_opts} ${source} ${destination}"
+    loop_exec "rsync -avx  ${CAREFUL_SYNC_OPTS} ${rsync_opts} ${source} ${destination}"
 
     if [ $? -ne 0 ]; then
         echo 'Failed synchronization without checksum validation. Validation skipped.'
         return 1
     fi
-    loop_exec "rsync -acvx ${rsync_opts} ${source} ${destination}"
+    loop_exec "rsync -acvx ${CAREFUL_SYNC_OPTS} ${rsync_opts} ${source} ${destination}"
 }
 
 # }}}
