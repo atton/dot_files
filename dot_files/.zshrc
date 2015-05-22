@@ -183,12 +183,8 @@ if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
 # Python
-# Python Path for Mac
-if [[  $(uname) == Darwin ]]; then
-    export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
-fi
-# Python startup
-export PYTHONSTARTUP=~/.pythonstartup
+# pyenv
+if which pyenv >& /dev/null; then eval "$(pyenv init - zsh)"; fi
 
 # Java
 # Java CLASSPATH

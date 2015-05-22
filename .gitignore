@@ -23,7 +23,6 @@
 
 # settings
 !dot_files/.gitconfig
-!dot_files/.pythonstartup
 !dot_files/.gdbinit
 !dot_files/.tmux.conf
 
