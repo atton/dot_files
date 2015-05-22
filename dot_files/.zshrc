@@ -178,7 +178,7 @@ function careful_sync {
 # rbenv
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
 # noir
-if which noir  >& /dev/null; then eval "$(noir init zsh)"; fi
+if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
