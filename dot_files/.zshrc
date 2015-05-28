@@ -95,8 +95,6 @@ alias bec='bundle exec rails console'
 alias bet='RAILS_ENV=test bundle exec'
 alias bep='RAILS_ENV=production bundle exec'
 
-alias zmv='noglob zmv -W'
-
 alias wine='LC_ALL=ja_JP.UTF-8 wine'
 
 # }}}
