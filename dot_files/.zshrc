@@ -168,6 +168,19 @@ function careful_sync {
     loop_exec "rsync -acvx ${CAREFUL_SYNC_OPTS} ${rsync_opts} ${source} ${destination}"
 }
 
+function compress_directory() {
+    rar a -r -rr5 $1.rar $1
+}
+
+function archive_directory() {
+    find . -name '*.db' -print0 | xargs -0 rm
+    find . -name '.*'   -print0 | xargs -0 rm
+
+    for dir in *; do
+        compress_directory "$dir" && rm -rf "$dir"
+    done
+}
+
 # }}}
 
 # settings for specific command {{{
