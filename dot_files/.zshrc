@@ -175,6 +175,7 @@ function compress_directory() {
 function archive_directory() {
     find . -name '*.db' -print0 | xargs -0 rm
     find . -name '.*'   -print0 | xargs -0 rm
+    find . -name '_*'   -print0 | xargs -0 rm
 
     for dir in *; do
         compress_directory "$dir" && rm -rf "$dir"
