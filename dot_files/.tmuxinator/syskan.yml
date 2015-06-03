@@ -4,7 +4,7 @@ name: syskan
 root: ~/files/syskan/
 
 windows:
-  - weekly-report:
-    - cd weekly_report
-    - noir edit weeklyreport friday
+  - note:
+    - cd note
+    - noir edit note
   - main:

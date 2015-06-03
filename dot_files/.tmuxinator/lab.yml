@@ -4,7 +4,7 @@ name: research
 root: ~/research/
 
 windows:
-  - weekly-report:
-    - cd weekly_report
-    - noir edit weeklyreport tuesday
+  - note:
+    - cd note
+    - noir edit note
   - main:
