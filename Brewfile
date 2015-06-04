@@ -30,6 +30,7 @@ install ssh-copy-id
 install tig
 install tmux
 install tree
+install unar
 install w3m
 install wget
 install xpdf
