@@ -6,14 +6,17 @@ update
 # formulas
 install android-sdk
 install ant
+install boot2docker
 install coreutils
 install direnv
+install docker
 install findutils
 install gauche
 install gcc
 install git
 install gnu-sed
 install gnuplot
+install go
 install gradle
 install graphviz
 install hub
@@ -26,6 +29,7 @@ install reattach-to-user-namespace
 install rsync
 install ruby-build
 install sdl
+install spin
 install ssh-copy-id
 install tig
 install tmux
@@ -43,7 +47,10 @@ install vim --with-lua --HEAD
 
 
 # taps
-brew tap peco/peco
+tap peco/peco
 tap caskroom/homebrew-cask
+tap homebrew/binary
 
-brew install peco
+install peco
+install brew-cask
+install rar
