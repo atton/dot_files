@@ -194,13 +194,6 @@ if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
-# Python
-# pyenv
-if which pyenv >& /dev/null; then
-    eval "$(pyenv init - zsh)"
-    alias brew='env PATH=${PATH/$HOME\/.pyenv\/shims:/} brew'
-fi
-
 # Java
 # Java CLASSPATH
 # add javafx jar file in classpath on Mac(jdk1.7)
