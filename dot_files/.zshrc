@@ -90,8 +90,6 @@ alias pin="ping 8.8.8.8"
 alias ipin="nslookup www.google.com"
 
 alias be='bundle exec'
-alias bes='bundle exec rails server'
-alias bec='bundle exec rails console'
 alias bet='RAILS_ENV=test bundle exec'
 alias bep='RAILS_ENV=production bundle exec'
 
@@ -193,6 +191,8 @@ if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
 if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
+# rubygems configration
+export RUBYGEMS_GEMDEPS=-
 
 # Java
 # Java CLASSPATH
