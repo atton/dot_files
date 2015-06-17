@@ -180,6 +180,15 @@ function archive_directory() {
     done
 }
 
+function rearchive_directory() {
+
+    mkdir /tmp/original_archives
+    for file in *; do
+        unar -d "$file" && mv "$file" /tmp/original_archives
+    done
+    archive_directory
+}
+
 # }}}
 
 # settings for specific command {{{
