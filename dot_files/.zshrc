@@ -178,7 +178,7 @@ function archive_directory() {
     find . -name '_*'   -print0 | xargs -0 rm
 
     for dir in *; do
-        compress_directory "$dir" && rm -rf "$dir"
+        compress_directory "$dir"
     done
 }
 
