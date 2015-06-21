@@ -174,9 +174,11 @@ function archive_directory() {
     find . -name '*.db' -print0 | xargs -0 rm
     find . -name '.*'   -print0 | xargs -0 rm
     find . -name '_*'   -print0 | xargs -0 rm
+    find . -type d -print0      | xargs -0 rmdir
 
+    mkdir /tmp/original_files
     for dir in *; do
-        compress_directory "$dir"
+        compress_directory "$dir" && mv "$dir" /tmp/original_files
     done
 }
 
@@ -185,6 +187,8 @@ function rearchive_directory() {
     mkdir /tmp/original_archives
     for file in *; do
         unar -d "$file" && mv "$file" /tmp/original_archives
+        dirname="${file%.*}"
+        mv "${dirname}"/**/*.* "${dirname}"
     done
     archive_directory
 }
