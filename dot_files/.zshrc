@@ -48,7 +48,7 @@ setopt hist_ignore_dups
 typeset -U path cdpath fpath manpath
 
 # delete duplicate directory in directory stack
-setopt PUSHD_IGNORE_DUPS
+setopt pushd_ignore_dups
 
 # beep disable in list completion
 setopt nolistbeep
@@ -58,6 +58,9 @@ setopt no_beep
 
 # disable flow control (disable ^q,^s)
 setopt no_flow_control
+
+# disable combine multi byte character on completion
+setopt combining_chars
 
 # ignore current directory when 'cd ..' completion
 zstyle ':completion:*' ignore-parents parent pwd ..
