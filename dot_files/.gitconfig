@@ -6,6 +6,7 @@
 [alias]
 	co = checkout
 	st = status
+	br = branch
 [gc]
 	auto = 0
 [include]
