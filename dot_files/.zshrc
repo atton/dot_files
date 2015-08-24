@@ -231,7 +231,7 @@ export HGENCODING=UTF-8
 if which direnv >& /dev/null; then eval "$(direnv hook zsh)"; fi
 
 # docker (for OSX)
-if which boot2docker >& /dev/null; then eval "$(boot2docker shellinit > /dev/stdout >& /dev/null)"; fi
+if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
 
 
 # }}}
