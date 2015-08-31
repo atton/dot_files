@@ -12,7 +12,6 @@ export LANGUAGE=en_US.UTF-8
 
 # for tmuxinator
 export EDITOR=vim
-export SHELL=zsh
 
 # PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.cabal/bin:$PATH
