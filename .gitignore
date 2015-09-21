@@ -57,6 +57,7 @@
 !dot_files/.tmuxinator/lab.yml
 !dot_files/.tmuxinator/noir.yml
 !dot_files/.tmuxinator/syskan.yml
+!dot_files/.tmuxinator/akatsuki.yml
 
 # snippets
 !dot_files/.vim/snippets
