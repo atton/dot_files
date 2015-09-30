@@ -114,12 +114,11 @@ function cd() {
 
 # Heavy initialization
 function shell-init() {
+    # initialize noir completion
+    if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 
-# initialize noir completion
-if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
-
-# docker (for OSX)
-if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
+    # docker (for OSX)
+    if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
 }
 
 # }}}
