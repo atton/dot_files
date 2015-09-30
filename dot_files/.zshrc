@@ -112,6 +112,16 @@ function cd() {
     fi
 }
 
+# Heavy initialization
+function shell-init() {
+
+# initialize noir completion
+if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
+
+# docker (for OSX)
+if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
+}
+
 function _loop_exec()
 {
     if [ $# -ne 2 ]; then
@@ -202,8 +212,6 @@ function rearchive_directory() {
 # Ruby
 # initialize rbenv
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
-# initialize noir completion
-#if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 # rubygems configuration
@@ -223,30 +231,6 @@ export HGENCODING=UTF-8
 
 # direnv
 if which direnv >& /dev/null; then eval "$(direnv hook zsh)"; fi
-
-# docker (for OSX)
-if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
-
-
-# }}}
-
-# {{{ notification settings in Mac
-
-function init_notifier() {
-    if ! [[ $(uname) == Darwin ]]; then return; fi
-
-    notify_script_path="$HOME/.zsh.d/zsh-notify/notify.plugin.zsh"
-    notifier_command="terminal-notifier"
-
-    if ! [ -f $notify_script_path ]; then return; fi
-    if ! (which $notifier_command >& /dev/null) ; then return; fi
-
-    source $notify_script_path
-    export SYS_NOTIFIER=`which $notifier_command`
-    export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
-}
-
-init_notifier
 
 # }}}
 
