@@ -122,6 +122,9 @@ function shell-init() {
 
     # docker (for OSX)
     if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
+
+    # source util functions
+    source $HOME/.zshrc.util
 }
 
 # }}}
