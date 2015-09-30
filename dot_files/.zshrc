@@ -114,6 +114,9 @@ function cd() {
 
 # Heavy initialization
 function shell-init() {
+    # initialize rbenv with rehash
+    if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
+
     # initialize noir completion
     if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 
@@ -126,7 +129,7 @@ function shell-init() {
 # settings for specific command {{{
 
 # Ruby
-# initialize rbenv
+# initialize rbenv without rehash (rehash operation is heavy...)
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh --no-rehash)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
