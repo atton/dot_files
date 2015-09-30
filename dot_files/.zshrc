@@ -210,11 +210,6 @@ export RUBY_CONFIGURE_OPTS="--enable-shared"
 export RUBYGEMS_GEMDEPS=-
 
 # Java
-# Java CLASSPATH
-# add javafx jar file in classpath on Mac(jdk1.7)
-if [[  $(uname) == Darwin ]]; then
-    export CLASSPATH=$CLASSPATH:`/usr/libexec/java_home`/jre/lib/jfxrt.jar
-fi
 # alias to set encoding
 alias javac='javac -J-Dfile.encoding=UTF8'
 alias java='java -Dfile.encoding=UTF8'
