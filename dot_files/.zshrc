@@ -200,14 +200,14 @@ function rearchive_directory() {
 # settings for specific command {{{
 
 # Ruby
-# rbenv
+# initialize rbenv
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
-# noir
-if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
+# initialize noir completion
+#if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
-# rubygems configration
-export RUBYGEMS_GEMDEPS=-
+# rubygems configuration
+export RUBYGEMS_GEMDEPS=-   # always check Gemfile in current directory
 
 # Java
 # alias to set encoding
