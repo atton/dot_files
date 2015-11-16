@@ -233,7 +233,7 @@ augroup TeX
     autocmd!
     autocmd BufNewFile *.tex setl filetype=tex
     autocmd BufRead    *.tex setl filetype=tex
-    autocmd FileType tex nnoremap <C-K> :make<CR>
+    autocmd FileType tex nnoremap <buffer><C-K> :make<CR>
 augroup END
 
 " for HTML
