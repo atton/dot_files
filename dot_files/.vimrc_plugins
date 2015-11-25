@@ -198,6 +198,7 @@ let s:unite_commands.command_candidates = [
 \ ['ToggleWildIgnore', 'ToggleWildIgnore'],
 \ ['NeoBundleUpdate' , 'NeoBundleUpdate'],
 \ ['NeoBundleSource' , 'NeoBundleSource'],
+\ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
 \ ]
 
 function! s:unite_commands.map(key, value)

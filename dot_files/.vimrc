@@ -152,6 +152,20 @@ function! s:toggle_wild_ignore()
     endif
 endfunction
 
+function! s:insert_time_stamps_from_undo_history()
+    if !has('persistent_undo')
+        echomsg 'Undo Tree Unavailale.'
+        finish
+    endif
+
+    let s:times_from_history = sort(map(undotree()['entries'], 'v:val["time"]'))
+    let s:oldest_unix_time   = s:times_from_history[1]
+    let s:latest_unix_time   = s:times_from_history[-1]
+
+    call append(line('$'), strftime('%Y/%m/%d %H:%M:%S', s:oldest_unix_time))
+    call append(line('$'), strftime('%Y/%m/%d %H:%M:%S', s:latest_unix_time))
+endfunction
+
 " }}}
 
 " commands {{{
@@ -164,10 +178,11 @@ command! SudoWriteCurrentBuffer write !sudo tee %
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
-command! ShowTrailingSpaces   call s:show_trailing_spaces()
-command! DeleteTrailingSpaces call s:delete_trailing_spaces()
-command! ToggleLastStatus     call s:toggle_last_status()
-command! ToggleWildIgnore     call s:toggle_wild_ignore()
+command! ShowTrailingSpaces              call s:show_trailing_spaces()
+command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
+command! ToggleLastStatus                call s:toggle_last_status()
+command! ToggleWildIgnore                call s:toggle_wild_ignore()
+command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 
 " }}}
 
