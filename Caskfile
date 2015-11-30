@@ -5,12 +5,14 @@ install brew-cask
 cask install alfred
 cask install android-file-transfer
 cask install appcleaner
+cask install blender
 cask install dropbox
 cask install evernote
 cask install firefox
 cask install flash
 cask install freemind
 cask install google-chrome
+cask install google-japanese-ime
 cask install heroku-toolbelt
 cask install iterm2
 cask install java
