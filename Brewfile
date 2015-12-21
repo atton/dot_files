@@ -6,6 +6,7 @@ update
 # formulas
 install android-sdk
 install ant
+install binutils
 install coreutils
 install direnv
 install docker
