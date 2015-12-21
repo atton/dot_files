@@ -270,6 +270,13 @@ augroup Yaml
     autocmd FileType yaml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
+" for CbC
+augroup CbC
+    autocmd!
+    autocmd BufNewFile *.cbc setl filetype=c
+    autocmd BufRead    *.cbc setl filetype=c
+augroup END
+
 " Omni Completion dictionary {{{
 augroup OmniCompletionDictionary
     autocmd!
