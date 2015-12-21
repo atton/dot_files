@@ -95,7 +95,12 @@ alias be='bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
 alias bep='RAILS_ENV=production bundle exec'
 
-alias wine='LC_ALL=ja_JP.UTF-8 wine'
+# OSX only
+
+if [[  $(uname) == Darwin ]]; then
+    alias wine='LC_ALL=ja_JP.UTF-8 wine'
+    alias chrome='open -a "Google Chrome" --args -allow-file-access-from-files'
+fi
 
 # }}}
 
