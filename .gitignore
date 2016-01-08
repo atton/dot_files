@@ -1,5 +1,4 @@
-# ignore all files
-*
+# enumerate files controlled by git
 
 # this
 !.gitignore
@@ -72,3 +71,6 @@
 # install script
 !install.sh
 !uninstall.sh
+
+# ignore unenumerated files
+*
