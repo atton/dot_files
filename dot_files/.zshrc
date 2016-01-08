@@ -141,8 +141,6 @@ function shell-init() {
 if which rbenv >& /dev/null; then eval "$(rbenv init - zsh --no-rehash)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
-# rubygems configuration
-export RUBYGEMS_GEMDEPS=-   # always check Gemfile in current directory
 
 # Java
 # alias to set encoding
