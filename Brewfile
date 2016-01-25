@@ -11,6 +11,7 @@ install coreutils
 install direnv
 install docker
 install docker-machine
+install exiftool
 install findutils
 install gauche
 install gcc
