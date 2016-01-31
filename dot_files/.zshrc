@@ -99,7 +99,6 @@ alias bep='RAILS_ENV=production bundle exec'
 
 if [[  $(uname) == Darwin ]]; then
     alias wine='LC_ALL=ja_JP.UTF-8 wine'
-    alias chrome='open -a "Google Chrome" --args -allow-file-access-from-files'
 fi
 
 # }}}
