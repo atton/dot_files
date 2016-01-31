@@ -17,7 +17,7 @@ install gauche
 install gcc
 install git
 install gnu-sed
-install gnuplot
+install gnuplot --with-x11 --with-pdflib-lite
 install go
 install gradle
 install graphviz
