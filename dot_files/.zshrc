@@ -27,10 +27,6 @@ else
 fi
 
 
-# for my util function
-export LOOP_EXEC_MAX_COUNT=50
-export CAREFUL_SYNC_OPTS='--exclude=".*"'
-
 # }}}
 
 # options {{{

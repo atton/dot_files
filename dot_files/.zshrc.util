@@ -1,3 +1,6 @@
+export LOOP_EXEC_MAX_COUNT=50
+export CAREFUL_SYNC_OPTS='--exclude=".*"'
+
 function _loop_exec()
 {
     if [ $# -ne 2 ]; then
