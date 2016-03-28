@@ -364,11 +364,9 @@ let g:ref_source_webdict_sites.default = 'yahoo_dict'
 " text browser is w3m
 let g:ref_source_webdict_cmd = 'w3m -dump %s'
 " if FileType is 'text', use webdict source
-augroup Ref
-    autocmd!
-    autocmd FileType text     call ref#register_detection('_', 'webdict')
-    autocmd FileType markdown call ref#register_detection('_', 'webdict')
-augroup END
+call ref#register_detection('text',     'webdict')
+call ref#register_detection('markdown', 'webdict')
+call ref#register_detection('w3m',      'webdict')
 
 " refe source
 let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
@@ -407,17 +405,6 @@ let g:alignta_default_arguments = " = "
 vnoremap <Leader>= :Alignta = <CR>
 vnoremap <Leader>: :Alignta : <CR>
 vnoremap <Leader>& :Alignta & <CR>
-
-" }}}
-
-" w3m.vim {{{
-
-augroup W3m
-    autocmd!
-    " type 'K', use webdict on ref
-    autocmd FileType w3m call ref#register_detection('_', 'webdict')
-    autocmd FileType w3m setl nonumber
-augroup END
 
 " }}}
 
