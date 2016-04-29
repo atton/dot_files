@@ -133,7 +133,7 @@ function shell-init() {
 
 # Ruby
 # initialize rbenv without rehash (rehash operation is heavy...)
-if which rbenv >& /dev/null; then eval "$(rbenv init - zsh --no-rehash)"; fi
+if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
