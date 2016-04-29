@@ -72,7 +72,7 @@ set wildmenu                        " enable wild
 let s:wildignore_files =
             \ '.*.sw[a-z],' . '*.un~,' . 'Session.vim,' . '.netrwhist,' .
             \ '.DS_Store,' . '.AppleDouble,' . '.LSOverride,' . 'Icon,' .
-            \ '._*,' . '.Spotlight-V100,' . '.Trashes,' .
+            \ '._*,' . '.Spotlight-V100,' . '.Trashes,' . 'CMakeFiles,' .
             \ '.git,' . '.hg,' .
             \ 'a.out,' . '*.o,' . '*.class,' .
             \ '*.jpg,' . '*.png,' . '*.bb,' . '*.gif,' . '*.eps,' .
