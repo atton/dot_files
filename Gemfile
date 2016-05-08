@@ -10,6 +10,6 @@ gem 'pry'
 gem 'pry-doc'
 gem 'pry-rescue'
 
-gem 'slideshow'
+gem 'slideshow', '2.4'
 
 gem 'tmuxinator'
