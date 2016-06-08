@@ -260,9 +260,7 @@ augroup END
 " for coffee
 augroup Coffee
     autocmd!
-    autocmd BufNewFile *.coffee setl filetype=coffee
-    autocmd BufRead    *.coffee setl filetype=coffee
-    autocmd FileType     coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " for YAML
