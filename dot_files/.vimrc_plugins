@@ -174,7 +174,7 @@ command! -nargs=0 -range UniteGrepBySelectedWord call s:unite_grep_by_selected_w
 
 " Shortcut Mappings
 nnoremap <Leader>b :silent Unite buffer<CR>
-nnoremap <Leader>f :silent Unite file_rec<CR>
+nnoremap <Leader>f :silent Unite -custom-rec-ignore-directory-pattern=tmp file_rec<CR>
 nnoremap <Leader>r :silent Unite register<CR>
 nnoremap <Leader>m :silent Unite file_mru<CR>
 nnoremap <Leader>g :Unite grep:. <CR>
