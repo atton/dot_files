@@ -158,6 +158,8 @@ let g:unite_update_time         = 10
 let g:unite_data_directory      = expand('~/.vim/.unite')
 let g:unite_enable_start_insert = 1
 
+let g:unite_source_grep_default_opts = '--exclude-dir=tmp --exclude-dir=log -iRHn'
+
 function! s:unite_grep_by_selected_word_in_current_dir()
     try
         let s:register_save = @a
