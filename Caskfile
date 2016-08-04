@@ -5,6 +5,7 @@ install brew-cask
 cask install alfred
 cask install android-file-transfer
 cask install appcleaner
+cask install aquaskk
 cask install blender
 cask install dropbox
 cask install evernote
@@ -16,11 +17,9 @@ cask install google-japanese-ime
 cask install heroku-toolbelt
 cask install iterm2
 cask install java
-cask install kobito
 cask install libreoffice
 cask install mactex
 cask install makerware
-cask install remote-desktop-connection
 cask install skype
 cask install slack
 cask install sublime-text
