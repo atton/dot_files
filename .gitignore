@@ -1,3 +1,6 @@
+# ignore all files
+*
+
 # enumerate files controlled by git
 
 # this
@@ -11,8 +14,11 @@
 # directory
 !dot_files
 
-# .rc files
+# settings
+!dot_files/.gdbinit
+!dot_files/.gitconfig
 !dot_files/.pryrc
+!dot_files/.tmux.conf
 !dot_files/.vimperatorrc
 !dot_files/.vimrc
 !dot_files/.vimrc_plugins
@@ -20,15 +26,6 @@
 !dot_files/.vrapperrc
 !dot_files/.zshrc
 !dot_files/.zshrc.util
-
-# settings
-!dot_files/.gitconfig
-!dot_files/.gdbinit
-!dot_files/.tmux.conf
-
-# zsh settings
-!dot_files/.zsh.d
-!dot_files/.zsh.d/zsh-notify
 
 # .vim directory
 !dot_files/.vim
@@ -42,24 +39,7 @@
 !dot_files/.vim/templates/tex.tex
 !dot_files/.vim/templates/vim.vim
 
-# emacs settings
-!dot_files/.emacs.d
-!dot_files/.emacs.d/init.el
-
-# elisp
-!dot_files/.emacs.d/elisp
-!dot_files/.emacs.d/elisp/east-asian-ambiguous.el
-
-# tmuxinator
-!dot_files/.tmuxinator
-
-# mux files
-!dot_files/.tmuxinator/lab.yml
-!dot_files/.tmuxinator/noir.yml
-!dot_files/.tmuxinator/syskan.yml
-!dot_files/.tmuxinator/akatsuki.yml
-
-# snippets
+# neosnipet snippets
 !dot_files/.vim/snippets
 !dot_files/.vim/snippets/_.snip
 !dot_files/.vim/snippets/c.snip
@@ -68,9 +48,19 @@
 !dot_files/.vim/snippets/ruby.snip
 !dot_files/.vim/snippets/tex.snip
 
+# emacs settings
+!dot_files/.emacs.d
+!dot_files/.emacs.d/init.el
+!dot_files/.emacs.d/elisp
+!dot_files/.emacs.d/elisp/east-asian-ambiguous.el
+
+# tmuxinator
+!dot_files/.tmuxinator
+!dot_files/.tmuxinator/lab.yml
+!dot_files/.tmuxinator/noir.yml
+!dot_files/.tmuxinator/syskan.yml
+!dot_files/.tmuxinator/akatsuki.yml
+
 # install script
 !install.sh
 !uninstall.sh
-
-# ignore unenumerated files
-*
