@@ -61,6 +61,10 @@
 !dot_files/.tmuxinator/syskan.yml
 !dot_files/.tmuxinator/akatsuki.yml
 
+# docker
+!dot_files/.docker/
+!dot_files/.docker/config.json
+
 # install script
 !install.sh
 !uninstall.sh
