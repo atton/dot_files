@@ -21,6 +21,7 @@ install gnuplot --with-x11 --with-pdflib-lite
 install go
 install gradle
 install graphviz
+install heroku
 install hub
 install imagemagick
 install lua

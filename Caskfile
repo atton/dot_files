@@ -14,7 +14,6 @@ cask install flash
 cask install freemind
 cask install google-chrome
 cask install google-japanese-ime
-cask install heroku-toolbelt
 cask install iterm2
 cask install java
 cask install libreoffice
