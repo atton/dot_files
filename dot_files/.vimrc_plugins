@@ -180,9 +180,11 @@ command! -nargs=0 -range UniteGrepBySelectedWord call s:unite_grep_by_selected_w
 " Shortcut Mappings
 nnoremap <Leader>b :silent Unite buffer<CR>
 nnoremap <Leader>f :silent Unite file_rec <CR>
+nnoremap <Leader>F :silent Unite file_rec/git <CR>
 nnoremap <Leader>r :silent Unite register<CR>
 nnoremap <Leader>m :silent Unite file_mru<CR>
 nnoremap <Leader>g :Unite grep:. <CR>
+nnoremap <Leader>G :Unite grep/git:. <CR>
 nnoremap <Leader>o :silent Unite outline<CR>
 nnoremap <Leader>c :silent Unite menu:commands<CR>
 nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
