@@ -1,55 +1,50 @@
-# install packages by Homebrew.
+# brew packages by Homebrew.
 # $ brew tap Homebrew/brewdler
-# $ brew brewdle
+# $ brew bundle
 
-update
-
-# formulas
-install binutils
-install coreutils
-install direnv
-install docker
-install exiftool
-install findutils
-install gauche
-install git
-install gnu-sed
-install go
-install gradle
-install hub
-install imagemagick
-install lua
-install mercurial
-install nkf
-install nyancat
-install rbenv
-install reattach-to-user-namespace
-install rsync
-install ruby-build
-install spin
-install ssh-copy-id
-install tig
-install tree
-install unar
-install w3m
-install wget
-install zsh
-
-install ghc
-install cabal-install
-
-install vim --with-lua --HEAD
-
+# formulae
+brew 'binutils'
+brew 'cabal-install'
+brew 'coreutils'
+brew 'direnv'
+brew 'docker'
+brew 'exiftool'
+brew 'findutils'
+brew 'gauche'
+brew 'ghc'
+brew 'git'
+brew 'gnu-sed'
+brew 'go'
+brew 'gradle'
+brew 'hub'
+brew 'imagemagick'
+brew 'lua'
+brew 'mercurial'
+brew 'nkf'
+brew 'nyancat'
+brew 'rbenv'
+brew 'reattach-to-user-namespace'
+brew 'ruby-build'
+brew 'spin'
+brew 'ssh-copy-id'
+brew 'tig'
+brew 'tree'
+brew 'unar'
+brew 'vim'
+brew 'w3m'
+brew 'wget'
+brew 'zsh'
 
 # taps
-tap atton-/customs
-tap caskroom/homebrew-cask
-tap homebrew/binary
-tap ie-developers/ie
-tap neovim/neovim
-tap peco/peco
+tap 'atton-/customs'
+tap 'caskroom/homebrew-cask'
+tap 'homebrew/binary'
+tap 'homebrew/dupes'
+tap 'ie-developers/ie'
+tap 'neovim/neovim'
+tap 'peco/peco'
 
-install atton-/customs/tmux
-install brew-cask
-install peco
-install rar
+brew 'atton-/customs/tmux'
+brew 'peco'
+brew 'rar'
+brew 'rsync'
