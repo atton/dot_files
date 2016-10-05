@@ -1,40 +1,31 @@
 # install packages by Homebrew.
-# run $ brew bundle
+# $ brew tap Homebrew/brewdler
+# $ brew brewdle
 
 update
 
 # formulas
-install android-sdk
-install ant
 install binutils
 install coreutils
 install direnv
 install docker
-install docker-machine
 install exiftool
 install findutils
 install gauche
-install gcc
 install git
 install gnu-sed
-install gnuplot --with-x11 --with-pdflib-lite
 install go
 install gradle
-install graphviz
-install heroku
 install hub
 install imagemagick
 install lua
 install mercurial
-install mysql
 install nkf
 install nyancat
-install postgresql
 install rbenv
 install reattach-to-user-namespace
 install rsync
 install ruby-build
-install sdl
 install spin
 install ssh-copy-id
 install tig
@@ -42,7 +33,6 @@ install tree
 install unar
 install w3m
 install wget
-install xpdf
 install zsh
 
 install ghc
