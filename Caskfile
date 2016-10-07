@@ -1,30 +1,22 @@
 # install cask applications.
-# run $ brew bundle Caskfile
+# run $ brew bundle --file=Caskfile
 
-install brew-cask
-cask install alfred
-cask install android-file-transfer
-cask install appcleaner
-cask install aquaskk
-cask install blender
-cask install dropbox
-cask install evernote
-cask install firefox
-cask install flash
-cask install freemind
-cask install google-chrome
-cask install google-japanese-ime
-cask install iterm2
-cask install java
-cask install libreoffice
-cask install mactex
-cask install makerware
-cask install skype
-cask install slack
-cask install sublime-text
-cask install unity
-cask install vagrant
-cask install virtualbox
-cask install vlc
-cask install wkhtmltopdf
-cask install wquartz
+cask 'alfred'
+cask 'appcleaner'
+cask 'aquaskk'
+cask 'dropbox'
+cask 'evernote'
+cask 'firefox'
+cask 'flash'
+cask 'freemind'
+cask 'google-chrome'
+cask 'google-japanese-ime'
+cask 'iterm2'
+cask 'java'
+cask 'libreoffice'
+cask 'mactex'
+cask 'skype'
+cask 'sublime-text'
+cask 'virtualbox'
+cask 'vlc'
+cask 'xquartz'
