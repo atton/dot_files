@@ -1,4 +1,4 @@
-# brew packages by Homebrew.
+# install packages by Homebrew.
 # $ brew tap Homebrew/brewdler
 # $ brew bundle
 
