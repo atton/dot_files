@@ -120,9 +120,6 @@ function shell-init() {
     # initialize noir completion
     if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 
-    # docker (for OSX)
-    if which docker-machine >& /dev/null; then eval "$(docker-machine env fox)"; fi
-
     # source util functions
     source $HOME/.zshrc.util
 }
