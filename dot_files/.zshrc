@@ -67,11 +67,12 @@ RPROMPT="[%~]%1(v|%1v|)"            # right prompt
 setopt transient_rprompt            # if typed chars conflict right prompt, hide right prompt
 
 # vcs_info (zsh support vcs_info after 4.3.11)
-autoload -Uz is-at-least
 if is-at-least 4.3.11; then
     autoload -Uz vcs_info
-    zstyle ':vcs_info:*' formats '(%s|%b)'
-    zstyle ':vcs_info:*' actionformats '(%s|%b|%a)'
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*' unstagedstr   '+'
+    zstyle ':vcs_info:*' formats       '%u(%s|%b)'
+    zstyle ':vcs_info:*' actionformats '%u(%s|%b|%a)'
     precmd () {
         psvar=()
         LANG=en_US.UTF-8 vcs_info
