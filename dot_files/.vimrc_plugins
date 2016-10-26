@@ -1,6 +1,8 @@
 " vim: set filetype=vim:
 " plugins settings
 " plugins management plugin : neobundle
+"   $ mkdir ~/.vim/bundle
+"   $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 " neobundle Settings {{{
 filetype off
