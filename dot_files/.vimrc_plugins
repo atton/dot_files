@@ -53,7 +53,7 @@ NeoBundleLazy 'sjl/gundo.vim'          , {'autoload' : {'commands' : 'GundoToggl
 NeoBundleLazy 'gregsexton/VimCalc'     , {'autoload' : {'commands' : 'Calc'}}
 
 " utility
-NeoBundle     'matchit.zip'
+NeoBundle     'Konfekt/FastFold'
 NeoBundle     'rhysd/clever-f.vim'
 NeoBundle     'tyru/open-browser.vim.git'
 NeoBundleLazy 'h1mesuke/vim-alignta'   , {'autoload' : {'commands'  : ['Alignta', 'Align']}}
