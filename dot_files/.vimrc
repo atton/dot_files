@@ -243,6 +243,12 @@ augroup Python
     autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 augroup END
 
+" for Haskell
+augroup Haskell
+    autocmd!
+    autocmd FileType haskell setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup END
+
 " for TeX
 augroup TeX
     autocmd!
