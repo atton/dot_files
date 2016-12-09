@@ -35,3 +35,5 @@ nnoremap <c-p> :js nextplease.openPrevLink()<CR>
 " somooziee
 let g:smooziee_scroll_amount="50"       " scroll amonut on up/down
 let g:smooziee_scroll_interval="5"      " scroll time
+
+command YankURLWithTitle js util.copyToClipboard(buffer.title + ' ' + buffer.URL , true)
