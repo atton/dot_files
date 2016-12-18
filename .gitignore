@@ -17,6 +17,7 @@
 # settings
 !dot_files/.gdbinit
 !dot_files/.gitconfig
+!dot_files/.hgrc
 !dot_files/.pryrc
 !dot_files/.tmux.conf
 !dot_files/.vimperatorrc

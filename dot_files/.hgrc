@@ -1,0 +1,19 @@
+[ui]
+username = atton <atton@cr.ie.u-ryukyu.ac.jp>
+
+[pager]
+pager   = less -FRX
+quiet   = True
+attend  = help, diff, log, glog
+verbose = true
+
+[color]
+mode = auto
+
+[extensions]
+hgext.convert =
+purge         =
+graphlog      =
+pager         =
+mq            =
+color         =
