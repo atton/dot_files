@@ -10,3 +10,4 @@
              (shell-command-to-string "agda-mode locate")))
 
 (setq agda2-program-args (mapcar (lambda (path) (concat "-i" (expand-file-name path))) (file-expand-wildcards "~/library/Agda2/*")))
+(add-to-list 'agda2-program-args "-i.")
