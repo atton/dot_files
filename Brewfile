@@ -42,7 +42,6 @@ tap 'homebrew/binary'
 tap 'homebrew/dupes'
 tap 'ie-developers/ie'
 tap 'neovim/neovim'
-tap 'peco/peco'
 
 brew 'atton-/customs/tmux'
 brew 'peco'
