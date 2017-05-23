@@ -11,3 +11,4 @@
 	auto = 0
 [include]
 	path = .githubconfig
+	path = .gitconfig.local
