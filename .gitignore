@@ -15,9 +15,12 @@
 !dot_files
 !dot_files/.config
 !dot_files/.config/git
+!dot_files/.config/nvim
 
 # settings
 !dot_files/.config/git/ignore
+!dot_files/.config/nvim/init.vim
+!dot_files/.config/nvim/plugins.vim
 !dot_files/.gdbinit
 !dot_files/.gitconfig
 !dot_files/.hgrc
