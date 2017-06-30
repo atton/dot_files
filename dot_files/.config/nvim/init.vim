@@ -21,6 +21,7 @@ set showcmd                     " show typing commands
 set nonumber                    " disable show line number
 set splitbelow                  " open new window in bottom when  split
 set splitright                  " open new window in right  when vsplit
+set noincsearch                 " disable incremental search
 set hlsearch                    " enable word highlighting in search
 set ignorecase                  " if search word is small char only, ignore capital/small
 set smartcase                   " if search word include capital char, not ignore capital/small
