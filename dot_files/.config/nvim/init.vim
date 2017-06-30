@@ -176,7 +176,7 @@ endfunction
 " short cut commands
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
-command! EditVimrcPlugins edit $HOME/.vimrc_plugins
+command! EditVimrcPlugins edit $HOME/.config/nvim/plugins.vim
 command! SudoWriteCurrentBuffer write !sudo tee %
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
