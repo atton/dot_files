@@ -30,11 +30,11 @@ if dein#load_state(s:dein_path)
     call dein#add('osyo-manga/shabadou.vim')
 
     " extension
+    call dein#add('Shougo/unite.vim')
+    "call dein#add('Shougo/denite.nvim') " TODO: upgrade to denite
     call dein#add('Shougo/neomru.vim')
     call dein#add('Shougo/unite-outline')
-    call dein#add('Shougo/unite.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-    call dein#add('atton-/unite-symbol')
     call dein#add('thinca/vim-ref')
     call dein#add('tyru/eskk.vim')
     call dein#add('Shougo/vimshell.git', {'lazy':1, 'on_cmd': ['VimShell', 'VimShellTab']})
@@ -117,6 +117,76 @@ augroup END
 " command for shortcut
 command! Vsh VimShellTab
 
+" }}}
+
+" Unite {{{
+
+let g:unite_update_time         = 10
+let g:unite_data_directory      = expand('~/.config/nvim/.unite')
+call unite#custom#profile('default', 'context', {
+\   'start_insert' : 1
+\ })
+
+call unite#custom#source('file_rec', 'ignore_globs', ['tmp/**', 'public/system/**'])
+let g:unite_source_grep_default_opts = '--exclude-dir=tmp --exclude-dir=log -iRHn'
+
+function! s:unite_grep_by_selected_word_in_current_dir()
+    try
+        let s:register_save = @a
+        normal! gv"ay
+        let s:command = 'Unite grep:.::' . @a
+        exec s:command
+    finally
+        let @a = s:register_save
+    endtry
+endfunction
+
+command! -nargs=0 -range UniteGrepBySelectedWord call s:unite_grep_by_selected_word_in_current_dir()
+
+
+" Shortcut Mappings
+nnoremap <Leader>b :silent Unite buffer<CR>
+nnoremap <Leader>f :silent Unite file_rec <CR>
+nnoremap <Leader>F :silent Unite file_rec/git <CR>
+nnoremap <Leader>r :silent Unite register<CR>
+nnoremap <Leader>m :silent Unite file_mru<CR>
+nnoremap <Leader>g :Unite grep:. <CR>
+nnoremap <Leader>G :Unite grep/git:. <CR>
+nnoremap <Leader>o :silent Unite outline<CR>
+nnoremap <Leader>c :silent Unite menu:commands<CR>
+nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
+
+vnoremap <Leader>k :UniteGrepBySelectedWord<CR>
+
+" commands source. for command shortcut {{{
+
+let s:unite_commands = {}
+let s:unite_commands.description = 'command shortcuts'
+
+" commands
+let s:unite_commands.command_candidates = [
+\ ['ReloadVimrc'     , 'ReloadVimrc'],
+\ ['EditVimrc'       , 'EditVimrc'],
+\ ['EditVimrcPlugins', 'EditVimrcPlugins'],
+\ ['ToggleLastStatus', 'ToggleLastStatus'],
+\ ['ToggleWildIgnore', 'ToggleWildIgnore'],
+\ ['NeoBundleUpdate' , 'NeoBundleUpdate'],
+\ ['NeoBundleSource' , 'NeoBundleSource'],
+\ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
+\ ]
+
+function! s:unite_commands.map(key, value)
+    return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
+endfunction
+
+" add to unite menus
+if (!exists('g:unite_source_menu_menus'))
+    let g:unite_source_menu_menus = {}
+endif
+let g:unite_source_menu_menus.commands = deepcopy(s:unite_commands)
+
+unlet s:unite_commands
+" }}}
 " }}}
 
 " {{{ Unite : neomru
