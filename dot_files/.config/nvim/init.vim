@@ -3,11 +3,9 @@ let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
 
 " source plugins {{{
-let s:neobundle_path = expand('~/.vim/bundle/neobundle.vim/')
-if isdirectory(s:neobundle_path)
+if (isdirectory(expand('~/.config/nvim/repos/github.com/Shougo/dein.vim')) && has('nvim'))
     source ~/.config/nvim/plugins.vim
 endif
-unlet s:neobundle_path
 " }}}
 
 " settings {{{

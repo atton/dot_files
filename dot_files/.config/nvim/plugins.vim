@@ -18,7 +18,7 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/dein.vim')
 
     " completions
-    call dein#add('Shougo/neocomplete.vim')
+    call dein#add('Shougo/deoplete.nvim')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('Shougo/neco-syntax')
@@ -82,13 +82,10 @@ syntax enable
 
 " plugins settings
 
-" neocomplete {{{
+" deoplete {{{
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#data_directory    = expand('~/.config/nvim/.neocomplete')
-
-" manual completion on neocomplete : i_^x^g
-inoremap <expr><c-x><c-g> neocomplete#start_manual_complete()
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#data_directory    = expand('~/.config/nvim/.deoplete')
 
 " }}}
 
