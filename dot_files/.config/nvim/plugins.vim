@@ -16,6 +16,7 @@ if dein#load_state(s:dein_path)
     call dein#begin(s:plugins_path)
     " dein
     call dein#add('Shougo/dein.vim')
+    call dein#add('haya14busa/dein-command.vim', {'lazy':1, 'on_cmd': 'Dein'})
 
     " completions
     call dein#add('Shougo/deoplete.nvim')
@@ -30,10 +31,7 @@ if dein#load_state(s:dein_path)
     call dein#add('osyo-manga/shabadou.vim')
 
     " extension
-    call dein#add('Shougo/unite.vim')
-    "call dein#add('Shougo/denite.nvim') " TODO: upgrade to denite
-    call dein#add('Shougo/neomru.vim')
-    call dein#add('Shougo/unite-outline')
+    call dein#add('Shougo/denite.nvim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('thinca/vim-ref')
     call dein#add('tyru/eskk.vim')
@@ -119,44 +117,42 @@ command! Vsh VimShellTab
 
 " }}}
 
-" Unite {{{
+" Denite {{{
 
-let g:unite_update_time         = 10
-let g:unite_data_directory      = expand('~/.config/nvim/.unite')
-call unite#custom#profile('default', 'context', {
-\   'start_insert' : 1
-\ })
+call denite#custom#map('insert', '<C-g>',   '<denite:leave_mode>',            'noremap')
+call denite#custom#map('insert', '<C-n>',   '<denite:move_to_next_line>',     'noremap')
+call denite#custom#map('insert', '<C-p>',   '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('insert', '<Space>', '<denite:toggle_select>',         'noremap')
+call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
 
-call unite#custom#source('file_rec', 'ignore_globs', ['tmp/**', 'public/system/**'])
+call denite#custom#var('file_rec', 'ignore_globs', ['.*/**', 'tmp/**', 'public/system/**'])
 let g:unite_source_grep_default_opts = '--exclude-dir=tmp --exclude-dir=log -iRHn'
 
-function! s:unite_grep_by_selected_word_in_current_dir()
+function! s:denite_grep_by_selected_word_in_current_dir()
     try
         let s:register_save = @a
         normal! gv"ay
-        let s:command = 'Unite grep:.::' . @a
+        let s:command = 'Denite grep:.::' . @a
         exec s:command
     finally
         let @a = s:register_save
     endtry
 endfunction
 
-command! -nargs=0 -range UniteGrepBySelectedWord call s:unite_grep_by_selected_word_in_current_dir()
+command! -nargs=0 -range DeniteGrepBySelectedWord call s:denite_grep_by_selected_word_in_current_dir()
 
 
 " Shortcut Mappings
-nnoremap <Leader>b :silent Unite buffer<CR>
-nnoremap <Leader>f :silent Unite file_rec <CR>
-nnoremap <Leader>F :silent Unite file_rec/git <CR>
-nnoremap <Leader>r :silent Unite register<CR>
-nnoremap <Leader>m :silent Unite file_mru<CR>
-nnoremap <Leader>g :Unite grep:. <CR>
-nnoremap <Leader>G :Unite grep/git:. <CR>
-nnoremap <Leader>o :silent Unite outline<CR>
-nnoremap <Leader>c :silent Unite menu:commands<CR>
-nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
+nnoremap <Leader>b :<C-u> Denite buffer<CR>
+nnoremap <Leader>f :<C-u> Denite file_rec <CR>
+nnoremap <Leader>r :<C-u> Denite register<CR>
+nnoremap <Leader>m :<C-u> Denite file_mru<CR>
+nnoremap <Leader>g :Denite grep:. <CR>
+nnoremap <Leader>o :<C-u> Denite outline<CR>
+nnoremap <Leader>c :<C-u> Denite menu:commands<CR>
+nnoremap <Leader><Leader> :<C-u> Denite menu:commands<CR>
 
-vnoremap <Leader>k :UniteGrepBySelectedWord<CR>
+vnoremap <Leader>k :DeniteGrepBySelectedWord<CR>
 
 " commands source. for command shortcut {{{
 
