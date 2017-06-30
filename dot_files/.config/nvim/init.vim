@@ -42,7 +42,7 @@ set spelllang=en,cjk            " treat Japanese in spell check
 
 " save undo history
 if has('persistent_undo')
-    let &undodir = expand('~/.vim/undo_history')
+    let &undodir = has('nvim') ? expand('~/.config/nvim/undo_history') : expand('~/.vim/undo_history')
     set undofile
 endif
 
