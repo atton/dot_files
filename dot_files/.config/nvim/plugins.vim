@@ -79,346 +79,268 @@ endif
 filetype plugin indent on
 syntax enable
 
-"" plugins settings
-"
-"" neocomplete or neocomplcache {{{
-"
-"if s:neocomplete_available()
-"    let g:neocomplete#enable_at_startup = 1
-"    let g:neocomplete#data_directory    = expand('~/.vim/.neocomplete')
-"
-"    " manual completion on neocomplete : i_^x^g
-"    inoremap <expr><c-x><c-g> neocomplete#start_manual_complete()
-"else
-"    let g:neocomplcache_enable_at_startup          = 1      " enable on startup
-"    let g:neocomplcache_enable_underbar_completion = 1      " enable '_' completion
-"    let g:neocomplcache_temporary_dir              = expand('~/.vim/.neocon')
-"
-"    " manual completion on neocomplcache : i_^x^g
-"    inoremap <expr><c-x><c-g> neocomplcache#start_manual_complete()
-"endif
-"
-"
-"" }}}
-"
-"" neosnippet {{{
-"
-"" snippet mapping : ^k
-"imap <C-k> <Plug>(neosnippet_expand_or_jump)
-"smap <C-k> <Plug>(neosnippet_expand_or_jump)
-"
-"" my snnipets dir
-"let g:neosnippet#snippets_directory = expand("~/.vim/snippets")
-"let g:neosnippet#data_directory     = expand("~/.vim/.neosnippet")
-"
-"" }}}
-"
-"" vimshell {{{
-"
-"let g:vimshell_prompt       = '% '
-"let g:vimshell_user_prompt  = ''
-"let g:vimshell_right_prompt = 'getcwd()'
-"
-"let g:vimshell_temporary_directory     = expand('~/.vim/.vimshell')
-"let g:vimshell_interactive_update_time = 10
-"
-"augroup VimShell
-"    autocmd!
-"    autocmd FileType vimshell setlocal nonumber
-"augroup END
-"" command for shortcut
-"command! Vsh VimShellTab
-"
-"" }}}
-"
-"" Unite {{{
-"
-"let g:unite_update_time         = 10
-"let g:unite_data_directory      = expand('~/.vim/.unite')
-"call unite#custom#profile('default', 'context', {
-"\   'start_insert' : 1
-"\ })
-"
-"call unite#custom#source('file_rec', 'ignore_globs', ['tmp/**', 'public/system/**', 'target/**', '*.swp'])
-"let g:unite_source_grep_default_opts = '--exclude-dir=tmp --exclude-dir=log -IiRHn'
-"
-"function! s:unite_grep_by_selected_word_in_current_dir(ext)
-"    try
-"        let s:register_save = @a
-"        normal! gv"ay
-"        let s:command = 'Unite grep' . a:ext . ':.::' . @a
-"        exec s:command
-"    finally
-"        let @a = s:register_save
-"    endtry
-"endfunction
-"
-"command! -nargs=0 -range UniteGrepBySelectedWord    call s:unite_grep_by_selected_word_in_current_dir('')
-"command! -nargs=0 -range UniteGitGrepBySelectedWord call s:unite_grep_by_selected_word_in_current_dir('/git')
-"
-"
-"" Shortcut Mappings
-"nnoremap <Leader>b :silent Unite buffer<CR>
-"nnoremap <Leader>f :silent Unite file_rec <CR>
-"nnoremap <Leader>F :silent Unite file_rec/git <CR>
-"nnoremap <Leader>r :silent Unite register<CR>
-"nnoremap <Leader>m :silent Unite file_mru<CR>
-"nnoremap <Leader>g :Unite grep:. <CR>
-"nnoremap <Leader>G :Unite grep/git:. <CR>
-"nnoremap <Leader>o :silent Unite outline<CR>
-"nnoremap <Leader>c :silent Unite menu:commands<CR>
-"nnoremap <Leader><Leader> :silent Unite menu:commands<CR>
-"
-"vnoremap <Leader>k :UniteGrepBySelectedWord<CR>
-"vnoremap <Leader>K :UniteGitGrepBySelectedWord<CR>
-"
-"" commands source. for command shortcut {{{
-"
-"let s:unite_commands = {}
-"let s:unite_commands.description = 'command shortcuts'
-"
-"" commands
-"let s:unite_commands.command_candidates = [
-"\ ['ReloadVimrc'     , 'ReloadVimrc'],
-"\ ['EditVimrc'       , 'EditVimrc'],
-"\ ['EditVimrcPlugins', 'EditVimrcPlugins'],
-"\ ['ToggleLastStatus', 'ToggleLastStatus'],
-"\ ['ToggleWildIgnore', 'ToggleWildIgnore'],
-"\ ['NeoBundleUpdate' , 'NeoBundleUpdate'],
-"\ ['NeoBundleSource' , 'NeoBundleSource'],
-"\ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
-"\ ]
-"
-"function! s:unite_commands.map(key, value)
-"    return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
-"endfunction
-"
-"" add to unite menus
-"if (!exists('g:unite_source_menu_menus'))
-"    let g:unite_source_menu_menus = {}
-"endif
-"let g:unite_source_menu_menus.commands = deepcopy(s:unite_commands)
-"
-"unlet s:unite_commands
-"" }}}
-"
-"" }}}
-"
-"" {{{ Unite : neomru
-"let g:neomru#file_mru_path      = expand('~/.vim/.neomru/file')
-"let g:neomru#directory_mru_path = expand('~/.vim/.neomru/directory')
-"" }}}
-"
-"" {{{ Unite : unite-symbol
-"nnoremap <Leader>i :silent Unite symbol<CR>
-"" }}}
-"
-"" quickrun {{{
-"
-"" shortcut
-"nmap <C-k> <Plug>(quickrun)
-"" disable default mappings
-"let g:quickrun_no_default_key_mappings = 1
-"
-"" init default settings
-"let g:quickrun_config = {'_' : {}}
-"" horizontal split on quickrun
-"let g:quickrun_config._['split'] = ''
-"" move cursor into quickrun buffer
-"let g:quickrun_config._['outputter/buffer/into']     = 1
-"" vimproc updatetime
-"let g:quickrun_config._['runner']                    = 'vimproc'
-"let g:quickrun_config._['runner/vimproc/updatetime'] = 50
-"
-"" for scheme : use -i flag (for SICP)
-"let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
-"" for processing (need processing-java command and vim-processing plugin)
-"let g:quickrun_config.processing = {
-"\     'command': 'processing-java',
-"\     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing --run --force'}
-"" for markdown
-"let g:quickrun_config.markdown          = {'outputter' : 'browser'}
-"let g:quickrun_config['markdown.slide'] = {'command' : 'build_tmp_slide.sh',
-"\                                          'exec' : '%c %s:p:r %s:t:r',
-"\                                          'outputter' : 'null'}
-"
-"" for not executable filetype : not execute quickrun
-"let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']
-"for s:ft in s:not_executable_filetypes
-"    if !has_key(g:quickrun_config, s:ft)
-"        let g:quickrun_config[s:ft] = {}
-"    endif
-"    let g:quickrun_config[s:ft]['command']   = 'false'
-"    let g:quickrun_config[s:ft]['outputter'] = 'null'
-"endfor
-"
-"" shabadou hooks {{{
-"" for all : if output is empty, close quickrun buffer and echo message(finished point)
-"let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
-"let g:quickrun_config._['hook/echo/enable']                    = 1
-"let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finished.'
-"" for quickfix : close quickfix window
-"let g:quickrun_config.qf['hook/echo/output_finish']            = 'close quickrun window'
-"let g:quickrun_config.qf['hook/close_quickfix/enable_exit']    = 1
-"" }}}
-"" }}}
-"
-"" watchdogs {{{
-"
-"" default settings
-"let s:watchdogs_config = {}
-"" for unnammed buffer
-"let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit']   = 1
-"let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
-"
-"" for LaTeX {{{
-"let g:quickrun_config['tex/watchdogs_checker'] = {
-"            \'type' : 'watchdogs_checker/tex' }
-"let g:quickrun_config['watchdogs_checker/tex'] = {
-"        \'command' : 'lacheck',
-"        \'exec' : '%c %s',
-"        \
-"        \'quickfix/errorformats' :
-"            \'%E!\ LaTeX\ %trror:\ %m,'
-"            \.'%E!\ %m,'
-"            \.'%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#,'
-"            \.'%+W%.%#\ at\ lines\ %l--%*\\d,'
-"            \.'%WLaTeX\ %.%#Warning:\ %m,'
-"            \.'%Cl.%l\ %m,'
-"            \.'%+C\ \ %m.,'
-"            \.'%+C%.%#-%.%#,'
-"            \.'%+C%.%#[]%.%#,'
-"            \.'%+C[]%.%#,'
-"            \.'%+C%.%#%[{}\\]%.%#,'
-"            \.'%+C<%.%#>%.%#,'
-"            \.'%C\ \ %m,'
-"            \.'%-GSee\ the\ LaTeX%m,'
-"            \.'%-GType\ \ H\ <return>%m,'
-"            \.'%-G\ ...%.%#,'
-"            \.'%-G%.%#\ (C)\ %.%#,'
-"            \.'%-G(see\ the\ transcript%.%#),'
-"            \.'%-G\\s%#,'
-"            \.'%+O(%*[^()])%r,'
-"            \.'%+O%*[^()](%*[^()])%r,'
-"            \.'%+P(%f%r,'
-"            \.'%+P\ %\\=(%f%r,'
-"            \.'%+P%*[^()](%f%r,'
-"            \.'%+P[%\\d%[^()]%#(%f%r,'
-"            \.'%+Q)%r,'
-"            \.'%+Q%*[^()])%r,'
-"            \.'%+Q[%\\d%*[^()])%r' }
-"" }}}
-"
-"" add to quickrun_config
-"let g:quickrun_config['watchdogs_checker/_']  = s:watchdogs_config
-"unlet s:watchdogs_config
-"" watchdogs initialize
-"call watchdogs#setup(g:quickrun_config)
-"" shortcut
-"nnoremap <C-j> :WatchdogsRunSilent<CR>
-"
-"" }}}
-"
-"" VimCalc {{{
-"
-"let g:VCalc_WindowPosition = 'bottom'                       " show buttom
-"
-"" }}}
-"
-"" eskk.vim {{{
-"
-"let g:eskk#directory  = expand('~/.vim/eskk')               " direcotry
-"let g:eskk#dictionary = {'path': expand('~/.vim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}       " dictionary
-"let g:eskk#large_dictionary = {'path': expand('~/.vim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp',}
-"imap <C-J> <Plug>(eskk:enable)
-"cmap <C-J> <Plug>(eskk:enable)
-"lmap <C-J> <Plug>(eskk:enable)
-"
-"" }}}
-"
-"" vim-ref {{{
-"
-"let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
-"
-"" webdict
-"" webdict source use yahoo_dict and infoseek and wikipedia
-"let g:ref_source_webdict_sites = {
-"\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '45'},
-"\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
-"\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'},
-"\ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
-"" webdict default dictionary is yahoo_dict
-"let g:ref_source_webdict_sites.default = 'yahoo_dict'
-"" text browser is w3m
-"let g:ref_source_webdict_cmd = 'w3m -dump %s'
-"" if FileType is 'text', use webdict source
-"call ref#register_detection('text',     'webdict')
-"call ref#register_detection('markdown', 'webdict')
-"call ref#register_detection('w3m',      'webdict')
-"
-"" refe source
-"let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
-"
-"" }}}
-"
-"" gundo.vim {{{
-"
-"" UndoTree : U
-"nnoremap U :GundoToggle<CR>
-"
-"" }}}
-"
-"" vim-surround {{{
-"
-"" manual mapping for eskk.vim (ignore ISurruond)
-"let g:surround_no_mappings = 1
-"" diff original mapping : Visual mode surround use 's' (original is 'S')
-"if has('vim_starting')
-"    nmap ds  <Plug>Dsurround
-"    nmap cs  <Plug>Csurround
-"    nmap ys  <Plug>Ysurround
-"    nmap yS  <Plug>YSurround
-"    nmap yss <Plug>Yssurround
-"    nmap ySs <Plug>YSsurround
-"    nmap ySS <Plug>YSsurround
-"    xmap s   <Plug>VSurround
-"    xmap gs  <Plug>VgSurround
-"endif
-"
-"" }}}
-"
-"" alignta {{{
-"
-"let g:alignta_default_arguments = " = "
-"vnoremap <Leader>= :Alignta = <CR>
-"vnoremap <Leader>: :Alignta : <CR>
-"vnoremap <Leader>& :Alignta & <CR>
-"
-"" }}}
-"
-"" open-browser {{{
-"
-"let g:netrw_nogx = 1 " disable netrw's gx mapping.
-"
-"" open URL
-"nmap gx <Plug>(openbrowser-smart-search)
-"vmap gx <Plug>(openbrowser-smart-search)
-"
-"" }}}
-"
-"" {{{ vim2hs
-"
-"let g:haskell_conceal = 0   " disable conceal. lambda and function compose
-"
-"" }}}
-"
-"" {{{ clever-f
-"
-"let g:clever_f_use_migemo = 1
-"
-"" compatible default keys
-"let g:clever_f_across_no_line = 1
-"nmap ; <Plug>(clever-f-repeat-forward)
-"nmap , <Plug>(clever-f-repeat-back)
-"
-"" }}}
+" plugins settings
+
+" neocomplete {{{
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#data_directory    = expand('~/.config/nvim/.neocomplete')
+
+" manual completion on neocomplete : i_^x^g
+inoremap <expr><c-x><c-g> neocomplete#start_manual_complete()
+
+" }}}
+
+" neosnippet {{{
+
+" snippet mapping : ^k
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" My snnipets
+let g:neosnippet#snippets_directory = expand("~/.config/nvim/snippets")
+let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
+
+" }}}
+
+" vimshell {{{
+
+let g:vimshell_prompt       = '% '
+let g:vimshell_user_prompt  = ''
+let g:vimshell_right_prompt = 'getcwd()'
+
+let g:vimshell_temporary_directory     = expand('~/.config/nvim/.vimshell')
+let g:vimshell_interactive_update_time = 10
+
+augroup VimShell
+    autocmd!
+    autocmd FileType vimshell setlocal nonumber
+augroup END
+" command for shortcut
+command! Vsh VimShellTab
+
+" }}}
+
+" {{{ Unite : neomru
+
+let g:neomru#file_mru_path      = expand('~/.config/nvim/.neomru/file')
+let g:neomru#directory_mru_path = expand('~/.config/nvim/.neomru/directory')
+
+" }}}
+
+" {{{ Unite : unite-symbol
+
+nnoremap <Leader>i :silent Unite symbol<CR>
+
+" }}}
+
+" quickrun {{{
+
+" shortcut
+nmap <C-k> <Plug>(quickrun)
+" disable default mappings
+let g:quickrun_no_default_key_mappings = 1
+
+" init default settings
+let g:quickrun_config = {'_' : {}}
+" horizontal split on quickrun
+let g:quickrun_config._['split'] = ''
+" move cursor into quickrun buffer
+let g:quickrun_config._['outputter/buffer/into']     = 1
+" vimproc updatetime
+let g:quickrun_config._['runner']                    = 'vimproc'
+let g:quickrun_config._['runner/vimproc/updatetime'] = 50
+
+" for scheme : use -i flag (for SICP)
+let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
+" for processing (need processing-java command and vim-processing plugin)
+let g:quickrun_config.processing = {
+\     'command': 'processing-java',
+\     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing --run --force'}
+" for markdown
+let g:quickrun_config.markdown          = {'outputter' : 'browser'}
+let g:quickrun_config['markdown.slide'] = {'command' : 'build_tmp_slide.sh',
+\                                          'exec' : '%c %s:p:r %s:t:r',
+\                                          'outputter' : 'null'}
+
+" for not executable filetype : not execute quickrun
+let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']
+for s:ft in s:not_executable_filetypes
+    if !has_key(g:quickrun_config, s:ft)
+        let g:quickrun_config[s:ft] = {}
+    endif
+    let g:quickrun_config[s:ft]['command']   = 'false'
+    let g:quickrun_config[s:ft]['outputter'] = 'null'
+endfor
+
+
+" shabadou hooks {{{
+" for all : if output is empty, close quickrun buffer and echo message(finished point)
+let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
+let g:quickrun_config._['hook/echo/enable']                    = 1
+let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finished.'
+" for quickfix : close quickfix window
+let g:quickrun_config.qf['hook/echo/output_finish']            = 'close quickrun window'
+let g:quickrun_config.qf['hook/close_quickfix/enable_exit']    = 1
+" }}}
+" }}}
+
+" watchdogs {{{
+
+" default settings
+let s:watchdogs_config = {}
+" for unnammed buffer
+let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit']   = 1
+let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
+
+" for LaTeX {{{
+let g:quickrun_config['tex/watchdogs_checker'] = {
+            \'type' : 'watchdogs_checker/tex' }
+let g:quickrun_config['watchdogs_checker/tex'] = {
+        \'command' : 'lacheck',
+        \'exec' : '%c %s',
+        \
+        \'quickfix/errorformats' :
+            \'%E!\ LaTeX\ %trror:\ %m,'
+            \.'%E!\ %m,'
+            \.'%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#,'
+            \.'%+W%.%#\ at\ lines\ %l--%*\\d,'
+            \.'%WLaTeX\ %.%#Warning:\ %m,'
+            \.'%Cl.%l\ %m,'
+            \.'%+C\ \ %m.,'
+            \.'%+C%.%#-%.%#,'
+            \.'%+C%.%#[]%.%#,'
+            \.'%+C[]%.%#,'
+            \.'%+C%.%#%[{}\\]%.%#,'
+            \.'%+C<%.%#>%.%#,'
+            \.'%C\ \ %m,'
+            \.'%-GSee\ the\ LaTeX%m,'
+            \.'%-GType\ \ H\ <return>%m,'
+            \.'%-G\ ...%.%#,'
+            \.'%-G%.%#\ (C)\ %.%#,'
+            \.'%-G(see\ the\ transcript%.%#),'
+            \.'%-G\\s%#,'
+            \.'%+O(%*[^()])%r,'
+            \.'%+O%*[^()](%*[^()])%r,'
+            \.'%+P(%f%r,'
+            \.'%+P\ %\\=(%f%r,'
+            \.'%+P%*[^()](%f%r,'
+            \.'%+P[%\\d%[^()]%#(%f%r,'
+            \.'%+Q)%r,'
+            \.'%+Q%*[^()])%r,'
+            \.'%+Q[%\\d%*[^()])%r' }
+" }}}
+
+" add to quickrun_config
+let g:quickrun_config['watchdogs_checker/_']  = s:watchdogs_config
+unlet s:watchdogs_config
+" watchdogs initialize
+call watchdogs#setup(g:quickrun_config)
+" shortcut
+nnoremap <C-j> :WatchdogsRunSilent<CR>
+
+" }}}
+
+" VimCalc {{{
+
+let g:VCalc_WindowPosition = 'bottom'                       " show buttom
+
+" }}}
+
+" eskk.vim {{{
+
+let g:eskk#directory  = expand('~/.config/nvim/eskk')               " direcotry
+let g:eskk#dictionary = {'path': expand('~/.config/nvim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}       " dictionary
+let g:eskk#large_dictionary = {'path': expand('~/.config/nvim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp',}
+imap <C-J> <Plug>(eskk:enable)
+cmap <C-J> <Plug>(eskk:enable)
+lmap <C-J> <Plug>(eskk:enable)
+
+" }}}
+
+" vim-ref {{{
+
+let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
+
+" webdict
+" webdict source use yahoo_dict and infoseek and wikipedia
+let g:ref_source_webdict_sites = {
+\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '45'},
+\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
+\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'},
+\ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
+" webdict default dictionary is yahoo_dict
+let g:ref_source_webdict_sites.default = 'yahoo_dict'
+" text browser is w3m
+let g:ref_source_webdict_cmd = 'w3m -dump %s'
+" if FileType is 'text', use webdict source
+call ref#register_detection('text',     'webdict')
+call ref#register_detection('markdown', 'webdict')
+call ref#register_detection('w3m',      'webdict')
+
+" refe source
+let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
+
+" }}}
+
+" gundo.vim {{{
+
+" UndoTree : U
+nnoremap U :GundoToggle<CR>
+
+" }}}
+
+" vim-surround {{{
+
+" manual mapping for eskk.vim (ignore ISurruond)
+let g:surround_no_mappings = 1
+" diff original mapping : Visual mode surround use 's' (original is 'S')
+if has('vim_starting')
+    nmap ds  <Plug>Dsurround
+    nmap cs  <Plug>Csurround
+    nmap ys  <Plug>Ysurround
+    nmap yS  <Plug>YSurround
+    nmap yss <Plug>Yssurround
+    nmap ySs <Plug>YSsurround
+    nmap ySS <Plug>YSsurround
+    xmap s   <Plug>VSurround
+    xmap gs  <Plug>VgSurround
+endif
+
+" }}}
+
+" alignta {{{
+
+let g:alignta_default_arguments = " = "
+vnoremap <Leader>= :Alignta = <CR>
+vnoremap <Leader>: :Alignta : <CR>
+vnoremap <Leader>& :Alignta & <CR>
+
+" }}}
+
+" open-browser {{{
+
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+
+" open URL
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" }}}
+
+" {{{ vim2hs
+
+let g:haskell_conceal = 0   " disable conceal. lambda and function compose
+
+" }}}
+
+" {{{ clever-f
+
+let g:clever_f_use_migemo = 1
+
+" compatible default keys
+let g:clever_f_across_no_line = 1
+nmap ; <Plug>(clever-f-repeat-forward)
+nmap , <Plug>(clever-f-repeat-back)
+
+" }}}
