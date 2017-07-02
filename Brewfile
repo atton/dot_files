@@ -2,6 +2,14 @@
 # $ brew tap Homebrew/brewdler
 # $ brew bundle
 
+# taps
+tap 'atton-/customs'
+tap 'caskroom/homebrew-cask'
+tap 'homebrew/binary'
+tap 'homebrew/dupes'
+tap 'ie-developers/ie'
+tap 'neovim/neovim'
+
 # formulae
 brew 'binutils'
 brew 'cabal-install'
@@ -37,15 +45,6 @@ brew 'vim'
 brew 'w3m'
 brew 'wget'
 brew 'zsh'
-
-# taps
-tap 'atton-/customs'
-tap 'caskroom/homebrew-cask'
-tap 'homebrew/binary'
-tap 'homebrew/dupes'
-tap 'ie-developers/ie'
-tap 'neovim/neovim'
-
 brew 'atton-/customs/tmux'
 brew 'peco'
 brew 'rar'
