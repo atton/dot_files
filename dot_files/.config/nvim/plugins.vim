@@ -125,8 +125,13 @@ call denite#custom#map('insert', '<C-p>',   '<denite:move_to_previous_line>', 'n
 call denite#custom#map('insert', '<Space>', '<denite:toggle_select>',         'noremap')
 call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
 
-call denite#custom#var('file_rec', 'ignore_globs', ['.*/**', 'tmp/**', 'public/system/**'])
-let g:unite_source_grep_default_opts = '--exclude-dir=tmp --exclude-dir=log -iRHn'
+call denite#custom#var('file_rec', 'command', [ 'find', '-L', ':directory',
+            \ '-path', '*/.*/.*', '-prune', '-o',
+            \ '-type', 'l', '-print', '-o',
+            \ '-type', 'f', '-print'])
+
+call denite#custom#var('grep', 'default_opts',
+            \ ['--exclude-dir=tmp', '--exclude-dir=log', '-iRHn'])
 
 function! s:denite_grep_by_selected_word_in_current_dir()
     try
@@ -185,7 +190,7 @@ unlet s:unite_commands
 " }}}
 " }}}
 
-" {{{ Unite : neomru
+" {{{ Denite : neomru
 
 let g:neomru#file_mru_path      = expand('~/.config/nvim/.neomru/file')
 let g:neomru#directory_mru_path = expand('~/.config/nvim/.neomru/directory')
