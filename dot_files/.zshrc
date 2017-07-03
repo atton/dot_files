@@ -12,7 +12,7 @@ export lang=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # for tmuxinator
-export EDITOR=vim
+export EDITOR=nvim
 
 # PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.cabal/bin:$PATH
