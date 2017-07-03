@@ -161,32 +161,23 @@ vnoremap <Leader>k :DeniteGrepBySelectedWord<CR>
 
 " commands source. for command shortcut {{{
 
-let s:unite_commands = {}
-let s:unite_commands.description = 'command shortcuts'
+let s:denite_commands             = {}
+let s:denite_commands.description = 'command shortcuts'
 
 " commands
-let s:unite_commands.command_candidates = [
+let s:denite_commands.command_candidates = [
 \ ['ReloadVimrc'     , 'ReloadVimrc'],
 \ ['EditVimrc'       , 'EditVimrc'],
 \ ['EditVimrcPlugins', 'EditVimrcPlugins'],
 \ ['ToggleLastStatus', 'ToggleLastStatus'],
 \ ['ToggleWildIgnore', 'ToggleWildIgnore'],
-\ ['NeoBundleUpdate' , 'NeoBundleUpdate'],
-\ ['NeoBundleSource' , 'NeoBundleSource'],
+\ ['PluginUpdate' ,    'Dein update'],
+\ ['LoadLazyPlugins' , 'Dein soure'],
 \ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
 \ ]
 
-function! s:unite_commands.map(key, value)
-    return { 'word': a:key, 'kind': 'command', 'action__command': a:value}
-endfunction
+call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
-" add to unite menus
-if (!exists('g:unite_source_menu_menus'))
-    let g:unite_source_menu_menus = {}
-endif
-let g:unite_source_menu_menus.commands = deepcopy(s:unite_commands)
-
-unlet s:unite_commands
 " }}}
 " }}}
 
