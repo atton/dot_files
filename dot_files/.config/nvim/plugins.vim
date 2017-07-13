@@ -1,5 +1,8 @@
 " plugins settings
 " plugins management plugin : dein.vim
+"   $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+"   $ sh ./installer.sh ~/.config/nvim
+"   $ wget https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L -O .config/nvim/eskk/SKK-JISYO.L
 
 " dein settings {{{
 " dein initialize {{{
