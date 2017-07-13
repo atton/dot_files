@@ -129,7 +129,7 @@ call denite#custom#map('insert', '<Space>', '<denite:toggle_select>',         'n
 call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
 
 call denite#custom#var('file_rec', 'command', [ 'find', '-L', ':directory',
-            \ '-path', '*/.*/.*', '-prune', '-o',
+            \ '-path', '*/.*/*', '-prune', '-o',
             \ '-type', 'l', '-print', '-o',
             \ '-type', 'f', '-print'])
 
