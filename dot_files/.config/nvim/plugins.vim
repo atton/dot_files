@@ -35,6 +35,7 @@ if dein#load_state(s:dein_path)
 
     " extension
     call dein#add('Shougo/denite.nvim')
+    call dein#add('Shougo/neomru.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('thinca/vim-ref')
     call dein#add('tyru/eskk.vim')
