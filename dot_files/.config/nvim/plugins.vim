@@ -1,9 +1,14 @@
-" plugins settings
-" plugins management plugin : dein.vim
-"   $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-"   $ sh ./installer.sh ~/.config/nvim
+" {{{ setup dein
+"    plugins management plugin : dein.vim
+"      $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+"      $ sh ./installer.sh ~/.config/nvim
+"      :dein#install()
+" }}}
+"
+" {{{ setup eskk
 "   $ mkdir -p ~/.config/nvim/eskk
 "   $ curl https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L > ~/.config/nvim/eskk/SKK-JISYO.L
+" }}}
 
 " dein settings {{{
 " dein initialize {{{
@@ -78,10 +83,10 @@ if dein#load_state(s:dein_path)
     call dein#save_state()
 endif
 
-" }}}
-
 filetype plugin indent on
 syntax enable
+
+" }}}
 
 " plugins settings
 
