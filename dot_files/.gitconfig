@@ -4,9 +4,10 @@
 [push]
 	default = current
 [alias]
+	br = branch
+	ci = commit
 	co = checkout
 	st = status
-	br = branch
 [gc]
 	auto = 0
 [include]
