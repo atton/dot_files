@@ -134,7 +134,7 @@ call denite#custom#option('default', 'cursor_wrap', v:true)
 call denite#custom#map('insert', '<C-g>',   '<denite:leave_mode>',            'noremap')
 call denite#custom#map('insert', '<C-n>',   '<denite:move_to_next_line>',     'noremap')
 call denite#custom#map('insert', '<C-p>',   '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<Space>', '<denite:toggle_select>',         'noremap')
+call denite#custom#map('insert', '<C-j>',   '<denite:toggle_select>',         'noremap')
 call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
 
 call denite#custom#var('file_rec', 'command', [ 'find', '-L', ':directory',
