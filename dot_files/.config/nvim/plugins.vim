@@ -68,6 +68,7 @@ if dein#load_state(s:dein_path)
     call dein#add('tpope/vim-markdown'       , {'lazy':1 ,'on_path': ['.*\.md', '.*\.mkd']})
     call dein#add('kchmck/vim-coffee-script' , {'lazy':1, 'on_ft': 'coffee'})
     call dein#add('vim-scripts/promela.vim'  , {'lazy':1, 'on_ft': 'promela'})
+    call dein#add('slim-template/vim-slim'   , {'lazy':1, 'on_path': '.*\.slim'})
 
 
     " lazy load plugins
