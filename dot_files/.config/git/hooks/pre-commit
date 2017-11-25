@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FORBIDDEN='(<<<<<<<|=======|>>>>>>>)'
+GREP_COLOR='4;5;37;41'
+cd $PWD
+
+git diff --cached --name-only | xargs -L1 grep --color --with-filename -n -E $FORBIDDEN
+if [[ $? -eq 0 ]]; then
+    echo "Merge lines was detected.\nPlease fix files, or run 'git commit --no-verify' to skip this check."
+    exit 1
+fi

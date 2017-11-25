@@ -13,3 +13,5 @@
 [include]
 	path = .githubconfig
 	path = .gitconfig.local
+[core]
+	hooksPath = ~/.config/git/hooks
