@@ -13,14 +13,17 @@
 
 # directory
 !dot_files
+!dot_files/.bitcoin
 !dot_files/.config
+!dot_files/.config/
 !dot_files/.config/git
 !dot_files/.config/git/hooks/
 !dot_files/.config/nvim
 
 # settings
-!dot_files/.config/git/ignore
+!dot_files/.bitcoin/bitcoin.conf
 !dot_files/.config/git/hooks/pre-commit
+!dot_files/.config/git/ignore
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
 !dot_files/.gdbinit
@@ -29,8 +32,6 @@
 !dot_files/.pryrc
 !dot_files/.tmux.conf
 !dot_files/.vimperatorrc
-!dot_files/.vimrc
-!dot_files/.vimrc_plugins
 !dot_files/.vimshrc
 !dot_files/.vrapperrc
 !dot_files/.zshrc
