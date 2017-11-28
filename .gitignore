@@ -14,7 +14,7 @@
 # directory
 !dot_files
 !dot_files/.bitcoin
-!dot_files/.bitcoin
+!dot_files/.bitcoingold
 !dot_files/.config
 !dot_files/.config/
 !dot_files/.config/git
@@ -24,7 +24,7 @@
 
 # settings
 !dot_files/.bitcoin/bitcoin.conf
-!dot_files/.bitcoingold/bitcoingold.conf
+!dot_files/.bitcoingold/bitcoin.conf
 !dot_files/.config/git/hooks/pre-commit
 !dot_files/.config/git/ignore
 !dot_files/.config/nvim/init.vim
