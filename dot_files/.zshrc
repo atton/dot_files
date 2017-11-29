@@ -125,6 +125,17 @@ function shell-init() {
     # source util functions
     source $HOME/.zshrc.util
 }
+# }}}
+
+# maintain packages {{{
+function brew-maintenance {
+    echo '---------- brew upgrade ----------'
+    brew upgrade
+    echo '---------- brew cleanup ----------'
+    brew cleanup
+    echo '---------- brew doctor  ----------'
+    brew doctor
+}
 
 # }}}
 
