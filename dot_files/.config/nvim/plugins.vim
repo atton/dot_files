@@ -203,12 +203,6 @@ let g:neomru#directory_mru_path = expand('~/.config/nvim/.neomru/directory')
 
 " }}}
 
-" {{{ Unite : unite-symbol
-
-nnoremap <Leader>i :silent Unite symbol<CR>
-
-" }}}
-
 " quickrun {{{
 
 " shortcut
