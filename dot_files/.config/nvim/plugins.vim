@@ -189,6 +189,7 @@ let s:denite_commands.command_candidates = [
 \ ['PluginUpdate' ,    'Dein update'],
 \ ['LoadLazyPlugins' , 'Dein soure'],
 \ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
+\ ['EskkCleanupCandidate' , 'EskkCleanupCandidate'],
 \ ]
 
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
@@ -324,6 +325,11 @@ let g:eskk#large_dictionary = {'path': expand('~/.config/nvim/eskk/SKK-JISYO.L')
 imap <C-J> <Plug>(eskk:enable)
 cmap <C-J> <Plug>(eskk:enable)
 lmap <C-J> <Plug>(eskk:enable)
+
+function! s:eskk_cleanup_candidate()
+    echo "^[0-9a-z\u3042-\u3093]*\\ \\/[0-9a-z\u3042-\u3093]*\\/$"
+endfunction
+command! -nargs=0 EskkCleanupCandidate call s:eskk_cleanup_candidate()
 
 " }}}
 
