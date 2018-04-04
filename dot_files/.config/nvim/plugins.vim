@@ -300,8 +300,8 @@ let g:VCalc_WindowPosition = 'bottom'                       " show buttom
 
 " eskk.vim {{{
 
-let g:eskk#directory  = expand('~/.config/nvim/eskk')               " direcotry
-let g:eskk#dictionary = {'path': expand('~/.config/nvim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}       " dictionary
+let g:eskk#directory        = expand('~/.config/nvim/eskk')
+let g:eskk#dictionary       = {'path': expand('~/.config/nvim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}
 let g:eskk#large_dictionary = {'path': expand('~/.config/nvim/eskk/SKK-JISYO.L'), 'sorted': 1, 'encoding': 'euc-jp',}
 imap <C-J> <Plug>(eskk:enable)
 cmap <C-J> <Plug>(eskk:enable)
