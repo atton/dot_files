@@ -45,7 +45,6 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('thinca/vim-ref')
     call dein#add('tyru/eskk.vim')
-    call dein#add('Shougo/vimshell.git', {'lazy':1, 'on_cmd': ['VimShell', 'VimShellTab']})
     call dein#add('sjl/gundo.vim',       {'lazy':1, 'on_cmd': 'GundoToggle'})
     call dein#add('gregsexton/VimCalc',  {'lazy':1, 'on_cmd': 'Calc'})
 
@@ -109,24 +108,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 " My snnipets
 let g:neosnippet#snippets_directory = expand("~/.config/nvim/snippets")
 let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
-
-" }}}
-
-" vimshell {{{
-
-let g:vimshell_prompt       = '% '
-let g:vimshell_user_prompt  = ''
-let g:vimshell_right_prompt = 'getcwd()'
-
-let g:vimshell_temporary_directory     = expand('~/.config/nvim/.vimshell')
-let g:vimshell_interactive_update_time = 10
-
-augroup VimShell
-    autocmd!
-    autocmd FileType vimshell setlocal nonumber
-augroup END
-" command for shortcut
-command! Vsh VimShellTab
 
 " }}}
 
