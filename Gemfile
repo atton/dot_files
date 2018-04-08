@@ -11,6 +11,4 @@ gem 'pry-rescue'
 gem 'slideshow'
 gem 'slideshow-models'
 
-gem 'tmuxinator'
-
 gem 'neovim'

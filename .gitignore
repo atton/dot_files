@@ -63,13 +63,6 @@
 !dot_files/.emacs.d/elisp
 !dot_files/.emacs.d/elisp/east-asian-ambiguous.el
 
-# tmuxinator
-!dot_files/.tmuxinator
-!dot_files/.tmuxinator/lab.yml
-!dot_files/.tmuxinator/noir.yml
-!dot_files/.tmuxinator/syskan.yml
-!dot_files/.tmuxinator/akatsuki.yml
-
 # docker
 !dot_files/.docker/
 !dot_files/.docker/config.json
