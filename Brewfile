@@ -3,15 +3,14 @@
 # $ brew bundle
 
 # taps
-tap 'atton-/customs'
+tap 'atton/customs'
 tap 'caskroom/homebrew-cask'
 tap 'homebrew/binary'
 tap 'homebrew/dupes'
-tap 'ie-developers/ie'
 tap 'neovim/neovim'
 
 # formulae
-brew 'atton-/customs/tmux'
+brew 'atton/customs/tmux'
 brew 'binutils'
 brew 'cabal-install'
 brew 'coreutils'
