@@ -23,6 +23,7 @@ if [[  $(uname) == Darwin ]]; then
     export PATH=/usr/texbin:$PATH
     export ANDROID_HOME=/usr/local/opt/android-sdk
     export PATH=$ANDROID_HOME/bin:$PATH
+    export HOMEBREW_NO_AUTO_UPDATE=1
 else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
