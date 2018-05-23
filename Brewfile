@@ -12,7 +12,6 @@ tap 'neovim/neovim'
 # formulae
 brew 'atton/customs/tmux'
 brew 'binutils'
-brew 'cabal-install'
 brew 'coreutils'
 brew 'direnv'
 brew 'exiftool'
