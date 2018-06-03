@@ -404,3 +404,7 @@ nmap , <Plug>(clever-f-repeat-back)
 " {{{ elm-vim
 let g:elm_setup_keybindings = 0
 " }}}
+
+" {{{ w3m.vim
+let g:w3m#history#save_file = s:plugins_path . '.vim_w3m_hist'
+"
