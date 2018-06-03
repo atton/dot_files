@@ -170,7 +170,6 @@ let s:denite_commands.command_candidates = [
 \ ['PluginUpdate' ,    'Dein update'],
 \ ['LoadLazyPlugins' , 'Dein soure'],
 \ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
-\ ['EskkCleanupCandidate' , 'EskkCleanupCandidate'],
 \ ]
 
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
