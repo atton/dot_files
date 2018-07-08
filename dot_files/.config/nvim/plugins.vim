@@ -45,7 +45,7 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('thinca/vim-ref')
     call dein#add('tyru/eskk.vim')
-    call dein#add('sjl/gundo.vim',       {'lazy':1, 'on_cmd': 'GundoToggle'})
+    call dein#add('atton/gundo.vim',     {'lazy':1, 'on_cmd': 'GundoToggle'})
     call dein#add('gregsexton/VimCalc',  {'lazy':1, 'on_cmd': 'Calc'})
 
     " utility
