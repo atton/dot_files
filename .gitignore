@@ -34,6 +34,7 @@
 !dot_files/.zclassic/zclassic.conf
 !dot_files/.zshrc
 !dot_files/.zshrc.util
+!dot_files/.zshrc.mac
 
 # .vim directory
 !dot_files/.vim
