@@ -333,9 +333,6 @@ call ref#register_detection('text',     'webdict')
 call ref#register_detection('markdown', 'webdict')
 call ref#register_detection('w3m',      'webdict')
 
-" refe source
-let g:ref_refe_cmd = expand('~/.vim/ruby_ref/ruby-refm-1.9.3-dynamic-20120829/refe-1_9_3 ')
-
 " }}}
 
 " gundo.vim {{{
