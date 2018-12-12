@@ -3,6 +3,8 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$ANDROID_HOME/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+source /usr/local/share/zsh/*
+
 function url4tweet {
     # needs GNU grep
     title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
