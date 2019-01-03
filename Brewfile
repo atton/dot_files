@@ -13,6 +13,7 @@ tap 'songmu/tap'
 # formulae
 brew 'atton/customs/tmux'
 brew 'binutils'
+brew 'cointop'
 brew 'coreutils'
 brew 'direnv'
 brew 'exiftool'
