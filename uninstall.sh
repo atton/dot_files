@@ -4,6 +4,7 @@
 files=`ls -1A dot_files`
 target_dir=$HOME
 
+cd `dirname $0`
 for file in $files
 do
     target=${target_dir}/${file} 

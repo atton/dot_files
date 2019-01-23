@@ -5,6 +5,7 @@ dir="dot_files"
 target_dir=$HOME
 files=`ls -1A $dir`
 
+cd `dirname $0`
 for file in $files
 do
     command="ln -s `pwd`/${dir}/${file} ${target_dir}"
