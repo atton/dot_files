@@ -20,7 +20,7 @@ export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
 # Path for specific environment
 if [[  $(uname) == Darwin ]]; then
-    source $HOME/.zshrc.mac
+    source $HOME/.zprofile.mac
 else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
@@ -122,7 +122,7 @@ function shell-init() {
     if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
 
     # source util functions
-    source $HOME/.zshrc.util
+    source $HOME/.zprofile.util
 }
 # }}}
 
@@ -163,8 +163,8 @@ if which direnv >& /dev/null; then eval "$(direnv hook zsh)"; fi
 
 # }}}
 
-#  {{{ source local zshrc
-localzshrc=$HOME/.zshrc.local
+#  {{{ source local zprofile
+localzshrc=$HOME/.zprofile.local
 
 if [ -f $localzshrc ]; then
     source $localzshrc

@@ -32,9 +32,9 @@
 !dot_files/.vimshrc
 !dot_files/.vrapperrc
 !dot_files/.zclassic/zclassic.conf
-!dot_files/.zshrc
-!dot_files/.zshrc.util
-!dot_files/.zshrc.mac
+!dot_files/.zprofile
+!dot_files/.zprofile.util
+!dot_files/.zprofile.mac
 
 # .vim directory
 !dot_files/.vim
