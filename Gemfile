@@ -9,7 +9,7 @@ gem 'pry-doc'
 gem 'pry-rescue'
 
 gem 'slideshow'
-gem 'slideshow-models'
+gem 'kramdown', '1.17.0'
 
 # https://docs.ruby-lang.org/ja/latest/doc/ReFe.html
 gem 'refe2' # after install, run 'bitclust setup'.

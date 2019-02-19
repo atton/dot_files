@@ -209,8 +209,8 @@ let g:quickrun_config.processing = {
 \     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing --run --force'}
 " for markdown
 let g:quickrun_config.markdown          = {'outputter' : 'browser'}
-let g:quickrun_config['markdown.slide'] = {'command' : 'build_tmp_slide.sh',
-\                                          'exec' : '%c %s:p:r %s:t:r',
+let g:quickrun_config['markdown.slide'] = {'runner' : 'shell',
+\                                          'exec' : 'zsh -l -c "build-tmp-slide %s:p:r %s:t:r"',
 \                                          'outputter' : 'null'}
 
 " for not executable filetype : not execute quickrun

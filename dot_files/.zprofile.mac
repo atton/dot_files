@@ -15,3 +15,25 @@ function url4tweet {
     title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
     echo "${title} ${1}"
 }
+
+
+
+function build-tmp-slide {
+    if [ $# -ne 2 ]; then
+        echo "Usage: build-tmp-slide <src_path> <src_name_without_modifier>"
+        echo "Note: this script usually called by quickrun"
+        return 1
+    fi
+
+    work_dir='/tmp/slideshow'
+    rm -rf ${work_dir}
+    mkdir -p ${work_dir}
+
+    src_filename="$1.md"
+    slideshow build ${src_filename} -o ${work_dir}
+
+    if [[  $(uname) == Darwin ]]; then
+        slide_path="${work_dir}/$2.html"
+        open $slide_path
+    fi
+}
