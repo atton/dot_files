@@ -6,6 +6,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 source /usr/local/share/zsh/*
 
 function url4tweet {
+    if [ $# -ne 1 ]; then
+        echo 'Please specify URL'
+        return 1
+    fi
+
     # needs GNU grep
     title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
     echo "${title} ${1}"
