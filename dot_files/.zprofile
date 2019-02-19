@@ -126,18 +126,6 @@ function shell-init() {
 }
 # }}}
 
-# maintain packages {{{
-function brew-maintenance {
-    echo '---------- brew upgrade ----------'
-    brew upgrade
-    echo '---------- brew cleanup ----------'
-    brew cleanup
-    echo '---------- brew doctor  ----------'
-    brew doctor
-}
-
-# }}}
-
 # settings for specific command {{{
 
 # Ruby
