@@ -30,7 +30,7 @@ function build-tmp-slide {
     mkdir -p ${work_dir}
 
     src_filename="$1.md"
-    slideshow build ${src_filename} -o ${work_dir}
+    slideshow build ${src_filename} -o ${work_dir} -t shower
 
     if [[  $(uname) == Darwin ]]; then
         slide_path="${work_dir}/$2.html"
