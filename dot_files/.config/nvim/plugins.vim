@@ -125,6 +125,7 @@ endfunction
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   imap <silent><buffer> <C-g> <Plug>(denite_filter_quit)
+  nmap <silent><buffer> <C-g> <Plug>(denite_filter_quit)
 endfunction
 
 call denite#custom#var('file/rec', 'command', [ 'find', '-L', ':directory',
