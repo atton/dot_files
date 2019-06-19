@@ -114,13 +114,18 @@ let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
 
 " Denite {{{
 
-call denite#custom#option('default', 'cursor_wrap', v:true)
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
+  nnoremap <silent><buffer><expr> <C-g> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
+endfunction
 
-call denite#custom#map('insert', '<C-g>',   '<denite:leave_mode>',            'noremap')
-call denite#custom#map('insert', '<C-n>',   '<denite:move_to_next_line>',     'noremap')
-call denite#custom#map('insert', '<C-p>',   '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-j>',   '<denite:toggle_select>',         'noremap')
-call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  imap <silent><buffer> <C-g> <Plug>(denite_filter_quit)
+endfunction
 
 call denite#custom#var('file/rec', 'command', [ 'find', '-L', ':directory',
             \ '-path', '*/.*/*', '-prune', '-o',
