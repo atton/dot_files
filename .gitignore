@@ -36,26 +36,23 @@
 !dot_files/.zprofile.util
 !dot_files/.zprofile.mac
 
-# .vim directory
-!dot_files/.vim
-
-# vim templetes
-!dot_files/.vim/templates
-!dot_files/.vim/templates/php.php
-!dot_files/.vim/templates/python.py
-!dot_files/.vim/templates/ruby.rb
-!dot_files/.vim/templates/shell.sh
-!dot_files/.vim/templates/tex.tex
-!dot_files/.vim/templates/vim.vim
+# nvim templetes
+!dot_files/.config/nvim/templates
+!dot_files/.config/nvim/templates/php.php
+!dot_files/.config/nvim/templates/python.py
+!dot_files/.config/nvim/templates/ruby.rb
+!dot_files/.config/nvim/templates/shell.sh
+!dot_files/.config/nvim/templates/tex.tex
+!dot_files/.config/nvim/templates/vim.vim
 
 # neosnipet snippets
-!dot_files/.vim/snippets
-!dot_files/.vim/snippets/_.snip
-!dot_files/.vim/snippets/c.snip
-!dot_files/.vim/snippets/cpp.snip
-!dot_files/.vim/snippets/markdown.snip
-!dot_files/.vim/snippets/ruby.snip
-!dot_files/.vim/snippets/tex.snip
+!dot_files/.config/nvim/snippets
+!dot_files/.config/nvim/snippets/_.snip
+!dot_files/.config/nvim/snippets/c.snip
+!dot_files/.config/nvim/snippets/cpp.snip
+!dot_files/.config/nvim/snippets/markdown.snip
+!dot_files/.config/nvim/snippets/ruby.snip
+!dot_files/.config/nvim/snippets/tex.snip
 
 # emacs settings
 !dot_files/.emacs.d

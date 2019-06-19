@@ -321,7 +321,7 @@ command! -nargs=0 EskkCleanupCandidate call s:eskk_cleanup_candidate()
 
 " vim-ref {{{
 
-let g:ref_cache_dir = expand('~/.vim/.vim_ref_cache')
+let g:ref_cache_dir = expand('~/.config/nvim/.vim_ref_cache')
 
 " webdict
 " webdict source use yahoo_dict and infoseek and wikipedia
