@@ -122,7 +122,7 @@ call denite#custom#map('insert', '<C-p>',   '<denite:move_to_previous_line>', 'n
 call denite#custom#map('insert', '<C-j>',   '<denite:toggle_select>',         'noremap')
 call denite#custom#map('insert', '<Tab>',   '<denite:choose_action>',         'noremap')
 
-call denite#custom#var('file_rec', 'command', [ 'find', '-L', ':directory',
+call denite#custom#var('file/rec', 'command', [ 'find', '-L', ':directory',
             \ '-path', '*/.*/*', '-prune', '-o',
             \ '-type', 'l', '-print', '-o',
             \ '-type', 'f', '-print'])
@@ -146,7 +146,7 @@ command! -nargs=0 -range DeniteGrepBySelectedWord call s:denite_grep_by_selected
 
 " Shortcut Mappings
 nnoremap <Leader>b :<C-u> Denite buffer<CR>
-nnoremap <Leader>f :<C-u> Denite file_rec <CR>
+nnoremap <Leader>f :<C-u> Denite file/rec <CR>
 nnoremap <Leader>r :<C-u> Denite register<CR>
 nnoremap <Leader>m :<C-u> Denite file_mru<CR>
 nnoremap <Leader>g :Denite grep:. <CR>
