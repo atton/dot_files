@@ -114,6 +114,8 @@ let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
 
 " Denite {{{
 
+call denite#custom#option('_', 'start_filter', v:true)
+
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
