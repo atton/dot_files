@@ -97,6 +97,7 @@ syntax enable
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#data_directory    = expand('~/.config/nvim/.deoplete')
+call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable completions in denite-filter
 
 " }}}
 
@@ -114,7 +115,7 @@ let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
 
 " Denite {{{
 
-call denite#custom#option('_', 'start_filter', v:true)
+call denite#custom#option('_', 'start_filter', v:true) " Always start at denite-filter
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -126,8 +127,12 @@ endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
-  imap <silent><buffer> <C-g> <Plug>(denite_filter_quit)
-  nmap <silent><buffer> <C-g> <Plug>(denite_filter_quit)
+  imap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
+  nmap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
+  imap     <silent><buffer> <CR>  <C-g><CR>
+  nmap     <silent><buffer> <CR>  <C-g><CR>
+  inoremap <silent><buffer> <C-n> <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
+  inoremap <silent><buffer> <C-p> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
 endfunction
 
 call denite#custom#var('file/rec', 'command', [ 'find', '-L', ':directory',
