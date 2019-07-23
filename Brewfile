@@ -5,8 +5,6 @@
 # taps
 tap 'atton/customs'
 tap 'caskroom/homebrew-cask'
-tap 'homebrew/binary'
-tap 'homebrew/dupes'
 tap 'neovim/neovim'
 tap 'songmu/tap'
 
