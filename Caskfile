@@ -4,6 +4,7 @@
 cask 'alfred'
 cask 'appcleaner'
 cask 'aquaskk'
+cask 'discord'
 cask 'docker'
 cask 'evernote'
 cask 'google-chrome'
