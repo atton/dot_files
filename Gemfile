@@ -14,4 +14,10 @@ gem 'kramdown', '1.17.0'
 # https://docs.ruby-lang.org/ja/latest/doc/ReFe.html
 gem 'refe2' # after install, run 'bitclust setup'.
 
+case RUBY_PLATFORM
+when /darwin/
+  gem 'iStats'
+end
+
 gem 'neovim'
+
