@@ -11,6 +11,7 @@ tap 'songmu/tap'
 # formulae
 brew 'atton/customs/tmux'
 brew 'binutils'
+brew 'cocoapods'
 brew 'cointop'
 brew 'coreutils'
 brew 'direnv'
