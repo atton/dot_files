@@ -118,7 +118,7 @@ function shell-init() {
     # initialize rbenv with rehash
     if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
 
-    if which nodenv >& /dev/null; then eval "$(nodenv init)"; fi
+    if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
 
     # initialize noir completion
     if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
@@ -137,7 +137,7 @@ if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
 # Node
-if which nodenv >& /dev/null; then eval "$(nodenv init -)"; fi
+if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 
 # Java
 # alias to set encoding
