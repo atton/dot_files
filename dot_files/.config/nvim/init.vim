@@ -115,7 +115,7 @@ set rulerformat=%m
 
 " functions {{{
 
-function! s:detect_trailing_space()
+function! s:detect_trailing_spaces()
     " detect trailing spaces for :write hook
 
     " search trailing spaces. wrap search and do not move cursor
@@ -235,8 +235,7 @@ nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 
 augroup All
     autocmd!
-    " detect trailing spaces on write files
-    autocmd BufWritePost * call s:detect_trailing_space()
+    autocmd BufWritePost * call s:detect_trailing_spaces()
 augroup END
 
 " for Ruby
