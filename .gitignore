@@ -53,6 +53,7 @@
 !dot_files/.config/nvim/snippets/markdown.snip
 !dot_files/.config/nvim/snippets/ruby.snip
 !dot_files/.config/nvim/snippets/tex.snip
+!dot_files/.config/nvim/snippets/text.snip
 
 # emacs settings
 !dot_files/.emacs.d
