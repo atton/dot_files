@@ -236,6 +236,7 @@ nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 augroup All
     autocmd!
     autocmd BufWritePost * call s:detect_trailing_spaces()
+    autocmd InsertLeave  * set nopaste
 augroup END
 
 " for Ruby
