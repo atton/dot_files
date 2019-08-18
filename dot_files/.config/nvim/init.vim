@@ -52,6 +52,7 @@ set spelllang=en,cjk            " treat Japanese in spell check
 if has('persistent_undo')
     let &undodir = has('nvim') ? expand('~/.config/nvim/undo_history') : expand('~/.vim/undo_history')
     set undofile
+    set undolevels=5000
 endif
 
 if has('folding')
