@@ -9,3 +9,13 @@ snippet     time_stamp
 alias       ts
 options     word
     `strftime("%Y/%m/%d %H:%M:%S")`
+
+snippet     fold
+options     word
+	{{{ ${1}
+	${2}
+	}}}
+
+snippet     line
+options     word
+    --------------------------------------------------
