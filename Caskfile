@@ -2,6 +2,7 @@
 # run $ brew bundle --file=Caskfile
 
 cask 'alfred'
+cask 'amazon-music'
 cask 'appcleaner'
 cask 'aquaskk'
 cask 'discord'
