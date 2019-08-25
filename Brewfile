@@ -5,7 +5,6 @@
 # taps
 tap 'atton/customs'
 tap 'caskroom/homebrew-cask'
-tap 'neovim/neovim'
 tap 'songmu/tap'
 
 # formulae
