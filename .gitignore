@@ -22,6 +22,7 @@
 
 # settings
 !dot_files/.config/git/hooks/pre-commit
+!dot_files/.config/git/hooks/pre-push
 !dot_files/.config/git/ignore
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
