@@ -183,6 +183,7 @@ endfunction
 " commands {{{
 
 " short cut commands
+command! E edit! ++enc=utf8
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.config/nvim/plugins.vim
