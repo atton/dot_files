@@ -5,6 +5,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 source /usr/local/share/zsh/*
 
+alias work='tmuxinator work'
+
 function url4tweet {
     if [ $# -ne 1 ]; then
         echo 'Please specify URL'

@@ -17,6 +17,7 @@ gem 'refe2' # after install, run 'bitclust setup'.
 case RUBY_PLATFORM
 when /darwin/
   gem 'iStats'
+  gem 'tmuxinator'
 end
 
 gem 'neovim'
