@@ -35,10 +35,10 @@
 !dot_files/.tmux.conf
 !dot_files/.vimshrc
 !dot_files/.vrapperrc
-!dot_files/.zclassic/zclassic.conf
+!dot_files/.wgetrc
 !dot_files/.zprofile
-!dot_files/.zprofile.util
 !dot_files/.zprofile.mac
+!dot_files/.zprofile.util
 
 # nvim templetes
 !dot_files/.config/nvim/templates
