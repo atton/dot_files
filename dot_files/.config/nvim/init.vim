@@ -178,6 +178,27 @@ function! s:insert_time_stamps_from_undo_history()
     call append(line('$'), strftime('%Y/%m/%d %H:%M:%S', s:latest_unix_time))
 endfunction
 
+
+function! s:sudo_write_current_buffer() abort
+    if has('nvim')
+        let s:askpass_path = '/tmp/askpass'
+        let s:password     = inputsecret("Enter Password: ")
+
+        try
+            call delete(s:askpass_path)
+            call writefile(['#!/bin/sh'],                 s:askpass_path, 'a')
+            call writefile(["echo '" . s:password . "'"], s:askpass_path, 'a')
+            call setfperm(s:askpass_path, "rwxr-xr-x")
+            write !SUDO_ASKPASS=/tmp/askpass sudo -A tee % >& /dev/null
+        finally
+            unlet s:password
+            call delete(s:askpass_path)
+        endtry
+    else
+        write !sudo tee %
+    endif
+endfunction
+
 " }}}
 
 " commands {{{
@@ -187,7 +208,7 @@ command! E edit! ++enc=utf8
 command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.config/nvim/plugins.vim
-command! SudoWriteCurrentBuffer write !sudo tee %
+command! SudoWriteCurrentBuffer call s:sudo_write_current_buffer()
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
