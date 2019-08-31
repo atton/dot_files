@@ -25,6 +25,7 @@ else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
 
+export LESSHISTFILE=$HOME/.config/less/history
 
 # }}}
 

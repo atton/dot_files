@@ -15,9 +15,9 @@
 # directory
 !dot_files
 !dot_files/.config
-!dot_files/.config/
 !dot_files/.config/git
 !dot_files/.config/git/hooks/
+!dot_files/.config/less
 !dot_files/.config/nvim
 !dot_files/.config/pry
 !dot_files/.config/tmuxinator
@@ -26,6 +26,7 @@
 !dot_files/.config/git/hooks/pre-commit
 !dot_files/.config/git/hooks/pre-push
 !dot_files/.config/git/ignore
+!dot_files/.config/less/.gitkeep
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
 !dot_files/.config/pry/.gitkeep
