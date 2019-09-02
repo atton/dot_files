@@ -10,9 +10,11 @@
 	st = status
 [gc]
 	auto = 0
-[include]
-	path = .githubconfig
-	path = .gitconfig.local
 [core]
 	hooksPath = ~/.config/git/hooks
 	quotepath = false
+[grep]
+	lineNumber = true
+[include]
+	path = .githubconfig
+	path = .gitconfig.local
