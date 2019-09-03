@@ -116,6 +116,7 @@ let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
 " Denite {{{
 
 call denite#custom#option('_', 'start_filter', v:true) " Always start at denite-filter
+call denite#custom#source('_', 'matchers', ['matcher/substring', 'matcher/fuzzy'])
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
