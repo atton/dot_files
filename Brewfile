@@ -4,7 +4,7 @@
 
 # taps
 tap 'atton/customs'
-tap 'caskroom/homebrew-cask'
+tap 'homebrew/cask'
 tap 'songmu/tap'
 
 # formulae
@@ -40,6 +40,7 @@ brew 'reattach-to-user-namespace'
 brew 'rsync'
 brew 'ruby-build'
 brew 'ssh-copy-id'
+brew 'terminal-notifier'
 brew 'tree'
 brew 'unar'
 brew 'w3m'
