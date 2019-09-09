@@ -13,7 +13,8 @@ function peep-mac {
         return 1
     fi
 
-    str="peep $1 | peep-notify mac"
+    str="peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process was finished.'"
+
     echo $str
     eval $str
 }
