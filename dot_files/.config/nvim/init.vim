@@ -208,18 +208,19 @@ endfunction
 
 " short cut commands
 command! E edit! ++enc=utf8 ++ff=unix
-command! ReloadVimrc source $MYVIMRC
 command! EditVimrc edit $MYVIMRC
 command! EditVimrcPlugins edit $HOME/.config/nvim/plugins.vim
-command! SudoWriteCurrentBuffer call s:sudo_write_current_buffer()
+command! ExecteCurrentLine exec '!'.getline('.')
+command! ReloadVimrc source $MYVIMRC
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
-command! ShowTrailingSpaces              call s:show_trailing_spaces()
 command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
+command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
+command! ShowTrailingSpaces              call s:show_trailing_spaces()
+command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
 command! ToggleLastStatus                call s:toggle_last_status()
 command! ToggleWildIgnore                call s:toggle_wild_ignore()
-command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 
 " }}}
 
