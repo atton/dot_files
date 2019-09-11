@@ -386,8 +386,6 @@ vnoremap <Leader>& :Alignta & <CR>
 
 " open-browser {{{
 
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-
 " open URL
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
