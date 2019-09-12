@@ -7,6 +7,12 @@ source /usr/local/share/zsh/*
 
 alias work='tmuxinator work'
 
+
+function cleanup-text-replacements() {
+    echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
+    defaults delete -g NSUserDictionaryReplacementItems
+}
+
 function peep-mac {
     if [ $# -ne 1 ]; then
         echo 'Please specify PID'
@@ -30,8 +36,6 @@ function url4tweet {
     echo "${title} ${1}"
 }
 
-
-
 function build-tmp-slide {
     if [ $# -ne 2 ]; then
         echo "Usage: build-tmp-slide <src_path> <src_name_without_modifier>"
@@ -51,3 +55,5 @@ function build-tmp-slide {
         open $slide_path
     fi
 }
+
+# vim: set filetype=zsh:
