@@ -127,6 +127,12 @@ function shell-init() {
     # source util functions
     source $HOME/.zprofile.util
 }
+
+function echo_and_eval() {
+    echo $1
+    eval $1
+}
+
 # }}}
 
 # settings for specific command {{{
