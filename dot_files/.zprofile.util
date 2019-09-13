@@ -84,3 +84,4 @@ function rearchive_directory() {
     archive_directory
 }
 
+# vim: set filetype=zsh:
