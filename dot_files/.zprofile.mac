@@ -8,7 +8,7 @@ source /usr/local/share/zsh/*
 alias work='tmuxinator work'
 
 
-function cleanup-text-replacements() {
+function delete-text-replacement-informations() {
     echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
     defaults delete -g NSUserDictionaryReplacementItems
 }
