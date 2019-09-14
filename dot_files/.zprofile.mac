@@ -23,6 +23,20 @@ function peep-mac {
     echo_and_eval "peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process was finished.'"
 }
 
+function peep-mac-tmux() {
+    pane_count=$(tmux list-panes | wc -l)
+
+    if [ $pane_count -ne 2 ]; then
+        echo 'peep-mac-tmux function only works 2 panel. Exit.'
+        exit 1
+    fi
+
+    target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
+    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
+
+    peep-mac $target_pid
+}
+
 function url4tweet {
     if [ $# -ne 1 ]; then
         echo 'Please specify URL'
