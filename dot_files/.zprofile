@@ -93,12 +93,6 @@ alias be='bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
 alias bep='RAILS_ENV=production bundle exec'
 
-# OSX only
-
-if [[  $(uname) == Darwin ]]; then
-    alias wine='LC_ALL=ja_JP.UTF-8 wine'
-fi
-
 # }}}
 
 # functions {{{
