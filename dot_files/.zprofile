@@ -87,7 +87,7 @@ fi
 alias vimp="vim -c 'set rtp+=.'"
 
 alias pin="ping 8.8.8.8"
-alias ipin="nslookup www.google.com"
+alias ipin="dig www.google.com"
 
 alias be='bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
