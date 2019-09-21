@@ -9,6 +9,14 @@ alias wine='LC_ALL=ja_JP.UTF-8 wine'
 alias work='tmuxinator work'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 
+function call-subshell () {
+    echo $BUFFER | /usr/bin/egrep '(\&\&|\|)' >& /dev/null
+    if [ $? -eq 0 ]; then
+        BUFFER="( ${BUFFER} )"
+    fi
+    zle .accept-line
+}
+zle -N accept-line call-subshell
 
 function delete-text-replacement-informations() {
     echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
