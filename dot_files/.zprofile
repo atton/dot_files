@@ -124,7 +124,7 @@ function shell-init() {
 
 function echo_and_eval() {
     echo $1
-    eval $1
+    eval "( $1 )"
 }
 
 # }}}
