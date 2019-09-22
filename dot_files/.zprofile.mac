@@ -10,9 +10,12 @@ alias work='tmuxinator work'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 
 function call-subshell () {
-    echo $BUFFER | /usr/bin/egrep '(\&\&|\|)' >& /dev/null
+    echo $BUFFER | /usr/bin/egrep "(\&\&|\|)" >& /dev/null
     if [ $? -eq 0 ]; then
-        BUFFER="( ${BUFFER} )"
+        echo $BUFFER | /usr/bin/egrep "^[[:space:]]*\(" | /usr/bin/egrep "\)[[:space:]]*$" >& /dev/null
+        if [ $? -ne 0 ]; then
+            BUFFER="( ${BUFFER} )"
+        fi
     fi
     zle .accept-line
 }
