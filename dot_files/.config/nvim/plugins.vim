@@ -64,7 +64,6 @@ if dein#load_state(s:dein_path)
     " syntax
     call dein#add('tpope/vim-rails')
     call dein#add('dag/vim2hs'                , {'lazy':1 ,'on_ft': 'haskell'})
-    call dein#add('sophacles/vim-processing'  , {'lazy':1, 'on_path': '.*\.pde'})
     call dein#add('tpope/vim-markdown'        , {'lazy':1 ,'on_path': ['.*\.md', '.*\.mkd']})
     call dein#add('kchmck/vim-coffee-script'  , {'lazy':1, 'on_ft': 'coffee'})
     call dein#add('vim-scripts/promela.vim'   , {'lazy':1, 'on_ft': 'promela'})
@@ -217,10 +216,6 @@ let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 
 " for scheme : use -i flag (for SICP)
 let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
-" for processing (need processing-java command and vim-processing plugin)
-let g:quickrun_config.processing = {
-\     'command': 'processing-java',
-\     'exec': '%c --sketch=%s:p:h/ --output=/tmp/processing --run --force'}
 " for markdown
 let g:quickrun_config.markdown          = {'outputter' : 'browser'}
 let g:quickrun_config['markdown.slide'] = {'runner' : 'shell',
