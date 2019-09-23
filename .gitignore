@@ -37,7 +37,6 @@
 !dot_files/.npmrc
 !dot_files/.pryrc
 !dot_files/.tmux.conf
-!dot_files/.vimshrc
 !dot_files/.vrapperrc
 !dot_files/.wgetrc
 !dot_files/.zprofile
@@ -66,8 +65,6 @@
 # emacs settings
 !dot_files/.emacs.d
 !dot_files/.emacs.d/init.el
-!dot_files/.emacs.d/elisp
-!dot_files/.emacs.d/elisp/east-asian-ambiguous.el
 
 # docker
 !dot_files/.docker/
