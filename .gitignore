@@ -37,7 +37,6 @@
 !dot_files/.npmrc
 !dot_files/.pryrc
 !dot_files/.tmux.conf
-!dot_files/.vrapperrc
 !dot_files/.wgetrc
 !dot_files/.zprofile
 !dot_files/.zprofile.mac
