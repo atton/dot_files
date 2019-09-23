@@ -31,7 +31,6 @@
 !dot_files/.config/nvim/plugins.vim
 !dot_files/.config/pry/.gitkeep
 !dot_files/.config/tmuxinator/work.yml
-!dot_files/.gdbinit
 !dot_files/.gitconfig
 !dot_files/.hgrc
 !dot_files/.npmrc
