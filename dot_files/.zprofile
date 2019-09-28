@@ -15,7 +15,7 @@ export LANGUAGE=en_US.UTF-8
 export EDITOR=nvim
 
 # PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.cabal/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
 # Path for specific environment
