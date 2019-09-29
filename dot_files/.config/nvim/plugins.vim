@@ -213,8 +213,6 @@ let g:quickrun_config._['outputter/buffer/into']     = 1
 let g:quickrun_config._['runner']                    = 'vimproc'
 let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 
-" for scheme : use -i flag (for SICP)
-let g:quickrun_config.scheme = {'command' : 'gosh' , 'cmdopt' : '-i' , 'exec' : '%c %o < %s'}
 " for markdown
 let g:quickrun_config.markdown          = {'outputter' : 'browser'}
 let g:quickrun_config['markdown.slide'] = {'runner' : 'shell',
