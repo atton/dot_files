@@ -63,7 +63,6 @@ if dein#load_state(s:dein_path)
 
     " syntax
     call dein#add('tpope/vim-rails')
-    call dein#add('dag/vim2hs'                , {'lazy':1 ,'on_ft': 'haskell'})
     call dein#add('tpope/vim-markdown'        , {'lazy':1 ,'on_path': ['.*\.md', '.*\.mkd']})
     call dein#add('kchmck/vim-coffee-script'  , {'lazy':1, 'on_ft': 'coffee'})
     call dein#add('vim-scripts/promela.vim'   , {'lazy':1, 'on_ft': 'promela'})
@@ -384,12 +383,6 @@ vnoremap <Leader>& :Alignta & <CR>
 " open URL
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-
-" }}}
-
-" {{{ vim2hs
-
-let g:haskell_conceal = 0   " disable conceal. lambda and function compose
 
 " }}}
 
