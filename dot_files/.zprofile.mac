@@ -78,4 +78,109 @@ function build-tmp-slide {
     fi
 }
 
+# {{{ itunes
+# http://hints.macworld.com/article.php?story=20011108211802830
+
+function itunes {
+    function showHelp () {
+        echo '-----------------------------';
+        echo 'iTunes Command Line Interface';
+        echo '-----------------------------';
+        echo 'Usage: itunes <option>';
+        echo;
+        echo 'Options:';
+        echo ' status, st = Shows iTunes status, current track and volume.';
+        echo ' play       = Start playing iTunes.';
+        echo ' pause      = Pause iTunes.';
+        echo ' next, n    = Go to the next track.';
+        echo ' prev, p    = Go to the previous track.';
+        echo ' mute       = Mute iTunes volume.';
+        echo ' unmute     = Unmute iTunes volume.';
+        echo ' vol up     = Increase iTunes volume by 10%';
+        echo ' vol down   = Increase iTunes volume by 10%';
+        echo ' vol #      = Set iTunes volume to # [0-100]';
+        echo ' quit       = Quit iTunes.';
+    }
+
+    if [ $# = 0 ]; then
+        showHelp;
+    fi
+
+    while [ $# -gt 0 ]; do
+        arg=$1;
+        case $arg in
+            'status' | 'st' )
+                state=`osascript -e 'tell application "iTunes" to player state as string'`;
+                echo "iTunes is currently $state.";
+                if [ $state = "playing" ]; then
+                    track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+                    vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
+                    echo "Current track: $track";
+                    echo "Current volume: $vol";
+                fi
+                break ;;
+
+            'play' )
+                echo 'Playing iTunes.';
+                osascript -e 'tell application "iTunes" to play';
+                break ;;
+
+            'pause' )
+                echo 'Pausing iTunes.';
+                osascript -e 'tell application "iTunes" to pause';
+                break ;;
+
+            'next' | 'n' )
+                echo 'Going to next track.' ;
+                osascript -e 'tell application "iTunes" to next track';
+                break ;;
+
+            'prev' | 'p' )
+                echo 'Going to previous track.';
+                osascript -e 'tell application "iTunes" to previous track';
+                break ;;
+
+            'mute' )
+                echo 'Muting iTunes volume level.';
+                osascript -e 'tell application "iTunes" to set mute to true';
+                break ;;
+
+            'unmute' )
+                echo 'Unmuting iTunes volume level.';
+                osascript -e 'tell application "iTunes" to set mute to false';
+                break ;;
+
+            'vol'    )
+                if [ $# -eq 1 ]; then
+                    echo 'Plese vol with "up" or "down" or 0-100.'
+                    break ;
+                fi
+
+                vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
+                if [ $2 = "up" ]; then
+                    newvol=$(( vol+10 ));
+                elif [ $2 = "down" ]; then
+                    newvol=$(( vol-10 ));
+                elif [ $2 -gt 0 ]; then
+                    newvol=$2;
+                fi
+                echo "Changing iTunes volume level: $newvol";
+                osascript -e "tell application \"iTunes\" to set sound volume to $newvol";
+                break ;;
+
+            'quit' )
+                echo 'Quitting iTunes.';
+                osascript -e 'tell application "iTunes" to quit';
+                exit 1 ;;
+
+            'help' | * )
+                echo 'help:';
+                showHelp;
+                break ;;
+        esac
+    done
+}
+
+# }}}
+
 # vim: set filetype=zsh:
