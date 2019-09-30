@@ -127,6 +127,13 @@ function itunes {
         echo ' quit       = Quit iTunes.';
     }
 
+    function showTrackInfo() {
+        track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+        album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
+        echo "Current track: $track - ($album)";
+    }
+
+
     if [ $# = 0 ]; then
         showHelp;
     fi
@@ -138,10 +145,8 @@ function itunes {
                 state=`osascript -e 'tell application "iTunes" to player state as string'`;
                 echo "iTunes is currently $state.";
                 if [ $state = "playing" ]; then
-                    track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
-                    album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
                     vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
-                    echo "Current track: $track - ($album)";
+                    showTrackInfo;
                     echo "Current volume: $vol";
                 fi
                 break ;;
@@ -159,11 +164,13 @@ function itunes {
             'next' | 'n' )
                 echo 'Going to next track.' ;
                 osascript -e 'tell application "iTunes" to next track';
+                showTrackInfo;
                 break ;;
 
             'prev' | 'p' )
                 echo 'Going to previous track.';
                 osascript -e 'tell application "iTunes" to previous track';
+                showTrackInfo;
                 break ;;
 
             'mute' )
