@@ -139,8 +139,9 @@ function itunes {
                 echo "iTunes is currently $state.";
                 if [ $state = "playing" ]; then
                     track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+                    album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
                     vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
-                    echo "Current track: $track";
+                    echo "Current track: $track - ($album)";
                     echo "Current volume: $vol";
                 fi
                 break ;;
