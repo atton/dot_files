@@ -133,6 +133,10 @@ function itunes {
         echo "Current track: $track - ($album)";
     }
 
+    function showCurrentVolume() {
+        vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
+        echo "Current volume: $vol";
+    }
 
     if [ $# = 0 ]; then
         showHelp;
@@ -144,10 +148,9 @@ function itunes {
             'status' | 'st' )
                 state=`osascript -e 'tell application "iTunes" to player state as string'`;
                 echo "iTunes is currently $state.";
+                showCurrentVolume;
                 if [ $state = "playing" ]; then
-                    vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
                     showTrackInfo;
-                    echo "Current volume: $vol";
                 fi
                 break ;;
 
