@@ -53,7 +53,6 @@ if dein#load_state(s:dein_path)
     call dein#add('rhysd/clever-f.vim')
     call dein#add('tyru/open-browser.vim.git')
     call dein#add('h1mesuke/vim-alignta', {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
-    call dein#add('atton/a.vim',          {'lazy':1, 'on_ft' : ['c', 'cpp']})
 
     " text-objects extension
     call dein#add('tpope/vim-surround')
