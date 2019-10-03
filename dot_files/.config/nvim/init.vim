@@ -202,6 +202,13 @@ function! s:sudo_write_current_buffer() abort
     endif
 endfunction
 
+function! s:check_directory() abort
+    let s:path = expand('%:p')
+    if (isdirectory(s:path))
+        echoerr s:path . ' is directory.'
+    endif
+endfunction
+
 " }}}
 
 " commands {{{
@@ -262,6 +269,7 @@ nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 
 augroup All
     autocmd!
+    autocmd BufEnter     * call s:check_directory()
     autocmd BufWritePost * call s:detect_trailing_spaces()
     autocmd InsertLeave  * set nopaste
 augroup END
