@@ -207,7 +207,7 @@ function itunes {
             'quit' )
                 echo 'Quitting iTunes.';
                 osascript -e 'tell application "iTunes" to quit';
-                exit 1 ;;
+                break ;;
 
             'help' | * )
                 echo 'help:';
