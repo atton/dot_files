@@ -2,12 +2,9 @@
 # $ brew tap Homebrew/brewdler
 # $ brew bundle
 
-# taps
 tap 'atton/customs'
-tap 'homebrew/cask'
 tap 'songmu/tap'
 
-# formulae
 brew 'atton/customs/tmux'
 brew 'binutils'
 brew 'cocoapods'
