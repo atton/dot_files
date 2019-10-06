@@ -191,7 +191,7 @@ function! s:sudo_write_current_buffer() abort
             call delete(s:askpass_path)
             call writefile(['#!/bin/sh'],                 s:askpass_path, 'a')
             call writefile(["echo '" . s:password . "'"], s:askpass_path, 'a')
-            call setfperm(s:askpass_path, "rwx--x--x")
+            call setfperm(s:askpass_path, "rwx------")
             write ! sudo -A tee % > /dev/null
         finally
             unlet s:password
