@@ -204,7 +204,7 @@ endfunction
 
 function! s:check_directory() abort
     let s:path = expand('%:p')
-    if (isdirectory(s:path))
+    if (isdirectory(s:path) || s:path == '~')
         echoerr s:path . ' is directory.'
     endif
 endfunction
