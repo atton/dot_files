@@ -188,6 +188,7 @@ function itunes {
 
             'vol'    )
                 if [ $# -eq 1 ]; then
+                    showCurrentVolume;
                     echo 'Plese vol with "up" or "down" or 0-100.'
                     break ;
                 fi
