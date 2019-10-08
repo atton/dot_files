@@ -119,8 +119,6 @@ function itunes {
         echo ' pause      = Pause iTunes.';
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
-        echo ' mute       = Mute iTunes volume.';
-        echo ' unmute     = Unmute iTunes volume.';
         echo ' vol up     = Increase iTunes volume by 10%';
         echo ' vol down   = Increase iTunes volume by 10%';
         echo ' vol #      = Set iTunes volume to # [0-100]';
@@ -174,16 +172,6 @@ function itunes {
                 echo 'Going to previous track.';
                 osascript -e 'tell application "iTunes" to previous track';
                 showTrackInfo;
-                break ;;
-
-            'mute' )
-                echo 'Muting iTunes volume level.';
-                osascript -e 'tell application "iTunes" to set mute to true';
-                break ;;
-
-            'unmute' )
-                echo 'Unmuting iTunes volume level.';
-                osascript -e 'tell application "iTunes" to set mute to false';
                 break ;;
 
             'vol'    )
