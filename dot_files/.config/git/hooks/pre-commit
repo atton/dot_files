@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# busybox xargs not support -L option
+if which busybox >& /dev/null; then exit 0; fi
+
 FORBIDDEN='(<<<<<<<|>>>>>>>)'
 GREP_COLOR='4;5;37;41'
 cd $PWD
