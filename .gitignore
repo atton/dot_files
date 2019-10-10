@@ -21,6 +21,7 @@
 !dot_files/.config/nvim
 !dot_files/.config/pry
 !dot_files/.config/tmuxinator
+!macOS
 
 # settings or .gitkeep
 !dot_files/.config/git/hooks/pre-commit
@@ -68,6 +69,11 @@
 !dot_files/.docker/
 !dot_files/.docker/config.json
 
+# macOS KeyBind
+!macOS/DefaultKeyBinding.dict
+
 # install script
 !install.sh
 !uninstall.sh
+!macOS/install.sh
+!macOS/uninstall.sh

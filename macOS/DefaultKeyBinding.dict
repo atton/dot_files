@@ -1,0 +1,5 @@
+/* copy to ~/Library/KeyBindings/DefaultKeyBinding.dict */
+
+{
+    "^;" = ("insertText:", ""); /* disable beep */
+}
