@@ -147,9 +147,7 @@ function itunes {
                 state=`osascript -e 'tell application "iTunes" to player state as string'`;
                 echo "iTunes is currently $state.";
                 showCurrentVolume;
-                if [ $state = "playing" ]; then
-                    showTrackInfo;
-                fi
+                showTrackInfo;
                 break ;;
 
             'play' )
