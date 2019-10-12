@@ -4,7 +4,6 @@
 tap 'homebrew/cask'
 
 cask 'alfred'
-cask 'amazon-music'
 cask 'appcleaner'
 cask 'aquaskk'
 cask 'discord'
