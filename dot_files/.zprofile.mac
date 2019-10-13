@@ -125,10 +125,16 @@ function itunes {
         echo ' quit       = Quit iTunes.';
     }
 
+    function getState() {
+        osascript -e 'tell application "iTunes" to player state as string'
+    }
+
     function showTrackInfo() {
-        track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
-        album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
-        echo "Current track: $track - ($album)";
+        if [ `getState` != 'stopped' ]; then
+            track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+            album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
+            echo "Current track: $track - ($album)";
+        fi
     }
 
     function showCurrentVolume() {
@@ -144,7 +150,7 @@ function itunes {
         arg=$1;
         case $arg in
             'status' | 'st' )
-                state=`osascript -e 'tell application "iTunes" to player state as string'`;
+                state=`getState`
                 echo "iTunes is currently $state.";
                 showCurrentVolume;
                 showTrackInfo;
