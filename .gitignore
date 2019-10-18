@@ -72,6 +72,9 @@
 # macOS KeyBind
 !macOS/DefaultKeyBinding.dict
 
+# macOS AquaSKK
+!macOS/keymap.conf
+
 # install script
 !install.sh
 !uninstall.sh
