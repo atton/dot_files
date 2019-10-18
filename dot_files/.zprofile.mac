@@ -120,8 +120,6 @@ function itunes {
         echo ' toggle, t  = Toggle play/pause.';
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
-        echo ' vol up     = Increase iTunes volume by 10%';
-        echo ' vol down   = Increase iTunes volume by 10%';
         echo ' vol #      = Set iTunes volume to # [0-100]';
         echo ' quit       = Quit iTunes.';
     }
@@ -199,18 +197,11 @@ function itunes {
             'vol'    )
                 if [ $# -eq 1 ]; then
                     showCurrentVolume;
-                    echo 'Plese vol with "up" or "down" or 0-100.'
+                    echo 'Plese specify volume level: 0-100.'
                     break ;
                 fi
 
-                vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
-                if [ $2 = "up" ]; then
-                    newvol=$(( vol+10 ));
-                elif [ $2 = "down" ]; then
-                    newvol=$(( vol-10 ));
-                elif [ $2 -gt 0 ]; then
-                    newvol=$2;
-                fi
+                newvol=$2;
                 echo "Changing iTunes volume level: $newvol";
                 osascript -e "tell application \"iTunes\" to set sound volume to $newvol";
                 break ;;
