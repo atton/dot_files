@@ -1,5 +1,7 @@
 /* copy to ~/Library/KeyBindings/DefaultKeyBinding.dict */
 
 {
-    "^;" = ("insertText:", ""); /* disable beep */
+    /* disable beep */
+    "^;" = ("insertText:", "");
+    "^'" = ("insertText:", "");
 }
