@@ -310,7 +310,7 @@ cmap <C-J> <Plug>(eskk:enable)
 lmap <C-J> <Plug>(eskk:enable)
 
 function! s:eskk_cleanup_candidate()
-    echo "^[0-9a-z\u3042-\u3093]*\\ \\/[0-9a-z\u3042-\u3093]*\\/$"
+    echo "^[0-9a-z\u3042-\u3093\u30fc]*\\ \\/[0-9a-z\u3042-\u3093\u30fc]*\\/$"
 endfunction
 command! -nargs=0 EskkCleanupCandidate call s:eskk_cleanup_candidate()
 
