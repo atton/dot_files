@@ -11,6 +11,9 @@ gem 'pry-rescue'
 gem 'slideshow'
 gem 'kramdown', '1.17.0'
 
+gem 'neovim'
+gem 'rubocop'
+
 # https://docs.ruby-lang.org/ja/latest/doc/ReFe.html
 gem 'refe2' # after install, run 'bitclust setup'.
 
@@ -19,6 +22,3 @@ when /darwin/
   gem 'iStats'
   gem 'tmuxinator'
 end
-
-gem 'neovim'
-
