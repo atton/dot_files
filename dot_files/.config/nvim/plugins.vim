@@ -72,7 +72,6 @@ if dein#load_state(s:dein_path)
     call dein#add('yuratomo/w3m.vim' , {'lazy':1, 'on_cmd': 'W3m'})
     call dein#add('Shougo/vinarise'  , {'lazy':1, 'on_cmd': 'Vinarise'})
     call dein#add('taka84u9/vim-ref-ri')
-    call dein#add('ujihisa/ref-hoogle')
 
     " for debug
     call dein#add('thinca/vim-prettyprint', {'lazy': 1})
