@@ -221,4 +221,12 @@ function itunes {
 
 # }}}
 
+# {{{ check-holiday
+
+function check-holiday() {
+    ruby -e 'require "holiday_jp"; puts(HolidayJp.holiday?(Date.today) ? "Today is holiday" : "")'
+}
+
+# }}}
+
 # vim: set filetype=zsh:
