@@ -224,7 +224,7 @@ function itunes {
 # {{{ check-holiday
 
 function check-holiday() {
-    ruby -e 'require "holiday_jp"; puts(HolidayJp.holiday?(Date.today) ? "Today is holiday" : "")'
+    ruby -e 'require "holiday_jp"; HolidayJp.holiday?(Date.today) ? puts("Today is holiday") : ""'
 }
 
 # }}}
