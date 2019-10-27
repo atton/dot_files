@@ -7,22 +7,6 @@ alias work='tmuxinator work'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 
 
-# {{{ call-subshell
-
-function call-subshell () {
-    echo $BUFFER | /usr/bin/grep 'xargs' >& /dev/null
-    if [ $? -eq 0 ]; then
-        echo $BUFFER | /usr/bin/egrep "^[[:space:]]*\(" | /usr/bin/egrep "\)[[:space:]]*$" >& /dev/null
-        if [ $? -ne 0 ]; then
-            BUFFER="( ${BUFFER} )"
-        fi
-    fi
-    zle .accept-line
-}
-zle -N accept-line call-subshell
-
-# }}}
-
 # {{{ delete-text-replacement-informations
 
 function delete-text-replacement-informations() {
