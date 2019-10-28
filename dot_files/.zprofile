@@ -84,8 +84,6 @@ fi
 
 # aliases {{{
 
-alias vimp="vim -c 'set rtp+=.'"
-
 alias pin="ping 8.8.8.8"
 alias ipin="dig www.google.com"
 
