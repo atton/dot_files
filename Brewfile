@@ -6,6 +6,7 @@ tap 'atton/customs'
 tap 'songmu/tap'
 
 brew 'atton/customs/tmux'
+brew 'awscli'
 brew 'binutils'
 brew 'cocoapods'
 brew 'coreutils'
