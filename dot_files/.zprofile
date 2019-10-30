@@ -75,7 +75,7 @@ if is-at-least 4.3.11; then
     zstyle ':vcs_info:*' actionformats '%u(%s|%b|%a)'
     precmd () {
         psvar=()
-        LANG=en_US.UTF-8 vcs_info
+        LANG=en_US.UTF-8 vcs_info >& /dev/null
         [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
     }
 fi
