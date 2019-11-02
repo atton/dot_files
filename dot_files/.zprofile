@@ -111,18 +111,13 @@ function echo_and_eval() {
     eval "( $1 )"
 }
 
-# Heavy initialization
+# Heavy initializations
 function shell-init() {
-    # initialize rbenv with rehash
-    if which rbenv >& /dev/null; then eval "$(rbenv init - zsh)"; fi
-
+    if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-
-    # initialize noir completion
-    if noir -v >& /dev/null; then eval "$(noir init zsh)"; fi
-
-    # source util functions
+    if noir -v      >& /dev/null; then eval "$(noir init zsh)";     fi
     source $HOME/.zprofile.util
+    typeset -U path cdpath fpath manpath
 }
 
 function skk-cleanup-regexp() {
