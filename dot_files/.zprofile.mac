@@ -179,7 +179,7 @@ function itunes {
                 showTrackInfo;
                 break ;;
 
-            'vol'    )
+            'vol' )
                 if [ $# -eq 1 ]; then
                     showCurrentVolume;
                     echo 'Plaese specify volume level: 0-100.'
@@ -187,6 +187,12 @@ function itunes {
                 fi
 
                 newvol=$2;
+                if [ $newvol -gt 100 ]; then
+                    showCurrentVolume;
+                    echo 'Specified volume over 100. abort.'
+                    break ;
+                fi
+
                 echo "Changing iTunes volume level: $newvol";
                 osascript -e "tell application \"iTunes\" to set sound volume to $newvol";
                 break ;;
