@@ -42,13 +42,8 @@ setopt hist_ignore_dups
 # delete duplicate path
 typeset -U path cdpath fpath manpath
 
-# delete duplicate directory in directory stack
-setopt pushd_ignore_dups
-
-# beep disable in list completion
-setopt nolistbeep
-
 # beep disable
+setopt nolistbeep
 setopt no_beep
 
 # disable flow control (disable ^q,^s)
