@@ -36,8 +36,13 @@ bindkey -e
 # number of history
 HISTSIZE=10000
 
-# if type command already added in history, not add in history
-setopt hist_ignore_dups
+# delete duplicate histories
+setopt extendedhistory
+setopt histignorealldups
+setopt histignorespace
+setopt histnostore
+setopt histreduceblanks
+setopt histverify
 
 # delete duplicate path
 typeset -U path cdpath fpath manpath
