@@ -39,6 +39,7 @@ HISTSIZE=10000
 # delete duplicate histories
 setopt extendedhistory
 setopt histignorealldups
+setopt histignoredups
 setopt histignorespace
 setopt histnostore
 setopt histreduceblanks
