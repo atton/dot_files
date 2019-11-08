@@ -47,7 +47,7 @@ setopt histverify
 # delete duplicate path
 typeset -U path cdpath fpath manpath
 
-# beep disable
+# disable beep
 setopt nolistbeep
 setopt no_beep
 
@@ -56,9 +56,6 @@ setopt no_flow_control
 
 # disable combine multi byte character on completion
 setopt combining_chars
-
-# ignore current directory when 'cd ..' completion
-zstyle ':completion:*' ignore-parents parent pwd ..
 
 # prompt format
 PROMPT="%m%# "                      # left prompt
