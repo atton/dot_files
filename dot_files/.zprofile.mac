@@ -4,7 +4,6 @@ source /usr/local/share/zsh/*
 
 alias alpine='docker run --rm -it alpine'
 alias notification-banner-clear='terminal-notifier -remove ALL'
-alias wine='LC_ALL=ja_JP.UTF-8 wine'
 alias work='tmuxinator work'
 
 alias dsnow='pmset displaysleepnow'
