@@ -2,7 +2,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 source /usr/local/share/zsh/*
 
-alias alpine='docker run --rm -it alpine'
+alias alpine='docker run --rm -it --name alpine alpine'
+alias alpines='docker run --rm -it alpine'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
