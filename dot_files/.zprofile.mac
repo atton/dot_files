@@ -2,14 +2,25 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 source /usr/local/share/zsh/*
 
-alias alpine='docker run --rm -it --name alpine alpine'
-alias alpines='docker run --rm -it alpine'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
 alias dsnow='pmset displaysleepnow'
 alias snow='pmset sleepnow'
 
+# {{{ alpine
+
+function alpine() {
+    alpine_running=`docker ps -q --filter 'name=alpine'`
+
+    if [ -z $alpine_running ]; then
+        docker run --rm -it --name alpine alpine:latest
+    else
+        docker run --rm -it alpine:latest
+    fi
+}
+
+# }}}
 
 # {{{ delete-text-replacement-informations
 
