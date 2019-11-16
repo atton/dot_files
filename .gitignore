@@ -43,6 +43,7 @@
 !dot_files/.zprofile.mac
 !dot_files/.zprofile.util
 !scripts/node-init.sh
+!scripts/python-init.sh
 
 # nvim templetes
 !dot_files/.config/nvim/templates
