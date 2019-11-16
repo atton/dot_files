@@ -22,14 +22,18 @@
 !dot_files/.config/pry
 !dot_files/.config/tmuxinator
 !macOS
+!scripts
 
-# settings or .gitkeep
+# .gitkeep
+!dot_files/.config/less/.gitkeep
+!dot_files/.config/pry/.gitkeep
+!scripts/.gitkeep
+
+# settings
 !dot_files/.config/git/hooks/pre-commit
 !dot_files/.config/git/ignore
-!dot_files/.config/less/.gitkeep
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
-!dot_files/.config/pry/.gitkeep
 !dot_files/.config/tmuxinator/work.yml
 !dot_files/.gitconfig
 !dot_files/.hgrc
