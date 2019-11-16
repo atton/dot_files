@@ -10,7 +10,6 @@
 !Gemfile
 !Brewfile
 !Caskfile
-!node-init.sh
 
 # directory
 !dot_files
@@ -27,7 +26,6 @@
 # .gitkeep
 !dot_files/.config/less/.gitkeep
 !dot_files/.config/pry/.gitkeep
-!scripts/.gitkeep
 
 # settings
 !dot_files/.config/git/hooks/pre-commit
@@ -44,6 +42,7 @@
 !dot_files/.zprofile
 !dot_files/.zprofile.mac
 !dot_files/.zprofile.util
+!scripts/node-init.sh
 
 # nvim templetes
 !dot_files/.config/nvim/templates
