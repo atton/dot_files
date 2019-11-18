@@ -56,7 +56,7 @@ function peep-mac-tmux() {
     fi
 
     target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
-    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
+    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort | head -1)
 
     peep-mac $target_pid
 }
