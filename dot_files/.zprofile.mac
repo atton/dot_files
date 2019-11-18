@@ -187,6 +187,14 @@ function itunes {
 
 # }}}
 
+# {{{ kindle-free-books
+
+function kindle-free-books() {
+    open -a safari 'https://www.amazon.co.jp/s/ref=sr_st_price-asc-rank?rh=n%3A2250738051%2Cp_36%3A0-11000&qid=1524613417&tag=atton-22&sort=price-asc-rank'
+}
+
+# }}}
+
 # {{{ peep-mac
 
 function peep-mac {
