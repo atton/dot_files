@@ -22,62 +22,6 @@ function alpine() {
 
 # }}}
 
-# {{{ delete-text-replacement-informations
-
-function delete-text-replacement-informations() {
-    echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
-    defaults delete -g NSUserDictionaryReplacementItems
-}
-
-# }}}
-
-# {{{ peep-mac
-
-function peep-mac {
-    if [ $# -ne 1 ]; then
-        echo 'Please specify PID'
-        return 1
-    fi
-
-    echo "Target command: $(ps | grep -e "^[[:space:]]*$1")"
-    echo_and_eval "peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process was finished.'"
-}
-
-# }}}
-
-# {{{ peep-mac-tmux
-
-function peep-mac-tmux() {
-    pane_count=$(tmux list-panes | wc -l)
-
-    if [ $pane_count -ne 2 ]; then
-        echo 'peep-mac-tmux function only works 2 panel. Exit.'
-        exit 1
-    fi
-
-    target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
-    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
-
-    peep-mac $target_pid
-}
-
-# }}}
-
-# {{{ url4tweet
-
-function url4tweet {
-    if [ $# -ne 1 ]; then
-        echo 'Please specify URL'
-        return 1
-    fi
-
-    # needs GNU grep
-    title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
-    echo "${title} ${1}"
-}
-
-# }}}
-
 # {{{ build-tmp-slide
 
 function build-tmp-slide {
@@ -98,6 +42,23 @@ function build-tmp-slide {
         slide_path="${work_dir}/$2.html"
         open $slide_path
     fi
+}
+
+# }}}
+
+# {{{ check-holiday
+
+function check-holiday() {
+    ruby -e 'require "holiday_jp"; HolidayJp.holiday?(Date.today) ? puts("Today is holiday") : ""'
+}
+
+# }}}
+
+# {{{ delete-text-replacement-informations
+
+function delete-text-replacement-informations() {
+    echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
+    defaults delete -g NSUserDictionaryReplacementItems
 }
 
 # }}}
@@ -226,10 +187,49 @@ function itunes {
 
 # }}}
 
-# {{{ check-holiday
+# {{{ peep-mac
 
-function check-holiday() {
-    ruby -e 'require "holiday_jp"; HolidayJp.holiday?(Date.today) ? puts("Today is holiday") : ""'
+function peep-mac {
+    if [ $# -ne 1 ]; then
+        echo 'Please specify PID'
+        return 1
+    fi
+
+    echo "Target command: $(ps | grep -e "^[[:space:]]*$1")"
+    echo_and_eval "peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process was finished.'"
+}
+
+# }}}
+
+# {{{ peep-mac-tmux
+
+function peep-mac-tmux() {
+    pane_count=$(tmux list-panes | wc -l)
+
+    if [ $pane_count -ne 2 ]; then
+        echo 'peep-mac-tmux function only works 2 panel. Exit.'
+        exit 1
+    fi
+
+    target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
+    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
+
+    peep-mac $target_pid
+}
+
+# }}}
+
+# {{{ url4tweet
+
+function url4tweet {
+    if [ $# -ne 1 ]; then
+        echo 'Please specify URL'
+        return 1
+    fi
+
+    # needs GNU grep
+    title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
+    echo "${title} ${1}"
 }
 
 # }}}
