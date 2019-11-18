@@ -1,6 +1,5 @@
 autoload -Uz compinit add-zsh-hook zmv is-at-least
 
-# complete enable
 compinit
 
 # {{{ environment variables
