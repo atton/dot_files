@@ -185,12 +185,8 @@ function itunes {
         esac
     done
 
-    unfunction getState
-    unfunction pause
-    unfunction play
-    unfunction showCurrentVolume
-    unfunction showHelp
-    unfunction showTrackInfo
+    unfunction getState pause play
+    unfunction showCurrentVolume showHelp showTrackInfo
 }
 
 # }}}
