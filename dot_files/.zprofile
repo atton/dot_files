@@ -134,11 +134,6 @@ export RUBY_CONFIGURE_OPTS="--enable-shared"
 # Node
 if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 
-# Java
-# alias to set encoding
-alias javac='javac -J-Dfile.encoding=UTF8'
-alias java='java -Dfile.encoding=UTF8'
-
 # git
 # file name completion in git command, use normal file name completion
 __git_files() { _files }
