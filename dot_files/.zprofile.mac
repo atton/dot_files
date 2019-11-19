@@ -82,7 +82,7 @@ function itunes {
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
         echo ' vol #      = Set iTunes volume to # [0-100]';
-        echo ' quit       = Quit iTunes.';
+        echo ' quit, q    = Quit iTunes.';
     }
 
     function getState() {
@@ -173,7 +173,7 @@ function itunes {
                 osascript -e "tell application \"iTunes\" to set sound volume to $newvol";
                 break ;;
 
-            'quit' )
+            'quit' | 'q' )
                 echo 'Quitting iTunes.';
                 osascript -e 'tell application "iTunes" to quit';
                 break ;;
