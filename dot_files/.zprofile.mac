@@ -68,7 +68,7 @@ function delete-text-replacement-informations() {
 # http://hints.macworld.com/article.php?story=20011108211802830
 
 function itunes {
-    function showHelp () {
+    function showHelp() {
         echo '-----------------------------';
         echo 'iTunes Command Line Interface';
         echo '-----------------------------';
@@ -184,6 +184,13 @@ function itunes {
                 break ;;
         esac
     done
+
+    unfunction getState
+    unfunction pause
+    unfunction play
+    unfunction showCurrentVolume
+    unfunction showHelp
+    unfunction showTrackInfo
 }
 
 # }}}
