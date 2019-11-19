@@ -125,13 +125,12 @@ function skk-cleanup-regexp() {
 
 # settings for specific command {{{
 
-# Ruby
-# initialize rbenv without rehash (rehash operation is heavy...)
+# Ruby(rbenv)
 if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
-# Node
+# Node(nodenv)
 if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 
 # git
