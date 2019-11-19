@@ -12,7 +12,7 @@ alias snow='pmset sleepnow'
 # {{{ alpine
 
 function alpine() {
-    alpine_running=`docker ps -q --filter 'name=alpine'`
+    local alpine_running=`docker ps -q --filter 'name=alpine'`
 
     if [ -z $alpine_running ]; then
         docker run --rm -it --name alpine alpine:latest
@@ -32,15 +32,15 @@ function build-tmp-slide {
         return 1
     fi
 
-    work_dir='/tmp/slideshow'
+    local work_dir='/tmp/slideshow'
     rm -rf ${work_dir}
     mkdir -p ${work_dir}
 
-    src_filename="$1.md"
+    local src_filename="$1.md"
     slideshow build ${src_filename} -o ${work_dir} -t shower
 
     if [[  $(uname) == Darwin ]]; then
-        slide_path="${work_dir}/$2.html"
+        local slide_path="${work_dir}/$2.html"
         open $slide_path
     fi
 }
@@ -91,14 +91,14 @@ function itunes {
 
     function showTrackInfo() {
         if [ `getState` != 'stopped' ]; then
-            track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
-            album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
+            local track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+            local album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
             echo "Current track: $track - ($album)";
         fi
     }
 
     function showCurrentVolume() {
-        vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
+        local vol=`osascript -e 'tell application "iTunes" to sound volume as integer'`;
         echo "Current volume: $vol";
     }
 
@@ -117,10 +117,10 @@ function itunes {
     fi
 
     while [ $# -gt 0 ]; do
-        arg=$1;
+        local arg=$1;
         case $arg in
             'status' | 'st' )
-                state=`getState`
+                local state=`getState`
                 echo "iTunes is currently $state.";
                 showCurrentVolume;
                 showTrackInfo;
@@ -135,7 +135,7 @@ function itunes {
                 break ;;
 
             'toggle' | 't' )
-                state=`getState`
+                local state=`getState`
                 if [ $state = 'playing' ]; then
                     pause;
                 elif [ $state = 'paused' ]; then
@@ -162,7 +162,7 @@ function itunes {
                     break ;
                 fi
 
-                newvol=$2;
+                local newvol=$2;
                 if [ $newvol -gt 100 ]; then
                     showCurrentVolume;
                     echo 'Specified volume over 100. abort.'
@@ -213,15 +213,15 @@ function peep-mac {
 # {{{ peep-mac-tmux
 
 function peep-mac-tmux() {
-    pane_count=$(tmux list-panes | wc -l)
+    local pane_count=$(tmux list-panes | wc -l)
 
     if [ $pane_count -ne 2 ]; then
         echo 'peep-mac-tmux function only works 2 panel. Exit.'
         exit 1
     fi
 
-    target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
-    target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
+    local target_parent_pid=$(tmux list-panes -F '#{pane_active} #{pane_pid}' | egrep '^0' | awk '{print $2}')
+    local target_pid=$(ps aux -o ppid | grep $target_parent_pid | grep -v grep | awk '{print $2}' | sort -r | head -1)
 
     peep-mac $target_pid
 }
@@ -237,7 +237,7 @@ function url4tweet {
     fi
 
     # needs GNU grep
-    title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
+    local title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
     echo "${title} ${1}"
 }
 

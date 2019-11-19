@@ -38,13 +38,13 @@ function careful_sync {
     fi
 
     if [ $# -eq 2 ]; then
-        rsync_opts=''
-        source=$1
-        destination=$2
+        local rsync_opts=''
+        local source=$1
+        local destination=$2
     elif [ $# -eq 3 ]; then
-        rsync_opts=$1
-        source=$2
-        destination=$3
+        local rsync_opts=$1
+        local source=$2
+        local destination=$3
     fi
 
 
@@ -68,6 +68,7 @@ function archive_directory() {
     find . -type d -print0      | xargs -0 rmdir
 
     mkdir /tmp/original_files
+    local dir
     for dir in *; do
         compress_directory "$dir" && mv "$dir" /tmp/original_files
     done
@@ -76,9 +77,10 @@ function archive_directory() {
 function rearchive_directory() {
 
     mkdir /tmp/original_archives
+    local file
     for file in *; do
         unar -d "$file" && mv "$file" /tmp/original_archives
-        dirname="${file%.*}"
+        local dirname="${file%.*}"
         mv "${dirname}"/**/*.* "${dirname}"
     done
     archive_directory
