@@ -1,6 +1,6 @@
-" .vimrc for plane vim or customized nvim
-"
-" {{{ install neovim
+" .vimrc for plain vim or customized nvim
+
+" {{{ Install neovim
 " macOS: $ brew install neovim/neovim
 " RHEL7: # yum -y install epel-release
 "        # curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
@@ -11,17 +11,17 @@
 let $XDG_DATA_HOME = expand('~/.config/nvim/data')
 " }}}
 
-" {{{ set Leader
+" {{{ Set leader
 let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
 
-" source plugins {{{
+" Source plugins {{{
 if (isdirectory(expand('~/.config/nvim/repos/github.com/Shougo/dein.vim')) && has('nvim'))
     source ~/.config/nvim/plugins.vim
 endif
 " }}}
 
-" settings {{{
+" Settings {{{
 filetype plugin indent on
 syntax enable
 set nocompatible                " disable vi compatible
@@ -51,15 +51,30 @@ set autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
 let loaded_netrwPlugin = 1      " disable netrw
 
+" Specific feature settings {{{
 
-" specific feature settings {{{
+" color {{{
 
-" save undo history
-if has('persistent_undo')
-    let &undodir = has('nvim') ? expand('~/.config/nvim/undo_history') : expand('~/.vim/undo_history')
-    set undofile
-    set undolevels=25000
+highlight Pmenu     ctermbg = grey
+highlight PmenuSel  ctermbg = darkcyan
+highlight PMenuSbar ctermbg = grey
+
+" }}}
+
+" encoding : utf-8 {{{
+
+if has('vim_starting')
+    set termencoding=utf-8
+    set encoding=utf-8
+    set fileencoding=utf-8
+    set fileencodings=ascii,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
+    set fileformat=unix
+    set fileformats=unix,dos,mac
 endif
+
+" }}}
+
+" {{{ folding : marker
 
 if has('folding')
     set foldmethod=marker       " fold use marker. {{{ }}}
@@ -67,9 +82,35 @@ endif
 
 " }}}
 
-" tab settings {{{
-set expandtab               " use space
-let s:tab_width  = 4        " common tab width
+" {{{ persistent undo
+
+if has('persistent_undo')
+    let &undodir = has('nvim') ? expand('~/.config/nvim/undo_history') : expand('~/.vim/undo_history')
+    set undofile
+    set undolevels=30000
+endif
+
+" }}}
+
+" {{{ ruler
+
+set ruler                           " show ruler, but usually hidden by statusline
+set rulerformat=%m                  " simple ruler (only modified flag)
+
+" }}}
+
+" {{{ statusline
+
+set laststatus=0                    " usually hide status line
+set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%04l\/%04L][P:%04l,%04v]
+
+" }}}
+
+" tab {{{
+
+" usually use space
+set expandtab
+let s:tab_width  = 4
 let &tabstop     = s:tab_width
 let &shiftwidth  = s:tab_width
 let &softtabstop = s:tab_width
@@ -80,9 +121,11 @@ augroup Makefile
     autocmd!
     autocmd FileType make setl noexpandtab
 augroup END
+
 " }}}
 
-" wild settings {{{
+" wild {{{
+
 set wildmenu                        " enable wild
 " wild ignore settings
 let s:wildignore_files =
@@ -96,31 +139,14 @@ let s:wildignore_files =
             \ '*.zip,'
 let &wildignore = s:wildignore_files
 unlet s:wildignore_files
+
+" }}}
+
 " }}}
 
 " }}}
 
-" Encoding settings : utf-8 {{{
-if has('vim_starting')
-    set termencoding=utf-8
-    set encoding=utf-8
-    set fileencoding=utf-8
-    set fileencodings=ascii,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
-    set fileformat=unix
-    set fileformats=unix,dos,mac
-endif
-" }}}
-
-" statusline and ruler settings {{{
-set laststatus=0                    " usually hide status line
-set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%04l\/%04L][P:%04l,%04v]
-
-" simple ruler (only modified flag)
-set ruler                           " show ruler, but usually hidden by statusline
-set rulerformat=%m
-" }}}
-
-" functions {{{
+" Functions {{{
 
 function! s:detect_trailing_spaces()
     " detect trailing spaces for :write hook
@@ -215,7 +241,7 @@ endfunction
 
 " }}}
 
-" commands {{{
+" Commands {{{
 
 " short cut commands
 command! E edit! ++enc=utf8 ++ff=unix
@@ -235,7 +261,7 @@ command! ToggleWildIgnore                call s:toggle_wild_ignore()
 
 " }}}
 
-" keymaps {{{
+" Keymaps {{{
 " yank to end of line (D like Y)
 nnoremap Y y$
 " emacs like cursor move
@@ -352,10 +378,3 @@ augroup END
 
 " }}}
 
-" color settings {{{
-
-highlight Pmenu     ctermbg = grey
-highlight PmenuSel  ctermbg = darkcyan
-highlight PMenuSbar ctermbg = grey
-
-" }}}
