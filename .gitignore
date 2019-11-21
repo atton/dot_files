@@ -60,8 +60,6 @@
 # neosnipet snippets
 !dot_files/.config/nvim/snippets
 !dot_files/.config/nvim/snippets/_.snip
-!dot_files/.config/nvim/snippets/c.snip
-!dot_files/.config/nvim/snippets/cpp.snip
 !dot_files/.config/nvim/snippets/markdown.snip
 !dot_files/.config/nvim/snippets/ruby.snip
 !dot_files/.config/nvim/snippets/tex.snip
