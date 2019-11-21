@@ -72,11 +72,11 @@
 !dot_files/.docker/
 !dot_files/.docker/config.json
 
-# macOS KeyBind
+# macOS
 !macOS/DefaultKeyBinding.dict
-
-# macOS AquaSKK
 !macOS/keymap.conf
+!macOS/git-clone-github.sh
+!macOS/git-clone-github-https.sh
 
 # install script
 !install.sh
