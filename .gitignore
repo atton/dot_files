@@ -78,5 +78,3 @@
 # install script
 !install.sh
 !uninstall.sh
-!macOS/install.sh
-!macOS/uninstall.sh

@@ -7,9 +7,9 @@ target_dir=$HOME
 
 for file in $files
 do
-    target=${target_dir}/${file} 
+    target=${target_dir}/${file}
 
-    if [ -L $target ]; then 
+    if [ -L $target ]; then
         # if exists as symlink
         command="rm -f $target"
     elif [ -e $target ]; then
@@ -20,3 +20,17 @@ do
     echo $command
     $command
 done
+
+
+# macOS only
+if [ `uname` != 'Darwin' ]; then
+    exit 0
+fi
+
+rm ~/Library/KeyBindings/DefaultKeyBinding.dict
+rmdir ~/Library/KeyBindings
+
+rm "$HOME/Library/Application Support/AquaSKK/keymap.conf"
+
+rm /usr/local/bin/git-clone-github
+rm /usr/local/bin/git-clone-github-https
