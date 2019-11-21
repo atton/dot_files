@@ -7,6 +7,10 @@
 "        # yum install -y --enablerepo=epel jemalloc neovim
 " }}}
 
+" {{{ Set environment variables
+let $XDG_DATA_HOME = expand('~/.config/nvim/data')
+" }}}
+
 " {{{ set Leader
 let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
