@@ -33,6 +33,7 @@
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
 !dot_files/.config/tmuxinator/work.yml
+!dot_files/.emacs
 !dot_files/.gitconfig
 !dot_files/.hgrc
 !dot_files/.npmrc
@@ -63,10 +64,6 @@
 !dot_files/.config/nvim/snippets/ruby.snip
 !dot_files/.config/nvim/snippets/tex.snip
 !dot_files/.config/nvim/snippets/text.snip
-
-# emacs settings
-!dot_files/.emacs.d
-!dot_files/.emacs.d/init.el
 
 # docker
 !dot_files/.docker/
