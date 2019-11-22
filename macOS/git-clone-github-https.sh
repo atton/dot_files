@@ -2,7 +2,7 @@
 cd `dirname $0`
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 'user_name/repo_name' or git clone-github 'user_name/repo_name'"
+    echo "Usage: git clone-github-https 'user_name/repo_name' or $0 'user_name/repo_name'"
     exit 1
 fi
 
