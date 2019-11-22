@@ -50,7 +50,6 @@ set listchars=tab:>-            " set list visible style
 set autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
 let loaded_netrwPlugin = 1      " disable netrw
-let &directory = expand('~/.config/nvim/swap')  " swapfile location
 
 " Specific feature settings {{{
 
@@ -59,6 +58,15 @@ let &directory = expand('~/.config/nvim/swap')  " swapfile location
 highlight Pmenu     ctermbg = grey
 highlight PmenuSel  ctermbg = darkcyan
 highlight PMenuSbar ctermbg = grey
+
+" }}}
+
+" directory {{{
+
+if has('nvim')
+    " swapfile location
+    let &directory = expand('~/.config/nvim/swap')
+endif
 
 " }}}
 
