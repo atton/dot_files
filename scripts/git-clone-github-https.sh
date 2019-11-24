@@ -7,5 +7,5 @@ if [ $# -ne 1 ]; then
 fi
 
 github_url="https://github.com/$1"
-echo "Convert to $github_url, cloning it."
+echo "Convert to '$github_url' , cloning it."
 git clone $github_url
