@@ -43,6 +43,10 @@
 !dot_files/.zprofile
 !dot_files/.zprofile.mac
 !dot_files/.zprofile.util
+
+# scripts
+!scripts/git-clone-github-https.sh
+!scripts/git-clone-github.sh
 !scripts/node-init.sh
 !scripts/python-init.sh
 
@@ -66,9 +70,7 @@
 # macOS
 !macOS/DefaultKeyBinding.dict
 !macOS/keymap.conf
-!macOS/git-clone-github.sh
-!macOS/git-clone-github-https.sh
 
-# install script
+# installation script
 !install.sh
 !uninstall.sh

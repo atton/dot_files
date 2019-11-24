@@ -21,6 +21,9 @@ do
     $command
 done
 
+rm /usr/local/bin/git-clone-github
+rm /usr/local/bin/git-clone-github-https
+
 
 # macOS only
 if [ `uname` != 'Darwin' ]; then
@@ -31,6 +34,3 @@ rm ~/Library/KeyBindings/DefaultKeyBinding.dict
 rmdir ~/Library/KeyBindings
 
 rm "$HOME/Library/Application Support/AquaSKK/keymap.conf"
-
-rm /usr/local/bin/git-clone-github
-rm /usr/local/bin/git-clone-github-https

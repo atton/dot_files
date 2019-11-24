@@ -13,6 +13,9 @@ do
     $command
 done
 
+cp scripts/git-clone-github.sh /usr/local/bin/git-clone-github
+cp scripts/git-clone-github-https.sh /usr/local/bin/git-clone-github-https
+
 
 # macOS only
 if [ `uname` != 'Darwin' ]; then
@@ -23,6 +26,3 @@ mkdir -p ~/Library/KeyBindings
 cp macOS/DefaultKeyBinding.dict ~/Library/KeyBindings
 
 cp macOS/keymap.conf "$HOME/Library/Application Support/AquaSKK"
-
-cp macOS/git-clone-github.sh /usr/local/bin/git-clone-github
-cp macOS/git-clone-github-https.sh /usr/local/bin/git-clone-github-https
