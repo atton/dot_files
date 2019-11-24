@@ -9,4 +9,5 @@ gem update --system
 gem install bundler
 cp ../Gemfile .
 bundle install
+bitclust setup
 rm Gemfile*
