@@ -64,6 +64,14 @@ function delete-text-replacement-informations() {
 
 # }}}
 
+# {{{ how-to-show-hidden-files-in-finder
+
+function how-to-show-hidden-files-in-finder() {
+    echo 'Press `Command + Shift + .` in Finder.'
+}
+
+# }}}
+
 # {{{ itunes
 # http://hints.macworld.com/article.php?story=20011108211802830
 
