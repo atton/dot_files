@@ -6,7 +6,6 @@ tap 'atton/customs'
 tap 'songmu/tap'
 
 brew 'atton/customs/tmux', args: ['HEAD']
-brew 'awscli'
 brew 'binutils'
 brew 'circleci'
 brew 'cocoapods'

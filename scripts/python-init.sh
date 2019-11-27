@@ -1,9 +1,11 @@
 #!/bin/sh
 
-echo '----- install pynvim (use pip2, pip3) -----'
-pip2 install --upgrade-strategy eager --progress-bar off --upgrade pynvim
-pip3 install --upgrade-strategy eager --progress-bar off --upgrade pynvim
+echo '----- install packages python3 -----'
+function pip3_install() {
+    pip3 install --upgrade-strategy eager --progress-bar off --upgrade $1
+    pip3 check $1
+}
 
-echo '----- check pynvim (use pip2, pip3) -----'
-pip2 check pynvim
-pip3 check pynvim
+pip3_install pynvim
+pip3_install awscli
+pip3_install aws-sam-cli
