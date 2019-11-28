@@ -1,5 +1,6 @@
 #!/bin/sh
 
+if which rbenv >& /dev/null; then rbenv rehash ; fi
 echo ------------- versions -------------
 echo "ruby: `ruby -v`"
 echo "gem:  `gem -v`"
