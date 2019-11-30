@@ -45,6 +45,7 @@
 !dot_files/.zprofile.util
 
 # scripts
+!scripts/docker-init.sh
 !scripts/git-clone-github-https.sh
 !scripts/git-clone-github.sh
 !scripts/node-init.sh
