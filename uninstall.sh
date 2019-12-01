@@ -26,9 +26,7 @@ rm /usr/local/bin/git-clone-github-https
 
 
 # macOS only
-if [ `uname` != 'Darwin' ]; then
-    exit 0
-fi
+if [ `uname` != 'Darwin' ]; then exit 0; fi
 
 rm ~/Library/KeyBindings/DefaultKeyBinding.dict
 rmdir ~/Library/KeyBindings

@@ -18,9 +18,7 @@ cp scripts/git-clone-github-https.sh /usr/local/bin/git-clone-github-https
 
 
 # macOS only
-if [ `uname` != 'Darwin' ]; then
-    exit 0
-fi
+if [ `uname` != 'Darwin' ]; then exit 0; fi
 
 mkdir -p ~/Library/KeyBindings
 cp macOS/DefaultKeyBinding.dict ~/Library/KeyBindings
