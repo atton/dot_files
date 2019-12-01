@@ -125,20 +125,19 @@ function skk-cleanup-regexp() {
 
 # settings for specific command {{{
 
-# Ruby(rbenv)
-if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
-# ruby-build
-export RUBY_CONFIGURE_OPTS="--enable-shared"
+# Git: not using git-based filename completion
+__git_files() { _files }
+
+# Mercurial
+export HGENCODING=UTF-8
 
 # Node(nodenv)
 if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 
-# git
-# file name completion in git command, use normal file name completion
-__git_files() { _files }
-
-# mercurial
-export HGENCODING=UTF-8
+# Ruby(rbenv)
+if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
+# ruby-build
+export RUBY_CONFIGURE_OPTS="--enable-shared"
 
 # }}}
 
