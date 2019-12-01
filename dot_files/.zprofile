@@ -125,6 +125,12 @@ function skk-cleanup-regexp() {
 
 # settings for specific command {{{
 
+# AWS
+if which aws >& /dev/null; then
+    export AWS_CONFIG_FILE=~/.config/aws/config
+    export AWS_SHARED_CREDENTIALS_FILE=~/.config/aws/credentials
+fi
+
 # Git: not using git-based filename completion
 __git_files() { _files }
 
