@@ -93,4 +93,13 @@ function rearchive_directory() {
 
 # }}}
 
+# {{{ pip3-install
+
+function pip3-install() {
+    pip3 install --upgrade-strategy eager --progress-bar off --upgrade $1
+    pip3 check $1
+}
+
+# }}}
+
 # vim: set filetype=zsh:
