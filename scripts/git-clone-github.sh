@@ -1,5 +1,4 @@
 #!/bin/sh
-cd `dirname $0`
 
 if [ $# -ne 1 ]; then
     echo "Usage: git clone-github 'user_name/repo_name' or $0 'user_name/repo_name'"
