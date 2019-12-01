@@ -1,6 +1,8 @@
 export LOOP_EXEC_MAX_COUNT=50
 export CAREFUL_SYNC_OPTS='--exclude=".*"'
 
+# {{{ careful_sync
+
 function _loop_exec()
 {
     if [ $# -ne 2 ]; then
@@ -57,6 +59,10 @@ function careful_sync {
     loop_exec "rsync -acvx ${CAREFUL_SYNC_OPTS} ${rsync_opts} '${source}' '${destination}'"
 }
 
+# }}}
+
+# {{{ compress_directory using rar
+
 function compress_directory() {
     rar a -r -rr5 $1.rar $1
 }
@@ -75,7 +81,6 @@ function archive_directory() {
 }
 
 function rearchive_directory() {
-
     mkdir /tmp/original_archives
     local file
     for file in *; do
@@ -85,5 +90,7 @@ function rearchive_directory() {
     done
     archive_directory
 }
+
+# }}}
 
 # vim: set filetype=zsh:
