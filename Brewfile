@@ -3,9 +3,12 @@
 # $ brew bundle
 
 tap 'atton/customs'
+tap 'aws/tap'
 tap 'songmu/tap'
 
 brew 'atton/customs/tmux', args: ['HEAD']
+brew 'aws-sam-cli'
+brew 'awscli'
 brew 'binutils'
 brew 'circleci'
 brew 'cocoapods'
