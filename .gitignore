@@ -3,7 +3,6 @@
 
 # enumerate files controlled by git
 
-# this
 !.gitignore
 
 # package settings
@@ -11,7 +10,7 @@
 !Brewfile
 !Caskfile
 
-# directory
+# directories
 !dot_files
 !dot_files/.config
 !dot_files/.config/bundler
@@ -24,7 +23,7 @@
 !macOS
 !scripts
 
-# .gitkeep
+# .gitkeep files
 !dot_files/.config/bundler/.gitkeep
 !dot_files/.config/pry/.gitkeep
 
@@ -71,10 +70,10 @@
 !dot_files/.config/nvim/snippets/tex.snip
 !dot_files/.config/nvim/snippets/text.snip
 
-# macOS
+# configurations for macOS
 !macOS/DefaultKeyBinding.dict
 !macOS/keymap.conf
 
-# installation script
+# installation scripts
 !install.sh
 !uninstall.sh
