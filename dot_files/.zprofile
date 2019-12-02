@@ -144,6 +144,8 @@ if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
+# bundler
+export BUNDLE_USER_HOME=~/.config/bundler
 
 # }}}
 
