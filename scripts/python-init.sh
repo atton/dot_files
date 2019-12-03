@@ -3,6 +3,10 @@
 echo '----- install packages python3 -----'
 function pip3_install() {
     pip3 install --upgrade-strategy eager --progress-bar off --upgrade $1
+    if [ $? -ne 0 ]; then
+        pip3 install --upgrade-strategy eager --upgrade $1
+    fi
+
     pip3 check $1
 }
 
