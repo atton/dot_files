@@ -12,7 +12,6 @@ gem 'slideshow'
 gem 'kramdown', '1.17.0'
 
 gem 'neovim'
-gem 'rubocop'
 
 case RUBY_PLATFORM
 when /darwin/
