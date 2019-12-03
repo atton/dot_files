@@ -10,7 +10,6 @@ pip3_install pynvim
 
 # not macOS only
 if [ `uname` == 'Darwin' ]; then exit 0; fi
-pip3_install pip
 
 pip3_install awscli
 pip3_install aws-sam-cli
