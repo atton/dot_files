@@ -118,6 +118,7 @@ function itunes {
     function play() {
         echo 'Playing iTunes.';
         osascript -e 'tell application "iTunes" to play';
+        showTrackInfo;
     }
 
     if [ $# = 0 ]; then
