@@ -65,7 +65,6 @@ if dein#load_state(s:dein_path)
     call dein#add('kchmck/vim-coffee-script'  , {'lazy':1, 'on_ft': 'coffee'})
     call dein#add('slim-template/vim-slim'    , {'lazy':1, 'on_path': '.*\.slim'})
     call dein#add('leafgarland/typescript-vim', {'lazy':1, 'on_path': '.*\.ts'})
-    call dein#add('ElmCast/elm-vim'           , {'lazy':1, 'on_path': '.*\.elm'})
 
 
     " lazy load plugins
@@ -385,10 +384,6 @@ let g:clever_f_across_no_line = 1
 nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
 
-" }}}
-
-" {{{ elm-vim
-let g:elm_setup_keybindings = 0
 " }}}
 
 " {{{ w3m.vim
