@@ -66,13 +66,9 @@ if dein#load_state(s:dein_path)
     call dein#add('slim-template/vim-slim'    , {'lazy':1, 'on_path': '.*\.slim'})
     call dein#add('leafgarland/typescript-vim', {'lazy':1, 'on_path': '.*\.ts'})
 
-
     " lazy load plugins
     call dein#add('yuratomo/w3m.vim' , {'lazy':1, 'on_cmd': 'W3m'})
     call dein#add('Shougo/vinarise'  , {'lazy':1, 'on_cmd': 'Vinarise'})
-
-    " for debug
-    call dein#add('thinca/vim-prettyprint', {'lazy': 1})
 
     call dein#end()
     call dein#save_state()
