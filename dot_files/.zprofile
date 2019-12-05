@@ -131,6 +131,9 @@ if which aws >& /dev/null; then
     export AWS_SHARED_CREDENTIALS_FILE=~/.config/aws/credentials
 fi
 
+# direnv
+if which direnv >& /dev/null; then eval "$(direnv hook zsh)"; fi
+
 # Git: not using git-based filename completion
 __git_files() { _files }
 
