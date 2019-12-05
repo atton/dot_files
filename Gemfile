@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
-gem 'kramdown', '1.17.0'
+gem 'kramdown'
 gem 'neovim'
 gem 'noir'
 gem 'pry'
