@@ -8,8 +8,8 @@ echo ---------- initializations ----------
 if [ -f Gemfile ]; then echo 'Gemfile detected, abort.'; exit 1; fi
 if [ -f Gemfile.lock ]; then echo 'Gemfile.lock detected, abort.'; exit 1; fi
 set -x
-gem update --system
-gem install -f bundler
+gem update --no-document --system
+gem install --no-document -f bundler
 cp `dirname $0`/../Gemfile .
 bundle install
 rm Gemfile*
