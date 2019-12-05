@@ -53,6 +53,7 @@ if dein#load_state(s:dein_path)
     call dein#add('rhysd/clever-f.vim')
     call dein#add('tyru/open-browser.vim.git')
     call dein#add('h1mesuke/vim-alignta', {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
+    call dein#add('yuratomo/w3m.vim',     {'lazy':1, 'on_cmd': 'W3m'})
 
     " text-objects extension
     call dein#add('tpope/vim-surround')
@@ -65,10 +66,6 @@ if dein#load_state(s:dein_path)
     call dein#add('kchmck/vim-coffee-script'  , {'lazy':1, 'on_ft': 'coffee'})
     call dein#add('slim-template/vim-slim'    , {'lazy':1, 'on_path': '.*\.slim'})
     call dein#add('leafgarland/typescript-vim', {'lazy':1, 'on_path': '.*\.ts'})
-
-    " lazy load plugins
-    call dein#add('yuratomo/w3m.vim' , {'lazy':1, 'on_cmd': 'W3m'})
-    call dein#add('Shougo/vinarise'  , {'lazy':1, 'on_cmd': 'Vinarise'})
 
     call dein#end()
     call dein#save_state()
