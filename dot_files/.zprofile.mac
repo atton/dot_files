@@ -89,7 +89,7 @@ function itunes {
         echo ' toggle, t  = Toggle play/pause.';
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
-        echo ' vol #      = Set volume level to 0-100 (%)';
+        echo ' vol, v #   = Set volume level to 0-100 (%)';
         echo ' quit, q    = Quit iTunes.';
     }
 
@@ -164,7 +164,7 @@ function itunes {
                 showTrackInfo;
                 break ;;
 
-            'vol' )
+            'vol' | 'v' )
                 if [ $# -eq 1 ]; then
                     showCurrentVolume;
                     echo 'If you want to change volume, input volume level: 0-100 (%).'
