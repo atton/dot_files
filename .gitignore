@@ -13,6 +13,7 @@
 # directories
 !dot_files
 !dot_files/.config
+!dot_files/.config/aws
 !dot_files/.config/bundler
 !dot_files/.config/git
 !dot_files/.config/git/hooks
@@ -24,6 +25,7 @@
 !scripts
 
 # .gitkeep files
+!dot_files/.config/aws/.gitkeep
 !dot_files/.config/bundler/.gitkeep
 !dot_files/.config/pry/.gitkeep
 
