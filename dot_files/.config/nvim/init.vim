@@ -363,7 +363,6 @@ augroup FileTemplate
     autocmd BufNewFile *.py  0r ~/.config/nvim/templates/python.py
     autocmd BufNewFile *.rb  0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh  0r ~/.config/nvim/templates/shell.sh
-    autocmd BufNewFile *.vim 0r ~/.config/nvim/templates/vim.vim
 augroup END
 
 " }}}
