@@ -335,12 +335,6 @@ augroup HTML
     autocmd FileType html setl tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-" for coffee
-augroup Coffee
-    autocmd!
-    autocmd FileType coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-augroup END
-
 " for YAML
 augroup Yaml
     autocmd FileType yaml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
