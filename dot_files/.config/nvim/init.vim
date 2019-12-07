@@ -343,7 +343,6 @@ augroup END
 " Omni Completion dictionary {{{
 augroup OmniCompletionDictionary
     autocmd!
-    autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
     autocmd FileType c          setlocal omnifunc=ccomplete#Complete
     autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -361,7 +360,6 @@ augroup END
 
 augroup FileTemplate
     autocmd!
-    autocmd BufNewFile *.php 0r ~/.config/nvim/templates/php.php
     autocmd BufNewFile *.py  0r ~/.config/nvim/templates/python.py
     autocmd BufNewFile *.rb  0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh  0r ~/.config/nvim/templates/shell.sh

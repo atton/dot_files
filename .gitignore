@@ -57,7 +57,6 @@
 
 # nvim templetes
 !dot_files/.config/nvim/templates
-!dot_files/.config/nvim/templates/php.php
 !dot_files/.config/nvim/templates/python.py
 !dot_files/.config/nvim/templates/ruby.rb
 !dot_files/.config/nvim/templates/shell.sh
