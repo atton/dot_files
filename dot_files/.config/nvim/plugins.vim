@@ -62,8 +62,8 @@ if dein#load_state(s:dein_path)
 
     " syntax
     call dein#add('tpope/vim-rails')
-    call dein#add('tpope/vim-markdown'        , {'lazy':1 ,'on_path': ['.*\.md', '.*\.mkd']})
-    call dein#add('slim-template/vim-slim'    , {'lazy':1, 'on_path': '.*\.slim'})
+    call dein#add('tpope/vim-markdown',     {'lazy':1 ,'on_path': '.*\.md'})
+    call dein#add('slim-template/vim-slim', {'lazy':1, 'on_path': '.*\.slim'})
 
     call dein#end()
     call dein#save_state()
