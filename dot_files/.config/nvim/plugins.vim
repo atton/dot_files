@@ -43,7 +43,9 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/denite.nvim')
     call dein#add('Shougo/neomru.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+    call dein#add('kana/vim-textobj-user')
     call dein#add('thinca/vim-ref')
+    call dein#add('tpope/vim-surround')
     call dein#add('tyru/eskk.vim')
     call dein#add('atton/gundo.vim',     {'lazy':1, 'on_cmd': 'GundoToggle'})
     call dein#add('gregsexton/VimCalc',  {'lazy':1, 'on_cmd': 'Calc'})
@@ -51,18 +53,12 @@ if dein#load_state(s:dein_path)
     " utility
     call dein#add('Konfekt/FastFold')
     call dein#add('rhysd/clever-f.vim')
-    call dein#add('tyru/open-browser.vim.git')
-    call dein#add('h1mesuke/vim-alignta', {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
-    call dein#add('yuratomo/w3m.vim',     {'lazy':1, 'on_cmd': 'W3m'})
-
-    " text-objects extension
-    call dein#add('tpope/vim-surround')
-    call dein#add('kana/vim-textobj-user')
-
-    " syntax
     call dein#add('tpope/vim-rails')
-    call dein#add('tpope/vim-markdown',     {'lazy':1 ,'on_path': '.*\.md'})
+    call dein#add('tyru/open-browser.vim.git')
+    call dein#add('h1mesuke/vim-alignta',   {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
     call dein#add('slim-template/vim-slim', {'lazy':1, 'on_path': '.*\.slim'})
+    call dein#add('tpope/vim-markdown',     {'lazy':1, 'on_path': '.*\.md'})
+    call dein#add('yuratomo/w3m.vim',       {'lazy':1, 'on_cmd': 'W3m'})
 
     call dein#end()
     call dein#save_state()
