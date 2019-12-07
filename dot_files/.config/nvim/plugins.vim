@@ -58,7 +58,6 @@ if dein#load_state(s:dein_path)
     " text-objects extension
     call dein#add('tpope/vim-surround')
     call dein#add('kana/vim-textobj-user')
-    call dein#add('rbonvall/vim-textobj-latex' , {'lazy': 1, 'on_ft': 'tex'})
 
     " syntax
     call dein#add('tpope/vim-rails')
