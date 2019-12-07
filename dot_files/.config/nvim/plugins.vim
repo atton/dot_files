@@ -234,44 +234,6 @@ let s:watchdogs_config = {}
 let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit']   = 1
 let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
 
-" for LaTeX {{{
-let g:quickrun_config['tex/watchdogs_checker'] = {
-            \'type' : 'watchdogs_checker/tex' }
-let g:quickrun_config['watchdogs_checker/tex'] = {
-        \'command' : 'lacheck',
-        \'exec' : '%c %s',
-        \
-        \'quickfix/errorformats' :
-            \'%E!\ LaTeX\ %trror:\ %m,'
-            \.'%E!\ %m,'
-            \.'%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#,'
-            \.'%+W%.%#\ at\ lines\ %l--%*\\d,'
-            \.'%WLaTeX\ %.%#Warning:\ %m,'
-            \.'%Cl.%l\ %m,'
-            \.'%+C\ \ %m.,'
-            \.'%+C%.%#-%.%#,'
-            \.'%+C%.%#[]%.%#,'
-            \.'%+C[]%.%#,'
-            \.'%+C%.%#%[{}\\]%.%#,'
-            \.'%+C<%.%#>%.%#,'
-            \.'%C\ \ %m,'
-            \.'%-GSee\ the\ LaTeX%m,'
-            \.'%-GType\ \ H\ <return>%m,'
-            \.'%-G\ ...%.%#,'
-            \.'%-G%.%#\ (C)\ %.%#,'
-            \.'%-G(see\ the\ transcript%.%#),'
-            \.'%-G\\s%#,'
-            \.'%+O(%*[^()])%r,'
-            \.'%+O%*[^()](%*[^()])%r,'
-            \.'%+P(%f%r,'
-            \.'%+P\ %\\=(%f%r,'
-            \.'%+P%*[^()](%f%r,'
-            \.'%+P[%\\d%[^()]%#(%f%r,'
-            \.'%+Q)%r,'
-            \.'%+Q%*[^()])%r,'
-            \.'%+Q[%\\d%*[^()])%r' }
-" }}}
-
 " add to quickrun_config
 let g:quickrun_config['watchdogs_checker/_']  = s:watchdogs_config
 unlet s:watchdogs_config

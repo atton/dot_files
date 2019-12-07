@@ -329,14 +329,6 @@ augroup Python
     autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 augroup END
 
-" for TeX
-augroup TeX
-    autocmd!
-    autocmd BufNewFile *.tex setl filetype=tex
-    autocmd BufRead    *.tex setl filetype=tex
-    autocmd FileType tex nnoremap <buffer><C-K> :make<CR>
-augroup END
-
 " for HTML
 augroup HTML
     autocmd!
@@ -379,7 +371,6 @@ augroup FileTemplate
     autocmd BufNewFile *.py  0r ~/.config/nvim/templates/python.py
     autocmd BufNewFile *.rb  0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh  0r ~/.config/nvim/templates/shell.sh
-    autocmd BufNewFile *.tex 0r ~/.config/nvim/templates/tex.tex
     autocmd BufNewFile *.vim 0r ~/.config/nvim/templates/vim.vim
 augroup END
 

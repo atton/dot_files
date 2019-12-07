@@ -61,7 +61,6 @@
 !dot_files/.config/nvim/templates/python.py
 !dot_files/.config/nvim/templates/ruby.rb
 !dot_files/.config/nvim/templates/shell.sh
-!dot_files/.config/nvim/templates/tex.tex
 !dot_files/.config/nvim/templates/vim.vim
 
 # neosnipet snippets
@@ -69,7 +68,6 @@
 !dot_files/.config/nvim/snippets/_.snip
 !dot_files/.config/nvim/snippets/markdown.snip
 !dot_files/.config/nvim/snippets/ruby.snip
-!dot_files/.config/nvim/snippets/tex.snip
 !dot_files/.config/nvim/snippets/text.snip
 
 # configurations for macOS
