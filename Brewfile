@@ -1,5 +1,5 @@
 # install packages by Homebrew.
-# $ brew tap Homebrew/brewdler
+# $ brew tap homebrew/brewdler
 # $ brew bundle
 
 tap 'atton/customs'
@@ -41,3 +41,22 @@ brew 'unar'
 brew 'w3m'
 brew 'wget'
 brew 'zsh'
+
+
+# cask
+tap 'homebrew/cask'
+
+cask 'alfred'
+cask 'appcleaner'
+cask 'aquaskk'
+cask 'discord'
+cask 'docker'
+cask 'evernote'
+cask 'google-chrome'
+cask 'java'
+cask 'libreoffice'
+cask 'mactex-no-gui'
+cask 'rar'
+cask 'spectacle'
+cask 'vlc'
+cask 'xquartz'

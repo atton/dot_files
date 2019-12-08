@@ -8,7 +8,6 @@
 # package settings
 !Gemfile
 !Brewfile
-!Caskfile
 
 # directories
 !dot_files
