@@ -193,7 +193,7 @@ function peep-mac {
     fi
 
     echo "Target command: $(ps | grep -e "^[[:space:]]*$1")"
-    echo_and_eval "peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process was finished.'"
+    echo_and_eval "peep >& /dev/null $1 && terminal-notifier -sound Glass -message 'Peeping process(PID: $1) was finished'"
 }
 
 # }}}
