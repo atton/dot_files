@@ -46,14 +46,6 @@
 !dot_files/.zprofile.mac
 !dot_files/.zprofile.util
 
-# scripts
-!scripts/docker-init.sh
-!scripts/git-clone-github-https.sh
-!scripts/git-clone-github.sh
-!scripts/node-init.sh
-!scripts/python-init.sh
-!scripts/ruby-init.sh
-
 # nvim templetes
 !dot_files/.config/nvim/templates
 !dot_files/.config/nvim/templates/python.py
@@ -70,6 +62,14 @@
 # configurations for macOS
 !macOS/DefaultKeyBinding.dict
 !macOS/keymap.conf
+
+# scripts
+!scripts/docker-init.sh
+!scripts/git-clone-github-https.sh
+!scripts/git-clone-github.sh
+!scripts/node-init.sh
+!scripts/python-init.sh
+!scripts/ruby-init.sh
 
 # installation scripts
 !install.sh
