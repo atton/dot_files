@@ -74,7 +74,7 @@ syntax enable
 " deoplete {{{
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#data_directory    = expand('~/.config/nvim/.deoplete')
+let g:deoplete#data_directory    = s:plugins_path . 'deoplete'
 call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable completions in denite-filter
 
 " }}}
@@ -86,8 +86,8 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " My snnipets
-let g:neosnippet#snippets_directory = expand("~/.config/nvim/snippets")
-let g:neosnippet#data_directory     = expand("~/.config/nvim/.neosnippet")
+let g:neosnippet#snippets_directory = s:plugins_path . 'snippets'
+let g:neosnippet#data_directory     = s:plugins_path . 'neosnippet'
 
 " }}}
 
@@ -172,8 +172,8 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " {{{ Denite : neomru
 
-let g:neomru#file_mru_path      = expand('~/.config/nvim/.neomru/file')
-let g:neomru#directory_mru_path = expand('~/.config/nvim/.neomru/directory')
+let g:neomru#file_mru_path      = s:plugins_path . 'neomru/file'
+let g:neomru#directory_mru_path = s:plugins_path . 'neomru/directory'
 
 " }}}
 
@@ -256,8 +256,7 @@ lmap <C-J> <Plug>(eskk:enable)
 
 " vim-ref {{{
 
-let g:ref_cache_dir = expand('~/.config/nvim/.vim_ref_cache')
-
+let g:ref_cache_dir = s:plugins_path . 'vim_ref_cache'
 " webdict
 " webdict source use yahoo_dict and infoseek and wikipedia
 let g:ref_source_webdict_sites = {
@@ -331,5 +330,5 @@ nmap , <Plug>(clever-f-repeat-back)
 " }}}
 
 " {{{ w3m.vim
-let g:w3m#history#save_file = s:plugins_path . '.vim_w3m_hist'
+let g:w3m#history#save_file = s:plugins_path . 'vim_w3m_hist'
 "
