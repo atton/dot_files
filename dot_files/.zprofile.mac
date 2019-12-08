@@ -23,30 +23,6 @@ function alpine() {
 
 # }}}
 
-# {{{ build-tmp-slide
-
-function build-tmp-slide {
-    if [ $# -ne 2 ]; then
-        echo "Usage: build-tmp-slide <src_path> <src_name_without_modifier>"
-        echo "Note: this script usually called by quickrun"
-        return 1
-    fi
-
-    local work_dir='/tmp/slideshow'
-    rm -rf ${work_dir}
-    mkdir -p ${work_dir}
-
-    local src_filename="$1.md"
-    slideshow build ${src_filename} -o ${work_dir} -t shower
-
-    if [[  $(uname) == Darwin ]]; then
-        local slide_path="${work_dir}/$2.html"
-        open $slide_path
-    fi
-}
-
-# }}}
-
 # {{{ check-holiday
 
 function check-holiday() {

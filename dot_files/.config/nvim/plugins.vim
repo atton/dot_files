@@ -196,9 +196,6 @@ let g:quickrun_config._['runner/vimproc/updatetime'] = 50
 
 " for markdown
 let g:quickrun_config.markdown          = {'outputter' : 'browser'}
-let g:quickrun_config['markdown.slide'] = {'runner' : 'shell',
-\                                          'exec' : 'zsh -l -c "build-tmp-slide %s:p:r %s:t:r"',
-\                                          'outputter' : 'null'}
 
 " for not executable filetype : not execute quickrun
 let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']

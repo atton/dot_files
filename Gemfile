@@ -7,7 +7,6 @@ gem 'noir'
 gem 'pry'
 gem 'pry-doc'
 gem 'pry-rescue'
-gem 'slideshow'
 
 case RUBY_PLATFORM
 when /darwin/
