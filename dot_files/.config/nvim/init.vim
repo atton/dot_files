@@ -133,6 +133,14 @@ augroup END
 
 " }}}
 
+" {{{ viminfo (for vim)
+
+if !has('nvim')
+    let &viminfofile = expand('~/.config/vim/viminfo')
+endif
+
+" }}}
+
 " wild {{{
 
 set wildmenu                        " enable wild

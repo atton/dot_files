@@ -19,6 +19,7 @@
 !dot_files/.config/nvim
 !dot_files/.config/pry
 !dot_files/.config/tmuxinator
+!dot_files/.config/vim
 !dot_files/.docker
 !macOS
 !scripts
@@ -27,6 +28,7 @@
 !dot_files/.config/aws/.gitkeep
 !dot_files/.config/bundler/.gitkeep
 !dot_files/.config/pry/.gitkeep
+!dot_files/.config/vim/.gitkeep
 
 # settings
 !dot_files/.config/git/hooks/pre-commit
