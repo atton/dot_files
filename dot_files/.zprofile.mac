@@ -176,9 +176,17 @@ function itunes {
 
 # }}}
 
-# {{{ keychain-pbcopy
+# {{{ kindle-free-books
 
-function keychain-pbcopy() {
+function kindle-free-books() {
+    open -a safari 'https://www.amazon.co.jp/s/ref=sr_st_price-asc-rank?rh=n%3A2250738051%2Cp_36%3A0-11000&qid=1524613417&tag=atton-22&sort=price-asc-rank'
+}
+
+# }}}
+
+# {{{ pbcopy-keychain
+
+function pbcopy-keychain() {
     if [ $# -ne 1 ]; then
         echo 'Please specify an item name.'
         return 1
@@ -186,14 +194,6 @@ function keychain-pbcopy() {
 
     security 2>&1 >/dev/null find-generic-password -gs $1 | \
     ruby -e 'print $1 if STDIN.gets =~ /^password: "(.*)"$/' | pbcopy
-}
-
-# }}}
-
-# {{{ kindle-free-books
-
-function kindle-free-books() {
-    open -a safari 'https://www.amazon.co.jp/s/ref=sr_st_price-asc-rank?rh=n%3A2250738051%2Cp_36%3A0-11000&qid=1524613417&tag=atton-22&sort=price-asc-rank'
 }
 
 # }}}
