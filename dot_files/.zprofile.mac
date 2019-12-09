@@ -176,6 +176,20 @@ function itunes {
 
 # }}}
 
+# {{{ keychain-pbcopy
+
+function keychain-pbcopy() {
+    if [ $# -ne 1 ]; then
+        echo 'Please specify an item name.'
+        return 1
+    fi
+
+    security 2>&1 >/dev/null find-generic-password -gs $1 | \
+    ruby -e 'print $1 if STDIN.gets =~ /^password: "(.*)"$/' | pbcopy
+}
+
+# }}}
+
 # {{{ kindle-free-books
 
 function kindle-free-books() {
