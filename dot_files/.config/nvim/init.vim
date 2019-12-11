@@ -174,11 +174,6 @@ function! s:detect_trailing_spaces()
     endif
 endfunction
 
-function! s:show_trailing_spaces()
-    highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
-    match TrailingSpaces /\s\+$/
-endfunction
-
 function! s:delete_trailing_spaces()
     " delete all trailing spaces
     let s:cursor = getpos(".")
@@ -271,7 +266,6 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 " commands for fuctions
 command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
-command! ShowTrailingSpaces              call s:show_trailing_spaces()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
 command! ToggleLastStatus                call s:toggle_last_status()
 command! ToggleWildIgnore                call s:toggle_wild_ignore()
