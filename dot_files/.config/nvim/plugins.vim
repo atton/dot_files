@@ -1,10 +1,10 @@
 " {{{ setup dein
 "    plugins management plugin : dein.vim
 "      $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-"      $ sh ./installer.sh ~/.config/nvim
+"      $ sh ./installer.sh ~/.config/nvim/dein
 "      :call dein#install()
 " }}}
-"
+
 " {{{ setup eskk
 "   $ mkdir -p ~/.config/nvim/eskk
 "   $ curl https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L > ~/.config/nvim/eskk/SKK-JISYO.L
@@ -13,16 +13,16 @@
 " dein settings {{{
 " dein initialize {{{
 let s:plugins_path = expand('~/.config/nvim/')
-let s:dein_path    = s:plugins_path . 'repos/github.com/Shougo/dein.vim'
+let s:dein_path    = s:plugins_path . 'dein'
 if has('vim_starting')
-    execute 'set runtimepath+=' . s:dein_path
+    let &runtimepath = s:dein_path . '/repos/github.com/Shougo/dein.vim,' . &runtimepath
 endif
 " }}}
 
 " list up plugins
 
 if dein#load_state(s:dein_path)
-    call dein#begin(s:plugins_path)
+    call dein#begin(s:dein_path)
     " dein
     call dein#add('Shougo/dein.vim')
     call dein#add('haya14busa/dein-command.vim', {'lazy':1, 'on_cmd': 'Dein'})

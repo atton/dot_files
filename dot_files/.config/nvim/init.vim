@@ -16,7 +16,7 @@ let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
 
 " Source plugins {{{
-if (isdirectory(expand('~/.config/nvim/repos/github.com/Shougo/dein.vim')) && has('nvim'))
+if (isdirectory(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')) && has('nvim'))
     source ~/.config/nvim/plugins.vim
 endif
 " }}}
