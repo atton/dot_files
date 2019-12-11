@@ -1,6 +1,6 @@
 autoload -Uz compinit add-zsh-hook zmv is-at-least
 
-compinit
+compinit -d .config/zsh/zcompdump
 
 # {{{ environment variables
 
