@@ -68,7 +68,8 @@ filetype plugin indent on
 syntax enable
 
 if dein#check_install()
-    call dein#install()
+    echo 'Uninstalled plugin detected, Please run `:call dein#install()`'
+    finish
 endif
 
 " }}}
