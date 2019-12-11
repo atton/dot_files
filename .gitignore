@@ -30,7 +30,6 @@
 !dot_files/.config/bundler/.gitkeep
 !dot_files/.config/pry/.gitkeep
 !dot_files/.config/vim/.gitkeep
-!dot_files/.config/zsh/.gitkeep
 
 # settings
 !dot_files/.config/git/hooks/pre-commit
@@ -38,6 +37,8 @@
 !dot_files/.config/nvim/init.vim
 !dot_files/.config/nvim/plugins.vim
 !dot_files/.config/tmuxinator/work.yml
+!dot_files/.config/zsh/zprofile.mac
+!dot_files/.config/zsh/zprofile.util
 !dot_files/.docker/config.json
 !dot_files/.emacs
 !dot_files/.gitconfig
@@ -48,8 +49,6 @@
 !dot_files/.vimrc
 !dot_files/.wgetrc
 !dot_files/.zprofile
-!dot_files/.zprofile.mac
-!dot_files/.zprofile.util
 
 # nvim templetes
 !dot_files/.config/nvim/templates
