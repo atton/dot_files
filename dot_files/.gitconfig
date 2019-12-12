@@ -16,5 +16,4 @@
 [grep]
 	lineNumber = true
 [include]
-	path = .githubconfig
 	path = .gitconfig.local
