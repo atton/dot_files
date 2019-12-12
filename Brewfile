@@ -2,10 +2,9 @@
 # $ brew tap homebrew/brewdler
 # $ brew bundle
 
-tap 'atton/customs'
-tap 'aws/tap'
-tap 'songmu/tap'
-
+tap  'atton/customs'
+tap  'aws/tap'
+tap  'songmu/tap'
 brew 'atton/customs/tmux', args: ['HEAD']
 brew 'aws-sam-cli'
 brew 'awscli'
@@ -15,7 +14,6 @@ brew 'cocoapods'
 brew 'coreutils'
 brew 'direnv'
 brew 'exiftool'
-brew 'fdupes'
 brew 'findutils'
 brew 'git'
 brew 'git-open'
@@ -42,10 +40,7 @@ brew 'w3m'
 brew 'wget'
 brew 'zsh'
 
-
-# cask
-tap 'homebrew/cask'
-
+tap  'homebrew/cask'
 cask 'alfred'
 cask 'appcleaner'
 cask 'aquaskk'
