@@ -52,9 +52,7 @@ function itunes {
         echo;
         echo 'Options:';
         echo ' status, st = Shows status, current track and volume.';
-        echo ' play       = Start playing iTunes.';
-        echo ' pause      = Pause iTunes.';
-        echo ' toggle, t  = Toggle play/pause.';
+        echo ' toggle, t  = Toggle play/pause. If iTunes stopped, start it.';
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
         echo ' vol, v #   = Set volume level to 0-100 (%)';
@@ -78,11 +76,6 @@ function itunes {
         echo "Current volume level: $vol%";
     }
 
-    function pause() {
-        echo 'Pausing iTunes.';
-        osascript -e 'tell application "iTunes" to pause';
-    }
-
     function play() {
         echo 'Playing iTunes.';
         osascript -e 'tell application "iTunes" to play';
@@ -103,19 +96,15 @@ function itunes {
                 showTrackInfo;
                 break ;;
 
-            'play' )
-                play;
-                break ;;
-
-            'pause' )
-                pause;
-                break ;;
-
             'toggle' | 't' )
                 local state=`getState`
                 if [ $state = 'playing' ]; then
-                    pause;
+                    echo 'Pausing iTunes.';
+                    osascript -e 'tell application "iTunes" to pause';
                 elif [ $state = 'paused' ]; then
+                    play;
+                elif [ $state = 'stopped' ]; then
+                    echo 'iTunes currently stopped. starting iTunes.'
                     play;
                 fi
                 break ;;
@@ -162,7 +151,7 @@ function itunes {
         esac
     done
 
-    unfunction getState pause play
+    unfunction getState play
     unfunction showCurrentVolume showHelp showTrackInfo
 }
 
