@@ -84,7 +84,9 @@ function itunes {
     }
 
     function playlist() {
+        echo "Playing playlist '$1'."
         osascript -e "tell application \"iTunes\" to play playlist \"$1\" ";
+        showTrackInfo;
     }
 
     if [ $# = 0 ]; then
