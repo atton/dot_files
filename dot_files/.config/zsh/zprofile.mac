@@ -45,9 +45,9 @@ function delete-text-replacement-informations() {
 
 function itunes {
     function showHelp() {
-        echo '-----------------------------';
-        echo 'iTunes Command Line Interface';
-        echo '-----------------------------';
+        echo '+-----------------------------+';
+        echo '|iTunes Command Line Interface|';
+        echo '+-----------------------------+';
         echo 'Usage: itunes <option>';
         echo;
         echo 'Options:';
