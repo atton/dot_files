@@ -103,14 +103,6 @@ set rulerformat=%m                  " simple ruler (only modified flag)
 
 " }}}
 
-" {{{ shadafile (neovim only)
-
-if has('nvim') && exists('&shadafile')
-    let &viminfofile = expand('~/.config/nvim/shada')
-endif
-
-" }}}
-
 " {{{ statusline
 
 set laststatus=0                    " usually hide status line
@@ -136,10 +128,10 @@ augroup END
 
 " }}}
 
-" {{{ viminfofile (vim only)
+" {{{ viminfofile
 
-if (!has('nvim')) && exists('&viminfofile')
-    let &viminfofile = expand('~/.config/vim/viminfo')
+if exists('&viminfofile')
+    let &viminfofile = expand('~/.config/') . (has('nvim') ? 'nvim/shada' : 'vim/viminfo')
 endif
 
 " }}}
