@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eux
 
 echo '----- install packages python3 -----'
 pip3_install() {
