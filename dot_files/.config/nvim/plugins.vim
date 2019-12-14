@@ -17,6 +17,7 @@ let s:plugins_path = expand('~/.config/nvim/')
 let s:dein_path    = s:plugins_path . 'dein'
 if has('vim_starting')
     let &runtimepath = s:dein_path . '/repos/github.com/Shougo/dein.vim,' . &runtimepath
+    let $NVIM_RPLUGIN_MANIFEST = s:plugins_path . 'rplugin.vim'
 endif
 " }}}
 " list up plugins
