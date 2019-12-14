@@ -1,10 +1,9 @@
 " .vimrc for plain vim or customized nvim
 
 " {{{ Install neovim
-" macOS: $ brew install neovim/neovim
-" RHEL7: # yum -y install epel-release
-"        # curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
-"        # yum install -y --enablerepo=epel jemalloc neovim
+" https://github.com/neovim/neovim/wiki/Installing-Neovim
+" rhel7 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y neovim python3-neovim
+" ubuntu 18.04 # apt-get update && apt-get install -y neovim
 " }}}
 
 " {{{ Set leader
@@ -374,4 +373,3 @@ augroup END
 " }}}
 
 " }}}
-
