@@ -13,9 +13,6 @@ do
     $command
 done
 
-cp scripts/git-clone-github.sh /usr/local/bin/git-clone-github
-cp scripts/git-clone-github-https.sh /usr/local/bin/git-clone-github-https
-
 
 # macOS only
 if [ `uname` != 'Darwin' ]; then exit 0; fi

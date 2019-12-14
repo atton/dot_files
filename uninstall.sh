@@ -21,9 +21,6 @@ do
     $command
 done
 
-rm /usr/local/bin/git-clone-github
-rm /usr/local/bin/git-clone-github-https
-
 
 # macOS only
 if [ `uname` != 'Darwin' ]; then exit 0; fi
