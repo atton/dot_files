@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eux
 
 if which nodenv >& /dev/null; then
     nodenv rehash
