@@ -135,7 +135,7 @@ augroup END
 
 " {{{ viminfo (for vim)
 
-if !has('nvim')
+if (!has('nvim')) && exists('&viminfofile')
     let &viminfofile = expand('~/.config/vim/viminfo')
 endif
 
