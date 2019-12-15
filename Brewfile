@@ -35,7 +35,6 @@ brew 'rsync'
 brew 'ssh-copy-id'
 brew 'terminal-notifier'
 brew 'unar'
-brew 'w3m'
 brew 'wget'
 brew 'zsh'
 

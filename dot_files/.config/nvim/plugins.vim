@@ -45,7 +45,6 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/neomru.vim')
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('kana/vim-textobj-user')
-    call dein#add('thinca/vim-ref')
     call dein#add('tpope/vim-surround')
     call dein#add('tyru/eskk.vim')
     call dein#add('atton/gundo.vim',     {'lazy':1, 'on_cmd': 'GundoToggle'})
@@ -59,7 +58,6 @@ if dein#load_state(s:dein_path)
     call dein#add('h1mesuke/vim-alignta',   {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
     call dein#add('slim-template/vim-slim', {'lazy':1, 'on_path': '.*\.slim'})
     call dein#add('tpope/vim-markdown',     {'lazy':1, 'on_path': '.*\.md'})
-    call dein#add('yuratomo/w3m.vim',       {'lazy':1, 'on_cmd': 'W3m'})
 
     call dein#end()
     call dein#save_state()
@@ -260,27 +258,6 @@ lmap <C-J> <Plug>(eskk:enable)
 
 " }}}
 
-" vim-ref {{{
-
-let g:ref_cache_dir = s:plugins_path . 'vim_ref_cache'
-" webdict
-" webdict source use yahoo_dict and infoseek and wikipedia
-let g:ref_source_webdict_sites = {
-\ 'yahoo_dict'  : {'url' : 'http://dic.search.yahoo.co.jp/search?p=%s',  'line' : '45'},
-\ 'infoseek_je' : {'url' : 'http://dictionary.infoseek.ne.jp/jeword/%s', 'line' : '11'},
-\ 'infoseek_ej' : {'url' : 'http://dictionary.infoseek.ne.jp/ejword/%s', 'line' : '11'},
-\ 'wikipedia'   : {'url' : 'http://ja.wikipedia.org/wiki/%s',},}
-" webdict default dictionary is yahoo_dict
-let g:ref_source_webdict_sites.default = 'yahoo_dict'
-" text browser is w3m
-let g:ref_source_webdict_cmd = 'w3m -dump %s'
-" if FileType is 'text', use webdict source
-call ref#register_detection('text',     'webdict')
-call ref#register_detection('markdown', 'webdict')
-call ref#register_detection('w3m',      'webdict')
-
-" }}}
-
 " gundo.vim {{{
 
 " UndoTree : U
@@ -334,7 +311,3 @@ nmap ; <Plug>(clever-f-repeat-forward)
 nmap , <Plug>(clever-f-repeat-back)
 
 " }}}
-
-" {{{ w3m.vim
-let g:w3m#history#save_file = s:plugins_path . 'vim_w3m_hist'
-"
