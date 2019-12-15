@@ -1,3 +1,4 @@
+export CP_HOME_DIR=$HOME/.config/cocoapods
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 source /usr/local/share/zsh/*
