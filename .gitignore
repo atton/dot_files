@@ -17,6 +17,7 @@
 !dot_files/.config/git
 !dot_files/.config/git/hooks
 !dot_files/.config/nvim
+!dot_files/.config/nvim/swap
 !dot_files/.config/pry
 !dot_files/.config/tmuxinator
 !dot_files/.config/vim
@@ -28,6 +29,7 @@
 # .gitkeep files
 !dot_files/.config/aws/.gitkeep
 !dot_files/.config/bundler/.gitkeep
+!dot_files/.config/nvim/swap/.gitkeep
 !dot_files/.config/pry/.gitkeep
 !dot_files/.config/vim/.gitkeep
 
