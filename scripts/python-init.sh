@@ -13,7 +13,7 @@ if [ `uname` == 'Darwin' ]; then
 fi
 
 
-pip3 install --upgrade pip
+pip3 install --upgrade setuptools pip
 
 pip3_install aws-sam-cli
 pip3_install awscli
