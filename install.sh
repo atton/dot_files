@@ -9,7 +9,7 @@ current_dir=`pwd`
 set -x
 for file in $files
 do
-    ln -s ${current_dir}/${dir}/${file} ${target_dir}
+    ln -sf ${current_dir}/${dir}/${file} ${target_dir}
 done
 
 cp scripts/git/git-pull-with-set-upstream-to-origin.sh /usr/local/bin/git-pull-with-set-upstream-to-origin
