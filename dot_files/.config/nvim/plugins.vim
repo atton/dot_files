@@ -35,15 +35,9 @@ if dein#load_state(s:dein_path)
     call dein#add('Shougo/neco-syntax')
     call dein#add('ujihisa/neco-look', {'lazy': 1, 'on_ft': 'text'})
 
-    " quickrun and watchdogs
-    call dein#add('thinca/vim-quickrun')
-    call dein#add('osyo-manga/vim-watchdogs')
-    call dein#add('osyo-manga/shabadou.vim')
-
     " extension
     call dein#add('Shougo/denite.nvim')
     call dein#add('Shougo/neomru.vim')
-    call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('kana/vim-textobj-user')
     call dein#add('tpope/vim-surround')
     call dein#add('tyru/eskk.vim')
@@ -178,66 +172,6 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 let g:neomru#file_mru_path      = s:plugins_path . 'neomru/file'
 let g:neomru#directory_mru_path = s:plugins_path . 'neomru/directory'
-
-" }}}
-
-" quickrun {{{
-
-" shortcut
-nmap <C-k> <Plug>(quickrun)
-" disable default mappings
-let g:quickrun_no_default_key_mappings = 1
-
-" init default settings
-let g:quickrun_config = {'_' : {}}
-" horizontal split on quickrun
-let g:quickrun_config._['split'] = ''
-" move cursor into quickrun buffer
-let g:quickrun_config._['outputter/buffer/into']     = 1
-" vimproc updatetime
-let g:quickrun_config._['runner']                    = 'vimproc'
-let g:quickrun_config._['runner/vimproc/updatetime'] = 50
-
-" for markdown
-let g:quickrun_config.markdown          = {'outputter' : 'browser'}
-
-" for not executable filetype : not execute quickrun
-let s:not_executable_filetypes = ['text', 'help', 'quickrun', 'qf', 'ref-refe', 'ref-webdict']
-for s:ft in s:not_executable_filetypes
-    if !has_key(g:quickrun_config, s:ft)
-        let g:quickrun_config[s:ft] = {}
-    endif
-    let g:quickrun_config[s:ft]['command']   = 'false'
-    let g:quickrun_config[s:ft]['outputter'] = 'null'
-endfor
-
-
-" shabadou hooks {{{
-" for all : if output is empty, close quickrun buffer and echo message(finished point)
-let g:quickrun_config._['hook/close_buffer/enable_empty_data'] = 1
-let g:quickrun_config._['hook/echo/enable']                    = 1
-let g:quickrun_config._['hook/echo/output_finish']             = 'quickrun finished.'
-" for quickfix : close quickfix window
-let g:quickrun_config.qf['hook/echo/output_finish']            = 'close quickrun window'
-let g:quickrun_config.qf['hook/close_quickfix/enable_exit']    = 1
-" }}}
-" }}}
-
-" watchdogs {{{
-
-" default settings
-let s:watchdogs_config = {}
-" for unnammed buffer
-let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/enable_exit']   = 1
-let s:watchdogs_config['hook/quickfix_replate_tempname_to_bufnr/priority_exit'] = -10
-
-" add to quickrun_config
-let g:quickrun_config['watchdogs_checker/_']  = s:watchdogs_config
-unlet s:watchdogs_config
-" watchdogs initialize
-call watchdogs#setup(g:quickrun_config)
-" shortcut
-nnoremap <C-j> :WatchdogsRunSilent<CR>
 
 " }}}
 
