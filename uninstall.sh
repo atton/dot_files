@@ -1,5 +1,4 @@
 #!/bin/sh
-# dot files unlink script : unlink dot files from $HOME
 cd `dirname $0`
 
 files=`ls -1A dot_files`
@@ -13,8 +12,9 @@ done
 
 rm /usr/local/bin/git-pull-with-set-upstream-to-origin
 
-# macOS only
+
 if [ `uname` != 'Darwin' ]; then exit 0; fi
+# macOS only configrations
 
 rm ~/Library/KeyBindings/DefaultKeyBinding.dict
 rmdir ~/Library/KeyBindings

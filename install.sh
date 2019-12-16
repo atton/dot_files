@@ -1,5 +1,4 @@
 #!/bin/sh
-# dot files link script : files in dot_files link to $HOME
 cd `dirname $0`
 
 dir="dot_files"
@@ -15,8 +14,9 @@ done
 
 cp scripts/git/git-pull-with-set-upstream-to-origin.sh /usr/local/bin/git-pull-with-set-upstream-to-origin
 
-# macOS only
+
 if [ `uname` != 'Darwin' ]; then exit 0; fi
+# macOS only configrations
 
 mkdir -p ~/Library/KeyBindings
 cp macOS/DefaultKeyBinding.dict ~/Library/KeyBindings
