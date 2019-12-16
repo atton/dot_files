@@ -13,6 +13,7 @@ do
     $command
 done
 
+cp scripts/git/git-pull-with-set-upstream-to-origin.sh /usr/local/bin/git-pull-with-set-upstream-to-origin
 
 # macOS only
 if [ `uname` != 'Darwin' ]; then exit 0; fi
