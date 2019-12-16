@@ -10,13 +10,13 @@ do
     rm -f ${target_dir}/${file}
 done
 
-rm /usr/local/bin/git-pull-with-set-upstream-to-origin
+rm -f /usr/local/bin/git-pull-with-set-upstream-to-origin
 
 
 if [ `uname` != 'Darwin' ]; then exit 0; fi
 # macOS only configrations
 
-rm ~/Library/KeyBindings/DefaultKeyBinding.dict
+rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
 rmdir ~/Library/KeyBindings
 
-rm "$HOME/Library/Application Support/AquaSKK/keymap.conf"
+rm -f "$HOME/Library/Application Support/AquaSKK/keymap.conf"
