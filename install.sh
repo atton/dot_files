@@ -5,12 +5,12 @@ cd `dirname $0`
 dir="dot_files"
 target_dir=$HOME
 files=`ls -1A $dir`
+current_dir=`pwd`
 
+set -x
 for file in $files
 do
-    command="ln -s `pwd`/${dir}/${file} ${target_dir}"
-    echo $command
-    $command
+    ln -s ${current_dir}/${dir}/${file} ${target_dir}
 done
 
 cp scripts/git/git-pull-with-set-upstream-to-origin.sh /usr/local/bin/git-pull-with-set-upstream-to-origin
