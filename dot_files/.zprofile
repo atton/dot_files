@@ -4,27 +4,22 @@ compinit -d .config/zsh/zcompdump
 
 # {{{ environment variables
 
-# languages
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export lang=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-# for tmuxinator
 export EDITOR=nvim
+export LESSHISTFILE=/dev/null
 
-# PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
-# Path for specific environment
-if [[  $(uname) == Darwin ]]; then
+if [[ $(uname) == Darwin ]]; then
     source $HOME/.config/zsh/zprofile.mac
 else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
-
-export LESSHISTFILE=/dev/null
 
 # }}}
 
