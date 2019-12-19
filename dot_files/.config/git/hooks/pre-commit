@@ -1,18 +1,24 @@
 #!/bin/sh
 
 # busybox xargs not support -L option
-if which busybox >& /dev/null; then exit 0; fi
-
-FORBIDDEN='(<<<<<<<|>>>>>>>)'
-GREP_COLOR='4;5;37;41'
-cd $PWD
-
-if [ -z "$(git diff --cached --diff-filter=ACMRTUXB)" ]; then
+if which busybox >& /dev/null; then
+    echo 'busybox detected. skip pre-commit hook.'
     exit 0
 fi
 
-git diff --cached --name-only --diff-filter=ACMRTUXB | xargs -L1 grep --color --with-filename -n -E $FORBIDDEN
-if [[ $? -eq 0 ]]; then
-    echo "Merge lines detected.\nPlease fix files, or run 'git commit --no-verify' to skip check."
-    exit 1
+check_and_report() {
+    GREP_COLOR='4;5;37;41'
+    git diff --cached --name-only --diff-filter=ACMRTUXB | xargs -L1 grep --color --with-filename -n -E $1
+    if [[ $? -eq 0 ]]; then
+        echo "${2} detected."
+        echo 'Please fix files, or add "--no-verify" flag.'
+        exit 1
+    fi
+}
+
+cd $PWD
+if [ -z "$(git diff --cached --diff-filter=ACMRTUXB)" ]; then
+    exit 0
 fi
+check_and_report '(<<<<<<<|>>>>>>>)' 'Merge lines'
+check_and_report 'binding.pry' 'binding.pry'
