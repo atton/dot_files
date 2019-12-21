@@ -56,13 +56,11 @@
 !dot_files/.zprofile
 
 # nvim templetes
-!dot_files/.config/nvim/templates
 !dot_files/.config/nvim/templates/python.py
 !dot_files/.config/nvim/templates/ruby.rb
 !dot_files/.config/nvim/templates/shell.sh
 
 # neosnipet snippets
-!dot_files/.config/nvim/snippets
 !dot_files/.config/nvim/snippets/_.snip
 !dot_files/.config/nvim/snippets/ruby.snip
 !dot_files/.config/nvim/snippets/text.snip
