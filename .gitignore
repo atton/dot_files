@@ -73,7 +73,7 @@
 !scripts/docker-init.sh
 !scripts/git/git-pull-with-set-upstream-to-origin.sh
 !scripts/node-init.sh
-!scripts/nvim-init.sh
+!scripts/neovim-init.sh
 !scripts/python-init.sh
 !scripts/ruby-init.sh
 
