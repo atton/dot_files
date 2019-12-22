@@ -11,7 +11,8 @@ for cmd in $dependencies ; do
     fi
 done
 
-set -x
+set -eux
+./python-init.sh
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
 sh /tmp/installer.sh ~/.config/nvim/dein
