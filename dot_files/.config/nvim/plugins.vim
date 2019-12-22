@@ -1,16 +1,3 @@
-" {{{ setup plugins
-" {{{ setup dein
-"    plugins management plugin : dein.vim
-"      $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-"      $ sh ./installer.sh ~/.config/nvim/dein
-"      :call dein#install()
-" }}}
-" {{{ setup eskk
-"   $ mkdir -p ~/.config/nvim/eskk
-"   $ curl https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L > ~/.config/nvim/eskk/SKK-JISYO.L
-" }}}
-" }}}
-
 " dein settings {{{
 " dein initialize {{{
 let s:plugins_path = expand('~/.config/nvim/')
