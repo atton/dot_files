@@ -7,7 +7,6 @@
 	br = branch
 	ci = commit
 	co = checkout
-	flog = log --format=fuller
 	st = status
 [gc]
 	auto = 0
