@@ -136,9 +136,6 @@ if which direnv >& /dev/null; then eval "$(direnv hook zsh)"; fi
 # Git: not using git-based filename completion
 __git_files() { _files }
 
-# Mercurial
-export HGENCODING=UTF-8
-
 # Node(nodenv)
 if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
 
