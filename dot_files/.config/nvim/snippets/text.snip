@@ -1,5 +1,11 @@
-snippet     look_back
-options     word
+snippet fold
+options word
+	{{{ ${1}
+	${2}
+	}}}
+
+snippet look_back
+options word
 	{{{ look_back
 	
 	\``strftime("%Y/%m/%d(%a)")` 振り返り\`
