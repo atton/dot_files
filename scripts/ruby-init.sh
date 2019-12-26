@@ -10,7 +10,6 @@ if [ -f Gemfile.lock ]; then echo 'Gemfile.lock detected, abort.'; exit 1; fi
 set -x
 gem update --no-document --system
 gem install --no-document -f bundler
-rm -rf ~/.gem
 cp `dirname $0`/../Gemfile .
 BUNDLE_USER_HOME=~/.config/bundler bundle install
 rm Gemfile*
