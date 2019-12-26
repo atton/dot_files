@@ -10,8 +10,6 @@ do
     rm -f ${target_dir}/${file}
 done
 
-rm -f /usr/local/bin/git-pull-with-set-upstream-to-origin
-
 
 if [ `uname` != 'Darwin' ]; then exit 0; fi
 # macOS only configrations

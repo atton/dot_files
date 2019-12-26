@@ -27,7 +27,6 @@
 !dot_files/.docker
 !macOS
 !scripts
-!scripts/git
 
 # .gitkeep files
 !dot_files/.config/aws/.gitkeep
@@ -71,7 +70,6 @@
 
 # scripts
 !scripts/docker-init.sh
-!scripts/git/git-pull-with-set-upstream-to-origin.sh
 !scripts/node-init.sh
 !scripts/neovim-init.sh
 !scripts/python-init.sh

@@ -12,8 +12,6 @@ do
     ln -sf ${current_dir}/${dir}/${file} ${target_dir}
 done
 
-cp scripts/git/git-pull-with-set-upstream-to-origin.sh /usr/local/bin/git-pull-with-set-upstream-to-origin
-
 
 if [ `uname` != 'Darwin' ]; then exit 0; fi
 # macOS only configrations
