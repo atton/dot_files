@@ -7,6 +7,7 @@ echo "gem:  `gem -v`"
 echo ---------- initializations ----------
 if [ -f Gemfile ]; then echo 'Gemfile detected, abort.'; exit 1; fi
 if [ -f Gemfile.lock ]; then echo 'Gemfile.lock detected, abort.'; exit 1; fi
+export GEM_SPEC_CACHE=$HOME/.config/gem/specs
 set -x
 gem update --no-document --system
 gem install --no-document -f bundler
