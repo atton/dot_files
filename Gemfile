@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
+gem 'json'
 gem 'kramdown'
 gem 'neovim'
 gem 'noir'
