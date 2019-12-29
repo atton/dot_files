@@ -135,6 +135,13 @@ nnoremap <Leader><Leader> :<C-u> Denite menu:commands<CR>
 
 vnoremap <Leader>k :DeniteGrepBySelectedWord<CR>
 
+" {{{ Denite : neomru
+
+let g:neomru#file_mru_path      = s:plugins_path . 'neomru/file'
+let g:neomru#directory_mru_path = s:plugins_path . 'neomru/directory'
+
+" }}}
+
 " commands source. for command shortcut {{{
 
 let s:denite_commands             = {}
@@ -155,13 +162,6 @@ let s:denite_commands.command_candidates = [
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " }}}
-
-" }}}
-
-" {{{ Denite : neomru
-
-let g:neomru#file_mru_path      = s:plugins_path . 'neomru/file'
-let g:neomru#directory_mru_path = s:plugins_path . 'neomru/directory'
 
 " }}}
 
