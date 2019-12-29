@@ -212,7 +212,6 @@ endif
 let g:alignta_default_arguments = " = "
 vnoremap <Leader>= :Alignta = <CR>
 vnoremap <Leader>: :Alignta : <CR>
-vnoremap <Leader>& :Alignta & <CR>
 
 " }}}
 
