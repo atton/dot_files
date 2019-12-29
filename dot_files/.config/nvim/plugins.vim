@@ -167,7 +167,7 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " VimCalc {{{
 
-let g:VCalc_WindowPosition = 'bottom'                       " show buttom
+let g:VCalc_WindowPosition = 'bottom'
 
 " }}}
 
@@ -184,7 +184,6 @@ lmap <C-J> <Plug>(eskk:enable)
 
 " gundo.vim {{{
 
-" UndoTree : U
 nnoremap U :GundoToggle<CR>
 
 " }}}
