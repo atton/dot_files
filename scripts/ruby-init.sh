@@ -1,8 +1,7 @@
-#!/bin/sh
+#!/bin/sh -eux
 
 export GEM_SPEC_CACHE=$HOME/.config/gem/specs
 export BUNDLE_USER_HOME=$HOME/.config/bundler
-set -eux
 which ruby
 which gem
 set +eu
