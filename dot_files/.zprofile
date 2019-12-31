@@ -102,14 +102,20 @@ function echo-and-eval() {
 }
 
 function note() {
-    local serial_number=`ls -1 | egrep "[0-9]+_.{8}.txt" | wc -l`
-    local today=`date +%Y%m%d`
+    local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
 
+    if [ $# -ge 1 -a $1 -lt 0 ] >& /dev/null; then
+        local serial=`printf '%02d' $(($serial_number $1))`
+        $EDITOR ${serial}_????????.txt
+        return $?
+    fi
+
+    local today=`date +%Y%m%d`
     ls -1 | egrep "[0-9]+_${today}.txt" >& /dev/null
     if [ $? -eq 0 ]; then
         $EDITOR *_${today}.txt
     else
-        local serial=`printf "%02d" $(($serial_number + 1))`
+        local serial=`printf '%02d' $(($serial_number + 1))`
         $EDITOR ${serial}_${today}.txt
     fi
 }
