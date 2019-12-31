@@ -87,13 +87,11 @@ alias bep='RAILS_ENV=production bundle exec'
 
 # functions {{{
 
-# custom cd (if type only 'cd', call pushd)
 function cd() {
+    # if type only 'cd', call pushd
     if [ $# -eq 0 ]; then
-        # if have no arguments, pushd $HOME
         builtin pushd $HOME
     else
-        # if have arguments, builtin cd
         builtin cd $@
     fi
 }
@@ -107,8 +105,8 @@ function echo-and-eval() {
     eval "( $1 )"
 }
 
-# Heavy initializations
 function shell-init() {
+    # Heavy initializations
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     if noir -v      >& /dev/null; then eval "$(noir init zsh)";     fi
