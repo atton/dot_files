@@ -105,6 +105,19 @@ function echo-and-eval() {
     eval "( $1 )"
 }
 
+function note() {
+    local serial_number=`ls -1 | egrep "[0-9]+_.{8}.txt" | wc -l`
+    local today=`date +%Y%m%d`
+
+    ls -1 | egrep "[0-9]+_${today}.txt" >& /dev/null
+    if [ $? -eq 0 ]; then
+        $EDITOR *_${today}.txt
+    else
+        local serial=`printf "%02d" $(($serial_number + 1))`
+        $EDITOR ${serial}_${today}.txt
+    fi
+}
+
 function shell-init() {
     # Heavy initializations
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
