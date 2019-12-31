@@ -127,10 +127,6 @@ function shell-init() {
     typeset -U path cdpath fpath manpath
 }
 
-function skk-cleanup-regexp() {
-    echo "^[0-9a-z\u3042-\u3093\u30fc]*\\ \\/[0-9a-z\u3042-\u3093\u30fc]*\\/$"
-}
-
 # }}}
 
 # settings for specific command {{{
