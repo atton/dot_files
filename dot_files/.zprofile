@@ -96,10 +96,6 @@ function cd() {
     fi
 }
 
-function date-for-noir() {
-    date +'%Y/%m/%d %H:%M:%S'
-}
-
 function echo-and-eval() {
     echo $1
     eval "( $1 )"
