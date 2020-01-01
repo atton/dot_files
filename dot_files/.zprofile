@@ -136,7 +136,11 @@ function note-calc-times() {
         echo "detected time $size counts, not-even. abort."
         return 1
     fi
-    echo "detected time $size counts"
+    echo "detected time $size counts. listing..."
+    echo '--------------------------------------------------'
+    cat $filespath | xargs egrep -n $timeregexp
+    echo '--------------------------------------------------'
+    echo 'formatted time calculating...'
     echo '--------------------------------------------------'
 
     function to_unixtime() {
