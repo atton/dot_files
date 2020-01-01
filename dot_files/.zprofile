@@ -141,7 +141,7 @@ function note-calc-times() {
     fi
     echo "detected time $size counts. listing..."
     echo '--------------------------------------------------'
-    cat $filespath | xargs egrep -n $timeregexp
+    cat $filespath | xargs egrep -Hn $timeregexp
     echo '--------------------------------------------------'
     echo 'formatted time calculating...'
     echo '--------------------------------------------------'
