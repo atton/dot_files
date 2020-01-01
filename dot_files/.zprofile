@@ -124,7 +124,7 @@ function note-calc-times() {
     local basepath=/tmp/note-calc-times
     mkdir -p $basepath
 
-    local timeregexp='^\s*\d{4}/[01]\d/[0-3]\d [0-2]\d:\d{2}:\d{2}$'
+    local timeregexp='^\s*[0-9/]{10} [0-9:]{8}$'
     local timespath="$basepath/times"
     ls -1 $@ |& egrep -v '[^0-9]:' | xargs cat |& egrep -v '^cat:' | egrep $timeregexp | sort > $timespath
 
