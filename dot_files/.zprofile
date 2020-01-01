@@ -120,6 +120,56 @@ function note() {
     fi
 }
 
+function note-calc-times() {
+    local basepath=/tmp/note-calc-times
+    mkdir -p $basepath
+
+    local timeregexp='^\s*\d{4}/[01]\d/[0-3]\d [0-2]\d:\d{2}:\d{2}$'
+    local timespath="$basepath/times"
+    ls -1 $@ |& egrep -v '[^0-9]:' | xargs cat |& egrep -v '^cat:' | egrep $timeregexp | sort > $timespath
+
+    local size=$((`cat $timespath | wc -l`))
+    if [ $(($size % 2)) -eq 1 ]; then
+        echo "detected time $size counts, not-even. abort."
+        return 1
+    fi
+    echo "detected time $size counts"
+    echo '--------------------------------------------------'
+
+    function to_unixtime() {
+        date -j -u -f '%Y/%m/%d %H:%M:%S' "$1" '+%s'
+    }
+    function print_time() {
+        local hour=$(($2 / 3600))
+        local minute=$((($2 % 3600) / 60))
+        local second=$(($2 % 60))
+        printf "$1%02d:%02d:%02d\n" $hour $minute $second
+    }
+    local total=0
+    function calc_time_diff() {
+        local before=`to_unixtime $1`
+        local after=`to_unixtime $2`
+        local diff=$(($after - $before))
+
+        print_time "$1 -> $2 = " $diff
+        total=$(($total + $diff))
+    }
+
+    declare -a lines; lines=( "${(@f)"$(<$timespath)"}" )
+    local i=1
+    while true ; do
+        local i1=$(($i+1))
+        if [ $i1 -gt $size ]; then break; fi
+
+        calc_time_diff ${lines[$i]} ${lines[$i1]}
+        i=$(($i+2))
+    done
+    print_time "Total time: " $total
+
+    unfunction to_unixtime print_time calc_time_diff
+    rm -rf $basepath
+}
+
 function shell-init() {
     # Heavy initializations
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
