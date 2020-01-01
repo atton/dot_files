@@ -137,7 +137,13 @@ function note-calc-times() {
     echo '--------------------------------------------------'
 
     function to_unixtime() {
-        date -j -u -f '%Y/%m/%d %H:%M:%S' "$1" '+%s'
+        if [ `uname` = 'Darwin' ]; then
+            date -j -u -f '%Y/%m/%d %H:%M:%S' "$1" '+%s'
+        elif which busybox >& /dev/null; then
+            date -D '%Y/%m/%d %H:%M:%S' -d "$1" '+%s'
+        else
+            date -d "$1" '+%s' # Maybe GNU Linux
+        fi
     }
     function print_time() {
         local hour=$(($2 / 3600))
