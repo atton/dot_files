@@ -132,7 +132,10 @@ function note-calc-times() {
     cat $filespath | xargs cat |& egrep -v '^cat:' | egrep $timeregexp | sort > $timespath
 
     local size=$((`cat $timespath | wc -l`))
-    if [ $(($size % 2)) -eq 1 ]; then
+    if [ $size  -eq 0 ]; then
+        echo "formatted time not detected. abort."
+        return 1
+    elif [ $(($size % 2)) -eq 1 ]; then
         echo "detected time $size counts, not-even. abort."
         return 1
     fi
