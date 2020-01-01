@@ -164,6 +164,7 @@ function note-calc-times() {
         calc_time_diff ${lines[$i]} ${lines[$i1]}
         i=$(($i+2))
     done
+    echo '--------------------------------------------------'
     print_time "Total time: " $total
 
     unfunction to_unixtime print_time calc_time_diff
