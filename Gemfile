@@ -4,7 +4,6 @@ gem 'bundler'
 gem 'json'
 gem 'kramdown'
 gem 'neovim'
-gem 'noir'
 gem 'pry'
 
 case RUBY_PLATFORM
