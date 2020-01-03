@@ -1,7 +1,7 @@
 #!/bin/sh
 cd `dirname $0`
 
-dependencies='nvim curl git sh pip3'
+dependencies='nvim curl git sh pip3 gcc'
 for cmd in $dependencies ; do
     which $cmd >& /dev/null
     if [ $? -ne 0 ]; then
