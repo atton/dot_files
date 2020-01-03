@@ -12,5 +12,9 @@ if [ `uname` == 'Darwin' ]; then pip3_install pynvim ; exit 0 ; fi
 pip3 install --upgrade setuptools pip
 pip3_install pynvim
 
+
+if [ $# -eq 1 ]; then
+    if [ $1 = 'NO_AWS' ]; then exit 0; fi
+fi
 pip3_install awscli
 pip3_install aws-sam-cli

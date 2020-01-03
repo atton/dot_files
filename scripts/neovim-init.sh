@@ -12,7 +12,7 @@ for cmd in $dependencies ; do
 done
 
 set -eux
-./python-init.sh
+./python-init.sh 'NO_AWS'
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh
 sh /tmp/installer.sh ~/.config/nvim/dein
