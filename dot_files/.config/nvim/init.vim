@@ -46,7 +46,17 @@ set listchars=tab:>-            " set list visible style
 set autoindent                  " enable autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
 
-let g:loaded_matchparen = 1     " disable show match brackets on cursor
+" Disable few builtin plugins {{{
+
+let g:loaded_matchparen    = 1
+let g:loaded_tar           = 1
+let g:loaded_tarPlugin     = 1
+let g:loaded_vimball       = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zip           = 1
+let g:loaded_zipPlugin     = 1
+
+" }}}
 
 " Specific feature settings {{{
 
