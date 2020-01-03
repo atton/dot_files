@@ -44,7 +44,6 @@ set list                        " show symbols include tab
 set listchars=tab:>-            " set list visible style
 set autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
-let loaded_netrwPlugin = 1      " disable netrw
 
 " Specific feature settings {{{
 
@@ -239,13 +238,6 @@ function! s:sudo_write_current_buffer() abort
     endif
 endfunction
 
-function! s:check_directory() abort
-    let s:path = expand('%:p')
-    if (isdirectory(s:path) || s:path == '~')
-        echoerr s:path . ' is directory.'
-    endif
-endfunction
-
 " }}}
 
 " Commands {{{
@@ -305,7 +297,6 @@ nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 
 augroup All
     autocmd!
-    autocmd BufEnter     * call s:check_directory()
     autocmd BufWritePost * call s:detect_trailing_spaces()
     autocmd InsertLeave  * set nopaste
 augroup END
