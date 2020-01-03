@@ -17,8 +17,10 @@ endif
 " }}}
 
 " Settings {{{
+
 filetype plugin indent on
 syntax enable
+
 set nocompatible                " disable vi compatible
 set background=light            " terminal back ground color is light
 set hidden                      " if buffer unsaved, can show other buffer
@@ -37,13 +39,14 @@ set visualbell t_vb=            " disable bell
 set backspace=indent,eol,start  " set deletable character by <BS>
 set ambiwidth=double            " set Ambiguous character width, for Zenkaku character
 set pumheight=7                 " pop up items number is 7
-let loaded_matchparen = 1       " disable show match brackets on cursor
 set nrformats-=octal            " ignore octal in increment/decrement(^a^x)
 set completeopt-=preview        " disable preview in completion
 set list                        " show symbols include tab
 set listchars=tab:>-            " set list visible style
-set autoindent
+set autoindent                  " enable autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
+
+let g:loaded_matchparen = 1     " disable show match brackets on cursor
 
 " Specific feature settings {{{
 
