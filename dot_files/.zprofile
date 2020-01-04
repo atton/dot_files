@@ -139,12 +139,10 @@ function note-calc-times() {
         echo "detected time $size counts, not-even. abort."
         return 1
     fi
-    echo "detected time $size counts. listing..."
-    echo '--------------------------------------------------'
+    function line() { printf "%55s\n" | tr ' ' '-' }
+    line; echo "detected time $size counts. listing..."; line
     cat $filespath | xargs egrep -Hn $timeregexp
-    echo '--------------------------------------------------'
-    echo 'formatted time calculating...'
-    echo '--------------------------------------------------'
+    line; echo 'formatted time calculating...' ; line
 
     function to_unixtime() {
         if [ `uname` = 'Darwin' ]; then
@@ -180,10 +178,9 @@ function note-calc-times() {
         calc_time_diff ${lines[$i]} ${lines[$i1]}
         i=$(($i+2))
     done
-    echo '--------------------------------------------------'
-    print_time "Total time: " $total
+    line; print_time "Total time: " $total
 
-    unfunction to_unixtime print_time calc_time_diff
+    unfunction line to_unixtime print_time calc_time_diff
     rm -rf $basepath
 }
 
