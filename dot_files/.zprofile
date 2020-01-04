@@ -188,10 +188,9 @@ function note-calc-times() {
 }
 
 function shell-init() {
-    # Heavy initializations
+    # Heavy initializations and utils
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if noir -v      >& /dev/null; then eval "$(noir init zsh)";     fi
     source $HOME/.config/zsh/zprofile.util
     typeset -U path cdpath fpath manpath
 }
