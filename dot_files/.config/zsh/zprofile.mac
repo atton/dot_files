@@ -49,9 +49,9 @@ function itunes {
         echo '+-----------------------------+';
         echo '|iTunes Command Line Interface|';
         echo '+-----------------------------+';
-        echo 'Usage: itunes <option>';
+        echo 'Usage: itunes <command>';
         echo;
-        echo 'Options:';
+        echo 'Commands:';
         echo ' status, st     = Shows status, current track and volume.';
         echo ' #              = Set volume level to #(0-100)%';
         echo ' play (bgm|fav) = Play (bgm|fav) playlist.';
