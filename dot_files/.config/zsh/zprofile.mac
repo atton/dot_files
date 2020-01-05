@@ -51,7 +51,7 @@ function itunes {
         echo '+-----------------------------+';
         echo 'Usage: itunes <command>';
         echo;
-        echo 'Commands:';
+        echo 'Commands(default = status)';
         echo ' status, st     = Shows status, current track and volume.';
         echo ' #              = Set volume level to #(0-100)%';
         echo ' play (bgm|fav) = Play (bgm|fav) playlist.';
@@ -63,6 +63,7 @@ function itunes {
 
     function getState() { osascript -e 'tell application "iTunes" to player state as string' }
     function showState() { echo "iTunes is currently `getState`." }
+    function showStatus() { showState; showCurrentVolume; showTrackInfo; }
 
     function showTrackInfo() {
         if [ `getState` != 'stopped' ]; then
@@ -89,15 +90,13 @@ function itunes {
         showTrackInfo;
     }
 
-    if [ $# = 0 ]; then
-        showHelp;
-    fi
+    if [ $# = 0 ]; then showStatus; fi
 
     while [ $# -gt 0 ]; do
         local arg=$1;
         case $arg in
             'status' | 'st' )
-                showState; showCurrentVolume; showTrackInfo;
+                showStatus;
                 break ;;
 
             'play' )
@@ -160,7 +159,7 @@ function itunes {
         esac
     done
 
-    unfunction getState showState play playlist
+    unfunction getState showState showStatus play playlist
     unfunction showCurrentVolume showHelp showTrackInfo
 }
 
