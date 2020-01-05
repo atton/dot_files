@@ -46,9 +46,9 @@ function delete-text-replacement-informations() {
 
 function itunes {
     function showHelp() {
-        echo '+-----------------------------+';
-        echo '|iTunes Command Line Interface|';
-        echo '+-----------------------------+';
+        echo '+-------------------------------+';
+        echo '| iTunes Command Line Interface |';
+        echo '+-------------------------------+';
         echo 'Usage: itunes <command>';
         echo;
         echo 'Commands(default = status)';
@@ -153,7 +153,6 @@ function itunes {
                 break ;;
 
             'help' | * )
-                echo 'help:';
                 showHelp;
                 break ;;
         esac
