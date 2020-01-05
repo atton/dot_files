@@ -61,9 +61,8 @@ function itunes {
         echo ' quit, q        = Quit iTunes.';
     }
 
-    function getState() {
-        osascript -e 'tell application "iTunes" to player state as string'
-    }
+    function getState() { osascript -e 'tell application "iTunes" to player state as string' }
+    function showState() { echo "iTunes is currently `getState`." }
 
     function showTrackInfo() {
         if [ `getState` != 'stopped' ]; then
@@ -98,10 +97,7 @@ function itunes {
         local arg=$1;
         case $arg in
             'status' | 'st' )
-                local state=`getState`
-                echo "iTunes is currently $state.";
-                showCurrentVolume;
-                showTrackInfo;
+                showState; showCurrentVolume; showTrackInfo;
                 break ;;
 
             'play' )
@@ -164,7 +160,7 @@ function itunes {
         esac
     done
 
-    unfunction getState play playlist
+    unfunction getState showState play playlist
     unfunction showCurrentVolume showHelp showTrackInfo
 }
 
