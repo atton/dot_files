@@ -1,20 +1,22 @@
 [user]
 	name  = atton
 	email = e115763@gmail.com
-[push]
-	default = current
+
 [alias]
 	br = branch
 	ci = commit
 	co = checkout
 	diff-with-filter = diff --diff-filter=ACMRTUXB
 	st = status
-[gc]
-	auto = 0
 [core]
 	hooksPath = ~/.config/git/hooks
 	quotepath = false
+[gc]
+	auto = 0
 [grep]
 	lineNumber = true
+[push]
+	default = current
+
 [include]
 	path = .gitconfig.local
