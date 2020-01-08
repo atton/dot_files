@@ -52,17 +52,18 @@ function itunes {
         echo 'Usage: itunes <command>';
         echo;
         echo 'Commands(default = status)';
-        echo ' status, st     = Shows status, current track and volume.';
-        echo ' #              = Set volume level to #(0-100)%';
-        echo ' play (bgm|fav) = Play (bgm|fav) playlist.';
-        echo ' toggle, t      = Toggle play/pause. If iTunes stopped, start it.';
-        echo ' next, n        = Go to the next track.';
-        echo ' prev, p        = Go to the previous track.';
-        echo ' quit, q        = Quit iTunes.';
+        echo ' status, st = Shows status, current track and volume.';
+        echo ' #          = Set volume level to #(0-100)%';
+        echo ' bgm        = Play "BGM : for Work" playlist.';
+        echo ' fav        = Play "Song : Recently Favorited" playlist.';
+        echo ' toggle, t  = Toggle play/pause. If iTunes stopped, start it.';
+        echo ' next, n    = Go to the next track.';
+        echo ' prev, p    = Go to the previous track.';
+        echo ' quit, q    = Quit iTunes.';
     }
 
-    function getState() { osascript -e 'tell application "iTunes" to player state as string' }
-    function showState() { echo "iTunes is currently `getState`." }
+    function getState()   { osascript -e 'tell application "iTunes" to player state as string' }
+    function showState()  { echo "iTunes is currently `getState`." }
     function showStatus() { showState; showCurrentVolume; showTrackInfo; }
 
     function showTrackInfo() {
@@ -99,22 +100,12 @@ function itunes {
                 showStatus;
                 break ;;
 
-            'play' )
-                if [ $# -eq 1 ]; then
-                    echo 'Please input name of playlist: bgm or fav'
-                    break ;
-                fi
+            'bgm' )
+                playlist 'BGM : for Work'
+                break ;;
 
-                local name=$2
-                if [ $name = 'bgm' ]; then
-                    playlist 'BGM : for Work'
-                elif [ $name = 'fav' ]; then
-                    playlist 'Song : Recently Favorited'
-                else
-                    echo "$name is not supported."
-                    echo 'Currently supported playlist: bgm or fav'
-                    break ;
-                fi
+            'fav' )
+                playlist 'Song : Recently Favorited'
                 break ;;
 
             'toggle' | 't' )
