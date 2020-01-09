@@ -37,6 +37,7 @@
 !dot_files/.config/vim/.gitkeep
 
 # settings
+!dot_files/.config/git/config
 !dot_files/.config/git/hooks/pre-commit
 !dot_files/.config/git/ignore
 !dot_files/.config/nvim/init.vim
@@ -47,7 +48,6 @@
 !dot_files/.config/zsh/zprofile.util
 !dot_files/.docker/config.json
 !dot_files/.emacs
-!dot_files/.gitconfig
 !dot_files/.npmrc
 !dot_files/.pryrc
 !dot_files/.vimrc
