@@ -87,10 +87,7 @@ alias bep='RAILS_ENV=production bundle exec'
 
 # functions {{{
 
-function echo-and-eval() {
-    echo $1
-    eval "( $1 )"
-}
+function echo-and-eval() { echo $1; eval "( $1 )"; }
 
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
