@@ -87,15 +87,6 @@ alias bep='RAILS_ENV=production bundle exec'
 
 # functions {{{
 
-function cd() {
-    # if type only 'cd', call pushd
-    if [ $# -eq 0 ]; then
-        builtin pushd $HOME
-    else
-        builtin cd $@
-    fi
-}
-
 function echo-and-eval() {
     echo $1
     eval "( $1 )"
