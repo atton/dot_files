@@ -115,9 +115,19 @@ function itunes {
         showTrackInfo;
     }
 
+    function quit() {
+        echo 'Quitting iTunes.';
+        osascript -e 'tell application "iTunes" to quit';
+    }
+
+    function volume() {
+        echo "Changing iTunes volume level: ${1}%";
+        osascript -e "tell application \"iTunes\" to set sound volume to ${1}";
+    }
+
     function cleanup() {
         unfunction getState showState showStatus play playlist toggle next previous
-        unfunction showCurrentVolume showHelp showTrackInfo cleanup
+        unfunction quit volume showCurrentVolume showHelp showTrackInfo cleanup
     }
 
     # itunes main code
@@ -151,13 +161,11 @@ function itunes {
                 break ;;
 
             'quit' | 'q' )
-                echo 'Quitting iTunes.';
-                osascript -e 'tell application "iTunes" to quit';
+                quit
                 break ;;
 
             <0-100> )
-                echo "Changing iTunes volume level: ${1}%";
-                osascript -e "tell application \"iTunes\" to set sound volume to ${1}";
+                volume $1
                 break ;;
 
             'help' | * )
