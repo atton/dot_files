@@ -91,8 +91,32 @@ function itunes {
         showTrackInfo;
     }
 
+    function toggle() {
+        if [ $1 = 'playing' ]; then
+            echo 'Pausing iTunes.';
+            osascript -e 'tell application "iTunes" to pause';
+        elif [ $1 = 'paused' ]; then
+            play;
+        elif [ $1 = 'stopped' ]; then
+            echo 'iTunes currently stopped. starting iTunes.'
+            play;
+        fi
+    }
+
+    function next() {
+        echo 'Going to next track.' ;
+        osascript -e 'tell application "iTunes" to next track';
+        showTrackInfo;
+    }
+
+    function previous() {
+        echo 'Going to previous track.';
+        osascript -e 'tell application "iTunes" to previous track';
+        showTrackInfo;
+    }
+
     function cleanup() {
-        unfunction getState showState showStatus play playlist
+        unfunction getState showState showStatus play playlist toggle next previous
         unfunction showCurrentVolume showHelp showTrackInfo cleanup
     }
 
@@ -115,28 +139,15 @@ function itunes {
                 break ;;
 
             'toggle' | 't' )
-                local state=`getState`
-                if [ $state = 'playing' ]; then
-                    echo 'Pausing iTunes.';
-                    osascript -e 'tell application "iTunes" to pause';
-                elif [ $state = 'paused' ]; then
-                    play;
-                elif [ $state = 'stopped' ]; then
-                    echo 'iTunes currently stopped. starting iTunes.'
-                    play;
-                fi
+                toggle `getState`
                 break ;;
 
             'next' | 'n' )
-                echo 'Going to next track.' ;
-                osascript -e 'tell application "iTunes" to next track';
-                showTrackInfo;
+                next
                 break ;;
 
             'prev' | 'p' )
-                echo 'Going to previous track.';
-                osascript -e 'tell application "iTunes" to previous track';
-                showTrackInfo;
+                previous
                 break ;;
 
             'quit' | 'q' )
