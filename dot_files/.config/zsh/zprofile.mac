@@ -60,6 +60,7 @@ function itunes {
         echo ' next, n    = Go to the next track.';
         echo ' prev, p    = Go to the previous track.';
         echo ' quit, q    = Quit iTunes.';
+        echo ' help, *    = show help informations.';
     }
 
     function getState()   { osascript -e 'tell application "iTunes" to player state as string' }
@@ -132,48 +133,17 @@ function itunes {
 
     # itunes main code
     if [ $# = 0 ]; then showStatus; cleanup; return; fi
-
-    while [ $# -gt 0 ]; do
-        local arg=$1;
-        case $arg in
-            'status' | 'st' )
-                showStatus;
-                break ;;
-
-            'bgm' )
-                playlist 'BGM : for Work'
-                break ;;
-
-            'fav' )
-                playlist 'Song : Recently Favorited'
-                break ;;
-
-            'toggle' | 't' )
-                toggle `getState`
-                break ;;
-
-            'next' | 'n' )
-                next
-                break ;;
-
-            'prev' | 'p' )
-                previous
-                break ;;
-
-            'quit' | 'q' )
-                quit
-                break ;;
-
-            <0-100> )
-                volume $1
-                break ;;
-
-            'help' | * )
-                showHelp;
-                break ;;
-        esac
-    done
-
+    case $1 in
+        'status' | 'st' ) showStatus;;
+        'bgm'           ) playlist 'BGM : for Work' ;;
+        'fav'           ) playlist 'Song : Recently Favorited' ;;
+        'toggle' | 't'  ) toggle `getState` ;;
+        'next'   | 'n'  ) next ;;
+        'prev'   | 'p'  ) previous ;;
+        'quit'   | 'q'  ) quit ;;
+         <0-100>        ) volume $1 ;;
+        'help'   | *    ) showHelp ;;
+    esac
     cleanup
 }
 
