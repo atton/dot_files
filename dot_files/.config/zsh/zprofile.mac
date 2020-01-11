@@ -91,7 +91,13 @@ function itunes {
         showTrackInfo;
     }
 
-    if [ $# = 0 ]; then showStatus; fi
+    function cleanup() {
+        unfunction getState showState showStatus play playlist
+        unfunction showCurrentVolume showHelp showTrackInfo cleanup
+    }
+
+    # itunes main code
+    if [ $# = 0 ]; then showStatus; cleanup; return; fi
 
     while [ $# -gt 0 ]; do
         local arg=$1;
@@ -149,8 +155,7 @@ function itunes {
         esac
     done
 
-    unfunction getState showState showStatus play playlist
-    unfunction showCurrentVolume showHelp showTrackInfo
+    cleanup
 }
 
 # }}}
