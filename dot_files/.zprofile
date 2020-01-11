@@ -133,7 +133,7 @@ function note-calc-times() {
 
     local size=$((`cat $timespath | wc -l`))
     if [ $size  -eq 0 ]; then
-        echo "formatted time not detected. abort."
+        echo 'formatted time not detected. abort.'
         return 1
     elif [ $(($size % 2)) -eq 1 ]; then
         echo "detected time $size counts, not-even. abort."
@@ -159,7 +159,6 @@ function note-calc-times() {
         local second=$(($2 % 60))
         printf "$1%02d:%02d:%02d\n" $hour $minute $second
     }
-    local total=0
     function calc_time_diff() {
         local before=`to_unixtime $1`
         local after=`to_unixtime $2`
@@ -170,6 +169,7 @@ function note-calc-times() {
     }
 
     declare -a lines; lines=( "${(@f)"$(<$timespath)"}" )
+    local total=0
     local i=1
     while true ; do
         local i1=$(($i+1))
@@ -178,7 +178,7 @@ function note-calc-times() {
         calc_time_diff ${lines[$i]} ${lines[$i1]}
         i=$(($i+2))
     done
-    line; print_time "Total time: " $total
+    line; print_time 'Total time: ' $total
 
     unfunction line to_unixtime print_time calc_time_diff
     rm -rf $basepath
