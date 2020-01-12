@@ -7,14 +7,10 @@
 	ci = commit
 	co = checkout
 	diff-with-filter = diff --diff-filter=ACMRTUXB
-	flog = log --format=fuller
-	mlog = log --format=medium
 	st = status
 [core]
 	hooksPath = ~/.config/git/hooks
 	quotepath = false
-[format]
-	pretty = short
 [gc]
 	auto = 0
 [grep]
