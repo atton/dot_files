@@ -9,9 +9,6 @@ export LANG=en_US.UTF-8
 export lang=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-export EDITOR=nvim
-export LESSHISTFILE=/dev/null
-
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
@@ -20,6 +17,12 @@ if [[ $(uname) == Darwin ]]; then
 else
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
+
+if which vi   >& /dev/null; then export EDITOR=vi;   fi
+if which vim  >& /dev/null; then export EDITOR=vim;  fi
+if which nvim >& /dev/null; then export EDITOR=nvim; fi
+
+export LESSHISTFILE=/dev/null
 
 # }}}
 
