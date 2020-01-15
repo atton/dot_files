@@ -130,7 +130,6 @@ nnoremap <Leader>f :<C-u> Denite file/rec <CR>
 nnoremap <Leader>r :<C-u> Denite register<CR>
 nnoremap <Leader>m :<C-u> Denite file_mru<CR>
 nnoremap <Leader>g :Denite grep:. <CR>
-nnoremap <Leader>c :<C-u> Denite menu:commands<CR>
 nnoremap <Leader><Leader> :<C-u> Denite menu:commands<CR>
 
 vnoremap <Leader>k :DeniteGrepBySelectedWord<CR>
