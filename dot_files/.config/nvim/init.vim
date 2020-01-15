@@ -316,8 +316,6 @@ augroup UserDefinedAutoCommand
     autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType python setl tabstop=4 softtabstop=4 shiftwidth=4  expandtab
-    autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
     autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType text   setl commentstring=%s
@@ -345,7 +343,6 @@ augroup END
 
 augroup FileTemplate
     autocmd!
-    autocmd BufNewFile *.py  0r ~/.config/nvim/templates/python.py
     autocmd BufNewFile *.rb  0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh  0r ~/.config/nvim/templates/shell.sh
 augroup END
