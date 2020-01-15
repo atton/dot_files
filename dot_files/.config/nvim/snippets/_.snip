@@ -13,7 +13,15 @@ options     word
 snippet     filetype_magic_comment
 alias       vim_magic_comment magic_comment_vim vim_magic magic_vim magic
 options     word
-    vim: set filetype=${1}:
+	`printf(&commentstring, 'vim: set filetype=${1}:')`
+
+snippet     fold
+options     head
+	`printf(&commentstring, '{{{ ${1}')`
+
+	${2}
+
+	`printf(&commentstring, '}}}')`
 
 snippet     line
 options     word

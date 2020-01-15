@@ -320,6 +320,9 @@ augroup UserDefinedAutoCommand
     autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
     autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType text   setl commentstring=%s
+    autocmd FileType sh     setl commentstring=#\ %s
+    autocmd FileType zsh    setl commentstring=#\ %s
 augroup END
 
 " Omni Completion dictionary {{{
