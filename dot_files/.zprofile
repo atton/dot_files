@@ -95,7 +95,7 @@ function echo-and-eval() { echo $1; eval "( $1 )"; }
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
 
-    if [ $# -ge 1 -a $1 -lt 0 ] >& /dev/null; then
+    if [ $# -ge 1 -a $1 -le 0 ] >& /dev/null; then
         local serial=`printf '%02d' $(($serial_number $1))`
         $EDITOR ${serial}_????????.txt
         return $?
