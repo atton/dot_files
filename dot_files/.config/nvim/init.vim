@@ -308,37 +308,18 @@ nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 
 " autocmds {{{
 
-augroup All
+augroup UserDefinedAutoCommand
     autocmd!
-    autocmd BufWritePost * call s:detect_trailing_spaces()
-    autocmd InsertLeave  * set nopaste
-augroup END
-
-" for Ruby
-augroup Ruby
-    autocmd!
-    autocmd FileType ruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType eruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType haml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType slim  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-augroup END
-
-" for Python
-augroup Python
-    autocmd!
+    autocmd BufWritePost *  call s:detect_trailing_spaces()
+    autocmd InsertLeave  *  setl nopaste
+    autocmd FileType ruby   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType python setl tabstop=4 softtabstop=4 shiftwidth=4  expandtab
     autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-augroup END
-
-" for HTML
-augroup HTML
-    autocmd!
-    autocmd FileType html setl tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
-
-" for YAML
-augroup Yaml
-    autocmd FileType yaml  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 " Omni Completion dictionary {{{
