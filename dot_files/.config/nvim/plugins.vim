@@ -148,14 +148,14 @@ let s:denite_commands.description = 'command shortcuts'
 
 " commands
 let s:denite_commands.command_candidates = [
-\ ['ReloadVimrc'     , 'ReloadVimrc'],
-\ ['EditVimrc'       , 'EditVimrc'],
-\ ['EditVimrcPlugins', 'EditVimrcPlugins'],
-\ ['ToggleLastStatus', 'ToggleLastStatus'],
-\ ['ToggleWildIgnore', 'ToggleWildIgnore'],
-\ ['PluginUpdate' ,    'Dein update'],
-\ ['LoadLazyPlugins' , 'Dein soure'],
-\ ['InsertTimeStampsFromUndoHistory' , 'InsertTimeStampsFromUndoHistory'],
+\ ['EditVimrc',         'EditVimrc'],
+\ ['EditVimrcPlugins',  'EditVimrcPlugins'],
+\ ['InsertTimeStamps',  'InsertTimeStampsFromUndoHistory'],
+\ ['LoadLazyPlugins',   'Dein soure'],
+\ ['PluginUpdate',      'Dein update'],
+\ ['ReloadVimrc',       'ReloadVimrc'],
+\ ['ToggleLastStatus',  'ToggleLastStatus'],
+\ ['ToggleWildIgnore',  'ToggleWildIgnore'],
 \ ]
 
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
