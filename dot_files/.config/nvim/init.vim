@@ -321,6 +321,8 @@ augroup UserDefinedAutoCommand
     autocmd FileType text   setl commentstring=%s
     autocmd FileType sh     setl commentstring=#\ %s
     autocmd FileType zsh    setl commentstring=#\ %s
+    autocmd BufNewFile *.rb   0r ~/.config/nvim/templates/ruby.rb
+    autocmd BufNewFile *.sh   0r ~/.config/nvim/templates/shell.sh
 augroup END
 
 " Omni Completion dictionary {{{
@@ -337,16 +339,6 @@ augroup OmniCompletionDictionary
                 \ |   setlocal omnifunc=syntaxcomplete#Complete
                 \ | endif
 augroup END
-" }}}
-
-" files template {{{
-
-augroup FileTemplate
-    autocmd!
-    autocmd BufNewFile *.rb  0r ~/.config/nvim/templates/ruby.rb
-    autocmd BufNewFile *.sh  0r ~/.config/nvim/templates/shell.sh
-augroup END
-
 " }}}
 
 " }}}
