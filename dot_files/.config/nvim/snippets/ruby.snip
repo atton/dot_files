@@ -3,6 +3,14 @@ alias       be be_t
 options     head
 	be_truthy
 
+snippet     fold
+options     head
+	# {{{ ${1}
+
+	${2}
+
+	# }}}
+
 snippet     rspec_template
 alias       rspec
 options     word
