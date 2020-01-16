@@ -1,5 +1,5 @@
-" dein settings {{{
-" dein initialize {{{
+" {{{ dein settings
+" {{{ dein initialize
 let s:plugins_path = expand('~/.config/nvim/')
 let s:dein_path    = s:plugins_path . 'dein'
 if has('vim_starting')
@@ -56,7 +56,7 @@ endif
 
 " plugins settings
 
-" deoplete {{{
+" {{{ deoplete
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#data_directory    = s:plugins_path . 'deoplete'
@@ -64,7 +64,7 @@ call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable comple
 
 " }}}
 
-" neosnippet {{{
+" {{{ neosnippet
 
 " snippet mapping : ^k
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -76,7 +76,7 @@ let g:neosnippet#data_directory     = s:plugins_path . 'neosnippet'
 
 " }}}
 
-" Denite {{{
+" {{{ Denite
 
 call denite#custom#option('_', 'start_filter', v:true) " Always start at denite-filter
 call denite#custom#source('_', 'matchers', ['matcher/substring', 'matcher/fuzzy'])
@@ -141,7 +141,7 @@ let g:neomru#directory_mru_path = s:plugins_path . 'neomru/directory'
 
 " }}}
 
-" commands source. for command shortcut {{{
+" {{{ Define denite source 'menu:commands' for shortcuts
 
 let s:denite_commands             = {}
 let s:denite_commands.description = 'command shortcuts'
@@ -166,13 +166,13 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " }}}
 
-" VimCalc {{{
+" {{{ VimCalc
 
 let g:VCalc_WindowPosition = 'bottom'
 
 " }}}
 
-" eskk.vim {{{
+" {{{ eskk.vim
 
 let g:eskk#directory        = expand('~/.config/nvim/eskk')
 let g:eskk#dictionary       = {'path': expand('~/.config/nvim/eskk/skk-jisyo'), 'sorted': 0, 'encoding': 'utf-8'}
@@ -183,13 +183,13 @@ lmap <C-J> <Plug>(eskk:enable)
 
 " }}}
 
-" gundo.vim {{{
+" {{{ gundo.vim
 
 nnoremap U :GundoToggle<CR>
 
 " }}}
 
-" vim-surround {{{
+" {{{ vim-surround
 
 " manual mapping for eskk.vim (ignore ISurruond)
 let g:surround_no_mappings = 1
@@ -208,7 +208,7 @@ endif
 
 " }}}
 
-" alignta {{{
+" {{{ alignta
 
 let g:alignta_default_arguments = " = "
 vnoremap <Leader>= :Alignta = <CR>
@@ -216,7 +216,7 @@ vnoremap <Leader>: :Alignta : <CR>
 
 " }}}
 
-" open-browser {{{
+" {{{ open-browser
 
 " open URL
 nmap gx <Plug>(openbrowser-smart-search)

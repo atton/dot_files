@@ -10,13 +10,13 @@
 let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
 
-" Source plugins {{{
+" {{{ Source plugins
 if (isdirectory(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')) && has('nvim'))
     source ~/.config/nvim/plugins.vim
 endif
 " }}}
 
-" Settings {{{
+" {{{ Settings
 
 filetype plugin indent on
 syntax enable
@@ -46,7 +46,7 @@ set listchars=tab:>-            " set list visible style
 set autoindent                  " enable autoindent
 set spelllang=en,cjk            " treat Japanese in spell check
 
-" Disable few builtin plugins {{{
+" {{{ Disable few builtin plugins
 
 let g:loaded_matchparen    = 1
 let g:loaded_tar           = 1
@@ -58,9 +58,9 @@ let g:loaded_zipPlugin     = 1
 
 " }}}
 
-" Specific feature settings {{{
+" {{{ Specific feature settings
 
-" color {{{
+" {{{ color
 
 highlight Pmenu     ctermbg = grey
 highlight PmenuSel  ctermbg = darkcyan
@@ -68,7 +68,7 @@ highlight PMenuSbar ctermbg = grey
 
 " }}}
 
-" directory {{{
+" {{{ directory
 
 if has('nvim')
     " swapfile location
@@ -77,7 +77,7 @@ endif
 
 " }}}
 
-" encoding : utf-8 {{{
+" {{{ encoding : utf-8
 
 if has('vim_starting')
     set termencoding=utf-8
@@ -122,7 +122,7 @@ set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%0
 
 " }}}
 
-" tab {{{
+" {{{ tab
 
 " usually use space
 set expandtab
@@ -148,7 +148,7 @@ endif
 
 " }}}
 
-" wild {{{
+" {{{ wild
 
 set wildmenu                        " enable wild
 " wild ignore settings
@@ -170,7 +170,7 @@ unlet s:wildignore_files
 
 " }}}
 
-" Functions {{{
+" {{{ Functions
 
 function! s:detect_trailing_spaces()
     " detect trailing spaces for :write hook
@@ -253,7 +253,7 @@ endfunction
 
 " }}}
 
-" Commands {{{
+" {{{ Commands
 
 " short cut commands
 command! E edit! ++enc=utf8 ++ff=unix
@@ -270,7 +270,7 @@ command! ToggleWildIgnore                call s:toggle_wild_ignore()
 
 " }}}
 
-" Keymaps {{{
+" {{{ Keymaps
 " yank to end of line (D like Y)
 nnoremap Y y$
 " emacs like cursor move
@@ -304,7 +304,7 @@ nnoremap <Leader>s :setl spell!<CR>
 nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 " }}}
 
-" autocmds {{{
+" {{{ autocmds
 
 augroup UserDefinedAutoCommand
     autocmd!
@@ -324,7 +324,7 @@ augroup UserDefinedAutoCommand
     autocmd BufNewFile *.sh   0r ~/.config/nvim/templates/shell.sh
 augroup END
 
-" Omni Completion dictionary {{{
+" {{{ Omni Completion dictionary
 augroup OmniCompletionDictionary
     autocmd!
     autocmd FileType c          setlocal omnifunc=ccomplete#Complete
