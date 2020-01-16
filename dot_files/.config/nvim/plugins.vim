@@ -148,8 +148,8 @@ let s:denite_commands.description = 'command shortcuts'
 
 " commands
 let s:denite_commands.command_candidates = [
-\ ['EditVimrc',         'EditVimrc'],
-\ ['EditVimrcPlugins',  'EditVimrcPlugins'],
+\ ['EditVimrc',         'edit ~/.config/nvim/init.vim'],
+\ ['EditVimrcPlugins',  'edit ~/.config/nvim/plugins.vim'],
 \ ['InsertTimeStamps',  'InsertTimeStampsFromUndoHistory'],
 \ ['LoadLazyPlugins',   'Dein soure'],
 \ ['PluginUpdate',      'Dein update'],

@@ -257,8 +257,6 @@ endfunction
 
 " short cut commands
 command! E edit! ++enc=utf8 ++ff=unix
-command! EditVimrc edit $MYVIMRC
-command! EditVimrcPlugins edit $HOME/.config/nvim/plugins.vim
 command! ExecteCurrentLine exec '!'.getline('.')
 command! ReloadVimrc source $MYVIMRC
 command! SetFileEncodingUTF8 setl fileencoding=utf8
