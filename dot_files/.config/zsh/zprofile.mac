@@ -4,6 +4,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 source /usr/local/share/zsh/*
 
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
+alias hub-ci='date +"%Y/%m/%d %H:%M:%S" && hub ci-status -v'
+alias hub-ci-open='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
