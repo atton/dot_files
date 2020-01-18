@@ -176,7 +176,7 @@ function note-calc-times() {
 }
 
 function shell-init() {
-    # Heavy initializations and utils
+    # initializations with rehash and load utils
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     source $HOME/.config/zsh/zprofile.util
