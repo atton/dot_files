@@ -93,6 +93,25 @@ function rearchive_directory() {
 
 # }}}
 
+# {{{ git-private
+
+function git-private() {
+    if [ ! -d .git ]; then
+        echo '.git not found.'
+        echo 'Please execute in repository-root directory.'
+        return 1
+    fi
+
+    echo-and-eval 'rm -rf /tmp/git-private'
+    echo-and-eval 'mkdir -p /tmp/git-private'
+    echo-and-eval 'mv .git/hooks/* /tmp/git-private'
+    echo-and-eval 'echo "#!/bin/sh" > .git/hooks/pre-push'
+    echo-and-eval 'echo "exit 1"   >> .git/hooks/pre-push'
+    echo-and-eval 'chmod 755 .git/hooks/pre-push'
+}
+
+# }}}
+
 # {{{ pip3-install
 
 function pip3-install() {
