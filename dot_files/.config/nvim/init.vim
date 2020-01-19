@@ -1,10 +1,5 @@
-" .vimrc for plain vim or customized nvim
-
-" {{{ Install neovim
+" .vimrc for plain vim or customized neovim
 " https://github.com/neovim/neovim/wiki/Installing-Neovim
-" rhel7 # yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y neovim python3-neovim
-" ubuntu 18.04 # apt-get update && apt-get install -y neovim
-" }}}
 
 " {{{ Set leader
 let g:mapleader = ' '               " <Leader> = <Space>
