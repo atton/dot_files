@@ -16,6 +16,7 @@ if [[ $(uname) == Darwin ]]; then
     source $HOME/.config/zsh/zprofile.mac
 else
     export PATH=$HOME/.rbenv/bin:$PATH
+    export APK_PROGRESS_CHAR='#'
 fi
 
 if which vi   >& /dev/null; then export EDITOR=vi;   fi
