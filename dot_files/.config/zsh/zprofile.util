@@ -115,7 +115,7 @@ function git-private() {
 # {{{ pip3-install
 
 function pip3-install() {
-    pip3 install --upgrade-strategy eager --progress-bar off --upgrade $1
+    pip3 install --no-color --progress-bar off --upgrade $1
     pip3 check $1
 }
 
