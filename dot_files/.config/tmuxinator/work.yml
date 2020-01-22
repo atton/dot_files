@@ -1,7 +1,5 @@
-# ~/.config/tmuxinator/work.yml
-
-name: <%= ENV["WORK_COMPANY"] %>
-root: <%= ENV["WORK_HOME"] %>
+name: work
+root: <%= ENV["TMUXINATOR_WORK_HOME"] %>
 
 windows:
   - note: cd ../../note && clear && check-holiday
