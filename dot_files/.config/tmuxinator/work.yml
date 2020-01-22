@@ -4,6 +4,6 @@ name: <%= ENV["WORK_COMPANY"] %>
 root: <%= ENV["WORK_HOME"] %>
 
 windows:
-  - <%= ENV["WORK_WINDOW_LINE_1"] %>
-  - <%= ENV["WORK_WINDOW_LINE_2"] %>
-  - <%= ENV["WORK_WINDOW_LINE_3"] %>
+  - note: cd ../../note && clear && check-holiday
+  - web:
+  - console:
