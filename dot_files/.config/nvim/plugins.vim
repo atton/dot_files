@@ -185,6 +185,7 @@ lmap <C-J> <Plug>(eskk:enable)
 
 " {{{ gundo.vim
 
+let g:gundo_prefer_python3 = 1
 nnoremap U :GundoToggle<CR>
 
 " }}}
