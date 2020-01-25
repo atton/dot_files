@@ -13,7 +13,7 @@ if dein#load_state(s:dein_path)
     call dein#begin(s:dein_path)
     " dein
     call dein#add('Shougo/dein.vim')
-    call dein#add('haya14busa/dein-command.vim', {'lazy':1, 'on_cmd': 'Dein'})
+    call dein#add('haya14busa/dein-command.vim', {'lazy': 1, 'on_cmd': 'Dein'})
 
     " completions
     call dein#add('Shougo/deoplete.nvim')
@@ -36,9 +36,9 @@ if dein#load_state(s:dein_path)
     call dein#add('rhysd/clever-f.vim')
     call dein#add('tpope/vim-rails')
     call dein#add('tyru/open-browser.vim.git')
-    call dein#add('h1mesuke/vim-alignta',   {'lazy':1, 'on_cmd': ['Alignta', 'Align']})
-    call dein#add('slim-template/vim-slim', {'lazy':1, 'on_path': '.*\.slim'})
-    call dein#add('tpope/vim-markdown',     {'lazy':1, 'on_path': '.*\.md'})
+    call dein#add('h1mesuke/vim-alignta',   {'lazy': 1, 'on_cmd': ['Alignta', 'Align']})
+    call dein#add('slim-template/vim-slim', {'lazy': 1, 'on_path': '.*\.slim'})
+    call dein#add('tpope/vim-markdown',     {'lazy': 1, 'on_path': '.*\.md'})
 
     call dein#end()
     call dein#save_state()
