@@ -28,8 +28,8 @@ if dein#load_state(s:dein_path)
     call dein#add('kana/vim-textobj-user')
     call dein#add('tpope/vim-surround')
     call dein#add('tyru/eskk.vim')
-    call dein#add('atton/gundo.vim',     {'lazy':1, 'on_cmd': 'GundoToggle'})
-    call dein#add('gregsexton/VimCalc',  {'lazy':1, 'on_cmd': 'Calc'})
+    call dein#add('atton/gundo.vim',      {'lazy': 1, 'on_cmd': 'GundoToggle'})
+    call dein#add('fedorenchik/VimCalc3', {'lazy': 1, 'on_cmd': 'Calc'})
 
     " utility
     call dein#add('Konfekt/FastFold')
@@ -166,7 +166,7 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " }}}
 
-" {{{ VimCalc
+" {{{ VimCalc3
 
 let g:VCalc_WindowPosition = 'bottom'
 
