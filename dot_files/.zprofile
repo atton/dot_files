@@ -176,8 +176,8 @@ function note-calc-times() {
     rm -rf $basepath
 }
 
-function shell-init() {
-    # initializations with rehash and load utils
+function shell-reinit() {
+    # *env initializations with rehash and load utils
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     source $HOME/.config/zsh/zprofile.util
