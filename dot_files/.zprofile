@@ -108,7 +108,9 @@ function note() {
         $EDITOR *_${today}.txt
     else
         local serial=`printf '%02d' $(($serial_number + 1))`
-        $EDITOR ${serial}_${today}.txt
+        local name=${serial}_${today}.txt
+        if [ -x ./new_note.sh ]; then ./new_note.sh > $name; fi
+        $EDITOR $name
     fi
 }
 
