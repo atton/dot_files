@@ -224,13 +224,4 @@ function url4md {
 
 # }}}
 
-# {{{ url4tweet
-
-function url4tweet {
-    local title=`title-from-url $@`
-    if [ -n "$title" ]; then echo "${title} ${1}"; fi
-}
-
-# }}}
-
 # vim: set filetype=zsh:
