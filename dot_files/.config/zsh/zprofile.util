@@ -121,10 +121,10 @@ function pip3-install() {
 
 # }}}
 
-# {{{ skk cleanup regexp
+# {{{ skk-cleanup-regexp
 
 function skk-cleanup-regexp() {
-    echo "^[0-9a-z\u3042-\u3093\u30fc]*\\ \\/[0-9a-z\u3042-\u3093\u30fc]*\\/$"
+    echo "^[0-9a-z\u3042-\u3093\u30fc]*\\ \\/[0-9a-z\u3042-\u3093\u30fc\u3001]*\\/$"
 }
 
 # }}}
