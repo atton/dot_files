@@ -205,17 +205,30 @@ function peep-mac-tmux() {
 
 # }}}
 
+# {{{ title-from-url
+
+function title-from-url {
+    if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
+    if egrep -v '^https?://.+' <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
+    curl -sHL ${1} | sed -e 's/<title[^>]*>/<title>/'| ggrep -oP "(?<=<title>)(.+)(?=</title>)"
+}
+
+# }}}
+
+# {{{ url4md
+
+function url4md {
+    local title=`title-from-url $@`
+    if [ -n "$title" ]; then echo "[${title}](${1})"; fi
+}
+
+# }}}
+
 # {{{ url4tweet
 
 function url4tweet {
-    if [ $# -ne 1 ]; then
-        echo 'Please specify URL'
-        return 1
-    fi
-
-    # needs GNU grep
-    local title=$(curl -s ${1} | /usr/local/opt/grep/libexec/gnubin/grep -oP "(?<=<title>)(.+)(?=</title>)")
-    echo "${title} ${1}"
+    local title=`title-from-url $@`
+    if [ -n "$title" ]; then echo "${title} ${1}"; fi
 }
 
 # }}}
