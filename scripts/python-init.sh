@@ -6,13 +6,12 @@ pip3_install() {
 }
 which pip3
 
-if [ `uname` == 'Darwin' ]; then pip3_install pynvim ; exit 0 ; fi
+if [ `uname` != 'Darwin' ]; then
+    pip3 install --no-color --upgrade setuptools pip
+fi
 
 
-pip3 install --no-color --upgrade setuptools pip
 pip3_install pynvim
-
-
 if [ $# -eq 1 ]; then
     if [ $1 = 'NO_AWS' ]; then exit 0; fi
 fi

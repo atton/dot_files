@@ -3,11 +3,8 @@
 # $ brew bundle
 
 tap  'atton/customs'
-tap  'aws/tap'
 tap  'songmu/tap'
 brew 'atton/customs/tmux', args: ['HEAD']
-brew 'aws-sam-cli'
-brew 'awscli'
 brew 'binutils'
 brew 'circleci'
 brew 'cocoapods'
@@ -24,7 +21,7 @@ brew 'nkf'
 brew 'nmap'
 brew 'nodenv'
 brew 'peep'
-brew 'python3'
+brew 'python'
 brew 'q'
 brew 'rbenv'
 brew 'reattach-to-user-namespace'
