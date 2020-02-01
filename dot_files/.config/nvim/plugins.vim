@@ -60,8 +60,9 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#data_directory    = s:plugins_path . 'deoplete'
+let s:keyword_patterns = '[a-zA-Z_]\k[a-zA-Z_-]*[!?]?' " default + kebab-case + end with (! or ?)
+call deoplete#custom#option('keyword_patterns', {'_': s:keyword_patterns})
 call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable completions in denite-filter
-call deoplete#custom#option('keyword_patterns', {'_': '[a-zA-Z_]\k[a-zA-Z_-]*'}) " default + kebab-case
 
 " }}}
 
