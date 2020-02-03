@@ -4,9 +4,9 @@ pip3_install() {
     pip3 install --no-color --progress-bar off --upgrade $1
     pip3 check $1
 }
-which pip3
+pip3 --version
 
-pip3 install --no-color --upgrade setuptools pip
+pip3 install --upgrade setuptools pip
 pip3 check setuptools pip
 pip3_install pynvim
 
