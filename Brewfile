@@ -1,5 +1,5 @@
 # install packages by Homebrew.
-# $ brew tap homebrew/brewdler
+# $ brew tap homebrew/bundle
 # $ brew bundle
 
 tap  'atton/customs'
