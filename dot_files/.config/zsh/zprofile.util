@@ -4,7 +4,7 @@ export CAREFUL_SYNC_OPTS='--exclude=".*"'
 # {{{ careful-sync
 
 function loop-exec() {
-    function _loop-exec() {
+    function init-loop-exec() {
         if [ $2 -gt $LOOP_EXEC_MAX_COUNT ]; then
             echo "loop-exec reached MAX_COUNT(${LOOP_EXEC_MAX_COUNT}). exit."
             return 1
@@ -14,7 +14,7 @@ function loop-exec() {
 
         if [ $? -ne 0 ]; then
             echo "[$2]: Exit code != 0. execute command again."
-            _loop-exec "$1" $(expr $2 + 1)
+            init-loop-exec "$1" $(expr $2 + 1)
         fi
     }
 
@@ -25,8 +25,8 @@ function loop-exec() {
         return 1
     fi
 
-    _loop-exec "$1" 1
-    unfunction _loop-exec
+    init-loop-exec "$1" 1
+    unfunction init-loop-exec
 }
 
 function careful-sync {
