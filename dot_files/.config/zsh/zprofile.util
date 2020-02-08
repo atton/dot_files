@@ -37,22 +37,22 @@ function careful-sync {
 
     if [ $# -eq 2 ]; then
         local rsync_opts=''
-        local source=$1
-        local destination=$2
+        local src=$1
+        local dest=$2
     elif [ $# -eq 3 ]; then
         local rsync_opts=$1
-        local source=$2
-        local destination=$3
+        local src=$2
+        local dest=$3
     fi
 
 
-    loop-exec "rsync -avx  ${CAREFUL_SYNC_OPTS} ${rsync_opts} '${source}' '${destination}'"
+    loop-exec "rsync -avx ${CAREFUL_SYNC_OPTS} ${rsync_opts} '${src}' '${dest}'"
 
     if [ $? -ne 0 ]; then
         echo 'Failed synchronization without checksum validation. Validation skipped.'
         return 1
     fi
-    loop-exec "rsync -acvx ${CAREFUL_SYNC_OPTS} ${rsync_opts} '${source}' '${destination}'"
+    loop-exec "rsync -acvx ${CAREFUL_SYNC_OPTS} ${rsync_opts} '${src}' '${dest}'"
 }
 
 # }}}
