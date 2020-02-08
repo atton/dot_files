@@ -210,7 +210,14 @@ function peep-mac-tmux() {
 function title-from-url {
     if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
     if egrep -v '^https?://.+' <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
-    curl -sHL ${1} | sed -e 's/<title[^>]*>/<title>/'| ggrep -oP "(?<=<title>)(.+)(?=</title>)"
+
+    echo $1 | egrep 'docs.aws.amazon.com' >& /dev/null
+    if [ $? -eq 0 ]; then
+        # "docs.aws.amazon.com" sets the title using JavaScript. So can't get using "(?<=<title>)(.+)(?=</title>)".
+        curl -sHL ${1} | grep 'topictitle' | sed -e 's/<h1[^>]*>/<h1>/' | ggrep -oP "(?<=<h1>)(.+)(?=</h1>)"
+    else
+        curl -sL  ${1} | sed -e 's/<title[^>]*>/<title>/' | ggrep -oP "(?<=<title>)(.+)(?=</title>)" | head -1
+    fi
 }
 
 # }}}
