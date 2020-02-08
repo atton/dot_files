@@ -122,6 +122,9 @@ function note-calc-times() {
     cat $filespath | xargs cat |& egrep -v '^cat:' | egrep $timeregexp | sort > $timespath
 
     local size=$((`cat $timespath | wc -l`))
+    function line() { printf "%55s\n" | tr ' ' '-' }; line
+    echo "detected time $size counts. listing..."; line
+    cat $filespath | xargs egrep -Hn $timeregexp; line
     if [ $size  -eq 0 ]; then
         echo 'formatted time not detected. abort.'
         return 1
@@ -129,10 +132,7 @@ function note-calc-times() {
         echo "detected time $size counts, not-even. abort."
         return 1
     fi
-    function line() { printf "%55s\n" | tr ' ' '-' }
-    line; echo "detected time $size counts. listing..."; line
-    cat $filespath | xargs egrep -Hn $timeregexp
-    line; echo 'formatted time calculating...' ; line
+    echo 'formatted time calculating...'; line
 
     function to_unixtime() {
         if [ `uname` = 'Darwin' ]; then
