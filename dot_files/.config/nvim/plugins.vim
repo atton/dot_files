@@ -156,10 +156,10 @@ let s:denite_commands.description = 'command shortcuts'
 let s:denite_commands.command_candidates = [
 \ ['EditVimrc',         'edit ~/.config/nvim/init.vim'],
 \ ['EditVimrcPlugins',  'edit ~/.config/nvim/plugins.vim'],
-\ ['EditZLocalProfile', 'edit ~/.config/zsh/zprofile.local'],
-\ ['EditZMacProfile',   'edit ~/.config/zsh/zprofile.mac'],
 \ ['EditZProfile',      'edit ~/.zprofile'],
-\ ['EditZUtilProfile',  'edit ~/.config/zsh/zprofile.util'],
+\ ['EditZProfileLocal', 'edit ~/.config/zsh/zprofile.local'],
+\ ['EditZProfileMac',   'edit ~/.config/zsh/zprofile.mac'],
+\ ['EditZProfileUtil',  'edit ~/.config/zsh/zprofile.util'],
 \ ['InsertTimeStamps',  'InsertTimeStampsFromUndoHistory'],
 \ ['LoadLazyPlugins',   'Dein soure'],
 \ ['PluginUpdate',      'Dein update'],
