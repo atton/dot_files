@@ -155,8 +155,6 @@ export BUNDLE_USER_HOME=~/.config/bundler
 #  {{{ source local zprofile
 
 localzshrc=$HOME/.config/zsh/zprofile.local
-if [ -f $localzshrc ]; then
-    source $localzshrc
-fi
+if [ -f $localzshrc ]; then source $localzshrc; fi
 
 # }}}
