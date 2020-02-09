@@ -215,6 +215,15 @@ function title-from-url {
 
 # }}}
 
+# {{{ tweet-url-format
+
+function tweet-url-format {
+    local title=`title-from-url $@`
+    if [ -n "$title" ]; then echo "${title} ${1}"; fi
+}
+
+# }}}
+
 # {{{ url4md
 
 function url4md {
