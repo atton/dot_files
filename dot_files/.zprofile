@@ -12,7 +12,7 @@ export LANGUAGE=en_US.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
-if [[ $(uname) == Darwin ]]; then
+if [ `uname` = 'Darwin' ]; then
     source $HOME/.config/zsh/zprofile.mac
 else
     export PATH=$HOME/.rbenv/bin:$PATH
@@ -118,6 +118,7 @@ function shell-reinit() {
     # *env initializations with rehash and load utils
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
+    if [ `uname` = 'Darwin' ]; then source $HOME/.config/zsh/zprofile.mac; fi
     source $HOME/.config/zsh/zprofile.util
     typeset -U path cdpath fpath manpath
 }
