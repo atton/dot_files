@@ -210,7 +210,14 @@ function peep-mac-tmux() {
 function title-from-url {
     if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
     if egrep -v '^https?://.+' <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
-    curl -sL $1 | sed -e 's/<title[^>]*>/<title>/' | ggrep -oP "(?<=<title>)(.+)(?=</title>)" | head -1
+    local title=`curl -sL $1 | sed -e 's/<title[^>]*>/<title>/' | ggrep -oP "(?<=<title>)(.+)(?=</title>)" | head -1`
+
+    if [ -n "${title}" ]; then
+        echo $title
+    else
+        echo 'title-from-url failed to get the title.'
+        return 1
+    fi
 }
 
 # }}}
