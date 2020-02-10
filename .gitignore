@@ -10,6 +10,8 @@
 !Brewfile
 
 # directories
+!.github
+!.github/workflows
 !dot_files
 !dot_files/.config
 !dot_files/.config/aws
@@ -18,8 +20,8 @@
 !dot_files/.config/git
 !dot_files/.config/git/hooks
 !dot_files/.config/nvim
-!dot_files/.config/nvim/swap
 !dot_files/.config/nvim/snippets
+!dot_files/.config/nvim/swap
 !dot_files/.config/pry
 !dot_files/.config/tmux
 !dot_files/.config/tmuxinator
@@ -77,3 +79,6 @@
 # installation scripts
 !install.sh
 !uninstall.sh
+
+# GitHub Actions
+!.github/workflows/homebrew.yml
