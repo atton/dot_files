@@ -30,14 +30,13 @@ jobs:
           gem list | grep neovim
   ruby-ubuntu:
     runs-on: ubuntu-latest
+    container: docker://ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apt-get
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby ruby-dev make gcc
+        run: apt-get update && apt-get install -y ruby ruby-dev make gcc
       - name: Execute ruby-init.sh
-        run: sudo bash scripts/ruby-init.sh
+        run: bash scripts/ruby-init.sh
       - name: Check gems
         run: |
           which pry kramdown
@@ -70,12 +69,13 @@ jobs:
           npm list -g | grep neovim
   node-ubuntu:
     runs-on: ubuntu-latest
+    container: docker://ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apt-get
-        run: sudo apt-get update && sudo apt-get install -y npm
+        run: apt-get update && apt-get install -y npm
       - name: Execute node-init.sh
-        run: sudo bash scripts/node-init.sh
+        run: bash scripts/node-init.sh
       - name: Check packages
         run: |
           which tsc yarn
