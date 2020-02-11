@@ -36,7 +36,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ruby ruby-dev make gcc
       - name: Execute ruby-init.sh
-        run: bash scripts/ruby-init.sh
+        run: sudo bash scripts/ruby-init.sh
       - name: Check gems
         run: |
           which pry kramdown
