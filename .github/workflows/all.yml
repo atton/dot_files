@@ -3,9 +3,9 @@ name: Brew install + Check init script
 on: [push, pull_request]
 
 jobs:
-  brew:
+  homebrew:
     # https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
-    runs-on: macos-10.15
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - name: Remove pre-installed pod command
