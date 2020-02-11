@@ -64,7 +64,7 @@ jobs:
         run: ./scripts/neovim-init.sh
       - name: Check packages
         run: |
-          which neovim
+          which nvim
           pip3 list | grep pynvim
           ls $HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
