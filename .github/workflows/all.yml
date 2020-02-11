@@ -53,3 +53,9 @@ jobs:
         run: |
           which tsc yarn
           npm list -g | grep neovim
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check docker command
+        run: docker --help
