@@ -1,0 +1,29 @@
+name: Brew install + Check init script
+
+on: [push]
+
+jobs:
+  brew:
+    # https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Remove pre-installed pod command
+      run: rm '/usr/local/bin/pod'
+    - name: Install formulas by homebrew + bundle
+      run: |
+        brew tap homebrew/bundle
+        brew bundle
+  ruby:
+    steps:
+      - uses: docker://alpine
+      - uses: actions/checkout@v2
+      - name: Setup dependencies by apk
+        run: apk add ruby ruby-dev make gcc libc-dev
+      - name: Execute my ruby-init.sh
+        run: ./dot_files/scripts/ruby-init.sh
+      - name: Check gems
+        run: |
+          which pry
+          which kramdown
+          gem list | grep neovim

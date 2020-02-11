@@ -81,4 +81,4 @@
 !uninstall.sh
 
 # GitHub Actions
-!.github/workflows/homebrew.yml
+!.github/workflows/all.yml
