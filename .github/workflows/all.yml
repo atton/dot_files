@@ -15,7 +15,7 @@ jobs:
         brew tap homebrew/bundle
         brew bundle
   ruby:
-    runs-on: ubuntu-latest
+    using: 'docker'
     steps:
       - uses: docker://alpine
       - uses: actions/checkout@v2
