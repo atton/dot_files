@@ -21,8 +21,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
         run: apk add ruby ruby-dev make gcc libc-dev
+      - name: ls
+        run: ls
       - name: Execute my ruby-init.sh
-        run: ./dot_files/scripts/ruby-init.sh
+        run: ./scripts/ruby-init.sh
       - name: Check gems
         run: |
           which pry
