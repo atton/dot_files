@@ -57,5 +57,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check docker command
-        run: docker images
+      - name: Cleanup pre-installed docker images
+        run: docker images -aq | xargs docker rmi
+      - name: Execute docker-init.sh
+        run: ./scripts/docker-init.sh
+      - name: Check images
+        run: |
+          docker images | grep alpine
+          docker images | grep centos
+          docker images | grep fedora
+          docker images | grep ubuntu
