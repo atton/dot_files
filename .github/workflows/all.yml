@@ -73,7 +73,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
-        run: apk add nodejs npm
+        run: apk add npm
+      - name: Execute install.sh
+        run: ./install.sh
       - name: Execute node-init.sh
         run: ./scripts/node-init.sh
       - name: Check packages
@@ -87,6 +89,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apt-get
         run: apt-get update && apt-get install -y npm
+      - name: Execute install.sh
+        run: bash install.sh
       - name: Execute node-init.sh
         run: bash scripts/node-init.sh
       - name: Check packages
