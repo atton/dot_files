@@ -58,4 +58,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check docker command
-        run: docker --help
+        run: docker images
