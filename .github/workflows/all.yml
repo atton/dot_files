@@ -14,7 +14,7 @@ jobs:
       run: |
         brew tap homebrew/bundle
         brew bundle
-  ruby:
+  ruby-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
     steps:
@@ -23,6 +23,20 @@ jobs:
         run: apk add ruby ruby-dev make gcc libc-dev
       - name: Execute ruby-init.sh
         run: ./scripts/ruby-init.sh
+      - name: Check gems
+        run: |
+          which pry kramdown
+          gem list | grep neovim
+  ruby-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dependencies by apt-get
+        run: |
+          apt-get update
+          apt-get install -y ruby ruby-dev make gcc
+      - name: Execute ruby-init.sh
+        run: bash scripts/ruby-init.sh
       - name: Check gems
         run: |
           which pry kramdown
