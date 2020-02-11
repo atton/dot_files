@@ -101,26 +101,6 @@ jobs:
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
           ls $HOME/.config/nvim/eskk/SKK-JISYO.L
-  neovim-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by homebrew
-        run: brew install neovim python
-      - name: Show neovim version
-        run: nvim --version
-      - name: Execute install.sh
-        run: ./install.sh
-      - name: Execute neovim-init.sh
-        run: ./scripts/neovim-init.sh
-      - name: Check packages
-        run: |
-          which nvim
-          pip3 list | grep pynvim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-          ls $HOME/.config/nvim/dein/repos/github.com | grep atton
-          ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
-          ls $HOME/.config/nvim/eskk/SKK-JISYO.L
   docker:
     runs-on: ubuntu-latest
     steps:
