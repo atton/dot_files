@@ -25,6 +25,5 @@ jobs:
         run: ./scripts/ruby-init.sh
       - name: Check gems
         run: |
-          which pry
-          which kramdown
+          which pry kramdown
           gem list | grep neovim
