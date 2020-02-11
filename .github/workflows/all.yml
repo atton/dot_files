@@ -55,18 +55,6 @@ jobs:
         run: |
           which aws sam
           pip3 list | grep pynvim
-  python-ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apt-get
-        run: sudo apt-get update && sudo apt-get install -y python3-pip
-      - name: Execute python-init.sh
-        run: sudo bash scripts/python-init.sh
-      - name: Check packages
-        run: |
-          which aws sam
-          pip3 list | grep pynvim
   node-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
