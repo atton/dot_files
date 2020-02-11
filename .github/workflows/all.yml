@@ -53,6 +53,22 @@ jobs:
         run: |
           which tsc yarn
           npm list -g | grep neovim
+  neovim:
+    runs-on: ubuntu-latest
+    container: docker://alpine
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dependencies by apk
+        run: apk add neovim curl git python3 python3-dev gcc libc-dev
+      - name: Execute neovim-init.sh
+        run: ./scripts/neovim-init.sh
+      - name: Check packages
+        run: |
+          which neovim
+          pip3 list | grep pynvim
+          ls $HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+          ls $HOME/.config/nvim/dein/repos/github.com | grep atton
+          ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
   docker:
     runs-on: ubuntu-latest
     steps:
