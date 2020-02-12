@@ -197,12 +197,13 @@ jobs:
         run: |
           NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
           echo $NODE_LATEST_VERSION
-          rbenv install $NODE_LATEST_VERSION
-          rbenv global $NODE_LATEST_VERSION
+          nodenv install $NODE_LATEST_VERSION
+          nodenv global $NODE_LATEST_VERSION
           zsh -l scripts/node-init.sh
       - name: Check packages
         run: |
-          which nvim ruby gem python pip3 node npm
+          which nvim
+          zsh -lc 'which ruby gem python pip3 node npm'
           gem list | grep neovim
           npm list -g | grep neovim
           pip3 list | grep pynvim
