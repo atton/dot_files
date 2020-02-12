@@ -160,8 +160,10 @@ jobs:
         run: ./install.sh
       - name: Execute neovim-init.sh
         run: ./scripts/neovim-init.sh
-      - name: Cleanup for suppress warning in GitHub Action
-        run: rm -rf /github/home/.cache
+      - name: Add permissions to suppress warning in GitHub Action
+        run: |
+          chmod u+rwx /
+          chmod u+rwx -R /github
       - name: Check packages
         run: |
           which nvim
