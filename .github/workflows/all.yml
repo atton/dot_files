@@ -174,25 +174,38 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Show installed formulas
-        run: brew list
+      - name: Install neovim by homebrew
+        run: |
+          brew update
+          brew install neovim
       - name: Setup dependencies by homebrew
-        run: brew install neovim ruby python
+        run: brew install rbenv nodenv
       - name: Show neovim version
         run: nvim --version
       - name: Execute install.sh
         run: ./install.sh
-      - name: Execute init scripts
+      - name: Install ruby and execute ruby-init.sh
         run: |
-          ./scripts/ruby-init.sh
-          ./scripts/node-init.sh
-          ./scripts/neovim-init.sh
+          RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
+          echo $RUBY_LATEST_VERSION
+          rbenv install $RUBY_LATEST_VERSION
+          rbenv global $RUBY_LATEST_VERSION
+          zsh -l scripts/ruby-init.sh
+      - name: Execute python-init.sh
+        run: zsh -l scripts/python-init.sh
+      - name: Install node and execute node-init.sh
+        run: |
+          NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
+          echo $NODE_LATEST_VERSION
+          rbenv install $NODE_LATEST_VERSION
+          rbenv global $NODE_LATEST_VERSION
+          zsh -l scripts/node-init.sh
       - name: Check packages
         run: |
-          which nvim gem npm pip3
+          which nvim ruby gem python pip3 node npm
           gem list | grep neovim
           npm list -g | grep neovim
-          pip3 --no-cache-dir list | grep pynvim
+          pip3 list | grep pynvim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
           ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
