@@ -160,17 +160,15 @@ jobs:
         run: ./install.sh
       - name: Execute neovim-init.sh
         run: ./scripts/neovim-init.sh
-      - name: Add permissions to suppress warning in GitHub Action
-        run: |
-          chmod u+rwx /
-          chmod u+rwx -R /github
       - name: Check packages
         run: |
           which nvim
-          pip3 list | grep pynvim
+          pip3 --no-cache-dir list | grep pynvim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
+          ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
           ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep dein.vim
+          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep deoplete.nvim
           ls $HOME/.config/nvim/eskk/SKK-JISYO.L
   docker:
     runs-on: ubuntu-latest
