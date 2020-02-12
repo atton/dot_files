@@ -164,9 +164,9 @@ jobs:
         run: |
           which nvim
           pip3 list | grep pynvim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
+          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep dein.vim
           ls $HOME/.config/nvim/eskk/SKK-JISYO.L
   docker:
     runs-on: ubuntu-latest
