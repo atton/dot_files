@@ -29,6 +29,20 @@ jobs:
           ruby -v
           which pry kramdown
           gem list | grep neovim
+  ruby-centos:
+    runs-on: ubuntu-latest
+    container: docker://centos
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dependencies by dnf
+        run: dnf install -y which ruby ruby-devel make gcc redhat-rpm-config
+      - name: Execute ruby-init.sh
+        run: ./scripts/ruby-init.sh
+      - name: Check gems and ruby version
+        run: |
+          ruby -v
+          which pry kramdown
+          gem list | grep neovim
   ruby-ubuntu:
     runs-on: ubuntu-latest
     container: docker://ubuntu
