@@ -184,15 +184,6 @@ jobs:
         run: nvim --version
       - name: Execute install.sh
         run: ./install.sh
-      - name: Install ruby and execute ruby-init.sh
-        run: |
-          RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
-          echo $RUBY_LATEST_VERSION
-          rbenv install $RUBY_LATEST_VERSION
-          rbenv global $RUBY_LATEST_VERSION
-          zsh -l scripts/ruby-init.sh
-      - name: Execute python-init.sh
-        run: zsh -l scripts/python-init.sh
       - name: Install node and execute node-init.sh
         run: |
           NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
@@ -200,6 +191,8 @@ jobs:
           nodenv install $NODE_LATEST_VERSION
           nodenv global $NODE_LATEST_VERSION
           zsh -l scripts/node-init.sh
+      - name: Execute neovim-init.sh(include python-init.sh)
+        run: zsh -l scripts/neovim-init.sh
       - name: Check packages
         run: |
           which nvim
