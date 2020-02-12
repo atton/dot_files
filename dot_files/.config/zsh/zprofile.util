@@ -125,7 +125,7 @@ function note-calc-times() {
     function line() { printf "%55s\n" | tr ' ' '-' }; line
     echo "detected time $size counts. listing..."; line
     cat $filespath | xargs egrep -Hn $timeregexp; line
-    if [ $size  -eq 0 ]; then
+    if [ $size -eq 0 ]; then
         echo 'formatted time not detected. abort.'
         return 1
     elif [ $(($size % 2)) -eq 1 ]; then
