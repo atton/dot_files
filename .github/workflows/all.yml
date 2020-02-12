@@ -174,8 +174,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Show installed formulas
+        run: brew list
       - name: Setup dependencies by homebrew
-        run: brew install neovim ruby python node
+        run: brew install neovim ruby python
       - name: Show neovim version
         run: nvim --version
       - name: Execute install.sh
