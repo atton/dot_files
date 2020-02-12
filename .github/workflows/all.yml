@@ -24,7 +24,7 @@ jobs:
         run: apk add ruby ruby-dev make gcc libc-dev
       - name: Execute ruby-init.sh
         run: ./scripts/ruby-init.sh
-      - name: Check gems and ruby version
+      - name: Check ruby version and gems
         run: |
           ruby -v
           which pry kramdown
@@ -38,7 +38,7 @@ jobs:
         run: dnf install -y which ruby ruby-devel make gcc redhat-rpm-config
       - name: Execute ruby-init.sh
         run: ./scripts/ruby-init.sh
-      - name: Check gems and ruby version
+      - name: Check ruby version and gems
         run: |
           ruby -v
           which pry kramdown
@@ -52,7 +52,7 @@ jobs:
         run: apt-get update && apt-get install -y ruby ruby-dev make gcc
       - name: Execute ruby-init.sh
         run: bash scripts/ruby-init.sh
-      - name: Check gems and ruby version
+      - name: Check ruby version and gems
         run: |
           ruby -v
           which pry kramdown
