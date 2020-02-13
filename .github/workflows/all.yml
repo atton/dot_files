@@ -186,8 +186,9 @@ jobs:
         run: |
           ./install.sh
           cp -r dot_files/.config/* $HOME/.config
+          which nvim curl git sh pip3 gcc
       - name: Execute neovim-init.sh(include python-init.sh)
-        run: zsh -l scripts/neovim-init.sh
+        run:  ./scripts/neovim-init.sh
       - name: Check packages
         run: |
           which nvim
