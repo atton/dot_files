@@ -1,16 +1,6 @@
 #!/bin/sh
 cd `dirname $0`
 
-dependencies='nvim curl git sh pip3 gcc'
-for cmd in $dependencies ; do
-    which $cmd >& /dev/null
-    if [ $? -ne 0 ]; then
-        echo "$cmd is missing. abort."
-        echo "$0 needs ${dependencies}."
-        exit 1
-    fi
-done
-
 set -eux
 ./python-init.sh 'NO_AWS'
 

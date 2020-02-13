@@ -186,9 +186,6 @@ jobs:
         run: |
           ./install.sh
           cp -r dot_files/.config/* $HOME/.config
-          ls -l $HOME/.config
-          ls -l $HOME/.config/zsh
-          ls -l $HOME/.config/zsh/zprofile.mac
       - name: Install ruby and execute ruby-init.sh
         run: |
           RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
@@ -204,14 +201,14 @@ jobs:
           nodenv global $NODE_LATEST_VERSION
           zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
-        run:  ./scripts/neovim-init.sh
+        run:  zsh -l scripts/neovim-init.sh
       - name: Check packages
         run: |
           which nvim
           zsh -lc 'which ruby gem python python3 pip3 node npm'
           zsh -lc 'gem list | grep neovim'
+          zsh -lc 'pip3 --no-cache-dir list | grep pynvim'
           zsh -lc 'npm list -g | grep neovim'
-          pip3 list | grep pynvim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
           ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
