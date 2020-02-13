@@ -182,15 +182,13 @@ jobs:
         run: brew install rbenv nodenv
       - name: Show neovim version
         run: nvim --version
+      - name: Before install.sh
+        run: |
+          which nvim curl git sh pip3 gcc
+          ls -A $HOME/.config
+          mv $HOME/.config/* dot_files/.config
       - name: Execute install.sh
         run: ./install.sh
-      - name: Install node and execute node-init.sh
-        run: |
-          NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
-          echo $NODE_LATEST_VERSION
-          nodenv install $NODE_LATEST_VERSION
-          nodenv global $NODE_LATEST_VERSION
-          zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
         run: zsh -l scripts/neovim-init.sh
       - name: Check packages
