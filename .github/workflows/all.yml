@@ -184,9 +184,8 @@ jobs:
         run: nvim --version
       - name: Before install.sh
         run: |
-          which nvim curl git sh pip3 gcc
-          ls -A $HOME/.config
           mv $HOME/.config/* dot_files/.config
+          rm -rf $HOME/.config
       - name: Execute install.sh
         run: ./install.sh
       - name: Execute neovim-init.sh(include python-init.sh)
@@ -194,7 +193,7 @@ jobs:
       - name: Check packages
         run: |
           which nvim
-          zsh -lc 'which ruby gem python pip3 node npm'
+          zsh -lc 'which ruby gem python python3 pip3 node npm'
           gem list | grep neovim
           npm list -g | grep neovim
           pip3 list | grep pynvim
