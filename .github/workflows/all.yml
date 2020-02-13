@@ -182,19 +182,32 @@ jobs:
         run: brew install rbenv nodenv
       - name: Show neovim version
         run: nvim --version
-      - name: Execute install.sh
+      - name: Execute install.sh and copy config under dot_files/.config
         run: |
           ./install.sh
           cp -r dot_files/.config/* $HOME/.config
-          which nvim curl git sh pip3 gcc
+      - name: Install ruby and execute ruby-init.sh
+        run: |
+          RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
+          echo $RUBY_LATEST_VERSION
+          rbenv install $RUBY_LATEST_VERSION
+          rbenv global $RUBY_LATEST_VERSION
+          zsh -l scripts/ruby-init.sh
+      - name: Install node and execute node-init.sh
+        run: |
+          NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
+          echo $NODE_LATEST_VERSION
+          nodenv install $NODE_LATEST_VERSION
+          nodenv global $NODE_LATEST_VERSION
+          zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
         run:  ./scripts/neovim-init.sh
       - name: Check packages
         run: |
           which nvim
           zsh -lc 'which ruby gem python python3 pip3 node npm'
-          gem list | grep neovim
-          npm list -g | grep neovim
+          zsh -lc 'gem list | grep neovim'
+          zsh -lc 'npm list -g | grep neovim'
           pip3 list | grep pynvim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
