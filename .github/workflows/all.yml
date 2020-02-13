@@ -186,6 +186,9 @@ jobs:
         run: |
           ./install.sh
           cp -r dot_files/.config/* $HOME/.config
+          ls -l $HOME/.config
+          ls -l $HOME/.config/zsh
+          ls -l $HOME/.config/zsh/zprofile.mac
       - name: Install ruby and execute ruby-init.sh
         run: |
           RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
