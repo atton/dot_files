@@ -12,9 +12,7 @@ export LANGUAGE=en_US.UTF-8
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
-if [ `uname` = 'Darwin' ]; then
-    source $HOME/.config/zsh/zprofile.mac
-else
+if [ `uname` = 'Linux' ]; then
     export PATH=$HOME/.rbenv/bin:$PATH
     export APK_PROGRESS_CHAR='#'
 fi
@@ -92,6 +90,7 @@ alias bep='RAILS_ENV=production bundle exec'
 # functions {{{
 
 function echo-and-eval() { echo $1; eval "( $1 )"; }
+function load-zprofile() { if [ -f $1 ]; then source $1; fi }
 
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
@@ -118,8 +117,8 @@ function shell-reinit() {
     # *env initializations with rehash and load utils
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if [ `uname` = 'Darwin' ]; then source $HOME/.config/zsh/zprofile.mac; fi
-    source $HOME/.config/zsh/zprofile.util
+    if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
+    load-zprofile $HOME/.config/zsh/zprofile.util
     typeset -U path cdpath fpath manpath
 }
 
@@ -153,9 +152,9 @@ export BUNDLE_USER_HOME=~/.config/bundler
 
 # }}}
 
-#  {{{ source local zprofile
+#  {{{ load zprofiles
 
-LOCAL_ZPROFILE=$HOME/.config/zsh/zprofile.local
-if [ -f $LOCAL_ZPROFILE ]; then source $LOCAL_ZPROFILE; fi
+if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
+load-zprofile $HOME/.config/zsh/zprofile.local
 
 # }}}
