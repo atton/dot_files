@@ -2,6 +2,8 @@
 cd `dirname $0`
 
 set -eux
+
+which nvim curl git sh pip3 gcc
 ./python-init.sh 'NO_AWS'
 
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > /tmp/installer.sh

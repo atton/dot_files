@@ -202,7 +202,7 @@ jobs:
           zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
         run:  zsh -l scripts/neovim-init.sh
-      - name: Check packages
+      - name: Check commands, packages and repositories.
         run: |
           which nvim
           zsh -lc 'which ruby gem python python3 pip3 node npm'
