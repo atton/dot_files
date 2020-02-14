@@ -13,8 +13,11 @@ jobs:
       run: rm '/usr/local/bin/pod'
     - name: Install formulas by homebrew + bundle
       run: |
+        brew update
         brew tap homebrew/bundle
         brew bundle
+    - name: Check installed packages
+      run: cat Brewfile.lock.json
   ruby-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
