@@ -14,18 +14,19 @@ export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
 if [ `uname` = 'Linux' ]; then
     export PATH=$HOME/.rbenv/bin:$PATH
-    export APK_PROGRESS_CHAR='#'
 fi
 
 if which vi   >& /dev/null; then export EDITOR=vi;   fi
 if which vim  >& /dev/null; then export EDITOR=vim;  fi
 if which nvim >& /dev/null; then export EDITOR=nvim; fi
 
+export APK_PROGRESS_CHAR='#'
 export LESSHISTFILE=/dev/null
 
 # }}}
 
 # options {{{
+
 # emacs like key binding
 bindkey -e
 
@@ -128,8 +129,8 @@ function shell-reinit() {
 
 # AWS
 if which aws >& /dev/null; then
-    export AWS_CONFIG_FILE=~/.config/aws/config
-    export AWS_SHARED_CREDENTIALS_FILE=~/.config/aws/credentials
+    export AWS_CONFIG_FILE=$HOME/.config/aws/config
+    export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 fi
 
 # direnv
@@ -148,7 +149,7 @@ export GEM_SPEC_CACHE=$HOME/.config/gem/specs
 # ruby-build
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 # bundler
-export BUNDLE_USER_HOME=~/.config/bundler
+export BUNDLE_USER_HOME=$HOME/.config/bundler
 
 # }}}
 
