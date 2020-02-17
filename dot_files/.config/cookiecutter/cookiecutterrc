@@ -2,5 +2,5 @@ default_context:
     full_name: "atton"
     email: "e115763@gmail.com"
     github_username: "atton"
-cookiecutters_dir: "$HOME/.config/cookiecutter/cache/template"
-replay_dir: "$HOME/.config/cookiecutter/cache/replay"
+cookiecutters_dir: "$HOME/.config/cookiecutter/data/template"
+replay_dir: "$HOME/.config/cookiecutter/data/replay"
