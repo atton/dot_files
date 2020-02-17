@@ -43,9 +43,6 @@ setopt histnostore
 setopt histreduceblanks
 setopt histverify
 
-# delete duplicate path
-typeset -U path cdpath fpath manpath
-
 # disable beep
 setopt nolistbeep
 setopt no_beep
@@ -93,6 +90,7 @@ alias bep='RAILS_ENV=production bundle exec'
 
 function echo-and-eval() { echo $1; eval "( $1 )"; }
 function load-zprofile() { if [ -f $1 ]; then source $1; fi }
+function unique-paths()  { typeset -U path cdpath fpath manpath }
 
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
@@ -121,7 +119,7 @@ function shell-reinit() {
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
     load-zprofile $HOME/.config/zsh/zprofile.util
-    typeset -U path cdpath fpath manpath
+    # unique-paths
 }
 
 # }}}
@@ -158,5 +156,6 @@ export BUNDLE_USER_HOME=$HOME/.config/bundler
 
 if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
 load-zprofile $HOME/.config/zsh/zprofile.local
+unique-paths
 
 # }}}
