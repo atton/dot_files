@@ -21,6 +21,7 @@ if which vim  >& /dev/null; then export EDITOR=vim;  fi
 if which nvim >& /dev/null; then export EDITOR=nvim; fi
 
 export APK_PROGRESS_CHAR='#'
+export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
 export LESSHISTFILE=/dev/null
 
 # }}}

@@ -17,6 +17,7 @@
 !dot_files/.config/aws
 !dot_files/.config/bundler
 !dot_files/.config/cocoapods
+!dot_files/.config/cookiecutter
 !dot_files/.config/git
 !dot_files/.config/git/hooks
 !dot_files/.config/nvim
@@ -40,6 +41,7 @@
 !dot_files/.config/vim/.gitkeep
 
 # settings
+!dot_files/.config/cookiecutter/cookiecutterrc
 !dot_files/.config/git/config
 !dot_files/.config/git/hooks/pre-commit
 !dot_files/.config/git/ignore
