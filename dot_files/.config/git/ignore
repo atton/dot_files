@@ -60,6 +60,13 @@ tramp
 
 # }}}
 
+# {{{ sqlite
+
+*.sqlite3
+*.sqlite
+
+# }}}
+
 # {{{ vim
 
 [._]*.s[a-v][a-z]
