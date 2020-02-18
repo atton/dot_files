@@ -1,3 +1,9 @@
+# {{{ aws-sam-cli
+
+.aws-sam
+
+# }}}
+
 # {{{ direnv
 
 .direnv
