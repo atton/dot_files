@@ -154,16 +154,17 @@ let s:denite_commands.description = 'command shortcuts'
 
 " commands
 let s:denite_commands.command_candidates = [
-\ ['EditVimrc',         'edit ~/.config/nvim/init.vim'],
-\ ['EditVimrcPlugins',  'edit ~/.config/nvim/plugins.vim'],
-\ ['EditZProfile',      'edit ~/.zprofile'],
-\ ['EditZProfileLocal', 'edit ~/.config/zsh/zprofile.local'],
-\ ['EditZProfileMac',   'edit ~/.config/zsh/zprofile.mac'],
-\ ['EditZProfileUtil',  'edit ~/.config/zsh/zprofile.util'],
-\ ['InsertTimeStamps',  'InsertTimeStampsFromUndoHistory'],
-\ ['LoadLazyPlugins',   'Dein soure'],
-\ ['PluginUpdate',      'Dein update'],
-\ ['ReloadVimrc',       'ReloadVimrc'],
+\ ['EditGlobalGitIgnore', 'edit ~/.config/git/ignore'],
+\ ['EditVimrc',           'edit ~/.config/nvim/init.vim'],
+\ ['EditVimrcPlugins',    'edit ~/.config/nvim/plugins.vim'],
+\ ['EditZProfile',        'edit ~/.zprofile'],
+\ ['EditZProfileLocal',   'edit ~/.config/zsh/zprofile.local'],
+\ ['EditZProfileMac',     'edit ~/.config/zsh/zprofile.mac'],
+\ ['EditZProfileUtil',    'edit ~/.config/zsh/zprofile.util'],
+\ ['InsertTimeStamps',    'InsertTimeStampsFromUndoHistory'],
+\ ['LoadLazyPlugins',     'Dein soure'],
+\ ['PluginUpdate',        'Dein update'],
+\ ['ReloadVimrc',         'ReloadVimrc'],
 \ ]
 
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
