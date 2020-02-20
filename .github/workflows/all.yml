@@ -121,7 +121,7 @@ jobs:
       - name: Check packages
         run: |
           which nvim
-          pip3 --no-cache-dir list | grep pynvim
+          pip3 --no-cache-dir show pynvim
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
           ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
@@ -164,9 +164,9 @@ jobs:
         run: |
           which nvim
           zsh -lc 'which ruby gem python python3 pip3 node npm'
-          zsh -lc 'gem list | grep neovim'
-          zsh -lc 'pip3 --no-cache-dir list | grep pynvim'
-          zsh -lc 'npm list -g | grep neovim'
+          zsh -lc 'which neovim-ruby-host'
+          zsh -lc 'pip3 --no-cache-dir show pynvim'
+          zsh -lc 'which neovim-node-host'
           ls $HOME/.config/nvim/dein/repos/github.com | grep atton
           ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
           ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
