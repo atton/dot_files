@@ -1,9 +1,12 @@
-#!/bin/sh -eux
+#!/bin/sh
 
 pip3_install() {
     pip3 install --no-color --progress-bar off --upgrade $@
     pip3 check $@
 }
+
+set -eux
+python3 -V
 pip3 --version
 
 pip3 install --upgrade setuptools pip
