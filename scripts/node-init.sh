@@ -20,8 +20,8 @@ check_nodenv=$?
 
 set -eux
 
-which node
-which npm
+node --version
+npm --version
 
 if [ $check_nodenv -eq 0 ]; then
     nodenv_before_install
@@ -30,3 +30,9 @@ if [ $check_nodenv -eq 0 ]; then
 else
     install_packages
 fi
+
+neovim-node-host --version
+npm --version
+sls --version
+tsc --version
+yarn --version

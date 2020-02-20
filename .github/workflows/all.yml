@@ -78,16 +78,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
-        run: apk add npm
+        run: apk add npm bash
       - name: Execute install.sh
-        run: ./install.sh
+        run: bash install.sh
       - name: Execute node-init.sh
-        run: ./scripts/node-init.sh
-      - name: Check node version and packages
-        run: |
-          node --version
-          which tsc yarn
-          npm list -g | grep neovim
+        run: bash scripts/node-init.sh
   node-centos:
     runs-on: ubuntu-latest
     container: docker://centos
@@ -96,14 +91,9 @@ jobs:
       - name: Setup dependencies by dnf
         run: dnf install -y which npm
       - name: Execute install.sh
-        run: ./install.sh
+        run: bash install.sh
       - name: Execute node-init.sh
-        run: ./scripts/node-init.sh
-      - name: Check node version and packages
-        run: |
-          node --version
-          which tsc yarn
-          npm list -g | grep neovim
+        run: bash scripts/node-init.sh
   node-ubuntu:
     runs-on: ubuntu-latest
     container: docker://ubuntu
@@ -115,11 +105,6 @@ jobs:
         run: bash install.sh
       - name: Execute node-init.sh
         run: bash scripts/node-init.sh
-      - name: Check node version and packages
-        run: |
-          node --version
-          which tsc yarn
-          npm list -g | grep neovim
   neovim-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
