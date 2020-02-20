@@ -100,7 +100,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apt-get
-        run: apt-get update && apt-get install -y npm
+        run: |
+          apt-get update
+          apt-get install -y curl
+          curl -sL https://deb.nodesource.com/setup_13.x | bash -
+          apt-get install -y nodejs
       - name: Execute install.sh
         run: bash install.sh
       - name: Execute node-init.sh
