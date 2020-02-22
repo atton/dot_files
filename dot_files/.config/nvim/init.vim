@@ -72,7 +72,7 @@ endif
 
 " }}}
 
-" {{{ encoding : utf-8
+" {{{ encoding(utf-8)
 
 if has('vim_starting')
     set termencoding=utf-8
@@ -85,7 +85,7 @@ endif
 
 " }}}
 
-" {{{ folding : marker
+" {{{ folding(marker)
 
 if has('folding')
     set foldmethod=marker       " fold use marker. {{{ }}}
