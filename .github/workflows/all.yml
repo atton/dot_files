@@ -115,23 +115,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
-        run: apk add neovim curl git python3 python3-dev gcc libc-dev
-      - name: Show neovim version
-        run: nvim --version
+        run: apk add neovim bash curl git python3 python3-dev gcc libc-dev
       - name: Execute install.sh
-        run: ./install.sh
+        run: bash install.sh
       - name: Execute neovim-init.sh
-        run: ./scripts/neovim-init.sh
-      - name: Check packages
-        run: |
-          which nvim
-          pip3 --no-cache-dir show pynvim
-          ls $HOME/.config/nvim/dein/repos/github.com | grep atton
-          ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
-          ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep dein.vim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep deoplete.nvim
-          ls $HOME/.config/nvim/eskk/SKK-JISYO.L
+        run: bash scripts/neovim-init.sh
   neovim-macos:
     runs-on: macos-latest
     steps:
@@ -142,11 +130,9 @@ jobs:
           brew install neovim
       - name: Setup dependencies by homebrew
         run: brew install rbenv nodenv
-      - name: Show neovim version
-        run: nvim --version
       - name: Execute install.sh and copy config under dot_files/.config
         run: |
-          ./install.sh
+          bash install.sh
           cp -r dot_files/.config/* $HOME/.config
       - name: Install ruby and execute ruby-init.sh
         run: |
@@ -164,19 +150,6 @@ jobs:
           zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
         run:  zsh -l scripts/neovim-init.sh
-      - name: Check commands, packages and repositories.
-        run: |
-          which nvim
-          zsh -lc 'which ruby gem python python3 pip3 node npm'
-          zsh -lc 'which neovim-ruby-host'
-          zsh -lc 'pip3 --no-cache-dir show pynvim'
-          zsh -lc 'which neovim-node-host'
-          ls $HOME/.config/nvim/dein/repos/github.com | grep atton
-          ls $HOME/.config/nvim/dein/repos/github.com | grep Shougo
-          ls $HOME/.config/nvim/dein/repos/github.com/atton | grep gundo.vim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep dein.vim
-          ls $HOME/.config/nvim/dein/repos/github.com/Shougo | grep deoplete.nvim
-          ls $HOME/.config/nvim/eskk/SKK-JISYO.L
   docker:
     runs-on: ubuntu-latest
     steps:
