@@ -22,6 +22,6 @@ test -d $HOME/.config/nvim/dein/repos/github.com/Shougo/deoplete.nvim
 test -f $HOME/.config/nvim/eskk/SKK-JISYO.L
 
 checkhealth_path='/tmp/checkhealth.txt'
-nvim --headless -c ':checkhealth' -c ":wqa $checkhealth_path"
+nvim --headless -c ':checkhealth' -c ':write /tmp/checkhealth.txt' -c ':quitall'
 cat $checkhealth_path
 rm $checkhealth_path
