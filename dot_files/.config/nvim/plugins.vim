@@ -47,11 +47,6 @@ endif
 filetype plugin indent on
 syntax enable
 
-if dein#check_install()
-    echomsg 'Uninstalled plugin detected. Please execute `:call dein#install()`'
-    finish
-endif
-
 " }}}
 
 " plugins settings
