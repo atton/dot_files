@@ -157,7 +157,7 @@ jobs:
       - name: Cleanup pre-installed docker images
         run: docker images -aq | xargs docker rmi
       - name: Execute docker-init.sh
-        run: ./scripts/docker-init.sh
+        run: bash scripts/docker-init.sh
       - name: Check images
         run: |
           docker images | grep alpine
