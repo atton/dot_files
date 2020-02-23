@@ -36,15 +36,6 @@ jobs:
         run: dnf install -y which ruby ruby-devel make gcc redhat-rpm-config
       - name: Execute ruby-init.sh
         run: bash scripts/ruby-init.sh
-  ruby-ubuntu:
-    runs-on: ubuntu-latest
-    container: docker://ubuntu
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apt-get
-        run: apt-get update && apt-get install -y ruby ruby-dev make gcc
-      - name: Execute ruby-init.sh
-        run: bash scripts/ruby-init.sh
   python-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
@@ -61,15 +52,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup dependencies by dnf
         run: dnf install -y gcc python3 python3-devel which
-      - name: Execute python-init.sh
-        run: bash scripts/python-init.sh
-  python-ubuntu:
-    runs-on: ubuntu-latest
-    container: docker://ubuntu
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apt-get
-        run: apt-get update && apt-get install -y python3-pip
       - name: Execute python-init.sh
         run: bash scripts/python-init.sh
   node-alpine:
@@ -90,21 +72,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Setup dependencies by dnf
         run: dnf install -y which npm
-      - name: Execute install.sh
-        run: bash install.sh
-      - name: Execute node-init.sh
-        run: bash scripts/node-init.sh
-  node-ubuntu:
-    runs-on: ubuntu-latest
-    container: docker://ubuntu
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apt-get
-        run: |
-          apt-get update
-          apt-get install -y curl
-          curl -sL https://deb.nodesource.com/setup_13.x | bash -
-          apt-get install -y nodejs
       - name: Execute install.sh
         run: bash install.sh
       - name: Execute node-init.sh
@@ -162,5 +129,3 @@ jobs:
         run: |
           docker images | grep alpine
           docker images | grep centos
-          docker images | grep fedora
-          docker images | grep ubuntu
