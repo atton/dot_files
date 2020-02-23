@@ -217,7 +217,7 @@ function title-from-url {
     if [ -n "${title}" ]; then
         echo $title
     else
-        echo 'title-from-url failed to get the title.'
+        echo 'GET_TITLE_FAILRUED'
         return 1
     fi
 }
