@@ -1,4 +1,4 @@
-name: Brew install + Check init script
+name: Brew bundle and Verify init scripts
 
 on: [push, pull_request]
 
