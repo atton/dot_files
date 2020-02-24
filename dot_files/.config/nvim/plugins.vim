@@ -7,6 +7,9 @@ if has('vim_starting')
     let $NVIM_RPLUGIN_MANIFEST = s:plugins_path . 'rplugin.vim'
 endif
 " }}}
+" {{{ provider initialize
+let g:ruby_host_prog = 'neovim-ruby-host'
+" }}}
 " list up plugins
 
 if dein#load_state(s:dein_path)
