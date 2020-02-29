@@ -254,6 +254,7 @@ endfunction
 command! E edit! ++enc=utf8 ++ff=unix
 command! ExecteCurrentLine exec '!'.getline('.')
 command! ReloadVimrc source $MYVIMRC
+command! RemovePryPrefix %substitute/\[\d\d*\] pry/pry/gc
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
