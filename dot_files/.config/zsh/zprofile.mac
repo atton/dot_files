@@ -138,25 +138,16 @@ function itunes {
     # itunes main code
     if [ $# = 0 ]; then showStatus; cleanup; return; fi
     case $1 in
-        'status' | 'st' ) showStatus;;
-        'bgm'           ) playlist 'BGM : for Work' ;;
-        'fav'           ) playlist 'Song : Recently Favorited' ;;
-        'toggle' | 't'  ) toggle `getState` ;;
-        'next'   | 'n'  ) next ;;
-        'prev'   | 'p'  ) previous ;;
-        'quit'   | 'q'  ) quit ;;
-         <0-100>        ) volume $1 ;;
-        'help'   | *    ) showHelp ;;
+        'bgm'    ) playlist 'BGM : for Work' ;;
+        'fav'    ) playlist 'Song : Recently Favorited' ;;
+        't'      ) toggle `getState` ;;
+        'n'      ) next ;;
+        'p'      ) previous ;;
+        'q'      ) quit ;;
+         <0-100> ) volume $1 ;;
+         *       ) showHelp ;;
     esac
     cleanup
-}
-
-# }}}
-
-# {{{ kindle-free-books
-
-function kindle-free-books() {
-    open -a safari 'https://www.amazon.co.jp/s/ref=sr_st_price-asc-rank?rh=n%3A2250738051%2Cp_36%3A0-11000&qid=1524613417&tag=atton-22&sort=price-asc-rank'
 }
 
 # }}}
