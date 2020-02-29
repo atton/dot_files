@@ -50,21 +50,15 @@ function delete-text-replacement-informations() {
 
 function itunes {
     function showHelp() {
-        echo '+-------------------------------+';
-        echo '| iTunes Command Line Interface |';
-        echo '+-------------------------------+';
-        echo 'Usage: itunes <command>';
-        echo;
-        echo 'Commands(default = status)';
-        echo ' status, st = Shows status, current track and volume.';
-        echo ' #          = Set volume level to #(0-100)%';
-        echo ' bgm        = Play "BGM : for Work" playlist.';
-        echo ' fav        = Play "Song : Recently Favorited" playlist.';
-        echo ' toggle, t  = Toggle play/pause. If iTunes stopped, start it.';
-        echo ' next, n    = Go to the next track.';
-        echo ' prev, p    = Go to the previous track.';
-        echo ' quit, q    = Quit iTunes.';
-        echo ' help, *    = show help informations.';
+        echo '--- Command Line iTunes Control ---';
+        echo ' itunes     = Shows status, current track and volume.';
+        echo ' itunes #   = Set volume level to #(0-100) percent';
+        echo ' itunes bgm = Play "BGM : for Work" playlist.';
+        echo ' itunes fav = Play "Song : Recently Favorited" playlist.';
+        echo ' itunes t   = Toggle play/pause. If iTunes stopped, start it.';
+        echo ' itunes n   = Go to the next track.';
+        echo ' itunes p   = Go to the previous track.';
+        echo ' itunes h   = show help informations.';
     }
 
     function getState()   { osascript -e 'tell application "iTunes" to player state as string' }
@@ -97,12 +91,13 @@ function itunes {
     }
 
     function toggle() {
-        if [ $1 = 'playing' ]; then
+        local state=`getState`
+        if [ $state = 'playing' ]; then
             echo 'Pausing iTunes.';
             osascript -e 'tell application "iTunes" to pause';
-        elif [ $1 = 'paused' ]; then
+        elif [ $state = 'paused' ]; then
             play;
-        elif [ $1 = 'stopped' ]; then
+        elif [ $state = 'stopped' ]; then
             echo 'iTunes currently stopped. starting iTunes.'
             play;
         fi
@@ -120,11 +115,6 @@ function itunes {
         showTrackInfo;
     }
 
-    function quit() {
-        echo 'Quitting iTunes.';
-        osascript -e 'tell application "iTunes" to quit';
-    }
-
     function volume() {
         echo "Changing iTunes volume level: ${1}%";
         osascript -e "tell application \"iTunes\" to set sound volume to ${1}";
@@ -132,7 +122,7 @@ function itunes {
 
     function cleanup() {
         unfunction getState showState showStatus play playlist toggle next previous
-        unfunction quit volume showCurrentVolume showHelp showTrackInfo cleanup
+        unfunction volume showCurrentVolume showHelp showTrackInfo cleanup
     }
 
     # itunes main code
@@ -140,10 +130,9 @@ function itunes {
     case $1 in
         'bgm'    ) playlist 'BGM : for Work' ;;
         'fav'    ) playlist 'Song : Recently Favorited' ;;
-        't'      ) toggle `getState` ;;
+        't'      ) toggle ;;
         'n'      ) next ;;
         'p'      ) previous ;;
-        'q'      ) quit ;;
          <0-100> ) volume $1 ;;
          *       ) showHelp ;;
     esac
