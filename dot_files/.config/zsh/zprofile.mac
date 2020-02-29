@@ -80,13 +80,7 @@ function itunes {
 
     function play() {
         echo 'Playing iTunes.';
-        osascript -e 'tell application "iTunes" to play';
-        showTrackInfo;
-    }
-
-    function playlist() {
-        echo "Playing playlist '$1'."
-        osascript -e "tell application \"iTunes\" to play playlist \"$1\" ";
+        osascript -e "tell application \"iTunes\" to play $1";
         showTrackInfo;
     }
 
@@ -121,15 +115,15 @@ function itunes {
     }
 
     function cleanup() {
-        unfunction getState showState showStatus play playlist toggle next previous
+        unfunction getState showState showStatus play toggle next previous
         unfunction volume showCurrentVolume showHelp showTrackInfo cleanup
     }
 
     # itunes main code
     if [ $# = 0 ]; then showStatus; cleanup; return; fi
     case $1 in
-        'bgm'    ) playlist 'BGM : for Work' ;;
-        'fav'    ) playlist 'Song : Recently Favorited' ;;
+        'bgm'    ) play 'playlist "BGM : for Work"' ;;
+        'fav'    ) play 'playlist "Song : Recently Favorited"' ;;
         't'      ) toggle ;;
         'n'      ) next ;;
         'p'      ) previous ;;
