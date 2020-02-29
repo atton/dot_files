@@ -12,7 +12,7 @@ pip3 --version
 pip3 install --quiet --upgrade setuptools pip
 pip3 check setuptools pip
 pip3 --version
-pip3_install pynvim
+pip3_install msgpack pynvim
 
 if [ $# -eq 1 ]; then if [ $1 = 'NO_AWS' ]; then exit 0; fi; fi
 pip3_install awscli aws-sam-cli
