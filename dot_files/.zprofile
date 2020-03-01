@@ -90,7 +90,6 @@ alias bep='RAILS_ENV=production bundle exec'
 
 function echo-and-eval() { echo $1; eval "( $1 )"; }
 function load-zprofile() { if [ -f $1 ]; then source $1; fi }
-function unique-paths()  { typeset -U path cdpath fpath manpath }
 
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
@@ -119,7 +118,7 @@ function shell-reinit() {
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
     load-zprofile $HOME/.config/zsh/zprofile.util
-    unique-paths
+    typeset -U path
 }
 
 # }}}
@@ -136,10 +135,19 @@ fi
 __git_files() { _files }
 
 # Node(nodenv)
-if which nodenv >& /dev/null; then eval "$(nodenv init - --no-rehash zsh)"; fi
+if which nodenv >& /dev/null; then
+    export PATH="$HOME/.nodenv/shims:${PATH}"
+    export NODENV_SHELL=zsh
+    source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
+fi
 
 # Ruby(rbenv)
-if which rbenv >& /dev/null; then eval "$(rbenv init - --no-rehash zsh)"; fi
+if which rbenv >& /dev/null; then
+    export PATH="$HOME/.rbenv/shims:${PATH}"
+    export RBENV_SHELL=zsh
+    source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
+fi
+
 # gem
 export GEM_SPEC_CACHE=$HOME/.config/gem/specs
 # ruby-build
@@ -153,6 +161,12 @@ export BUNDLE_USER_HOME=$HOME/.config/bundler
 
 if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
 load-zprofile $HOME/.config/zsh/zprofile.local
-unique-paths
+
+# }}}
+
+# {{{ end of setup
+
+# uniquenize path
+typeset -U path
 
 # }}}
