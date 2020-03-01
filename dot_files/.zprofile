@@ -1,4 +1,4 @@
-autoload -Uz compinit add-zsh-hook zmv is-at-least
+autoload -Uz compinit zmv is-at-least
 
 compinit -d .config/zsh/zcompdump
 
