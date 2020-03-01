@@ -88,8 +88,9 @@ alias bep='RAILS_ENV=production bundle exec'
 
 # functions {{{
 
-function echo-and-eval() { echo $1; eval "( $1 )"; }
-function load-zprofile() { if [ -f $1 ]; then source $1; fi }
+function echo-and-eval()   { echo $1; eval "( $1 )"; }
+function load-zprofile()   { if [ -f $1 ]; then source $1; fi }
+function reload-zprofile() { source $HOME/.zprofile }
 
 function note() {
     local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
