@@ -1,4 +1,4 @@
-autoload -Uz compinit zmv is-at-least
+autoload -Uz compinit is-at-least
 
 compinit -d .config/zsh/zcompdump
 
@@ -114,12 +114,12 @@ function note() {
 }
 
 function shell-reinit() {
-    # *env initializations with rehash and load utils
+    autoload -Uz zmv
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
     load-zprofile $HOME/.config/zsh/zprofile.util
-    # unique-paths
+    unique-paths
 }
 
 # }}}
