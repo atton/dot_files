@@ -4,7 +4,6 @@
 
 [alias]
 	br = branch
-	ci = commit
 	clean-all = clean -fdx --exclude='.env*' --exclude='.*version'
 	co = checkout
 	diff-with-filter = diff --diff-filter=ACMRTUXB
