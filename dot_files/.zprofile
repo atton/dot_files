@@ -1,6 +1,6 @@
 autoload -Uz compinit is-at-least
 
-compinit -d .config/zsh/zcompdump
+compinit -d $HOME/.config/zsh/zcompdump
 
 # {{{ environment variables
 
