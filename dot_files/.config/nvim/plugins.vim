@@ -191,6 +191,7 @@ let g:eskk#large_dictionary = {'path': expand('~/.config/nvim/eskk/SKK-JISYO.L')
 imap <C-J> <Plug>(eskk:enable)
 cmap <C-J> <Plug>(eskk:enable)
 lmap <C-J> <Plug>(eskk:enable)
+command! CleanupSkkBadConversion %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 
 " }}}
 
