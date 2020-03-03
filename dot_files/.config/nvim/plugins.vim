@@ -169,7 +169,6 @@ let s:denite_commands.command_candidates = [
 \ ['LoadLazyPlugins',     'Dein soure'],
 \ ['PluginUpdate',        'Dein update'],
 \ ['ReloadVimrc',         'ReloadVimrc'],
-\ ['RemovePryPrefix',     'RemovePryPrefix'],
 \ ]
 
 call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
