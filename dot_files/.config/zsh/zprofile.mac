@@ -5,6 +5,7 @@ export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/op
 
 source /usr/local/share/zsh/site-functions/*
 
+alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
 alias hub-ci='date +"%Y/%m/%d %H:%M:%S" && hub ci-status -v'
 alias hub-ci-open='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
