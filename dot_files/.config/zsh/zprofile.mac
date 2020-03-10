@@ -142,6 +142,12 @@ function pbcopy-keychain() {
         return 1
     fi
 
+    security find-generic-password -s $1 >& /dev/null
+    if [ $? -ne 0 ]; then
+        echo "This key($1) is not found."
+        return 1
+    fi
+
     security 2>&1 >/dev/null find-generic-password -gs $1 | \
     ruby -e 'print $1 if STDIN.gets =~ /^password: "(.*)"$/' | pbcopy
 }
