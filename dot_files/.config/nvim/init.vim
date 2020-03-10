@@ -250,7 +250,8 @@ endfunction
 
 " {{{ Commands
 
-" short cut commands
+" shortcut commands
+command! CleanupSkkBadConversion %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 command! E edit! ++enc=utf8 ++ff=unix
 command! ExecteCurrentLine exec '!'.getline('.')
 command! ReloadVimrc source $MYVIMRC
