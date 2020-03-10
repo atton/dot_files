@@ -251,13 +251,13 @@ endfunction
 " {{{ Commands
 
 " shortcut commands
-command! CleanupSkkBadConversion %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 command! E edit! ++enc=utf8 ++ff=unix
 command! ExecteCurrentLine exec '!'.getline('.')
 command! ReloadVimrc source $MYVIMRC
 command! RemovePryPrefix %substitute/\[\d\d*\] pry/pry/gc
 command! RemovePryPrefixAll %substitute/\[\d\d*\] pry/pry/g
 command! SetFileEncodingUTF8 setl fileencoding=utf8
+command! SkkDictionaryCleanup %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 
 " commands for fuctions
 command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
