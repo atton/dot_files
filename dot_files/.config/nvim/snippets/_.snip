@@ -2,17 +2,17 @@
 
 snippet     date_stamp
 alias       ds
-options     word
+options     head
     `strftime("%Y/%m/%d(%a)")`
 
 snippet     time_stamp
 alias       ts
-options     word
+options     head
     `strftime("%Y/%m/%d %H:%M:%S")`
 
 snippet     filetype_magic_comment
 alias       vim_magic_comment magic_comment_vim vim_magic magic_vim magic
-options     word
+options     head
 	`printf(&commentstring, 'vim: set filetype=${1}:')`
 
 snippet     fold
