@@ -2,6 +2,14 @@ snippet     be_truthy
 alias       be_t
 	be_truthy
 
+snippet     factory_girl_template
+alias       factory_girl
+options     head
+	FactoryGirl.define do
+	  factory :${1} do
+	  end
+	end
+
 snippet     first_or_create
 	{ ${1}.first || create(:${2}) }
 
