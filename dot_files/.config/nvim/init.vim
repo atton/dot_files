@@ -257,7 +257,7 @@ function! s:edit_previous_note() abort
         return s:error_exit()
     endif
 
-    let s:file_prefix = s:file_prefix[0] - 1
+    let s:file_prefix = printf('%02d', s:file_prefix[0]-1)
     let s:filename    = expand(s:file_prefix . '_*.txt')
     if filereadable(s:filename)
         execute 'edit ' . s:filename
