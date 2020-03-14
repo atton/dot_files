@@ -167,7 +167,7 @@ unlet s:wildignore_files
 
 " {{{ Functions
 
-function! s:detect_trailing_spaces()
+function! s:detect_trailing_spaces() abort
     " detect trailing spaces for :write hook
 
     " search trailing spaces. wrap search and do not move cursor
@@ -176,14 +176,14 @@ function! s:detect_trailing_spaces()
     endif
 endfunction
 
-function! s:delete_trailing_spaces()
+function! s:delete_trailing_spaces() abort
     " delete all trailing spaces
     let s:cursor = getpos(".")
     %substitute/\s\+$//ge
     call setpos(".", s:cursor)
 endfunction
 
-function! s:toggle_last_status()
+function! s:toggle_last_status() abort
     " toggle laststatus helper
     let s:enable_last_status_value  = 2
     let s:disable_last_status_value = 0
@@ -195,7 +195,7 @@ function! s:toggle_last_status()
     end
 endfunction
 
-function! s:toggle_wild_ignore()
+function! s:toggle_wild_ignore() abort
     " toggle wildignore settings helper
     let s:enable_last_status_value  = 2
     if (&wildignore != '')
@@ -210,7 +210,7 @@ function! s:toggle_wild_ignore()
     endif
 endfunction
 
-function! s:insert_time_stamps_from_undo_history()
+function! s:insert_time_stamps_from_undo_history() abort
     if !has('persistent_undo')
         echomsg 'Undo Tree Unavailale.'
         finish
