@@ -87,6 +87,27 @@ jobs:
         run: bash install.sh
       - name: Execute neovim-init.sh
         run: bash scripts/neovim-init.sh
+  neovim-centos:
+    runs-on: ubuntu-latest
+    container: docker://centos
+    steps:
+      - name: Setup dependencies by dnf
+        run: dnf install -y automake cmake gcc gcc-c++ gettext git libtool make python3 unzip which
+      - name: clone neovim from github
+        run: git clone https://github.com/neovim/neovim /root/neovim
+      - name: Install latest neovim
+        run: |
+          cd /root/neovim
+          NEOVIM_LATEST_VERSION=$(git tag | sort -V | tail -1)
+          echo $NEOVIM_LATEST_VERSION
+          git checkout -b $NEOVIM_LATEST_VERSION
+          make install
+          cd /
+      - uses: actions/checkout@v2
+      - name: Execute install.sh
+        run: bash install.sh
+      - name: Execute neovim-init.sh
+        run: bash scripts/neovim-init.sh
   neovim-macos:
     runs-on: macos-latest
     steps:
