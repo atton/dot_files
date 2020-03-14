@@ -246,6 +246,26 @@ function! s:sudo_write_current_buffer() abort
     endif
 endfunction
 
+function! s:edit_previous_note() abort
+    function! s:error_exit() abort
+        echoerr 'Cannot detect the previous file.'
+        return 1
+    endfunction
+
+    let s:file_prefix = split(expand('%t'), '_')
+    if len(s:file_prefix) != 2
+        return s:error_exit()
+    endif
+
+    let s:file_prefix = s:file_prefix[0] - 1
+    let s:filename    = expand(s:file_prefix . '_*.txt')
+    if filereadable(s:filename)
+        execute 'edit ' . s:filename
+    else
+        return s:error_exit()
+    endif
+endfunction
+
 " }}}
 
 " {{{ Commands
@@ -261,7 +281,9 @@ command! SkkDictionaryCleanup %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a
 
 " commands for fuctions
 command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
+command! EditPreviousNote                call s:edit_previous_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
+command! PreviousNote                    call s:edit_previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
 command! ToggleLastStatus                call s:toggle_last_status()
 command! ToggleWildIgnore                call s:toggle_wild_ignore()
