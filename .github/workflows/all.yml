@@ -97,12 +97,12 @@ jobs:
         run: git clone https://github.com/neovim/neovim /root/neovim
       - name: Install latest neovim
         run: |
-          cd /root/neovim
+          pushd /root/neovim
           NEOVIM_LATEST_VERSION=$(git tag | sort -V | tail -1)
           echo $NEOVIM_LATEST_VERSION
           git checkout -b $NEOVIM_LATEST_VERSION
           make install
-          cd /
+          popd
       - uses: actions/checkout@v2
       - name: Execute install.sh
         run: bash install.sh
