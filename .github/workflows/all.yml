@@ -82,11 +82,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
-        run: apk add bash curl gcc git libc-dev make neovim python3 python3-dev ruby ruby-dev
-      - name: Execute install.sh
-        run: bash install.sh
-      - name: Execute ruby-init.sh
-        run: bash scripts/ruby-init.sh
+        run: apk add --no-progress bash curl gcc git libc-dev make neovim nodejs npm python3 python3-dev ruby ruby-dev
+      - name: Execute scripts
+        run: |
+          bash install.sh
+          bash scripts/ruby-init.sh
+          bash scripts/node-init.sh
       - name: Execute neovim-init.sh
         run: bash scripts/neovim-init.sh
   neovim-centos:
