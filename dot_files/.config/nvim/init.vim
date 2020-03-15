@@ -248,8 +248,9 @@ endfunction
 
 function! s:edit_previous_note() abort
     function! s:error_exit() abort
-        echoerr 'Cannot detect the previous file.'
-        return 1
+        echohl NvimInvalid
+        echomsg '[EditPreviousNote] Cannot detect the previous note.'
+        echohl None
     endfunction
 
     let s:file_prefix = split(expand('%t'), '_')
