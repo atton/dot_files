@@ -96,10 +96,9 @@ jobs:
     steps:
       - name: Setup dependencies by dnf
         run: dnf install -y automake cmake gcc gcc-c++ gettext git libtool make python3 unzip which
-      - name: clone neovim from github
-        run: git clone https://github.com/neovim/neovim /root/neovim
       - name: Install latest neovim
         run: |
+          git clone https://github.com/neovim/neovim /root/neovim
           pushd /root/neovim
           NEOVIM_LATEST_VERSION=$(git tag | sort -V | tail -1)
           echo $NEOVIM_LATEST_VERSION
