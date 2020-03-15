@@ -325,24 +325,24 @@ nnoremap <Leader>s :setl spell!<CR>
 nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 " }}}
 
-" {{{ autocmds
+" {{{ autocmd
 
-augroup UserDefinedAutoCommand
+augroup UserDefinedAutocmd
     autocmd!
-    autocmd BufWritePost *  call s:detect_trailing_spaces()
-    autocmd InsertLeave  *  setl nopaste
-    autocmd FileType ruby   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType text   setl commentstring=%s
-    autocmd FileType sh     setl commentstring=#\ %s
-    autocmd FileType zsh    setl commentstring=#\ %s
-    autocmd FileType vim    setl commentstring=\"\ %s
     autocmd BufNewFile *.rb 0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/shell.sh
+    autocmd BufWritePost *  call s:detect_trailing_spaces()
+    autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType ruby   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType sh     setl commentstring=#\ %s
+    autocmd FileType text   setl commentstring=%s
+    autocmd FileType vim    setl commentstring=\"\ %s
+    autocmd FileType zsh    setl commentstring=#\ %s
+    autocmd InsertLeave *   setl nopaste
     autocmd VimEnter *      delcommand Nexplore
     autocmd VimEnter *      delcommand Pexplore
 augroup END
