@@ -9,7 +9,7 @@ bash python-init.sh 'NO_AWS'
 
 installer_path='/tmp/installer.sh'
 curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $installer_path
-bash $installer_path $HOME/.config/nvim/dein
+bash $installer_path $HOME/.config/nvim/dein >& /dev/null
 rm $installer_path
 
 mkdir -p $HOME/.config/nvim/eskk
