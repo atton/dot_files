@@ -167,15 +167,6 @@ unlet s:wildignore_files
 
 " {{{ Functions
 
-function! s:detect_trailing_spaces() abort
-    " detect trailing spaces for :write hook
-
-    " search trailing spaces. wrap search and do not move cursor
-    if search('\s\+$', 'wn')
-       echomsg("warn: detect trailing space in " . expand("%"))
-    endif
-endfunction
-
 function! s:delete_trailing_spaces() abort
     " delete all trailing spaces
     let s:cursor = getpos(".")
@@ -281,7 +272,6 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 command! SkkDictionaryCleanup %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 
 " commands for fuctions
-command! DeleteTrailingSpaces            call s:delete_trailing_spaces()
 command! EditPreviousNote                call s:edit_previous_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 command! PreviousNote                    call s:edit_previous_note()
@@ -322,7 +312,6 @@ nnoremap <Leader>l :ToggleLastStatus<CR>
 nnoremap <Leader>w :ToggleWildIgnore<CR>
 nnoremap <Leader>e :SetFileEncodingUTF8<CR>
 nnoremap <Leader>s :setl spell!<CR>
-nnoremap <Leader>d :DeleteTrailingSpaces<CR>
 " }}}
 
 " {{{ autocmd
@@ -331,7 +320,7 @@ augroup UserDefinedAutocmd
     autocmd!
     autocmd BufNewFile *.rb 0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/shell.sh
-    autocmd BufWritePost *  call s:detect_trailing_spaces()
+    autocmd BufWritePre *   call s:delete_trailing_spaces()
     autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
