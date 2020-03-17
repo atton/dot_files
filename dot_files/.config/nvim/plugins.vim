@@ -234,8 +234,8 @@ vnoremap <Leader>: :Alignta : <CR>
 let g:openbrowser_open_vim_command = 'split'
 
 " open URL
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
+nmap gx <Plug>(openbrowser-open)
+vmap gx <Plug>(openbrowser-open)
 
 " }}}
 
