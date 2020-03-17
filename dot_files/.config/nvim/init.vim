@@ -332,6 +332,7 @@ augroup UserDefinedAutocmd
     autocmd FileType vim    setl commentstring=\"\ %s
     autocmd FileType zsh    setl commentstring=#\ %s
     autocmd InsertLeave *   setl nopaste
+    autocmd VimEnter *      if exists(':Explore')  | delcommand Explore  | endif
     autocmd VimEnter *      if exists(':Nexplore') | delcommand Nexplore | endif
     autocmd VimEnter *      if exists(':Pexplore') | delcommand Pexplore | endif
 augroup END
