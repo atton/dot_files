@@ -85,6 +85,12 @@ endif
 
 " }}}
 
+" {{{ netrw
+
+let g:netrw_dirhistmax = 0
+
+" }}}
+
 " {{{ folding(marker)
 
 if has('folding')
