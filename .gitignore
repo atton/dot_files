@@ -74,6 +74,7 @@
 !scripts/docker-init.sh
 !scripts/neovim-init.sh
 !scripts/node-init.sh
+!scripts/perl-init.sh
 !scripts/python-init.sh
 !scripts/ruby-init.sh
 
