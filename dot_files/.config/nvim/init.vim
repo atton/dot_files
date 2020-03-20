@@ -278,7 +278,6 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 command! SkkDictionaryCleanup %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 
 " commands for fuctions
-command! EditPreviousNote                call s:edit_previous_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 command! PreviousNote                    call s:edit_previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
