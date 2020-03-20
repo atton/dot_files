@@ -174,7 +174,6 @@ unlet s:wildignore_files
 " {{{ Functions
 
 function! s:delete_trailing_spaces() abort
-    " delete all trailing spaces
     let s:cursor = getpos(".")
     %substitute/\s\+$//ge
     call setpos(".", s:cursor)

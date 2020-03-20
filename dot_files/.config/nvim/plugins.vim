@@ -124,8 +124,7 @@ function! s:denite_grep_by_selected_word_in_current_dir()
     try
         let s:register_save = @a
         normal! gv"ay
-        let s:command = 'Denite grep:.::' . @a
-        exec s:command
+        execute 'Denite grep:.::' . @a
     finally
         let @a = s:register_save
     endtry
