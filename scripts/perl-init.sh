@@ -2,6 +2,6 @@
 cd `dirname $0`
 
 perl --version
-cpanm -version
+cpanm --version
 
 cpanm -nq Neovim::Ext
