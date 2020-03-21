@@ -309,6 +309,8 @@ cnoremap <C-e> <END>
 cnoremap <C-f> <RIGHT>
 cnoremap <C-b> <LEFT>
 cnoremap <C-d> <DEL>
+cnoremap <C-h> <BS>
+cnoremap <C-k> <C-\>e(strpart(getcmdline(), 0, getcmdpos() - 1))<CR>
 
 
 " add undo point map
