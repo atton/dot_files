@@ -173,15 +173,15 @@ unlet s:wildignore_files
 
 " {{{ Functions
 
-function! s:lint_pry_logs() abort
-    %substitute/\[\d\d*\] pry/pry/ge
-    %substitute/pry([^\)]\{5,})>/pry(...)>/ge
-endfunction
-
 function! s:delete_trailing_spaces() abort
     let s:cursor = getpos(".")
     %substitute/\s\+$//ge
     call setpos(".", s:cursor)
+endfunction
+
+function! s:formalize_pry_logs() abort
+    %substitute/\[\d\d*\] pry/pry/ge
+    %substitute/pry([^\)]\{5,})>/pry(...)>/ge
 endfunction
 
 function! s:toggle_last_status() abort
@@ -280,8 +280,8 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 command! SkkDictionaryCleanup %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
 
 " commands for fuctions
+command! FormalizePryLogs                call s:formalize_pry_logs()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
-command! LintPryLogs                     call s:lint_pry_logs()
 command! PreviousNote                    call s:edit_previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
 command! ToggleLastStatus                call s:toggle_last_status()
@@ -341,8 +341,6 @@ augroup UserDefinedAutocmd
     autocmd FileType zsh    setl commentstring=#\ %s
     autocmd InsertLeave *   setl nopaste
     autocmd VimEnter *      if exists(':Explore')  | delcommand Explore  | endif
-    autocmd VimEnter *      if exists(':Hexplore') | delcommand Hexplore | endif
-    autocmd VimEnter *      if exists(':Lexplore') | delcommand Lexplore | endif
     autocmd VimEnter *      if exists(':Nexplore') | delcommand Nexplore | endif
     autocmd VimEnter *      if exists(':Pexplore') | delcommand Pexplore | endif
 augroup END
