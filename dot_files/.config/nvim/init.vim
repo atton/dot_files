@@ -174,8 +174,8 @@ unlet s:wildignore_files
 " {{{ Functions
 
 function! s:lint_pry_logs() abort
-    %substitute/\[\d\d*\] pry/pry/gce
-    %substitute/pry([^\)]\{5,})>/pry(...)>/gce
+    %substitute/\[\d\d*\] pry/pry/ge
+    %substitute/pry([^\)]\{5,})>/pry(...)>/ge
 endfunction
 
 function! s:delete_trailing_spaces() abort
