@@ -12,7 +12,7 @@ nodenv_after_install() {
 
 install_packages() {
     npm update -g npm
-    npm install -g neovim serverless typescript yarn
+    npm install -g neovim serverless yarn
 }
 
 which nodenv >& /dev/null;
@@ -34,5 +34,4 @@ fi
 neovim-node-host --version
 npm --version
 sls --version
-tsc --version
 yarn --version
