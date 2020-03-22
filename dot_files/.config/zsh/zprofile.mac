@@ -3,6 +3,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
 # "brew --prefix" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
+alias alpine='docker-run-sandbox alpine'
+alias centos='docker-run-sandbox centos'
 alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
 alias hub-ci='date +"%Y/%m/%d %H:%M:%S" && hub ci-status -v'
@@ -13,19 +15,6 @@ alias work='tmuxinator work'
 alias dsnow='pmset displaysleepnow'
 alias snow='pmset sleepnow'
 
-# {{{ alpine
-
-function alpine() {
-    local alpine_running=`docker ps -q --filter 'name=alpine'`
-
-    if [ -z $alpine_running ]; then
-        docker run --rm -it --name alpine alpine:latest
-    else
-        docker run --rm -it alpine:latest
-    fi
-}
-
-# }}}
 
 # {{{ check-holiday
 
@@ -40,6 +29,20 @@ function check-holiday() {
 function delete-text-replacement-informations() {
     echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
     defaults delete -g NSUserDictionaryReplacementItems
+}
+
+# }}}
+
+# {{{ docker-run-sandbox
+
+function docker-run-sandbox() {
+    local target_running=`docker ps -q --filter "name=$1"`
+
+    if [ -z $target_running ]; then
+        docker run --rm -it --name $1 ${1}:latest
+    else
+        docker run --rm -it ${1}:latest
+    fi
 }
 
 # }}}
