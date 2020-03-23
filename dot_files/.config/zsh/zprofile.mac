@@ -9,6 +9,7 @@ alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
 alias hub-ci='hub ci-status -v'
 alias hub-ci-open='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
+alias hubb='hub browse'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
