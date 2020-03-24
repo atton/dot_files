@@ -1,3 +1,11 @@
-Pry.config.history.file = File.expand_path('~/.config/pry/histories')
+@histories_path = File.expand_path('~/.config/pry/histories')
+
+if Pry.config.respond_to?(:history_file=)
+  Pry.config.history_file = @histories_path.clone
+else
+  Pry.config.history.file = @histories_path.clone
+end
+
+remove_instance_variable(:@histories_path)
 
 # vim: set filetype=ruby:
