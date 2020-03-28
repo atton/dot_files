@@ -4,7 +4,6 @@ export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/op
 # "brew --prefix" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
 alias dsnow='pmset displaysleepnow'
-alias snow='pmset sleepnow'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
