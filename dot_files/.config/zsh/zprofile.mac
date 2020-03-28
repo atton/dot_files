@@ -4,9 +4,12 @@ export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/op
 # "brew --prefix" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
 alias alpine='docker-run-sandbox alpine'
+alias alpine-ruby='docker-run-sandbox ruby:2.5.7-alpine sh'
+alias alpine-ruby-latest='docker-run-sandbox ruby:2.7.0-alpine sh'
 alias centos='docker-run-sandbox centos'
 alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
+
 alias hubb='hub browse'
 alias hubc='hub ci-status -v'
 alias hubo='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
@@ -37,12 +40,13 @@ function delete-text-replacement-informations() {
 # {{{ docker-run-sandbox
 
 function docker-run-sandbox() {
-    local target_running=`docker ps -q --filter "name=$1"`
+    local name=`echo $1 | sed -e 's/:.*$//'`
+    local target_running=`docker ps -q --filter "name=${name}"`
 
     if [ -z $target_running ]; then
-        docker run --rm -it --name $1 ${1}:latest
+        docker run --rm -it --name ${name} ${1} ${2}
     else
-        docker run --rm -it ${1}:latest
+        docker run --rm -it ${1} ${2}
     fi
 }
 
