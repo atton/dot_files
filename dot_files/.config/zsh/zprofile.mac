@@ -3,6 +3,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
 # "brew --prefix" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
+alias dsnow='pmset displaysleepnow'
+alias snow='pmset sleepnow'
+alias notification-banner-clear='terminal-notifier -remove ALL'
+alias work='tmuxinator work'
+
 alias alpine='docker-run-sandbox alpine'
 alias alpine-ruby='docker-run-sandbox ruby:2.5.7-alpine sh'
 alias alpine-ruby-latest='docker-run-sandbox ruby:2.7.0-alpine sh'
@@ -13,12 +18,6 @@ alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs
 alias hubb='hub browse'
 alias hubc='hub ci-status -v'
 alias hubo='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
-alias notification-banner-clear='terminal-notifier -remove ALL'
-alias work='tmuxinator work'
-
-alias dsnow='pmset displaysleepnow'
-alias snow='pmset sleepnow'
-
 
 # {{{ check-holiday
 
