@@ -5,7 +5,7 @@ set -eux
 nvim --version
 
 which bash curl git bash pip3 gcc
-bash python-init.sh 'NO_AWS'
+bash python-init.sh
 
 installer_path='/tmp/installer.sh'
 curl -s https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $installer_path
