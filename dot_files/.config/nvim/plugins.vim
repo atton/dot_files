@@ -157,6 +157,7 @@ let s:denite_commands.description = 'command shortcuts'
 
 " commands
 let s:denite_commands.command_candidates = [
+\ ['EditGlobalGitConfig', 'edit ~/.config/git/config'],
 \ ['EditGlobalGitIgnore', 'edit ~/.config/git/ignore'],
 \ ['EditVimrc',           'edit ~/.config/nvim/init.vim'],
 \ ['EditVimrcPlugins',    'edit ~/.config/nvim/plugins.vim'],
