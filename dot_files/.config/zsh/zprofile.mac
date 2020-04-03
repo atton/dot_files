@@ -5,6 +5,7 @@ export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/op
 # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
 alias dsnow='pmset displaysleepnow'
+alias grep-url='egrep -o "https?://[^ ]+"'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
@@ -17,7 +18,7 @@ alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs
 
 alias hubb='hub browse'
 alias hubc='hub ci-status -v'
-alias hubo='hub ci-status -v | egrep -o "https?://[^ ]+" | xargs open -a safari'
+alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
 
 # {{{ check-holiday
 
@@ -189,7 +190,7 @@ function peep-mac-tmux() {
 
 function title-from-url {
     if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
-    if egrep -v '^https?://.+' <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
+    if grep-url -v <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
     local title=`curl -sL $1 | sed -e 's/<title[^>]*>/<title>/' | ggrep -oP "(?<=<title>)(.+)(?=</title>)" | head -1`
 
     if [ -n "${title}" ]; then
