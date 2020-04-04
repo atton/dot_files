@@ -165,6 +165,7 @@ let s:denite_commands.command_candidates = [
 \ ['EditZProfileLocal',   'edit ~/.config/zsh/zprofile.local'],
 \ ['EditZProfileMac',     'edit ~/.config/zsh/zprofile.mac'],
 \ ['EditZProfileUtil',    'edit ~/.config/zsh/zprofile.util'],
+\ ['FixSkkDictionary',    'FixSkkDictionary'],
 \ ['FormalizePryLogs',    'FormalizePryLogs'],
 \ ['InsertTimeStamps',    'InsertTimeStampsFromUndoHistory'],
 \ ['LoadLazyPlugins',     'Dein soure'],

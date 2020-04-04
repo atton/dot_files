@@ -276,7 +276,7 @@ endfunction
 " shortcut commands
 command! E edit! ++enc=utf8 ++ff=unix
 command! ExecteCurrentLine exec '!'.getline('.')
-command! FixSkkDictionary %substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc
+command! FixSkkDictionary execute '%substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc'
 command! ReloadVimrc source $MYVIMRC
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 
