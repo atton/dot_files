@@ -9,8 +9,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Remove pre-installed pod command
-      run: rm '/usr/local/bin/pod'
+    - name: Cleanup environment
+      run: |
+        brew list | xargs brew unlink
+        rm -f /usr/local/bin/pod
     - name: Install formulas by homebrew + bundle
       run: |
         brew update >& /dev/null
