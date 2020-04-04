@@ -21,7 +21,7 @@ brew 'nkf'
 brew 'nmap'
 brew 'nodenv'
 brew 'peep'
-brew 'python'
+brew 'python@3.8', link: true
 brew 'q'
 brew 'rbenv'
 brew 'reattach-to-user-namespace'
