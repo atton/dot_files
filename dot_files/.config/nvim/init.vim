@@ -240,6 +240,7 @@ function! s:sudo_write_current_buffer() abort
             write ! sudo -A tee % > /dev/null
         finally
             unlet s:password
+            unlet $SUDO_ASKPASS
             call delete(s:askpass_path)
         endtry
     else
