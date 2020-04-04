@@ -119,7 +119,7 @@ set rulerformat=%m                  " simple ruler (only modified flag)
 " {{{ statusline
 
 set laststatus=0                    " usually hide status line
-set statusline=%F%m%r%h%w%=\ %{'[E:'.(&fenc!=''?&fenc:&enc).'][F:'.&ff.']'}[L:%04l\/%04L][P:%04l,%04v]
+set statusline=%F%m%r%h%w%=\ %{'[E:'.&fenc.'][F:'.&ff.(&ft==''?']':'][FT:'.&ft.']')}[L:%04l\/%04L]
 
 " }}}
 
