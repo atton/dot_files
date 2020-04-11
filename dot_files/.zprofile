@@ -126,11 +126,10 @@ function shell-reinit() {
 
 # settings for specific command {{{
 
-# AWS
-if which aws >& /dev/null; then
-    export AWS_CONFIG_FILE=$HOME/.config/aws/config
-    export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
-fi
+# AWS CLI
+export AWS_CONFIG_FILE=$HOME/.config/aws/config
+export AWS_DEFAULT_OUTPUT=yaml
+export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 
 # Git: not using git-based filename completion
 __git_files() { _files }
