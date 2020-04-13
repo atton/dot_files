@@ -1,6 +1,5 @@
 export CP_HOME_DIR=$HOME/.config/cocoapods
 export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_COLOR=1
 export HOMEBREW_NO_EMOJI=1
 export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
 # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
