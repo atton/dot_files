@@ -7,6 +7,9 @@
 	clean-all = clean -fdx --exclude='.env*' --exclude='.*version'
 	co = checkout
 	diff-with-filter = diff --diff-filter=ACMRTUXB
+	flog = log --format=fuller
+	glog = log --graph
+	olog = log --format=oneline
 	pick = cherry-pick
 	st = status
 [core]
