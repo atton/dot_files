@@ -157,5 +157,5 @@ jobs:
         run: |
           docker images | egrep '^alpine\s+latest'
           docker images | egrep '^centos\s+latest'
-          docker images | egrep '^ruby\s+2.5.7-alpine'
-          docker images | egrep '^ruby\s+2.7.0-alpine'
+          docker images | egrep '^ruby\s+2\.5\..-alpine'
+          docker images | egrep '^ruby\s+2\.7\..-alpine'
