@@ -19,6 +19,8 @@
 	auto = 0
 [grep]
 	lineNumber = true
+[merge]
+	ff = no
 [push]
 	default = current
 
