@@ -225,7 +225,6 @@ function! s:insert_time_stamps_from_undo_history() abort
     call append(line('$'), strftime('%Y/%m/%d %H:%M:%S', s:latest_unix_time))
 endfunction
 
-
 function! s:sudo_write_current_buffer() abort
     if has('nvim')
         let s:askpass_path = '/tmp/askpass'
