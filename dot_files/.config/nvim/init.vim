@@ -268,6 +268,17 @@ function! s:edit_previous_note() abort
     endif
 endfunction
 
+function! s:git_commit_today_note() abort
+    let s:filename   = expand('%t')
+    let s:git_status = system('git status --short')
+    if stridx(s:filename, strftime('%Y%m%d.txt'))        == -1 | return | endif
+    if stridx(s:git_status, printf('?? %s', s:filename)) == -1 | return | endif
+
+    call system(printf('git add %s', s:filename))
+    call system(printf('git commit -m "[Neovim] Add %s note"', get(split(s:filename, '_'), 0)))
+    echo system('git show --name-status')
+endfunction
+
 " }}}
 
 " {{{ Commands
@@ -281,6 +292,7 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 
 " commands for fuctions
 command! FormalizePryLogs                call s:formalize_pry_logs()
+command! GitCommitTodayNote              call s:git_commit_today_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 command! PreviousNote                    call s:edit_previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
