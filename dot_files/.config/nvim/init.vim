@@ -203,11 +203,9 @@ function! s:toggle_wild_ignore() abort
         let s:wildignore_backup = &wildignore
         let &wildignore = ''
         echo "disable wildignore"
-    else
-        if(exists('s:wildignore_backup'))
-            let &wildignore = s:wildignore_backup
-            echo "enable wildignore"
-        endif
+    elseif(exists('s:wildignore_backup'))
+        let &wildignore = s:wildignore_backup
+        echo "enable wildignore"
     endif
 endfunction
 
