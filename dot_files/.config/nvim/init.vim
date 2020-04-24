@@ -247,25 +247,10 @@ function! s:sudo_write_current_buffer() abort
     endif
 endfunction
 
-function! s:edit_previous_note() abort
-    function! s:error_exit() abort
-        echohl NvimInvalid
-        echomsg '[EditPreviousNote] Cannot detect the previous note.'
-        echohl None
-    endfunction
-
-    let s:file_prefix = split(expand('%t'), '_')
-    if len(s:file_prefix) != 2
-        return s:error_exit()
-    endif
-
-    let s:file_prefix = printf('%02d', s:file_prefix[0]-1)
+function! s:previous_note() abort
+    let s:file_prefix = printf('%02d', get(split(expand('%t'), '_'), 0)-1)
     let s:filename    = expand(s:file_prefix . '_*.txt')
-    if filereadable(s:filename)
-        execute 'edit ' . s:filename
-    else
-        return s:error_exit()
-    endif
+    if filereadable(s:filename) | execute 'edit ' . s:filename | endif
 endfunction
 
 function! s:git_commit_today_note() abort
@@ -294,7 +279,7 @@ command! SetFileEncodingUTF8 setl fileencoding=utf8
 command! FormalizePryLogs                call s:formalize_pry_logs()
 command! GitCommitTodayNote              call s:git_commit_today_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
-command! PreviousNote                    call s:edit_previous_note()
+command! PreviousNote                    call s:previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
 command! ToggleLastStatus                call s:toggle_last_status()
 command! ToggleWildIgnore                call s:toggle_wild_ignore()
