@@ -184,18 +184,6 @@ function! s:formalize_pry_logs() abort
     %substitute/pry([^\)]\{5,})>/pry(...)>/ge
 endfunction
 
-function! s:toggle_last_status() abort
-    " toggle laststatus helper
-    let s:enable_last_status_value  = 2
-    let s:disable_last_status_value = 0
-
-    if(&laststatus == s:enable_last_status_value)
-        let &laststatus = s:disable_last_status_value
-    else
-        let &laststatus = s:enable_last_status_value
-    end
-endfunction
-
 function! s:toggle_wild_ignore() abort
     " toggle wildignore settings helper
     let s:enable_last_status_value  = 2
@@ -272,6 +260,7 @@ command! ExecteCurrentLine exec '!'.getline('.')
 command! FixSkkDictionary execute '%substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc'
 command! ReloadVimrc source $MYVIMRC
 command! SetFileEncodingUTF8 setl fileencoding=utf8
+command! ToggleLastStatus let &laststatus = xor(&laststatus, 2)
 
 " commands for fuctions
 command! FormalizePryLogs                call s:formalize_pry_logs()
@@ -279,7 +268,6 @@ command! GitCommitTodayNote              call s:git_commit_today_note()
 command! InsertTimeStampsFromUndoHistory call s:insert_time_stamps_from_undo_history()
 command! PreviousNote                    call s:previous_note()
 command! SudoWriteCurrentBuffer          call s:sudo_write_current_buffer()
-command! ToggleLastStatus                call s:toggle_last_status()
 command! ToggleWildIgnore                call s:toggle_wild_ignore()
 
 " }}}
