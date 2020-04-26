@@ -149,10 +149,8 @@ endif
 
 " }}}
 
-" {{{ wild
+" {{{ wildignore
 
-set wildmenu                        " enable wild
-" wild ignore settings
 let s:wildignore_files =
             \ '.*.sw[a-z],' . '*.un~,' . 'Session.vim,' . '.netrwhist,' .
             \ '.DS_Store,' . '.AppleDouble,' . '.LSOverride,' . 'Icon,' .
@@ -163,7 +161,6 @@ let s:wildignore_files =
             \ '*.aux,' . '*.dvi,' . '*.toc,' . '*.pdf,' .
             \ '*.zip,'
 let &wildignore = s:wildignore_files
-unlet s:wildignore_files
 
 " }}}
 
@@ -185,15 +182,12 @@ function! s:formalize_pry_logs() abort
 endfunction
 
 function! s:toggle_wild_ignore() abort
-    " toggle wildignore settings helper
-    let s:enable_last_status_value  = 2
     if (&wildignore != '')
-        let s:wildignore_backup = &wildignore
         let &wildignore = ''
-        echo "disable wildignore"
-    elseif(exists('s:wildignore_backup'))
-        let &wildignore = s:wildignore_backup
-        echo "enable wildignore"
+        echo 'disable wildignore'
+    else
+        let &wildignore = s:wildignore_files
+        echo 'enable wildignore'
     endif
 endfunction
 
