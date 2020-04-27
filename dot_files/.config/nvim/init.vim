@@ -239,8 +239,9 @@ function! s:git_commit_today_note() abort
     if stridx(s:filename, strftime('%Y%m%d.txt'))        == -1 | return | endif
     if stridx(s:git_status, printf('?? %s', s:filename)) == -1 | return | endif
 
+    let s:prefix = has('nvim') ? '[Neovim]' : '[Vim]'
     call system(printf('git add %s', s:filename))
-    call system(printf('git commit -m "[Neovim] Add %s note"', get(split(s:filename, '_'), 0)))
+    call system(printf('git commit -m "%s Add %s note"', s:prefix, get(split(s:filename, '_'), 0)))
     echo system('git show --name-status')
 endfunction
 
