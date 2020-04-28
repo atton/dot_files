@@ -42,5 +42,6 @@ cask 'libreoffice'
 cask 'rar'
 cask 'spectacle'
 cask 'xquartz'
+cask 'zoomus'
 
 # vim: set filetype=ruby:
