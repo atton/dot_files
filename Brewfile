@@ -4,7 +4,8 @@
 
 tap  'atton/customs'
 tap  'songmu/tap'
-brew 'atton/customs/tmux', args: ['HEAD']
+brew 'atton/customs/git-scripts', args: ['HEAD']
+brew 'atton/customs/tmux',        args: ['HEAD']
 brew 'awscli'
 brew 'binutils'
 brew 'cocoapods'

@@ -89,25 +89,6 @@ function rearchive-directory() {
 
 # }}}
 
-# {{{ git-privatize
-
-function git-privatize() {
-    if [ ! -d .git ]; then
-        echo '.git not found.'
-        echo 'Please execute in repository-root directory.'
-        return 1
-    fi
-
-    echo-and-eval 'rm -rf /tmp/git-stash-hooks'
-    echo-and-eval 'mkdir -p /tmp/git-stash-hooks'
-    echo-and-eval 'mv .git/hooks/* /tmp/git-stash-hooks'
-    echo-and-eval 'echo "#!/bin/sh" > .git/hooks/pre-push'
-    echo-and-eval 'echo "exit 1"   >> .git/hooks/pre-push'
-    echo-and-eval 'chmod 755 .git/hooks/pre-push'
-}
-
-# }}}
-
 # {{{ note-calc-times
 
 function note-calc-times() {
