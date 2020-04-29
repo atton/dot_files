@@ -3,9 +3,10 @@
 # $ brew bundle
 
 tap  'atton/customs'
-tap  'songmu/tap'
 brew 'atton/customs/git-scripts', args: ['HEAD']
+brew 'atton/customs/peep'
 brew 'atton/customs/tmux',        args: ['HEAD']
+
 brew 'awscli'
 brew 'binutils'
 brew 'cocoapods'
@@ -20,7 +21,6 @@ brew 'neovim'
 brew 'nkf'
 brew 'nmap'
 brew 'nodenv'
-brew 'peep'
 brew 'python@3.8', link: true
 brew 'q'
 brew 'rbenv'
