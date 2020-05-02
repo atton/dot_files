@@ -28,15 +28,6 @@ function check-holiday() {
 
 # }}}
 
-# {{{ delete-text-replacement-informations
-
-function delete-text-replacement-informations() {
-    echo 'delete from ZTEXTREPLACEMENTENTRY;' | sqlite3 ~/Library/KeyboardServices/TextReplacements.db
-    defaults delete -g NSUserDictionaryReplacementItems
-}
-
-# }}}
-
 # {{{ docker-run-sandbox
 
 function docker-run-sandbox() {
