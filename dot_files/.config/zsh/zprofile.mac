@@ -20,14 +20,6 @@ alias hubb='hub browse'
 alias hubc='hub ci-status -v'
 alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
 
-# {{{ check-holiday
-
-function check-holiday() {
-    ruby -e 'require "holiday_jp"; HolidayJp.holiday?(Date.today) ? puts("Today is holiday") : ""'
-}
-
-# }}}
-
 # {{{ docker-run-sandbox
 
 function docker-run-sandbox() {
