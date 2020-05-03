@@ -50,7 +50,6 @@
 !dot_files/.config/tmux/tmux.conf
 !dot_files/.config/tmuxinator/work.yml
 !dot_files/.config/zsh/zprofile.mac
-!dot_files/.config/zsh/zprofile.util
 !dot_files/.docker/config.json
 !dot_files/.emacs
 !dot_files/.npmrc

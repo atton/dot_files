@@ -118,7 +118,6 @@ function shell-reinit() {
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
-    load-zprofile $HOME/.config/zsh/zprofile.util
     typeset -U path
 }
 

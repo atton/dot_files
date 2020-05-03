@@ -164,7 +164,6 @@ let s:denite_commands.command_candidates = [
 \ ['EditZProfile',        'edit ~/.zprofile'],
 \ ['EditZProfileLocal',   'edit ~/.config/zsh/zprofile.local'],
 \ ['EditZProfileMac',     'edit ~/.config/zsh/zprofile.mac'],
-\ ['EditZProfileUtil',    'edit ~/.config/zsh/zprofile.util'],
 \ ['FixSkkDictionary',    'FixSkkDictionary'],
 \ ['FormalizePryLogs',    'FormalizePryLogs'],
 \ ['GitCommitTodayNote',  'GitCommitTodayNote'],
