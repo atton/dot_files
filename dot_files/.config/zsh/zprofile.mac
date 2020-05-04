@@ -10,8 +10,6 @@ alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
 alias alpine='docker-run-sandbox alpine'
-alias alpine-ruby='docker-run-sandbox ruby:2.5.7-alpine sh'
-alias alpine-ruby-latest='docker-run-sandbox ruby:2.7.0-alpine sh'
 alias centos='docker-run-sandbox centos'
 alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
 alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
