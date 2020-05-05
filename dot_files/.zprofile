@@ -92,27 +92,6 @@ function echo-and-eval()   { echo $1; eval "( $1 )"; }
 function load-zprofile()   { if [ -f $1 ]; then source $1; fi }
 function reload-zprofile() { source $HOME/.zprofile }
 
-function note() {
-    local serial_number=`ls -1 | egrep '[0-9]+_.{8}.txt' | wc -l`
-
-    if [ $# -ge 1 -a $1 -le 0 ] >& /dev/null; then
-        local serial=`printf '%02d' $(($serial_number $1))`
-        $EDITOR ${serial}_????????.txt
-        return $?
-    fi
-
-    local today=`date +%Y%m%d`
-    ls -1 | egrep "[0-9]+_${today}.txt" >& /dev/null
-    if [ $? -eq 0 ]; then
-        $EDITOR *_${today}.txt
-    else
-        local serial=`printf '%02d' $(($serial_number + 1))`
-        local name=${serial}_${today}.txt
-        if [ -x .new-note.sh ]; then ./.new-note.sh > $name; fi
-        $EDITOR $name
-    fi
-}
-
 function shell-reinit() {
     autoload -Uz zmv
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
