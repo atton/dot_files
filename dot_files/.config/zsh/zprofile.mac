@@ -4,34 +4,13 @@ export HOMEBREW_NO_EMOJI=1
 export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
 # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
-alias dsnow='pmset displaysleepnow'
-alias grep-url='egrep -o "https?://[^ ]+"'
-alias notification-banner-clear='terminal-notifier -remove ALL'
-alias work='tmuxinator work'
-
-alias alpine='docker-run-sandbox alpine'
-alias centos='docker-run-sandbox centos'
 alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
-alias docker-volumes-cleanup='docker volume ls -q | egrep "[0-9a-f]{64}" | xargs docker volume rm'
-
+alias dsnow='pmset displaysleepnow'
 alias hubb='hub browse'
 alias hubc='hub ci-status -v'
 alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
-
-# {{{ docker-run-sandbox
-
-function docker-run-sandbox() {
-    local name=`echo $1 | sed -e 's/:.*$//'`
-    local target_running=`docker ps -q --filter "name=${name}"`
-
-    if [ -z $target_running ]; then
-        docker run --rm -it --name ${name} ${1} ${2}
-    else
-        docker run --rm -it ${1} ${2}
-    fi
-}
-
-# }}}
+alias notification-banner-clear='terminal-notifier -remove ALL'
+alias work='tmuxinator work'
 
 # {{{ title-from-url
 

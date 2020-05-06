@@ -77,8 +77,8 @@ fi
 
 # aliases {{{
 
+alias grep-url='egrep -o "https?://[^ ]+"'
 alias pin="ping 8.8.8.8"
-alias ipin="dig www.google.com"
 
 alias be='bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
@@ -108,6 +108,20 @@ function shell-reinit() {
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 export AWS_DEFAULT_OUTPUT=yaml
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
+
+# Docker
+if which docker >& /dev/null; then
+    function docker-run-latest-sandbox() {
+        if [ -z "$(docker ps -q --filter "name=${1}")" ]; then
+            docker run --rm -it --name ${1} ${1} ${2}
+        else
+            docker run --rm -it ${1} ${2}
+        fi
+    }
+    alias alpine='docker-run-latest-sandbox alpine'
+    alias centos='docker-run-latest-sandbox centos'
+    alias docker-volumes-cleanup='docker volume ls --quiet | egrep "[0-9a-f]{64}" | xargs docker volume rm'
+fi
 
 # Git: disable git-based filename completion
 __git_files() { _files }
