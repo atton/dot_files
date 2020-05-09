@@ -12,15 +12,6 @@ alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
-# {{{ title-from-url
-
-function title-from-url {
-    if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
-    docker run --rm webpage-title $1
-}
-
-# }}}
-
 # {{{ url4md
 
 function url4md {
