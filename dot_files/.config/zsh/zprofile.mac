@@ -12,15 +12,6 @@ alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
 alias notification-banner-clear='terminal-notifier -remove ALL'
 alias work='tmuxinator work'
 
-# {{{ url4md
-
-function url4md {
-    local title=`title-from-url $@`
-    if [ -n "$title" ]; then echo "[${title}](${1})"; fi
-}
-
-# }}}
-
 # {{{ url4tweet
 
 function url4tweet {
