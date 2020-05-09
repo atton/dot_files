@@ -16,15 +16,7 @@ alias work='tmuxinator work'
 
 function title-from-url {
     if [ $# -ne 1 ]; then echo 'Please specify the URL' 1>&2; return 1; fi
-    if grep-url -v <<< $1 >& /dev/null; then echo "'$1' is not URL" 1>&2; return 1; fi
-    local title=`curl -sL $1 | sed -e 's/<title[^>]*>/<title>/' | ggrep -oP "(?<=<title>)(.+)(?=</title>)" | head -1`
-
-    if [ -n "${title}" ]; then
-        echo $title
-    else
-        echo 'GET_TITLE_FAILRUED'
-        return 1
-    fi
+    docker run --rm webpage-title $1
 }
 
 # }}}
