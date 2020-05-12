@@ -306,7 +306,6 @@ nnoremap <Leader>s :setl spell!<CR>
 
 augroup UserDefinedAutocmd
     autocmd!
-    autocmd BufNewFile *.rb 0r ~/.config/nvim/templates/ruby.rb
     autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/shell.sh
     autocmd BufWritePre *   call s:delete_trailing_spaces()
     autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab

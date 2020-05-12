@@ -58,7 +58,6 @@
 !dot_files/.zprofile
 
 # nvim templetes
-!dot_files/.config/nvim/templates/ruby.rb
 !dot_files/.config/nvim/templates/shell.sh
 
 # neosnipet snippets
