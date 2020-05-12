@@ -133,12 +133,6 @@ let &shiftwidth  = s:tab_width
 let &softtabstop = s:tab_width
 unlet s:tab_width
 
-" use \t in only Makefile
-augroup Makefile
-    autocmd!
-    autocmd FileType make setl noexpandtab
-augroup END
-
 " }}}
 
 " {{{ viminfofile
@@ -311,6 +305,7 @@ augroup UserDefinedAutocmd
     autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType make   setl noexpandtab
     autocmd FileType ruby   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
