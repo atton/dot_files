@@ -319,20 +319,4 @@ augroup UserDefinedAutocmd
     autocmd VimEnter *      if exists(':Pexplore') | delcommand Pexplore | endif
 augroup END
 
-" {{{ Omni Completion dictionary
-augroup OmniCompletionDictionary
-    autocmd!
-    autocmd FileType c          setlocal omnifunc=ccomplete#Complete
-    autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType ruby       setlocal omnifunc=rubycomplete#Complete
-
-    " default setting : syntax completaion
-    autocmd Filetype *
-                \   if &l:omnifunc == ''
-                \ |   setlocal omnifunc=syntaxcomplete#Complete
-                \ | endif
-augroup END
-" }}}
-
 " }}}
