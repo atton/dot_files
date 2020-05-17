@@ -96,7 +96,7 @@ function shell-reinit() {
     autoload -Uz zmv
     if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
+    load-zprofile $HOME/.config/zsh/zprofile.local
     typeset -U path
 }
 
@@ -149,9 +149,28 @@ export BUNDLE_USER_HOME=$HOME/.config/bundler
 
 # }}}
 
-#  {{{ load zprofiles
+# {{{ settings for mac
 
-if [ `uname` = 'Darwin' ]; then load-zprofile $HOME/.config/zsh/zprofile.mac; fi
+if [ `uname` = 'Darwin' ]; then
+    export CP_HOME_DIR=$HOME/.config/cocoapods
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_EMOJI=1
+    export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
+    # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
+
+    alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
+    alias dsnow='pmset displaysleepnow'
+    alias hubb='hub browse'
+    alias hubc='hub ci-status -v'
+    alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
+    alias notification-banner-clear='terminal-notifier -remove ALL'
+    alias work='tmuxinator work'
+fi
+
+# }}}
+
+# {{{ load local zprofile
+
 load-zprofile $HOME/.config/zsh/zprofile.local
 
 # }}}

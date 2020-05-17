@@ -38,6 +38,7 @@
 !dot_files/.config/cocoapods/.gitkeep
 !dot_files/.config/nvim/swap/.gitkeep
 !dot_files/.config/vim/.gitkeep
+!dot_files/.config/zsh/.gitkeep
 
 # settings
 !dot_files/.config/cookiecutter/cookiecutterrc
@@ -49,7 +50,6 @@
 !dot_files/.config/pry/pryrc
 !dot_files/.config/tmux/tmux.conf
 !dot_files/.config/tmuxinator/work.yml
-!dot_files/.config/zsh/zprofile.mac
 !dot_files/.docker/config.json
 !dot_files/.emacs
 !dot_files/.npmrc
