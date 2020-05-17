@@ -47,6 +47,12 @@ tramp
 
 # }}}
 
+# {{{ LibreOffice
+
+.~lock.*#
+
+# }}}
+
 # {{{ macOS
 
 .AppleDB
