@@ -3,5 +3,5 @@ root: <%= ENV["TMUXINATOR_WORK_HOME"] %>
 
 windows:
   - note: cd ../../note && clear && check-holiday
-  - web:
+  - editor:
   - console:
