@@ -5,6 +5,10 @@
 let g:mapleader = ' '               " <Leader> = <Space>
 " }}}
 
+" {{{ configuration root path
+let s:config_path = expand('~/.config/') . (has('nvim') ? 'nvim' : 'vim') . '/'
+" }}}
+
 " {{{ Source plugins
 if (isdirectory(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')) && has('nvim'))
     source ~/.config/nvim/plugins.vim
@@ -102,7 +106,7 @@ endif
 " {{{ persistent undo
 
 if has('persistent_undo')
-    let &undodir = has('nvim') ? expand('~/.config/nvim/undo_history') : expand('~/.vim/undo_history')
+    let &undodir = s:config_path . 'undo_history'
     set undofile
     set undolevels=30000
 endif

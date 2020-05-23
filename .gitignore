@@ -27,6 +27,7 @@
 !dot_files/.config/tmux
 !dot_files/.config/tmuxinator
 !dot_files/.config/vim
+!dot_files/.config/vim/undo_history
 !dot_files/.config/zsh
 !dot_files/.docker
 !macOS
@@ -37,7 +38,7 @@
 !dot_files/.config/bundler/.gitkeep
 !dot_files/.config/cocoapods/.gitkeep
 !dot_files/.config/nvim/swap/.gitkeep
-!dot_files/.config/vim/.gitkeep
+!dot_files/.config/vim/undo_history/.gitkeep
 !dot_files/.config/zsh/.gitkeep
 
 # settings
