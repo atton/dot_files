@@ -3,7 +3,6 @@
 # $ brew bundle
 
 tap  'atton/customs'
-brew 'atton/customs/git-scripts', args: ['HEAD']
 brew 'atton/customs/mac-scripts', args: ['HEAD']
 brew 'atton/customs/peep'
 brew 'atton/customs/tmux',        args: ['HEAD']
