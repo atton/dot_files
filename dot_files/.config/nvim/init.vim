@@ -67,12 +67,9 @@ highlight PMenuSbar ctermbg = grey
 
 " }}}
 
-" {{{ directory
+" {{{ directory(swapfile location)
 
-if has('nvim')
-    " swapfile location
-    let &directory = expand('~/.config/nvim/swap')
-endif
+let &directory = s:config_path . 'swap'
 
 " }}}
 
