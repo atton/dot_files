@@ -139,7 +139,7 @@ unlet s:tab_width
 " {{{ viminfofile
 
 if exists('&viminfofile')
-    let &viminfofile = expand('~/.config/') . (has('nvim') ? 'nvim/shada' : 'vim/viminfo')
+    let &viminfofile = s:config_path . (has('nvim') ? 'shada' : 'viminfo')
 endif
 
 " }}}
