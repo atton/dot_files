@@ -5,6 +5,7 @@ gem 'json'
 gem 'kramdown'
 gem 'neovim'
 gem 'pry'
+gem 'pry-doc'
 
 case RUBY_PLATFORM
 when /darwin/
