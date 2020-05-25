@@ -163,7 +163,6 @@ let s:denite_commands.command_candidates = [
 \ ['EditVimrcPlugins',    'edit ~/.config/nvim/plugins.vim'],
 \ ['EditZProfile',        'edit ~/.zprofile'],
 \ ['EditZProfileLocal',   'edit ~/.config/zsh/zprofile.local'],
-\ ['EditZProfileMac',     'edit ~/.config/zsh/zprofile.mac'],
 \ ['FixSkkDictionary',    'FixSkkDictionary'],
 \ ['FormalizePryLogs',    'FormalizePryLogs'],
 \ ['GitCommitTodayNote',  'GitCommitTodayNote'],
