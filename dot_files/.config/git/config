@@ -17,6 +17,7 @@
 	quotepath = false
 [fetch]
 	prune = true
+	pruneTags = true
 [gc]
 	auto = 0
 [grep]
