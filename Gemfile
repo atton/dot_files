@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'activesupport'
 gem 'bundler'
 gem 'json'
 gem 'kramdown'

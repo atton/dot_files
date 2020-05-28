@@ -8,4 +8,6 @@ end
 
 remove_instance_variable(:@history_path)
 
+require 'active_support/all' if Gem::Specification.map(&:name).include?('activesupport')
+
 # vim: set filetype=ruby:
