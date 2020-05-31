@@ -158,6 +158,7 @@ if [ `uname` = 'Darwin' ]; then
     export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
     # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
+    alias activity-monitor='open -a "Activity Monitor"'
     alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
     alias dsnow='pmset displaysleepnow'
     alias hubb='hub browse'
