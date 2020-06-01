@@ -4,25 +4,32 @@ compinit -d $HOME/.config/zsh/zcompdump
 
 # {{{ environment variables
 
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export lang=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export lang=en_US.UTF-8
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export LIBRARY_PATH=/usr/local/lib:/usr/lib:$LIBRARY_PATH
 
+export APK_PROGRESS_CHAR='#'
+export AWS_CONFIG_FILE=$HOME/.config/aws/config
+export AWS_DEFAULT_OUTPUT=yaml
+export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
+export BUNDLE_USER_HOME=$HOME/.config/bundler
+export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
+export GEM_SPEC_CACHE=$HOME/.config/gem/specs
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_EMOJI=1
+export LESSHISTFILE=/dev/null
+export RUBY_CONFIGURE_OPTS="--enable-shared"
+
 if [ `uname` = 'Linux' ]; then
     export PATH=$HOME/.rbenv/bin:$PATH
 fi
-
 if which vi   >& /dev/null; then export EDITOR=vi;   fi
 if which vim  >& /dev/null; then export EDITOR=vim;  fi
 if which nvim >& /dev/null; then export EDITOR=nvim; fi
-
-export APK_PROGRESS_CHAR='#'
-export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
-export LESSHISTFILE=/dev/null
 
 # }}}
 
@@ -104,11 +111,6 @@ function shell-reinit() {
 
 # settings for specific command {{{
 
-# AWS CLI
-export AWS_CONFIG_FILE=$HOME/.config/aws/config
-export AWS_DEFAULT_OUTPUT=yaml
-export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
-
 # Docker
 if which docker >& /dev/null; then
     function docker-run-latest-sandbox() {
@@ -140,21 +142,12 @@ if which rbenv >& /dev/null; then
     source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
 fi
 
-# gem
-export GEM_SPEC_CACHE=$HOME/.config/gem/specs
-# ruby-build
-export RUBY_CONFIGURE_OPTS="--enable-shared"
-# bundler
-export BUNDLE_USER_HOME=$HOME/.config/bundler
-
 # }}}
 
 # {{{ settings for mac
 
 if [ `uname` = 'Darwin' ]; then
     export CP_HOME_DIR=$HOME/.config/cocoapods
-    export HOMEBREW_NO_AUTO_UPDATE=1
-    export HOMEBREW_NO_EMOJI=1
     export RUBY_CONFIGURE_OPTS="--enable-shared --with-openssl-dir=/usr/local/opt/openssl@1.1"
     # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
