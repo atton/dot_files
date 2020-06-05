@@ -19,6 +19,7 @@ export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 export BUNDLE_USER_HOME=$HOME/.config/bundler
 export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
 export GEM_SPEC_CACHE=$HOME/.config/gem/specs
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_EMOJI=1
 export LESSHISTFILE=/dev/null
