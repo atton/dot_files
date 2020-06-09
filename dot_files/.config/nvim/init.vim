@@ -301,8 +301,10 @@ nnoremap <Leader>s :setl spell!<CR>
 
 augroup UserDefinedAutocmd
     autocmd!
-    autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/shell.sh
-    autocmd BufWritePre *   call s:delete_trailing_spaces()
+    autocmd BufNewFile *.sh  call append(0, ['#!/bin/sh',  'cd `dirname $0`'])
+    autocmd BufNewFile *.zsh call append(0, ['#!/bin/zsh', 'cd `dirname $0`'])
+    autocmd BufWritePre *    call s:delete_trailing_spaces()
+
     autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
     autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab

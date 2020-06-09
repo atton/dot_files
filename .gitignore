@@ -58,9 +58,6 @@
 !dot_files/.wgetrc
 !dot_files/.zprofile
 
-# nvim templetes
-!dot_files/.config/nvim/templates/shell.sh
-
 # neosnipet snippets
 !dot_files/.config/nvim/snippets/_.snip
 !dot_files/.config/nvim/snippets/ruby.snip
