@@ -37,6 +37,8 @@ tramp
 *.blg
 *.cpt
 *.dvi
+*.fdb_latexmk
+*.fls
 *.idx
 *.lof
 *.log
