@@ -305,13 +305,15 @@ augroup UserDefinedAutocmd
     autocmd BufNewFile *.zsh call append(0, ['#!/bin/zsh', 'cd `dirname $0`'])
     autocmd BufWritePre *    call s:delete_trailing_spaces()
 
-    autocmd FileType eruby  setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType haml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType html   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType make   setl noexpandtab
-    autocmd FileType ruby   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType slim   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-    autocmd FileType yaml   setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType eruby    setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType haml     setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType html     setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType make     setl noexpandtab
+    autocmd FileType markdown setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType ruby     setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType slim     setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    autocmd FileType yaml     setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
     autocmd FileType sh     setl commentstring=#\ %s
     autocmd FileType text   setl commentstring=%s
     autocmd FileType vim    setl commentstring=\"\ %s
