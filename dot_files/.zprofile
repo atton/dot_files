@@ -101,11 +101,13 @@ function load-zprofile()   { if [ -f $1 ]; then source $1; fi }
 function reload-zprofile() { source $HOME/.zprofile }
 
 function shell-reinit() {
+    rehash
     autoload -Uz zmv
-    if which rbenv  >& /dev/null; then eval "$(rbenv init - zsh)";  fi
+    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
     load-zprofile $HOME/.config/zsh/zprofile.local
     typeset -U path
+    rehash
 }
 
 # }}}
