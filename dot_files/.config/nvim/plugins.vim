@@ -8,7 +8,8 @@ if has('vim_starting')
 endif
 " }}}
 " {{{ provider initialize
-let g:ruby_host_prog = 'neovim-ruby-host'
+let g:python3_host_prog = exepath('python3')
+let g:ruby_host_prog    = 'neovim-ruby-host'
 " }}}
 " list up plugins
 
