@@ -168,8 +168,8 @@ let s:denite_commands.command_candidates = [
 \ ['FormalizePryLogs',    'FormalizePryLogs'],
 \ ['GitCommitTodayNote',  'GitCommitTodayNote'],
 \ ['InsertTimeStamps',    'InsertTimeStampsFromUndoHistory'],
-\ ['LoadLazyPlugins',     'Dein soure'],
-\ ['PluginUpdate',        'Dein update'],
+\ ['LoadLazyPlugins',     'call dein#source()'],
+\ ['PluginUpdate',        'call dein#update()'],
 \ ['ReloadVimrc',         'ReloadVimrc'],
 \ ]
 
