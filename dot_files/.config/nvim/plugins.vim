@@ -7,14 +7,14 @@ if has('vim_starting')
     let $NVIM_RPLUGIN_MANIFEST = s:plugins_path . 'rplugin.vim'
 endif
 " }}}
-" {{{ provider initialize
+" {{{ provider initializations for reduce launch time
 let g:python3_host_prog = exepath('python3')
 let g:ruby_host_prog    = 'neovim-ruby-host'
 " }}}
-" list up plugins
 
 if dein#load_state(s:dein_path)
     call dein#begin(s:dein_path)
+
     " dein
     call dein#add('Shougo/dein.vim')
     call dein#add('haya14busa/dein-command.vim', {'lazy': 1, 'on_cmd': 'Dein'})
