@@ -5,7 +5,7 @@ on: [push, pull_request]
 # https://help.github.com/en/actions/reference/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
 jobs:
-  homebrew:
+  homebrew-macos:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
@@ -145,7 +145,7 @@ jobs:
           zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh(include python-init.sh)
         run:  zsh -l scripts/neovim-init.sh
-  docker:
+  docker-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
