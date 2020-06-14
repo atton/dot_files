@@ -159,3 +159,15 @@ jobs:
           docker images | egrep '^centos\s+latest'
           docker images | egrep '^atton/latex-make\s+latest'
           docker images | egrep '^atton/webpage-title\s+latest'
+  vim-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Show version
+        run: /usr/bin/vim --version
+      - uses: actions/checkout@v2
+      - name: Execute install.sh and copy config under dot_files/.config
+        run: |
+          bash install.sh
+          cp -r dot_files/.config/* $HOME/.config
+      - name: Validate .vimrc by system vim
+        run: /usr/bin/vim -es -u NONE -c 'try | source $HOME/.vimrc | catch | cq! | endtry | q!'
