@@ -109,6 +109,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Execute scripts
         run: |
+          rm -rf $HOME/.config
           bash install.sh
           bash scripts/node-init.sh
           bash scripts/perl-init.sh
@@ -125,10 +126,8 @@ jobs:
           brew install neovim
       - name: Setup dependencies by homebrew
         run: brew install rbenv nodenv
-      - name: Execute install.sh and copy config under dot_files/.config
-        run: |
-          bash install.sh
-          cp -r dot_files/.config/* $HOME/.config
+      - name: Execute install.sh
+        run: rm -rf $HOME/.config && bash install.sh
       - name: Install ruby and execute ruby-init.sh
         run: |
           RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
@@ -165,9 +164,7 @@ jobs:
       - name: Show version
         run: /usr/bin/vim --version
       - uses: actions/checkout@v2
-      - name: Execute install.sh and copy config under dot_files/.config
-        run: |
-          bash install.sh
-          cp -r dot_files/.config/* $HOME/.config
+      - name: Execute install.sh
+        run: rm -rf $HOME/.config && bash install.sh
       - name: Validate .vimrc by system vim
         run: /usr/bin/vim -es -u NONE -c 'try | source $HOME/.vimrc | catch | cq! | endtry | q!'
