@@ -170,6 +170,7 @@ let s:denite_commands.command_candidates = [
 \ ['InsertTimeStamps',    'InsertTimeStampsFromUndoHistory'],
 \ ['LoadLazyPlugins',     'call dein#source()'],
 \ ['PluginUpdate',        'call dein#update()'],
+\ ['RecacheRuntimepath',  'call dein#recache_runtimepath()'],
 \ ['ReloadVimrc',         'ReloadVimrc'],
 \ ]
 
