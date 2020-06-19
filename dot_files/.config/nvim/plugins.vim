@@ -113,11 +113,6 @@ function! s:denite_filter_my_settings() abort
   inoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
 endfunction
 
-call denite#custom#var('file/rec', 'command', [ 'find', '-L', ':directory',
-            \ '-path', '*/.*/*', '-prune', '-o',
-            \ '-type', 'l', '-print', '-o',
-            \ '-type', 'f', '-print'])
-
 call denite#custom#var('grep', 'default_opts',
             \ ['--exclude-dir=tmp', '--exclude-dir=log', '-iRHn'])
 
