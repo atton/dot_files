@@ -15,13 +15,10 @@ rm $installer_path
 mkdir -p $HOME/.config/nvim/eskk
 curl -s https://raw.githubusercontent.com/skk-dev/dict/master/SKK-JISYO.L > $HOME/.config/nvim/eskk/SKK-JISYO.L
 
-nvim --headless -c ':call dein#install()' -c ':UpdateRemotePlugins' -c ':quit'
+nvim --headless -c 'call dein#install()' -c 'UpdateRemotePlugins' -c 'quit'
 test -d $HOME/.config/nvim/dein/repos/github.com/atton/gundo.vim
 test -d $HOME/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 test -d $HOME/.config/nvim/dein/repos/github.com/Shougo/deoplete.nvim
 test -f $HOME/.config/nvim/eskk/SKK-JISYO.L
 
-checkhealth_path='/tmp/checkhealth.txt'
-nvim --headless -c ':checkhealth' -c ":write $checkhealth_path" -c ':quitall'
-cat $checkhealth_path
-rm $checkhealth_path
+nvim --headless -c 'checkhealth' -c 'silent write >> /dev/stdout' -c 'quitall'
