@@ -92,7 +92,6 @@ let g:neosnippet#data_directory     = s:plugins_path . 'neosnippet'
 call denite#custom#option('_', 'start_filter', v:true) " Always start at denite-filter
 call denite#custom#source('_', 'matchers', ['matcher/substring', 'matcher/fuzzy'])
 
-autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
   nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
@@ -100,8 +99,8 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <C-l> denite#do_map('redraw')
   nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 endfunction
+autocmd! FileType denite call s:denite_my_settings()
 
-autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
   imap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
   nmap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
@@ -113,6 +112,7 @@ function! s:denite_filter_my_settings() abort
   inoremap <silent><buffer> <C-p> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
   inoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
 endfunction
+autocmd! FileType denite-filter call s:denite_filter_my_settings()
 
 call denite#custom#var('grep', 'default_opts',
             \ ['--exclude-dir=tmp', '--exclude-dir=log', '-iRHn'])
