@@ -97,6 +97,7 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>  denite#do_map('do_action')
   nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
   nnoremap <silent><buffer><expr> <C-g> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <C-l> denite#do_map('redraw')
   nnoremap <silent><buffer><expr> i     denite#do_map('open_filter_buffer')
 endfunction
 
