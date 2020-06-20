@@ -142,8 +142,8 @@ jobs:
           nodenv install $NODE_LATEST_VERSION
           nodenv global $NODE_LATEST_VERSION
           zsh -l scripts/node-init.sh
-      - name: Execute neovim-init.sh(include python-init.sh)
-        run:  zsh -l scripts/neovim-init.sh
+      - name: Execute neovim-init.sh
+        run: zsh -l scripts/neovim-init.sh
   docker-ubuntu:
     runs-on: ubuntu-latest
     steps:
