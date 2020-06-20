@@ -178,11 +178,12 @@ endfunction
 
 function! s:toggle_wild_ignore() abort
     if (&wildignore != '')
+        let s:wildignore = &wildignore
         let &wildignore = ''
-        echo 'disable wildignore'
+        echo 'wildignore disabled'
     else
-        let &wildignore = s:wildignore_files
-        echo 'enable wildignore'
+        let &wildignore = s:wildignore
+        echo 'wildignore enabled'
     endif
 endfunction
 
