@@ -250,6 +250,7 @@ command! E edit! ++enc=utf8 ++ff=unix
 command! ExecteCurrentLine exec '!'.getline('.')
 command! FixSkkDictionary execute '%substitute/^[0-9a-z\u3042-\u3093\u30fc]*\ \/[0-9a-z\u3042-\u3093\u30fc\u3001]*\/$\n//gc'
 command! ReloadVimrc source $MYVIMRC
+command! RemoveAnsiEscapeCodes %substitute/\e\[[0-9;]*m//g
 command! SetFileEncodingUTF8 setl fileencoding=utf8
 command! ToggleLastStatus let &laststatus = xor(&laststatus, 2)
 
