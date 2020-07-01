@@ -85,6 +85,7 @@ fi
 
 # aliases {{{
 
+alias grep-latest='egrep "^[0-9.]+$" | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
 alias pin="ping 8.8.8.8"
 
@@ -133,6 +134,7 @@ __git_files() { _files }
 
 # Node(nodenv)
 if which nodenv >& /dev/null; then
+    alias nodenv-latest="nodenv install -l | grep-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
     export PATH="$HOME/.nodenv/shims:${PATH}"
     export NODENV_SHELL=zsh
     source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
@@ -140,6 +142,7 @@ fi
 
 # Ruby(rbenv)
 if which rbenv >& /dev/null; then
+    alias rbenv-latest="rbenv install -l | grep-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
     export PATH="$HOME/.rbenv/shims:${PATH}"
     export RBENV_SHELL=zsh
     source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh

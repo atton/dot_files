@@ -130,17 +130,11 @@ jobs:
         run: rm -rf $HOME/.config && bash install.sh
       - name: Install ruby and execute ruby-init.sh
         run: |
-          RUBY_LATEST_VERSION=$(rbenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
-          echo $RUBY_LATEST_VERSION
-          rbenv install $RUBY_LATEST_VERSION
-          rbenv global $RUBY_LATEST_VERSION
+          echo 'rbenv-latest' | zsh -l
           zsh -l scripts/ruby-init.sh
       - name: Install node and execute node-init.sh
         run: |
-          NODE_LATEST_VERSION=$(nodenv install -l | egrep '^[0-9.]+$' | sort -V | tail -1)
-          echo $NODE_LATEST_VERSION
-          nodenv install $NODE_LATEST_VERSION
-          nodenv global $NODE_LATEST_VERSION
+          echo 'nodenv-latest' | zsh -l
           zsh -l scripts/node-init.sh
       - name: Execute neovim-init.sh
         run: zsh -l scripts/neovim-init.sh
