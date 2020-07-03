@@ -129,13 +129,9 @@ jobs:
       - name: Execute install.sh
         run: rm -rf $HOME/.config && bash install.sh
       - name: Install ruby and execute ruby-init.sh
-        run: |
-          echo 'rbenv-latest' | zsh -l
-          zsh -l scripts/ruby-init.sh
+        run: echo "rbenv-latest && `pwd`/scripts/ruby-init.sh" | zsh -l
       - name: Install node and execute node-init.sh
-        run: |
-          echo 'nodenv-latest' | zsh -l
-          zsh -l scripts/node-init.sh
+        run: echo "nodenv-latest && `pwd`/scripts/node-init.sh" | zsh -l
       - name: Execute neovim-init.sh
         run: zsh -l scripts/neovim-init.sh
   docker-ubuntu:

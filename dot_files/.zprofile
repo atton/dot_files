@@ -18,16 +18,22 @@ export AWS_DEFAULT_OUTPUT=yaml
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 export BUNDLE_USER_HOME=$HOME/.config/bundler
 export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
+export CP_HOME_DIR=$HOME/.config/cocoapods
 export GEM_SPEC_CACHE=$HOME/.config/gem/specs
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_EMOJI=1
 export LESSHISTFILE=/dev/null
+export NODENV_SHELL=zsh
+export RBENV_SHELL=zsh
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
 if [ `uname` = 'Linux' ]; then
-    export PATH=$HOME/.rbenv/bin:$PATH
+    export PATH=$HOME/.rbenv/bin:$HOME/.nodenv/bin:$PATH
+    if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
+    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
 fi
+
 if which vi   >& /dev/null; then export EDITOR=vi;   fi
 if which vim  >& /dev/null; then export EDITOR=vim;  fi
 if which nvim >& /dev/null; then export EDITOR=nvim; fi
@@ -85,13 +91,14 @@ fi
 
 # aliases {{{
 
+alias be='bundle exec'
+alias bep='RAILS_ENV=production bundle exec'
+alias bet='RAILS_ENV=test bundle exec'
 alias grep-latest='egrep "^[0-9.]+$" | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
+alias nodenv-latest="nodenv install -l | grep-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
 alias pin="ping 8.8.8.8"
-
-alias be='bundle exec'
-alias bet='RAILS_ENV=test bundle exec'
-alias bep='RAILS_ENV=production bundle exec'
+alias rbenv-latest="rbenv install -l | grep-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
 
 # }}}
 
@@ -104,8 +111,8 @@ function reload-zprofile() { source $HOME/.zprofile }
 function shell-reinit() {
     rehash
     autoload -Uz zmv
-    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
     if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
+    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
     load-zprofile $HOME/.config/zsh/zprofile.local
     typeset -U path
     rehash
@@ -132,28 +139,12 @@ fi
 # Git: disable git-based filename completion
 __git_files() { _files }
 
-# Node(nodenv)
-if which nodenv >& /dev/null; then
-    alias nodenv-latest="nodenv install -l | grep-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
-    export PATH="$HOME/.nodenv/shims:${PATH}"
-    export NODENV_SHELL=zsh
-    source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
-fi
-
-# Ruby(rbenv)
-if which rbenv >& /dev/null; then
-    alias rbenv-latest="rbenv install -l | grep-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
-    export PATH="$HOME/.rbenv/shims:${PATH}"
-    export RBENV_SHELL=zsh
-    source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
-fi
-
 # }}}
 
 # {{{ settings for mac
 
 if [ `uname` = 'Darwin' ]; then
-    export CP_HOME_DIR=$HOME/.config/cocoapods
+    export PATH="$HOME/.rbenv/shims:$HOME/.nodenv/shims:${PATH}"
     export RUBY_CONFIGURE_OPTS="$RUBY_CONFIGURE_OPTS --with-openssl-dir=/usr/local/opt/openssl@1.1"
     # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
@@ -165,6 +156,9 @@ if [ `uname` = 'Darwin' ]; then
     alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
     alias notification-banner-clear='terminal-notifier -remove ALL'
     alias work='tmuxinator work'
+
+    source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
+    source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
 fi
 
 # }}}
