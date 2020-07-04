@@ -10,8 +10,8 @@ let s:config_path = expand('~/.config/') . (has('nvim') ? 'nvim' : 'vim') . '/'
 " }}}
 
 " {{{ Source plugins
-if (isdirectory(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')) && has('nvim'))
-    source ~/.config/nvim/plugins.vim
+if (has('nvim') && isdirectory(expand('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')))
+    execute 'source ' . s:config_path . 'plugins.vim'
 endif
 " }}}
 
