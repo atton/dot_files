@@ -155,7 +155,6 @@ if [ `uname` = 'Darwin' ]; then
     alias hubc='hub ci-status -v'
     alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
     alias notification-banner-clear='terminal-notifier -remove ALL'
-    alias work='tmuxinator work'
 
     source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
     source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
