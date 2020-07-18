@@ -154,6 +154,7 @@ if [ `uname` = 'Darwin' ]; then
     alias hubb='hub browse'
     alias hubc='hub ci-status -v'
     alias hubco='hub ci-status -v | grep-url | xargs open -a safari'
+    alias hubcr='hub ci-status -v `git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)`'
     alias notification-banner-clear='terminal-notifier -remove ALL'
 
     source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
