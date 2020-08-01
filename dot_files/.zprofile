@@ -96,9 +96,11 @@ alias bep='RAILS_ENV=production bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
 alias grep-latest='egrep "^[0-9.]+$" | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
-alias nodenv-latest="nodenv install -l | grep-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
+alias node-build-show-latest='node-build --definitions | grep-latest'
+alias nodenv-latest-global="node-build-show-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
 alias pin="ping 8.8.8.8"
-alias rbenv-latest="rbenv install -l | grep-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
+alias rbenv-latest-global="ruby-build-show-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
+alias ruby-build-show-latest='ruby-build --definitions | grep-latest'
 
 # }}}
 
