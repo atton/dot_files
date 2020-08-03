@@ -11,8 +11,8 @@ nodenv_after_install() {
 }
 
 install_packages() {
-    npm update -g npm
-    npm install -g neovim serverless yarn
+    npm update --global --no-progress npm
+    npm install --global --no-progress neovim yarn
 }
 
 which nodenv >& /dev/null;
@@ -20,18 +20,14 @@ check_nodenv=$?
 
 set -eux
 
+which node npm
 node --version
 npm --version
 
-if [ $check_nodenv -eq 0 ]; then
-    nodenv_before_install
-    install_packages
-    nodenv_after_install
-else
-    install_packages
-fi
+if [ $check_nodenv -eq 0 ]; then nodenv_before_install; fi
+install_packages
+if [ $check_nodenv -eq 0 ]; then nodenv_after_install; fi
 
 neovim-node-host --version
 npm --version
-sls --version
 yarn --version
