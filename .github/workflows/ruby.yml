@@ -21,3 +21,13 @@ jobs:
         run: dnf install -y which ruby ruby-devel make gcc redhat-rpm-config
       - name: Execute ruby-init.sh
         run: ./scripts/ruby-init.sh
+  rbenv-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install rbenv and zsh by homebrew
+        run: brew update && brew install rbenv zsh && brew upgrade rbenv zsh
+      - name: Execute install.sh
+        run: rm -rf $HOME/.config && ./install.sh
+      - name: Install latest ruby and execute ruby-init.sh
+        run: zsh -lc "rbenv-latest-global && `pwd`/scripts/ruby-init.sh"
