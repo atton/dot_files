@@ -11,7 +11,7 @@ jobs:
       - name: Setup dependencies by apk
         run: apk add ruby ruby-dev make gcc libc-dev bash
       - name: Execute ruby-init.sh
-        run: ./ruby-init.sh
+        run: ./scripts/ruby-init.sh
   ruby-centos:
     runs-on: ubuntu-latest
     container: docker://centos
