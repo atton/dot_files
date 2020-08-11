@@ -80,4 +80,5 @@
 
 # GitHub Actions
 !.github/workflows/all.yml
+!.github/workflows/node.yml
 !.github/workflows/ruby.yml

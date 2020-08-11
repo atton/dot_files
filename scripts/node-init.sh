@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 nodenv_before_install() {
     nodenv rehash
