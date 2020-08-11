@@ -1,4 +1,4 @@
-name: ruby: Verify init script
+name: Verify ruby-init script
 
 on: [push, pull_request]
 
