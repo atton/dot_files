@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pip3_install() {
     pip3 install --no-color --progress-bar off --upgrade $@
