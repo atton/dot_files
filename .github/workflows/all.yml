@@ -16,24 +16,6 @@ jobs:
         brew update >& /dev/null
         brew tap homebrew/bundle
         brew bundle
-  ruby-alpine:
-    runs-on: ubuntu-latest
-    container: docker://alpine
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apk
-        run: apk add ruby ruby-dev make gcc libc-dev bash
-      - name: Execute ruby-init.sh
-        run: bash scripts/ruby-init.sh
-  ruby-centos:
-    runs-on: ubuntu-latest
-    container: docker://centos
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by dnf
-        run: dnf install -y which ruby ruby-devel make gcc redhat-rpm-config
-      - name: Execute ruby-init.sh
-        run: bash scripts/ruby-init.sh
   python-alpine:
     runs-on: ubuntu-latest
     container: docker://alpine
