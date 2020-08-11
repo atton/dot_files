@@ -159,8 +159,8 @@ if [ `uname` = 'Darwin' ]; then
     alias hubcr='hub ci-status -v `git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)`'
     alias notification-banner-clear='terminal-notifier -remove ALL'
 
-    source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh
-    source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh
+    if which nodenv >& /dev/null; then eval 'source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh'; fi
+    if which rbenv >& /dev/null;  then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh'; fi
 fi
 
 # }}}
