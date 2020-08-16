@@ -16,64 +16,6 @@ jobs:
         brew update >& /dev/null
         brew tap homebrew/bundle
         brew bundle
-  neovim-alpine:
-    runs-on: ubuntu-latest
-    container: docker://alpine
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup dependencies by apk
-        run: apk add --no-progress bash curl gcc git libc-dev make neovim nodejs npm perl perl-app-cpanminus perl-dev python3 python3-dev py3-pip ruby ruby-dev wget
-      - name: Execute scripts
-        run: |
-          bash install.sh
-          bash scripts/node-init.sh
-          bash scripts/perl-init.sh
-          bash scripts/ruby-init.sh
-      - name: Execute neovim-init.sh
-        run: bash scripts/neovim-init.sh
-  neovim-centos:
-    runs-on: ubuntu-latest
-    container: docker://centos
-    steps:
-      - name: Setup dependencies by dnf
-        run: dnf install -y automake cmake cpanminus gcc gcc-c++ gettext git glibc-langpack-en libtool make nodejs perl python3 redhat-rpm-config ruby ruby-devel unzip which
-      - name: Install latest neovim
-        run: |
-          git clone https://github.com/neovim/neovim /root/neovim
-          pushd /root/neovim
-          NEOVIM_LATEST_VERSION=$(git tag | sort -V | tail -1)
-          echo $NEOVIM_LATEST_VERSION
-          git checkout -b $NEOVIM_LATEST_VERSION
-          make install
-          popd
-      - uses: actions/checkout@v2
-      - name: Execute scripts
-        run: |
-          rm -rf $HOME/.config
-          bash install.sh
-          bash scripts/node-init.sh
-          bash scripts/perl-init.sh
-          bash scripts/ruby-init.sh
-      - name: Execute neovim-init.sh
-        run: bash scripts/neovim-init.sh
-  neovim-macos:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install neovim by homebrew
-        run: |
-          brew update
-          brew install neovim
-      - name: Setup dependencies by homebrew
-        run: brew install rbenv nodenv
-      - name: Execute install.sh
-        run: rm -rf $HOME/.config && bash install.sh
-      - name: Install ruby and execute ruby-init.sh
-        run: echo "rbenv-latest-global && `pwd`/scripts/ruby-init.sh" | zsh -l
-      - name: Install node and execute node-init.sh
-        run: echo "nodenv-latest-global && `pwd`/scripts/node-init.sh" | zsh -l
-      - name: Execute neovim-init.sh
-        run: zsh -l scripts/neovim-init.sh
   docker-ubuntu:
     runs-on: ubuntu-latest
     steps:
