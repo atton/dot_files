@@ -1,5 +1,7 @@
 #!/bin/sh -eux
 
+docker --version
+
 docker pull alpine
 docker pull centos
 

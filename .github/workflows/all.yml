@@ -16,20 +16,6 @@ jobs:
         brew update >& /dev/null
         brew tap homebrew/bundle
         brew bundle
-  docker-ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Cleanup pre-installed docker images
-        run: docker images -aq | xargs docker rmi
-      - name: Execute docker-init.sh
-        run: bash scripts/docker-init.sh
-      - name: Check images
-        run: |
-          docker images | egrep '^alpine\s+latest'
-          docker images | egrep '^centos\s+latest'
-          docker images | egrep '^atton/latex-make\s+latest'
-          docker images | egrep '^atton/webpage-title\s+latest'
   vim-macos:
     runs-on: macos-latest
     steps:
