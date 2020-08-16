@@ -148,7 +148,7 @@ __git_files() { _files }
 if [ `uname` = 'Darwin' ]; then
     export PATH="$HOME/.rbenv/shims:$HOME/.nodenv/shims:${PATH}"
     export RUBY_CONFIGURE_OPTS="$RUBY_CONFIGURE_OPTS --with-openssl-dir=/usr/local/opt/openssl@1.1"
-    # "brew --prefix openssl@1.1" is heavy. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
+    # "brew --prefix openssl@1.1" is slow. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
     alias activity-monitor='open -a "Activity Monitor"'
     alias docker-hypervisor='docker run -it --rm --privileged --pid=host alpine'
@@ -160,7 +160,7 @@ if [ `uname` = 'Darwin' ]; then
     alias notification-banner-clear='terminal-notifier -remove ALL'
 
     if which nodenv >& /dev/null; then eval 'source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh'; fi
-    if which rbenv >& /dev/null;  then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh'; fi
+    if which rbenv  >& /dev/null; then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh';   fi
 fi
 
 # }}}
