@@ -15,5 +15,6 @@ jobs:
         run: |
           docker images | egrep '^alpine\s+latest'
           docker images | egrep '^centos\s+latest'
+          docker images | egrep '^atton/alpine-texlive-ja\s+latest'
           docker images | egrep '^atton/latex-make\s+latest'
           docker images | egrep '^atton/webpage-title\s+latest'
