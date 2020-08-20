@@ -1,0 +1,43 @@
+name: Verify vimrc in many environments
+
+on: [push, pull_request]
+
+jobs:
+  vim-centos-7:
+    runs-on: ubuntu-latest
+    container: docker://centos:7
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          yum install -y vim
+          rm -rf $HOME/.config && ./install.sh
+          ./scripts/vim-healthcheck.sh
+  vim-centos-8:
+    runs-on: ubuntu-latest
+    container: docker://centos:8
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          dnf install -y vim
+          rm -rf $HOME/.config && ./install.sh
+          ./scripts/vim-healthcheck.sh
+  vim-centos-latest:
+    runs-on: ubuntu-latest
+    container: docker://centos:8
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          dnf install -y vim
+          rm -rf $HOME/.config && ./install.sh
+          ./scripts/vim-healthcheck.sh
+  vim-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          rm -rf $HOME/.config && ./install.sh
+          ./scripts/vim-healthcheck.sh

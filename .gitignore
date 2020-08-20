@@ -73,6 +73,7 @@
 !scripts/perl-init.sh
 !scripts/python-init.sh
 !scripts/ruby-init.sh
+!scripts/vim-healthcheck.sh
 
 # installation scripts
 !install.sh
@@ -85,3 +86,4 @@
 !.github/workflows/node.yml
 !.github/workflows/python.yml
 !.github/workflows/ruby.yml
+!.github/workflows/vim.yml
