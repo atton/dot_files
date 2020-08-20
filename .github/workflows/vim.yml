@@ -3,6 +3,33 @@ name: Verify vimrc in many environments
 on: [push, pull_request]
 
 jobs:
+  vim-alpine-3.10:
+    runs-on: ubuntu-latest
+    container: docker://alpine:3.10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
+  vim-alpine-3.11:
+    runs-on: ubuntu-latest
+    container: docker://alpine:3.11
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
+  vim-alpine-latest:
+    runs-on: ubuntu-latest
+    container: docker://alpine
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-centos-7:
     runs-on: ubuntu-latest
     container: docker://centos:7
