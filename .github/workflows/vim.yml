@@ -11,8 +11,7 @@ jobs:
       - name: Validate .vimrc
         run: |
           yum install -y vim
-          rm -rf $HOME/.config && ./install.sh
-          ./scripts/vim-healthcheck.sh
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-centos-8:
     runs-on: ubuntu-latest
     container: docker://centos:8
@@ -21,8 +20,7 @@ jobs:
       - name: Validate .vimrc
         run: |
           dnf install -y vim
-          rm -rf $HOME/.config && ./install.sh
-          ./scripts/vim-healthcheck.sh
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-centos-latest:
     runs-on: ubuntu-latest
     container: docker://centos:8
@@ -31,13 +29,10 @@ jobs:
       - name: Validate .vimrc
         run: |
           dnf install -y vim
-          rm -rf $HOME/.config && ./install.sh
-          ./scripts/vim-healthcheck.sh
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - name: Validate .vimrc
-        run: |
-          rm -rf $HOME/.config && ./install.sh
-          ./scripts/vim-healthcheck.sh
+        run: rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
