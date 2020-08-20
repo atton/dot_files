@@ -1,4 +1,4 @@
-name: Verify vimrc in many environments
+name: Verify .vimrc
 
 on: [push, pull_request]
 
