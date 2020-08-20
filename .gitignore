@@ -80,8 +80,8 @@
 !uninstall.sh
 
 # GitHub Actions
-!.github/workflows/all.yml
 !.github/workflows/docker.yml
+!.github/workflows/homebrew.yml
 !.github/workflows/neovim.yml
 !.github/workflows/node.yml
 !.github/workflows/python.yml
