@@ -21,3 +21,11 @@ jobs:
         run: dnf install -y gcc python3 python3-devel which
       - name: Execute python-init.sh
         run: ./scripts/python-init.sh
+  python-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dependencies by brew
+        run: brew update && brew install python
+      - name: Execute python-init.sh
+        run: ./scripts/python-init.sh
