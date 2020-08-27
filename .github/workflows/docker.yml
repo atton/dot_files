@@ -1,4 +1,7 @@
-name: Verify docker-init script
+name: Search docker images
+
+# Docker Hub Princing: https://hub.docker.com/pricing
+# Free plan restricted 100 pull / 6 hour. So verification switched pull to only search.
 
 on: [push, pull_request]
 
@@ -6,15 +9,7 @@ jobs:
   docker-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Cleanup pre-installed docker images
-        run: docker images -aq | xargs docker rmi
-      - name: Execute docker-init.sh
-        run: ./scripts/docker-init.sh
-      - name: Check images
+      - name: Search images
         run: |
-          docker images | egrep '^alpine\s+latest'
-          docker images | egrep '^centos\s+latest'
-          docker images | egrep '^atton/alpine-texlive-ja\s+latest'
-          docker images | egrep '^atton/latex-make\s+latest'
-          docker images | egrep '^atton/webpage-title\s+latest'
+          docker search latex-make    | grep atton
+          docker search webpage-title | grep atton
