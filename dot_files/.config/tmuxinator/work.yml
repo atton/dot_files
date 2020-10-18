@@ -1,7 +1,7 @@
 name: work
-root: <%= ENV["TMUXINATOR_WORK_HOME"] %>
+root: <%= ENV.fetch('TMUXINATOR_WORK_HOME', '~') %>
 
 windows:
-  - note: cd ../../note && clear && check-holiday
+  - note: <%= ENV.fetch('TMUXINATOR_WORK_NOTE', '') %>
   - editor:
   - console:
