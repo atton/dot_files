@@ -12,6 +12,7 @@ jobs:
     - name: Remove cocoapods
       run: rm -f /usr/local/bin/pod
     - name: Install formulas by homebrew + bundle
-      run: $(brew update || true)
+      run: |
+        $(brew update || true)
         brew tap homebrew/bundle
         brew bundle
