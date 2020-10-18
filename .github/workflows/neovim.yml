@@ -48,9 +48,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install neovim by homebrew
-        run: |
-          brew update
-          brew install neovim
+        run: $(brew update || true) && brew reinstall neovim
       - name: Setup dependencies by homebrew
         run: brew install rbenv nodenv
       - name: Execute install.sh
