@@ -13,6 +13,6 @@ jobs:
       run: rm -f /usr/local/bin/pod
     - name: Install formulas by homebrew + bundle
       run: |
-        $(brew update || true)
+        $(brew update >& /dev/null || true)
         brew tap homebrew/bundle
         brew bundle
