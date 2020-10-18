@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install nodenv and zsh by homebrew
-        run: brew update || brew install nodenv zsh || brew upgrade nodenv zsh
+        run: brew update; brew install nodenv zsh; brew upgrade nodenv zsh
       - name: Execute install.sh
         run: rm -rf $HOME/.config && ./install.sh
       - name: Install latest node and execute node-init.sh
