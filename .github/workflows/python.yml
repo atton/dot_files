@@ -26,6 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by brew
-        run: brew update || brew install python || brew upgrad python || true
+        run: brew update || brew install python || brew upgrade python || true
       - name: Execute python-init.sh
         run: ./scripts/python-init.sh
