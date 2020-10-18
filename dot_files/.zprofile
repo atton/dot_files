@@ -1,6 +1,8 @@
 autoload -Uz compinit is-at-least
 
-compinit -d $HOME/.config/zsh/zcompdump
+if [[ -o interactive ]]; then
+    compinit -d $HOME/.config/zsh/zcompdump
+fi
 
 # {{{ environment variables
 
