@@ -1,5 +1,5 @@
 name: work
-root: <%= ENV.fetch('TMUXINATOR_WORK_HOME', '~') %>
+root: <%= ENV.fetch('TMUXINATOR_WORK_HOME', '') %>
 
 windows:
   - note: <%= ENV.fetch('TMUXINATOR_WORK_NOTE', '') %>
