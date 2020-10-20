@@ -63,15 +63,17 @@ endif
 
 " {{{ deoplete
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#data_directory    = s:plugins_path . 'deoplete'
-let s:keyword_patterns = {}
-let s:keyword_patterns['_']    = '[a-zA-Z_]\k*'
-let s:keyword_patterns['ruby'] = '[a-zA-Z_@]\w*[!?]?'
-let s:keyword_patterns['text'] = '[0-9a-zA-Z][0-9a-zA-Z_.-]*'
-let s:keyword_patterns['zsh']  = '[a-zA-Z_][a-zA-Z_-]*'
-call deoplete#custom#option('keyword_patterns', s:keyword_patterns)
-call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable completions in denite-filter
+if has('python3')
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#data_directory    = s:plugins_path . 'deoplete'
+    let s:keyword_patterns = {}
+    let s:keyword_patterns['_']    = '[a-zA-Z_]\k*'
+    let s:keyword_patterns['ruby'] = '[a-zA-Z_@]\w*[!?]?'
+    let s:keyword_patterns['text'] = '[0-9a-zA-Z][0-9a-zA-Z_.-]*'
+    let s:keyword_patterns['zsh']  = '[a-zA-Z_][a-zA-Z_-]*'
+    call deoplete#custom#option('keyword_patterns', s:keyword_patterns)
+    call deoplete#custom#option('sources', {'denite-filter': '_'})  " Disable completions in denite-filter
+endif
 
 " }}}
 
