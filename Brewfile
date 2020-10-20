@@ -9,7 +9,6 @@ brew 'atton/customs/tmux',        args: ['HEAD']
 
 brew 'awscli'
 brew 'binutils'
-brew 'cocoapods'
 brew 'coreutils'
 brew 'findutils'
 brew 'git'
