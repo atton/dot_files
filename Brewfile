@@ -20,7 +20,7 @@ brew 'neovim'
 brew 'nkf'
 brew 'nmap'
 brew 'nodenv'
-brew 'python@3.8', link: true
+brew 'python@3.9', link: true
 brew 'q'
 brew 'rbenv'
 brew 'reattach-to-user-namespace'
