@@ -27,9 +27,3 @@ npm --version
 if [ $check_nodenv -eq 0 ]; then nodenv_before_install; fi
 install_packages
 if [ $check_nodenv -eq 0 ]; then nodenv_after_install; fi
-
-cdk --version
-neovim-node-host --version
-npm --version
-tsc --version
-yarn --version
