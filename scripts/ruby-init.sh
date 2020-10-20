@@ -14,9 +14,3 @@ gem update --no-document --system
 gem install --no-document -f bundler
 bundle install --gemfile "`dirname $0`/../Gemfile"
 if which rbenv >& /dev/null; then rbenv rehash ; fi
-
-set -eu
-gem --version
-kramdown --version
-neovim-ruby-host --version
-pry --version
