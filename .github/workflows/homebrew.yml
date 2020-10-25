@@ -13,4 +13,5 @@ jobs:
       run: |
         $(brew update >& /dev/null || true)
         brew tap homebrew/bundle
+        brew bundle cleanup
         brew bundle
