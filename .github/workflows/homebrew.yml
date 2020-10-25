@@ -9,9 +9,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Remove cocoapods
-      run: rm -f /usr/local/bin/pod
-    - name: Install formulas by homebrew + bundle
+    - name: Install formulas by brew bundle
       run: |
         $(brew update >& /dev/null || true)
         brew tap homebrew/bundle
