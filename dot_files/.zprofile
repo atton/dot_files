@@ -96,8 +96,9 @@ fi
 alias be='bundle exec'
 alias bep='RAILS_ENV=production bundle exec'
 alias bet='RAILS_ENV=test bundle exec'
-alias grep-latest='egrep "^[0-9.]+$" | sort -V | tail -1'
+alias grep-latest='grep-version | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
+alias grep-version='egrep "^[0-9.]+$"'
 alias node-build-show-latest='node-build --definitions | grep-latest'
 alias nodenv-latest-global="node-build-show-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
 alias pin="ping 8.8.8.8"
