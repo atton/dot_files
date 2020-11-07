@@ -164,6 +164,7 @@ let s:denite_commands.command_candidates = [
 \ ['EditZProfileLocal',   'edit ~/.config/zsh/zprofile.local'],
 \ ['FixSkkDictionary',    'FixSkkDictionary'],
 \ ['FormalizePryLogs',    'FormalizePryLogs'],
+\ ['GetTitleFromURL',     'GetTitleFromCurrentLineURL'],
 \ ['GitCommitTodayNote',  'GitCommitTodayNote'],
 \ ['InsertTimeStamps',    'InsertTimeStampsFromUndoHistory'],
 \ ['LoadLazyPlugins',     'call dein#source()'],
