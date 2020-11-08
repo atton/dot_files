@@ -25,7 +25,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup dependencies by brew
-        run: $(brew update >& /dev/null || true); brew reinstall python@3.8
       - name: Execute python-init.sh
-        run: ./scripts/python-init.sh
+        run: sudo ./scripts/python-init.sh
