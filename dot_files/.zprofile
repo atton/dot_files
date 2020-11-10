@@ -93,9 +93,6 @@ fi
 
 # aliases {{{
 
-alias be='bundle exec'
-alias bep='RAILS_ENV=production bundle exec'
-alias bet='RAILS_ENV=test bundle exec'
 alias grep-latest='grep-version | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
 alias grep-version='egrep "^[0-9.]+$"'
