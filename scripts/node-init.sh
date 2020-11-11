@@ -24,6 +24,6 @@ which node npm
 node --version
 npm --version
 
-if [ $check_nodenv -eq 0 ]; then nodenv_before_install; fi
+if [ $check_nodenv ]; then nodenv_before_install; fi
 install_packages
-if [ $check_nodenv -eq 0 ]; then nodenv_after_install; fi
+if [ $check_nodenv ]; then nodenv_after_install; fi
