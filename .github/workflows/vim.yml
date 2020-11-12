@@ -21,6 +21,15 @@ jobs:
         run: |
           apk add vim
           rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
+  vim-alpine-3-12:
+    runs-on: ubuntu-latest
+    container: docker://alpine:3.12
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-alpine-latest:
     runs-on: ubuntu-latest
     container: docker://alpine
