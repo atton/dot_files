@@ -77,7 +77,7 @@ setopt transient_rprompt            # if typed chars conflict right prompt, hide
 # vcs_info (zsh support vcs_info after 4.3.11)
 if is-at-least 4.3.11; then
     autoload -Uz vcs_info
-    zstyle ':vcs_info:*' enable git
+    zstyle ':vcs_info:*' enable git hg
     zstyle ':vcs_info:*' check-for-changes true
     zstyle ':vcs_info:*' unstagedstr   '+'
     zstyle ':vcs_info:*' formats       '%u(%s|%b)'
