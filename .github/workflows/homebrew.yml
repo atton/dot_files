@@ -8,8 +8,8 @@ jobs:
   homebrew-macos:
     runs-on: macos-latest
     steps:
-    - name: Remove built-in aws
-      run: rm -f /usr/local/bin/aws
+    - name: Remove built-in conflict commands
+      run: rm -f /usr/local/bin/aws /usr/local/bin/aws_completer
     - uses: actions/checkout@v2
     - name: Install formulas by brew bundle
       run: |
