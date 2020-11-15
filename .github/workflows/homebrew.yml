@@ -8,6 +8,8 @@ jobs:
   homebrew-macos:
     runs-on: macos-latest
     steps:
+    - name: Remove built-in aws
+      run: rm -f /usr/local/bin/aws
     - uses: actions/checkout@v2
     - name: Install formulas by brew bundle
       run: |
