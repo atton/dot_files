@@ -181,6 +181,7 @@ call denite#custom#var('menu', 'menus', {'commands': s:denite_commands})
 
 " {{{ VimCalc3
 
+let g:VCalc_Win_Size       = 5
 let g:VCalc_WindowPosition = 'bottom'
 
 " }}}
