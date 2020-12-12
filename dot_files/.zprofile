@@ -19,6 +19,7 @@ export AWS_CONFIG_FILE=$HOME/.config/aws/config
 export AWS_DEFAULT_OUTPUT=yaml
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 export BUNDLE_USER_HOME=$HOME/.config/bundler
+export CDK_HOME=$HOME/.config/aws-cdk
 export COOKIECUTTER_CONFIG=$HOME/.config/cookiecutter/cookiecutterrc
 export CP_HOME_DIR=$HOME/.config/cocoapods
 export GEM_SPEC_CACHE=$HOME/.config/gem/specs
