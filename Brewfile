@@ -40,6 +40,5 @@ cask 'google-chrome'
 cask 'libreoffice'
 cask 'spectacle'
 cask 'xquartz'
-cask 'zoomus'
 
 # vim: set filetype=ruby:
