@@ -10,7 +10,6 @@
 	flog = log --format=fuller
 	glog = log --graph
 	olog = log --format=oneline
-	pick = cherry-pick
 	st = status
 [core]
 	hooksPath = ~/.config/git/hooks
