@@ -21,6 +21,8 @@
 	auto = 0
 [grep]
 	lineNumber = true
+[init]
+	defaultBranch = master
 [merge]
 	ff = no
 [pull]
