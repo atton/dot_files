@@ -10,7 +10,6 @@
 	glog = log --graph
 	olog = log --format=oneline
 	st = status
-	sw = switch
 [core]
 	hooksPath = ~/.config/git/hooks
 	quotepath = false
