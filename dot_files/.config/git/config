@@ -2,6 +2,8 @@
 	name  = atton
 	email = e115763@gmail.com
 
+[advice]
+	detachedHead = false
 [alias]
 	br = branch
 	clean-all = clean -fdx --exclude='.env*' --exclude='.*version'
