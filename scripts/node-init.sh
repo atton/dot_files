@@ -11,8 +11,8 @@ nodenv_after_install() {
 }
 
 install_packages() {
-    npm install --global --no-progress npm@latest
-    npm install --global --no-progress aws-cdk neovim typescript yarn
+    npm install --global npm
+    npm install --global aws-cdk neovim typescript yarn
 }
 
 which nodenv >& /dev/null;
