@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by apk
-        run: apk add --no-progress bash build-base curl neovim nodejs npm perl perl-app-cpanminus perl-dev py3-pip python3 python3-dev ruby ruby-dev ruby-etc wget
+        run: apk add --no-progress bash build-base curl git neovim nodejs npm perl perl-app-cpanminus perl-dev py3-pip python3 python3-dev ruby ruby-dev ruby-etc wget
       - name: Execute scripts
         run: |
           ./install.sh
