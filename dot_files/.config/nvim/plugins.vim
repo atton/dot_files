@@ -104,14 +104,14 @@ endfunction
 autocmd! FileType denite call s:denite_my_settings()
 
 function! s:denite_filter_my_settings() abort
-  imap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
-  nmap     <silent><buffer> <C-g> <Plug>(denite_filter_quit)
-  imap     <silent><buffer> <C-l> <Plug>(denite_filter_update)
-  nmap     <silent><buffer> <C-l> <Plug>(denite_filter_update)
-  imap     <silent><buffer> <CR>  <C-g><CR>
-  nmap     <silent><buffer> <CR>  <C-g><CR>
-  inoremap <silent><buffer> <C-n> <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
-  inoremap <silent><buffer> <C-p> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
+  imap     <silent><buffer>       <C-g> <Plug>(denite_filter_quit)
+  nmap     <silent><buffer>       <C-g> <Plug>(denite_filter_quit)
+  imap     <silent><buffer>       <C-l> <Plug>(denite_filter_update)
+  nmap     <silent><buffer>       <C-l> <Plug>(denite_filter_update)
+  imap     <silent><buffer><expr> <CR>  denite#do_map('do_action')
+  nmap     <silent><buffer><expr> <CR>  denite#do_map('do_action')
+  inoremap <silent><buffer><expr> <C-n> denite#increment_parent_cursor(1)
+  inoremap <silent><buffer><expr> <C-p> denite#increment_parent_cursor(-1)
   inoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
 endfunction
 autocmd! FileType denite-filter call s:denite_filter_my_settings()
