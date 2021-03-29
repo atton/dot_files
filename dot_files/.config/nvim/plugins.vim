@@ -118,6 +118,9 @@ autocmd! FileType denite-filter call s:denite_filter_my_settings()
 
 call denite#custom#var('grep', 'default_opts',
             \ ['--exclude-dir=tmp', '--exclude-dir=log', '-iRHn'])
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
+            \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
 function! s:denite_grep_by_selected_word_in_current_dir()
     try
@@ -134,7 +137,8 @@ command! -nargs=0 -range DeniteGrepBySelectedWord call s:denite_grep_by_selected
 
 " Shortcut Mappings
 nnoremap <Leader>b :<C-u> Denite buffer<CR>
-nnoremap <Leader>f :<C-u> Denite file/rec <CR>
+nnoremap <Leader>f :<C-u> Denite file/rec<CR>
+nnoremap <Leader>F :<C-u> Denite file/rec/git<CR>
 nnoremap <Leader>r :<C-u> Denite register<CR>
 nnoremap <Leader>m :<C-u> Denite file_mru<CR>
 nnoremap <Leader>g :Denite grep:. <CR>
