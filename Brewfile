@@ -7,6 +7,8 @@ brew 'atton/customs/mac-scripts', args: ['HEAD']
 brew 'atton/customs/peep'
 brew 'atton/customs/tmux',        args: ['HEAD']
 
+brew 'python@3.9', link: true
+
 brew 'awscli'
 brew 'binutils'
 brew 'coreutils'
@@ -20,7 +22,7 @@ brew 'neovim'
 brew 'nkf'
 brew 'nmap'
 brew 'nodenv'
-brew 'python@3.9', link: true
+brew 'protobuf'
 brew 'q'
 brew 'rbenv'
 brew 'reattach-to-user-namespace'
