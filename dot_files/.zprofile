@@ -94,6 +94,7 @@ fi
 
 # aliases {{{
 
+alias docker-cleanup='docker system prune --volumes --force'
 alias grep-latest='grep-version | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
 alias grep-version='egrep "^[0-9.]+$"'
