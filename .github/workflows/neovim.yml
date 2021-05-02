@@ -23,7 +23,7 @@ jobs:
     container: docker://centos
     steps:
       - name: Setup dependencies by dnf
-        run: dnf install -y automake cmake cpanminus gcc gcc-c++ gettext git glibc-langpack-en libtool make nodejs perl python3 redhat-rpm-config ruby ruby-devel unzip which
+        run: dnf install -y automake cmake cpanminus gcc gcc-c++ gettext git glibc-langpack-en libtool make nodejs perl python3 redhat-rpm-config ruby ruby-devel unzip
       - name: Install latest neovim
         run: |
           git clone https://github.com/neovim/neovim /root/neovim

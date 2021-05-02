@@ -4,7 +4,7 @@ cd `dirname $0`
 set -eux
 nvim --version
 
-which bash curl gcc git pip3
+type bash curl gcc git pip3
 bash python-init.sh
 
 installer_path='/tmp/installer.sh'

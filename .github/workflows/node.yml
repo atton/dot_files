@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by dnf
-        run: dnf install -y which npm
+        run: dnf install -y npm
       - name: Execute install.sh and node-init.sh
         run: |
           ./install.sh

@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup dependencies by dnf
-        run: dnf install -y gcc python3 python3-devel which
+        run: dnf install -y gcc python3 python3-devel
       - name: Execute python-init.sh
         run: ./scripts/python-init.sh
   python-macos:

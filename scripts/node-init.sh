@@ -15,12 +15,12 @@ install_packages() {
     npm install --global neovim typescript yarn
 }
 
-which nodenv >& /dev/null;
+type nodenv >& /dev/null;
 check_nodenv=$?
 
 set -eux
 
-which node npm
+type node npm
 node --version
 npm --version
 
