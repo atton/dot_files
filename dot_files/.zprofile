@@ -137,7 +137,6 @@ if type docker >& /dev/null; then
     }
     alias alpine='docker-run-latest-sandbox alpine'
     alias centos='docker-run-latest-sandbox centos'
-    alias docker-volumes-cleanup='docker volume ls --quiet | egrep "[0-9a-f]{64}" | xargs docker volume rm'
 fi
 
 # Git: disable git-based filename completion
