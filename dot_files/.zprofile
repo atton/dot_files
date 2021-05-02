@@ -33,13 +33,13 @@ export RUBY_CONFIGURE_OPTS="--enable-shared"
 
 if [ `uname` = 'Linux' ]; then
     export PATH=$HOME/.rbenv/bin:$HOME/.nodenv/bin:$PATH
-    if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
+    if type nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
+    if type rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
 fi
 
-if which vi   >& /dev/null; then export EDITOR=vi;   fi
-if which vim  >& /dev/null; then export EDITOR=vim;  fi
-if which nvim >& /dev/null; then export EDITOR=nvim; fi
+if type vi   >& /dev/null; then export EDITOR=vi;   fi
+if type vim  >& /dev/null; then export EDITOR=vim;  fi
+if type nvim >& /dev/null; then export EDITOR=nvim; fi
 
 # }}}
 
@@ -115,8 +115,8 @@ function reload-zprofile() { source $HOME/.zprofile }
 function shell-reinit() {
     rehash
     autoload -Uz zmv
-    if which nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if which rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
+    if type nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
+    if type rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
     load-zprofile $HOME/.config/zsh/zprofile.local
     typeset -U path
     rehash
@@ -127,7 +127,7 @@ function shell-reinit() {
 # settings for specific command {{{
 
 # Docker
-if which docker >& /dev/null; then
+if type docker >& /dev/null; then
     function docker-run-latest-sandbox() {
         if [ -z "$(docker ps -q --filter "name=${1}")" ]; then
             docker run --rm -it --name ${1} ${1} ${2}
@@ -161,8 +161,8 @@ if [ `uname` = 'Darwin' ]; then
     alias hubcr='hub ci-status -v `git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)`'
     alias notification-banner-clear='terminal-notifier -remove ALL'
 
-    if which nodenv >& /dev/null; then eval 'source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh'; fi
-    if which rbenv  >& /dev/null; then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh';   fi
+    if type nodenv >& /dev/null; then eval 'source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh'; fi
+    if type rbenv  >& /dev/null; then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh';   fi
 fi
 
 # }}}
