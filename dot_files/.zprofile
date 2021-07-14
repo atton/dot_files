@@ -28,6 +28,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_EMOJI=1
 export LESSHISTFILE=/dev/null
 export NODENV_SHELL=zsh
+export NVIM_LOG_FILE=/dev/null
 export RBENV_SHELL=zsh
 export RUBY_CONFIGURE_OPTS="--enable-shared"
 
