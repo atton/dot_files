@@ -39,6 +39,7 @@ cask 'aquaskk'
 cask 'docker'
 cask 'google-chrome'
 cask 'libreoffice'
+cask 'session-manager-plugin'
 cask 'spectacle'
 cask 'xquartz'
 
