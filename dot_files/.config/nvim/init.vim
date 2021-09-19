@@ -237,7 +237,7 @@ function! s:git_commit_today_note() abort
 
     let s:prefix = has('nvim') ? '[Neovim]' : '[Vim]'
     call system(printf('git add %s', s:filename))
-    call system(printf('git commit -m "%s Add %s note"', s:prefix, get(split(s:filename, '_'), 0)))
+    call system(printf('git commit --no-verify -m "%s Add %s note"', s:prefix, get(split(s:filename, '_'), 0)))
     echo system('git show --name-status')
 endfunction
 
