@@ -25,12 +25,12 @@ jobs:
         run: |
           ./install.sh
           ./scripts/node-init.sh
-  nodenv-macos:
+  node-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install nodenv and zsh by homebrew
-        run: $(brew update >& /dev/null || true); brew reinstall nodenv zsh
+      - name: Install asdf and zsh by homebrew
+        run: $(brew update >& /dev/null || true); brew reinstall asdf zsh
       - name: Execute install.sh
         run: rm -rf $HOME/.config && ./install.sh
       - name: Install latest node and execute node-init.sh

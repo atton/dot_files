@@ -21,7 +21,7 @@ jobs:
         run: dnf install -y ruby ruby-devel make gcc redhat-rpm-config
       - name: Execute ruby-init.sh
         run: ./scripts/ruby-init.sh
-  rbenv-macos:
+  ruby-macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2

@@ -3,27 +3,27 @@ name: Verify .vimrc
 on: [push, pull_request]
 
 jobs:
-  vim-alpine-3-10:
-    runs-on: ubuntu-latest
-    container: docker://alpine:3.10
-    steps:
-      - uses: actions/checkout@v2
-      - name: Validate .vimrc
-        run: |
-          apk add vim
-          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
-  vim-alpine-3-11:
-    runs-on: ubuntu-latest
-    container: docker://alpine:3.11
-    steps:
-      - uses: actions/checkout@v2
-      - name: Validate .vimrc
-        run: |
-          apk add vim
-          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-alpine-3-12:
     runs-on: ubuntu-latest
     container: docker://alpine:3.12
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
+  vim-alpine-3-13:
+    runs-on: ubuntu-latest
+    container: docker://alpine:3.13
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate .vimrc
+        run: |
+          apk add vim
+          rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
+  vim-alpine-3-14:
+    runs-on: ubuntu-latest
+    container: docker://alpine:3.14
     steps:
       - uses: actions/checkout@v2
       - name: Validate .vimrc
@@ -59,7 +59,7 @@ jobs:
           rm -rf $HOME/.config && ./install.sh && ./scripts/vim-healthcheck.sh
   vim-centos-latest:
     runs-on: ubuntu-latest
-    container: docker://centos:8
+    container: docker://centos
     steps:
       - uses: actions/checkout@v2
       - name: Validate .vimrc
