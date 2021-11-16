@@ -100,9 +100,7 @@ alias grep-latest='grep-version | sort -V | tail -1'
 alias grep-url='egrep -o "https?://[^ ]+"'
 alias grep-version='egrep "^[0-9.]+$"'
 alias node-build-show-latest='node-build --definitions | grep-latest'
-alias nodenv-latest-global="node-build-show-latest | xargs -I {} zsh -lc 'nodenv install {} && nodenv global {}'"
 alias pin="ping 8.8.8.8"
-alias rbenv-latest-global="ruby-build-show-latest | xargs -I {} zsh -lc 'rbenv install {} && rbenv global {}'"
 alias ruby-build-show-latest='ruby-build --definitions | grep-latest'
 
 # }}}
@@ -116,8 +114,6 @@ function reload-zprofile() { source $HOME/.zprofile }
 function shell-reinit() {
     rehash
     autoload -Uz zmv
-    if type nodenv >& /dev/null; then eval "$(nodenv init - zsh)"; fi
-    if type rbenv  >& /dev/null; then eval "$(rbenv  init - zsh)"; fi
     load-zprofile $HOME/.config/zsh/zprofile.local
     typeset -U path
     rehash
@@ -148,7 +144,6 @@ __git_files() { _files }
 # {{{ settings for mac
 
 if [ `uname` = 'Darwin' ]; then
-    export PATH="$HOME/.rbenv/shims:$HOME/.nodenv/shims:${PATH}"
     export RUBY_CONFIGURE_OPTS="$RUBY_CONFIGURE_OPTS --with-openssl-dir=/usr/local/opt/openssl@1.1"
     # "brew --prefix openssl@1.1" is slow. So set "--with-openssl-dir" directly. (More info: $ brew info ruby-build)
 
@@ -161,8 +156,7 @@ if [ `uname` = 'Darwin' ]; then
     alias hubcr='hub ci-status -v `git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD)`'
     alias notification-banner-clear='terminal-notifier -remove ALL'
 
-    if type nodenv >& /dev/null; then eval 'source /usr/local/Cellar/nodenv/*/completions/nodenv.zsh'; fi
-    if type rbenv  >& /dev/null; then eval 'source /usr/local/Cellar/rbenv/*/completions/rbenv.zsh';   fi
+    if type asdf >& /dev/null; then source /usr/local/opt/asdf/libexec/asdf.sh; fi
 fi
 
 # }}}

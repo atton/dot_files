@@ -4,7 +4,6 @@ gem 'activesupport'
 gem 'bundler'
 gem 'json'
 gem 'kramdown'
-gem 'neovim'
 gem 'pry'
 gem 'pry-doc'
 

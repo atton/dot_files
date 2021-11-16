@@ -9,7 +9,6 @@ endif
 " }}}
 " {{{ provider initializations for reduce launch time
 let g:python3_host_prog = exepath('python3')
-let g:ruby_host_prog    = 'neovim-ruby-host'
 " }}}
 
 if dein#load_state(s:dein_path)
