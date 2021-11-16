@@ -9,13 +9,17 @@ brew 'atton/customs/tmux',        args: ['HEAD']
 
 brew 'python@3.9', link: true
 
+brew 'asdf'
 brew 'awscli'
 brew 'binutils'
 brew 'coreutils'
 brew 'findutils'
+brew 'gawk'
 brew 'geos'
 brew 'git'
 brew 'gnu-sed'
+brew 'go'
+brew 'gpg'
 brew 'hub'
 brew 'jq'
 brew 'mercurial'

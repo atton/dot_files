@@ -42,6 +42,7 @@
 !dot_files/.config/zsh/.gitkeep
 
 # settings
+!dot_files/.asdfrc
 !dot_files/.config/cookiecutter/cookiecutterrc
 !dot_files/.config/git/config
 !dot_files/.config/git/hooks/pre-commit
