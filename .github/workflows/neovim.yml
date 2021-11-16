@@ -53,9 +53,5 @@ jobs:
         run: brew install rbenv nodenv
       - name: Execute install.sh
         run: rm -rf $HOME/.config && ./install.sh
-      - name: Install ruby and execute ruby-init.sh
-        run: echo "rbenv-latest-global && `pwd`/scripts/ruby-init.sh" | zsh -l
-      - name: Install node and execute node-init.sh
-        run: echo "nodenv-latest-global && `pwd`/scripts/node-init.sh" | zsh -l
       - name: Execute neovim-init.sh
         run: zsh -l scripts/neovim-init.sh
