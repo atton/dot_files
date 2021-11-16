@@ -34,4 +34,4 @@ jobs:
       - name: Execute install.sh
         run: rm -rf $HOME/.config && ./install.sh
       - name: Install latest node and execute node-init.sh
-        run: zsh -lc "nodenv-latest-global && `pwd`/scripts/node-init.sh"
+        run: zsh -lc "asdf plugin-add nodejs && asdf install nodejs latest && asdf global nodejs latest && `pwd`/scripts/node-init.sh"
